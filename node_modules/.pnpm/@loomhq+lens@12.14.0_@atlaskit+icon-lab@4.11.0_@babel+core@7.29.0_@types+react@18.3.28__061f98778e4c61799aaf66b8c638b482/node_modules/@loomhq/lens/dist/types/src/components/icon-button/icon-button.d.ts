@@ -1,0 +1,29 @@
+import React from 'react';
+import type { LensButtonProps } from '../../types';
+export declare const IconButtonBox: import("@emotion/styled").StyledComponent<{
+    theme?: import("@emotion/react").Theme;
+    as?: React.ElementType;
+} & IconButtonBoxProps, React.DetailedHTMLProps<React.ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>, {}>;
+type AllProps = IconButtonProps & React.ComponentProps<typeof IconButtonBox> & Omit<LensButtonProps, keyof IconButtonProps & React.ComponentProps<typeof IconButtonBox>>;
+declare const IconButton: React.ForwardRefExoticComponent<Omit<AllProps, "ref"> & React.RefAttributes<HTMLButtonElement>>;
+type IconButtonProps = {
+    altText: string;
+    icon?: React.ReactNode;
+    onClick?: React.MouseEventHandler<HTMLInputElement>;
+    iconColor?: string;
+    backgroundColor?: string;
+    isActive?: boolean;
+    isDisabled?: boolean;
+    size?: 'small' | 'medium' | 'large';
+    htmlTag?: 'button' | 'a';
+    href?: string;
+    target?: string;
+};
+type IconButtonBoxProps = {
+    size?: 'small' | 'medium' | 'large';
+    isActive?: boolean;
+    backgroundColor?: string;
+    as?: 'button' | 'a';
+};
+export default IconButton;
+//# sourceMappingURL=icon-button.d.ts.map

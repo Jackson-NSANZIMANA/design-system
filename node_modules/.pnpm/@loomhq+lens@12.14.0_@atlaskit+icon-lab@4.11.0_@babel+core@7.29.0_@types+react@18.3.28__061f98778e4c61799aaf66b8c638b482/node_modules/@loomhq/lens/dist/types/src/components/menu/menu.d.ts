@@ -1,0 +1,42 @@
+import React from 'react';
+type MenuPositionsProps = {
+    [key: string]: 'bottom-start' | 'bottom-end' | 'top-start' | 'top-end' | 'left-start' | 'right-start';
+};
+export declare const menuPositions: MenuPositionsProps;
+declare const MenuContainer: import("@emotion/styled").StyledComponent<{
+    theme?: import("@emotion/react").Theme;
+    as?: React.ElementType;
+} & MenuProps, React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>, {}>;
+declare const MenuItemWrapper: import("@emotion/styled").StyledComponent<{
+    theme?: import("@emotion/react").Theme;
+    as?: React.ElementType;
+} & MenuItemProps, React.DetailedHTMLProps<React.LiHTMLAttributes<HTMLLIElement>, HTMLLIElement>, {}>;
+export declare const MenuItem: ({ isDisabled, isHighlighted, isSelected, icon, hasDivider, children, menuItemRole, keyboardMove, showDeselectIcon, ...props }: MenuItemProps & React.ComponentProps<typeof MenuItemWrapper>) => React.JSX.Element;
+declare const Menu: ({ position, zIndex, minWidth, maxWidth, maxHeight, children, role, downshiftMenuProps, search, ...props }: MenuProps & React.ComponentProps<typeof MenuContainer>) => React.JSX.Element;
+type MenuProps = {
+    isDisabled?: boolean;
+    position?: string;
+    zIndex?: number;
+    minWidth?: number | string;
+    maxWidth?: number | string;
+    maxHeight?: number | string;
+    children?: React.ReactNode;
+    downshiftMenuProps?: any;
+    search?: React.ReactElement;
+    role?: React.AriaRole;
+};
+type MenuItemProps = {
+    isDisabled?: boolean;
+    isHighlighted?: boolean;
+    keyboardMove?: boolean;
+    isSelected?: boolean;
+    icon?: React.ReactNode | string;
+    hasDivider?: boolean;
+    children?: React.ReactNode;
+    columns?: string;
+    hidden?: boolean;
+    menuItemRole?: React.AriaRole;
+    showDeselectIcon?: boolean;
+};
+export default Menu;
+//# sourceMappingURL=menu.d.ts.map

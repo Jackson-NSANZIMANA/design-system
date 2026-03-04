@@ -1,0 +1,29 @@
+{
+  "packageName": "@loomhq/lens",
+  "version": "12.14.0",
+  "exports": [
+    ".",
+    "./icons/*"
+  ],
+  "dependencies": {
+    "@floating-ui/react-dom": "^0.6.3",
+    "downshift": "^7.0.0",
+    "focus-trap-react": "^10.0.0",
+    "lodash": "^4.17.21",
+    "react-colorful": "^5.6.1",
+    "react-laag": "^2.0.5",
+    "resize-observer-polyfill": "^1.5.1",
+    "transition-hook": "^1.5.1"
+  },
+  "peerDependencies": {
+    "@atlaskit/icon": "^25.8.0",
+    "@atlaskit/icon-lab": "^4.11.0",
+    "@atlaskit/react-ufo": "^3.12.4",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@types/react": "^18.3.20",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "lensPath": "/home/jackson/Documents/projects/design-system/node_modules/@loomhq/lens"
+}

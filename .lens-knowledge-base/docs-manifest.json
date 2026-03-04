@@ -1,0 +1,24 @@
+{
+  "baseUrl": "https://lens.loom.dev",
+  "paths": [
+    "/getting-started",
+    "/components",
+    "/design-tokens",
+    "/patterns",
+    "/theming",
+    "/accessibility",
+    "/layout",
+    "/typography",
+    "/colors",
+    "/spacing",
+    "/icons"
+  ],
+  "note": "MANUALLY populate these files from the documentation site",
+  "instructions": [
+    "Visit each path at lens.loom.dev",
+    "Copy the complete content into corresponding .md files",
+    "Include all code examples verbatim",
+    "Include all prop tables",
+    "Include all usage guidelines"
+  ]
+}
