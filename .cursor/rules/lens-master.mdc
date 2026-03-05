@@ -9,8 +9,8 @@ alwaysApply: true
 This project EXCLUSIVELY uses Lens (`@loomhq/lens@12.14.0`) by Loom.
 
 ## Quick Reference
-- Full component docs: @.lens-knowledge-base/components.md
-- Styles/tokens docs: @.lens-knowledge-base/styles.md
+- Full component docs: @.lens-knowledge-base/COMPONENT-INDEX.md
+- Styles/tokens docs: @.lens-knowledge-base/tokens/styles-complete.md
 - All exports: @.lens-knowledge-base/exports-inventory.json
 
 ## Layout Components

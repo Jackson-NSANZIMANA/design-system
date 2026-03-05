@@ -7,6 +7,31 @@ cat > CLAUDE.md << 'AGENTEOF'
 This project uses **Lens** (`@loomhq/lens`), the official Loom design system,
 as the **sole and exclusive** frontend component library and styling system.
 
+---
+
+## Core Philosophy & Principles
+**The Core Doctrine**
+*"No frontend element shall exist outside Lens governance."*
+
+**The Lens Pipeline**
+- **Lens First Every UI need starts with a Lens catalog lookup.**
+
+- **Lens Only Zero custom CSS/components unless Lens lacks it.**
+
+- **Lens Always Continuous compliance verification.**
+
+## Exception Protocol
+- *If Lens genuinely lacks a needed component, follow these steps:*
+
+- Compose from existing Lens primitives.
+
+- Use Lens design tokens for all styling.
+
+- Document the gap for future Lens contribution.
+
+- *NEVER* invent raw CSS/HTML outside the Lens token system.
+
+---
 **Documentation:** https://lens.loom.dev
 **Package:** `@loomhq/lens@12.14.0`
 **Local Knowledge Base:** `.lens-knowledge-base/`
@@ -499,7 +524,7 @@ document.head.appendChild(style)
 
 "I need to render [X]"
 │
-├── Step 1: Check .lens-knowledge-base/components.md
+├── Step 1: Check .lens-knowledge-base/COMPONENT-INDEX.md (Index page) || OR .lens-knowledge-base/reference/components-full.md (full 7000 lines doc)
 │ Does Lens have a component for [X]?
 │ ├── YES → Use it. Import from '@loomhq/lens'. DONE.
 │ └── NO → Step 2
@@ -538,8 +563,8 @@ document.head.appendChild(style)
 
 ## REFERENCE LOOKUP ORDER
 
-1. FIRST: Check .lens-knowledge-base/components.md (7000 lines, all components)
-2. SECOND: Check .lens-knowledge-base/styles.md (all design tokens)
+1. FIRST: Check .lens-knowledge-base/COMPONENT-INDEX.md (7000 lines, all components) || Or simply .lens-knowledge-base/COMPONENT-INDEX.md (Components Index page)
+2. SECOND: Check .lens-knowledge-base/reference/styles-full.md (all design tokens)
 3. THIRD: Check https://lens.loom.dev
 4. FOURTH: Check TypeScript types in .lens-knowledge-base/type-declarations/
 5. NEVER: Guess prop names — look them up or ask
@@ -652,16 +677,18 @@ Known typo in Lens source: IllutrationFoldersEmptyStateMobile
 (missing 's' in "Illustration")
 
 ### Key Utility Functions
+
 ```tsx
 import {
-getThemeStylesString, // CSS theme variables (REQUIRED)
-getAllCssVarsString, // All CSS custom properties (REQUIRED)
-cssUtilities, // CSS utility classes (optional)
-breakpoints, // Breakpoint definitions
-colorsNames, // Available color token names
+  getThemeStylesString, // CSS theme variables (REQUIRED)
+  getAllCssVarsString, // All CSS custom properties (REQUIRED)
+  cssUtilities, // CSS utility classes (optional)
+  breakpoints, // Breakpoint definitions
+  colorsNames, // Available color token names
 } from '@loomhq/lens'
 ```
-*See .lens-knowledge-base/icons-inventory.md for complete list.*
+
+_See .lens-knowledge-base/icons-inventory.md for complete list._
 
 ## Illustrations (28 components)
 
@@ -671,13 +698,13 @@ Import from @loomhq/lens.
 **Known typo in Lens source:** IllutrationFoldersEmptyStateMobile (missing 's' in Illustration")
 
 ### Key Utility Functions
-```tsx
-import { 
-  getThemeStylesString,  // CSS theme variables (REQUIRED)
-  getAllCssVarsString,    // All CSS custom properties (REQUIRED)
-  cssUtilities,          // CSS utility classes (optional)
-  breakpoints,           // Breakpoint definitions
-  colorsNames,           // Available color token names
-} from '@loomhq/lens'
 
+```tsx
+import {
+  getThemeStylesString, // CSS theme variables (REQUIRED)
+  getAllCssVarsString, // All CSS custom properties (REQUIRED)
+  cssUtilities, // CSS utility classes (optional)
+  breakpoints, // Breakpoint definitions
+  colorsNames, // Available color token names
+} from '@loomhq/lens'
 ```

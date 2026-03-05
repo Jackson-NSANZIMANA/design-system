@@ -1,8 +1,40 @@
+cat > CLAUDE.md << 'AGENTEOF'
+
 # PROJECT AI CODING MANDATE — LENS DESIGN SYSTEM
 
 ## ⚠️ CRITICAL: READ BEFORE WRITING ANY FRONTEND CODE
 
-This project uses **Lens** (`@loomhq/lens`), the official Loom design system,as the **sole and exclusive** frontend component library and styling system.
+This project uses **Lens** (`@loomhq/lens`), the official Loom design system,
+as the **sole and exclusive** frontend component library and styling system.
+
+---
+
+## Core Philosophy & Principles
+
+┌─────────────────────────────────────────────────────────────────┐
+│ THE CORE DOCTRINE │
+│ │
+│ "No frontend element shall exist outside Lens governance." │
+│ │
+│ ┌───────────────┐ ┌────────────────┐ ┌───────────────┐ │
+│ │ LENS FIRST │───▶│ LENS ONLY │───▶│ LENS ALWAYS │ │
+│ │ │ │ │ │ │ │
+│ │ Every UI need │ │ Zero custom │ │ Continuous │ │
+│ │ starts with │ │ CSS/com#!/bin/bash
+ponents │ │ compliance │ │
+│ │ Lens catalog │ │ unless Lens │ │ verification │ │
+│ │ lookup │ │ lacks it │ │ │ │
+│ └───────────────┘ └────────────────┘ └───────────────┘ │
+│ │
+│ EXCEPTION PROTOCOL: │
+│ If Lens genuinely lacks a needed component: │
+│ 1. Compose from existing Lens primitives │
+│ 2. Use Lens design tokens for all styling │
+│ 3. Document gap for future Lens contribution │
+│ 4. NEVER invent raw CSS/HTML outside Lens token system │
+└─────────────────────────────────────────────────────────────────┘
+
+---
 
 **Documentation:** https://lens.loom.dev
 **Package:** `@loomhq/lens@12.14.0`
@@ -496,7 +528,7 @@ document.head.appendChild(style)
 
 "I need to render [X]"
 │
-├── Step 1: Check .lens-knowledge-base/components.md
+├── Step 1: Check .lens-knowledge-base/COMPONENT-INDEX.md
 │ Does Lens have a component for [X]?
 │ ├── YES → Use it. Import from '@loomhq/lens'. DONE.
 │ └── NO → Step 2
@@ -535,8 +567,8 @@ document.head.appendChild(style)
 
 ## REFERENCE LOOKUP ORDER
 
-1. FIRST: Check .lens-knowledge-base/components.md (7000 lines, all components)
-2. SECOND: Check .lens-knowledge-base/styles.md (all design tokens)
+1. FIRST: Check .lens-knowledge-base/COMPONENT-INDEX.md (7000 lines, all components)
+2. SECOND: Check .lens-knowledge-base/reference/styles-full.md (all design tokens)
 3. THIRD: Check https://lens.loom.dev
 4. FOURTH: Check TypeScript types in .lens-knowledge-base/type-declarations/
 5. NEVER: Guess prop names — look them up or ask
@@ -649,16 +681,18 @@ Known typo in Lens source: IllutrationFoldersEmptyStateMobile
 (missing 's' in "Illustration")
 
 ### Key Utility Functions
+
 ```tsx
 import {
-getThemeStylesString, // CSS theme variables (REQUIRED)
-getAllCssVarsString, // All CSS custom properties (REQUIRED)
-cssUtilities, // CSS utility classes (optional)
-breakpoints, // Breakpoint definitions
-colorsNames, // Available color token names
+  getThemeStylesString, // CSS theme variables (REQUIRED)
+  getAllCssVarsString, // All CSS custom properties (REQUIRED)
+  cssUtilities, // CSS utility classes (optional)
+  breakpoints, // Breakpoint definitions
+  colorsNames, // Available color token names
 } from '@loomhq/lens'
 ```
-*See .lens-knowledge-base/icons-inventory.md for complete list.*
+
+_See .lens-knowledge-base/icons-inventory.md for complete list._
 
 ## Illustrations (28 components)
 
@@ -668,13 +702,13 @@ Import from @loomhq/lens.
 **Known typo in Lens source:** IllutrationFoldersEmptyStateMobile (missing 's' in Illustration")
 
 ### Key Utility Functions
-```tsx
-import { 
-  getThemeStylesString,  // CSS theme variables (REQUIRED)
-  getAllCssVarsString,    // All CSS custom properties (REQUIRED)
-  cssUtilities,          // CSS utility classes (optional)
-  breakpoints,           // Breakpoint definitions
-  colorsNames,           // Available color token names
-} from '@loomhq/lens'
 
+```tsx
+import {
+  getThemeStylesString, // CSS theme variables (REQUIRED)
+  getAllCssVarsString, // All CSS custom properties (REQUIRED)
+  cssUtilities, // CSS utility classes (optional)
+  breakpoints, // Breakpoint definitions
+  colorsNames, // Available color token names
+} from '@loomhq/lens'
 ```
