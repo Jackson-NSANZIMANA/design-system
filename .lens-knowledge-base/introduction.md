@@ -249,7 +249,7 @@ Combine the custom CSS with Lens CSS variables.
 }
 ```
 
-Don't add custom styles to components.
+Don't add custom styles to components. (see `./tokens`)
 
 ### When NOT to use Lens to compose layouts
 
