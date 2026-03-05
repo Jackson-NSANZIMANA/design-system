@@ -5647,8 +5647,6 @@ Use one of the **palette colors**.
 
 ## Align
 
-## Content
-
 ## Usage
 
 ```javascript
