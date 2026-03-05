@@ -2126,7 +2126,7 @@ project-root/
 └── utils/
 └── lens-registry.ts # [Section 4.1] Component registry
 
-Implementation Roadmap
+# Implementation Roadmap
 
 PHASE 1: FOUNDATION (Day 1)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━

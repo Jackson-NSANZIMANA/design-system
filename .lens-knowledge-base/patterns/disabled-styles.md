@@ -1,15 +1,19 @@
 # Disabled styles
 
 ## Purpose
+
 Disabled styles are applied to form elements to indicate that the user can't interact with these.
 
 ## Colors
+
 Disabled components use **disabledContent** and **disabledBackground** colors.
 
 ### disabledContent
+
 Used for text and icon color.
 
 ### disabledBackground
+
 Used for background color.
 
 See **Colors**
@@ -21,6 +25,7 @@ See **Colors**
 ## Button
 
 ### Example
+
 ```jsx
 <Arrange gap="medium">
   <Button isDisabled>Button</Button>
@@ -38,6 +43,7 @@ See **Colors**
 ## Link
 
 ### Example
+
 ```jsx
 <Link isDisabled>Link</Link>
 <Link isDisabled>Link</Link>
@@ -48,6 +54,7 @@ See **Colors**
 ## TextButton
 
 ### Example
+
 ```jsx
 <Arrange gap="medium">
   <TextButton isDisabled>TextButton</TextButton>
@@ -65,6 +72,7 @@ See **Colors**
 ## IconButton
 
 ### Example
+
 ```jsx
 <IconButton isDisabled icon={<SvgAdd />} altText="Disabled button" />
 <IconButton isDisabled icon={<SvgAdd />} altText="Disabled button" />
@@ -75,6 +83,7 @@ See **Colors**
 ## TextInput
 
 ### Example
+
 ```jsx
 <>
   <FormField
@@ -144,6 +153,7 @@ See **Colors**
 ## Textarea
 
 ### Example
+
 ```jsx
 <FormField
   direction="column"
@@ -179,6 +189,7 @@ See **Colors**
 ## Select
 
 ### Example
+
 ```jsx
 <FormField
   direction="column"
@@ -208,6 +219,7 @@ See **Colors**
 ## Checkbox
 
 ### Example
+
 ```jsx
 <Arrange gap="small" columns="1fr">
   <FormField
@@ -251,6 +263,7 @@ See **Colors**
 ## Radio
 
 ### Example
+
 ```jsx
 <Arrange gap="small" columns="1fr">
   <FormField
@@ -294,6 +307,7 @@ See **Colors**
 ## Switch
 
 ### Example
+
 ```jsx
 <Arrange gap="small" columns="1fr">
   <FormField

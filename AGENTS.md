@@ -1,11 +1,8 @@
-cat > CLAUDE.md << 'AGENTEOF'
-
 # PROJECT AI CODING MANDATE — LENS DESIGN SYSTEM
 
 ## ⚠️ CRITICAL: READ BEFORE WRITING ANY FRONTEND CODE
 
-This project uses **Lens** (`@loomhq/lens`), the official Loom design system,
-as the **sole and exclusive** frontend component library and styling system.
+This project uses **Lens** (`@loomhq/lens`), the official Loom design system,as the **sole and exclusive** frontend component library and styling system.
 
 **Documentation:** https://lens.loom.dev
 **Package:** `@loomhq/lens@12.14.0`
