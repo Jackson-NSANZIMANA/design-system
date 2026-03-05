@@ -1,0 +1,39 @@
+---
+description: Master rule for Lens design system enforcement
+globs: ["src/**/*.tsx", "src/**/*.ts", "src/**/*.jsx", "src/**/*.js"]
+alwaysApply: true
+---
+
+# LENS DESIGN SYSTEM — MANDATORY
+
+This project EXCLUSIVELY uses Lens (`@loomhq/lens@12.14.0`) by Loom.
+
+## Quick Reference
+- Full component docs: @.lens-knowledge-base/components.md
+- Styles/tokens docs: @.lens-knowledge-base/styles.md
+- All exports: @.lens-knowledge-base/exports-inventory.json
+
+## Layout Components
+- `<Container>` = generic container (NOT Box, NOT div)
+- `<Split>` = flexbox layout (NOT Flex, NOT Stack)
+- `<Arrange>` = CSS grid layout (NOT Grid)
+- `<Align>` = content positioning
+- `<Spacer>` = spacing between elements
+- `<SplitSection>` = flex item with grow/shrink/basis
+
+## Typography — ALL text through Text component
+- `<Text size="heading-lg" htmlTag="h1">` for headings
+- `<Text size="body-md">` for body text
+- `<Text variant="mainTitle">` for page titles
+- NO separate Heading component exists
+
+## Key API Differences from Other Libraries
+- Boolean props: `isDisabled`, `isFloating`, `hasLoader`, `hasEllipsis`
+- Element override: `htmlTag="a"` (NOT `as="a"`)
+- Refs: `refHandler={(r) => ref.current = r}` (NOT `ref={ref}`)
+- Icons: `<Icon icon={<SvgName />} />` with `Svg` prefix
+- Spacing: named tokens `"small"/"medium"/"large"` (NOT numbers like `"4"`)
+- Button icons: `iconBefore` / `iconAfter` (NOT `leftIcon` / `rightIcon`)
+
+## Spacing Tokens
+xsmall=4px, small=8px, medium=16px, large=24px, xlarge=40px, xxlarge=64px

@@ -1,0 +1,3424 @@
+{
+  "totalIcons": 683,
+  "importPattern": "import SvgName from \"@loomhq/lens/icons/icon-name\"",
+  "wrapperImport": "import { Icon } from \"@loomhq/lens\"",
+  "usagePattern": "<Icon icon={<SvgName />} />",
+  "buttonUsage": "<Button iconBefore={<SvgName />}>Label</Button>",
+  "icons": [
+    {
+      "filename": "account",
+      "importPath": "@loomhq/lens/icons/account",
+      "componentName": "SvgAccount"
+    },
+    {
+      "filename": "account-circle",
+      "importPath": "@loomhq/lens/icons/account-circle",
+      "componentName": "SvgAccountCircle"
+    },
+    {
+      "filename": "actionItem",
+      "importPath": "@loomhq/lens/icons/actionItem",
+      "componentName": "SvgActionItem"
+    },
+    {
+      "filename": "add",
+      "importPath": "@loomhq/lens/icons/add",
+      "componentName": "SvgAdd"
+    },
+    {
+      "filename": "add-a-photo",
+      "importPath": "@loomhq/lens/icons/add-a-photo",
+      "componentName": "SvgAddAPhoto"
+    },
+    {
+      "filename": "add-circle-outline",
+      "importPath": "@loomhq/lens/icons/add-circle-outline",
+      "componentName": "SvgAddCircleOutline"
+    },
+    {
+      "filename": "add-clip",
+      "importPath": "@loomhq/lens/icons/add-clip",
+      "componentName": "SvgAddClip"
+    },
+    {
+      "filename": "add-photo",
+      "importPath": "@loomhq/lens/icons/add-photo",
+      "componentName": "SvgAddPhoto"
+    },
+    {
+      "filename": "admin",
+      "importPath": "@loomhq/lens/icons/admin",
+      "componentName": "SvgAdmin"
+    },
+    {
+      "filename": "ai-generative-audio",
+      "importPath": "@loomhq/lens/icons/ai-generative-audio",
+      "componentName": "SvgAiGenerativeAudio"
+    },
+    {
+      "filename": "airtable",
+      "importPath": "@loomhq/lens/icons/airtable",
+      "componentName": "SvgAirtable"
+    },
+    {
+      "filename": "alert-bulb",
+      "importPath": "@loomhq/lens/icons/alert-bulb",
+      "componentName": "SvgAlertBulb"
+    },
+    {
+      "filename": "alert-triangle",
+      "importPath": "@loomhq/lens/icons/alert-triangle",
+      "componentName": "SvgAlertTriangle"
+    },
+    {
+      "filename": "align-bottom",
+      "importPath": "@loomhq/lens/icons/align-bottom",
+      "componentName": "SvgAlignBottom"
+    },
+    {
+      "filename": "align-center",
+      "importPath": "@loomhq/lens/icons/align-center",
+      "componentName": "SvgAlignCenter"
+    },
+    {
+      "filename": "align-left",
+      "importPath": "@loomhq/lens/icons/align-left",
+      "componentName": "SvgAlignLeft"
+    },
+    {
+      "filename": "align-right",
+      "importPath": "@loomhq/lens/icons/align-right",
+      "componentName": "SvgAlignRight"
+    },
+    {
+      "filename": "apple",
+      "importPath": "@loomhq/lens/icons/apple",
+      "componentName": "SvgApple"
+    },
+    {
+      "filename": "apps",
+      "importPath": "@loomhq/lens/icons/apps",
+      "componentName": "SvgApps"
+    },
+    {
+      "filename": "archive",
+      "importPath": "@loomhq/lens/icons/archive",
+      "componentName": "SvgArchive"
+    },
+    {
+      "filename": "arrow-back",
+      "importPath": "@loomhq/lens/icons/arrow-back",
+      "componentName": "SvgArrowBack"
+    },
+    {
+      "filename": "arrow-downward",
+      "importPath": "@loomhq/lens/icons/arrow-downward",
+      "componentName": "SvgArrowDownward"
+    },
+    {
+      "filename": "arrow-drop-down",
+      "importPath": "@loomhq/lens/icons/arrow-drop-down",
+      "componentName": "SvgArrowDropDown"
+    },
+    {
+      "filename": "arrow-drop-up",
+      "importPath": "@loomhq/lens/icons/arrow-drop-up",
+      "componentName": "SvgArrowDropUp"
+    },
+    {
+      "filename": "arrow-forward",
+      "importPath": "@loomhq/lens/icons/arrow-forward",
+      "componentName": "SvgArrowForward"
+    },
+    {
+      "filename": "arrow-left",
+      "importPath": "@loomhq/lens/icons/arrow-left",
+      "componentName": "SvgArrowLeft"
+    },
+    {
+      "filename": "arrow-left-alt",
+      "importPath": "@loomhq/lens/icons/arrow-left-alt",
+      "componentName": "SvgArrowLeftAlt"
+    },
+    {
+      "filename": "arrow-right",
+      "importPath": "@loomhq/lens/icons/arrow-right",
+      "componentName": "SvgArrowRight"
+    },
+    {
+      "filename": "arrow-right-alt",
+      "importPath": "@loomhq/lens/icons/arrow-right-alt",
+      "componentName": "SvgArrowRightAlt"
+    },
+    {
+      "filename": "arrow-slanted",
+      "importPath": "@loomhq/lens/icons/arrow-slanted",
+      "componentName": "SvgArrowSlanted"
+    },
+    {
+      "filename": "arrow-upward",
+      "importPath": "@loomhq/lens/icons/arrow-upward",
+      "componentName": "SvgArrowUpward"
+    },
+    {
+      "filename": "at-mention",
+      "importPath": "@loomhq/lens/icons/at-mention",
+      "componentName": "SvgAtMention"
+    },
+    {
+      "filename": "atlassian",
+      "importPath": "@loomhq/lens/icons/atlassian",
+      "componentName": "SvgAtlassian"
+    },
+    {
+      "filename": "auto-chapters",
+      "importPath": "@loomhq/lens/icons/auto-chapters",
+      "componentName": "SvgAutoChapters"
+    },
+    {
+      "filename": "auto-draft",
+      "importPath": "@loomhq/lens/icons/auto-draft",
+      "componentName": "SvgAutoDraft"
+    },
+    {
+      "filename": "auto-summaries",
+      "importPath": "@loomhq/lens/icons/auto-summaries",
+      "componentName": "SvgAutoSummaries"
+    },
+    {
+      "filename": "auto-titles",
+      "importPath": "@loomhq/lens/icons/auto-titles",
+      "componentName": "SvgAutoTitles"
+    },
+    {
+      "filename": "back",
+      "importPath": "@loomhq/lens/icons/back",
+      "componentName": "SvgBack"
+    },
+    {
+      "filename": "back5",
+      "importPath": "@loomhq/lens/icons/back5",
+      "componentName": "SvgBack5"
+    },
+    {
+      "filename": "banner-vector-up",
+      "importPath": "@loomhq/lens/icons/banner-vector-up",
+      "componentName": "SvgBannerVectorUp"
+    },
+    {
+      "filename": "bar-chart",
+      "importPath": "@loomhq/lens/icons/bar-chart",
+      "componentName": "SvgBarChart"
+    },
+    {
+      "filename": "bell",
+      "importPath": "@loomhq/lens/icons/bell",
+      "componentName": "SvgBell"
+    },
+    {
+      "filename": "bell-off",
+      "importPath": "@loomhq/lens/icons/bell-off",
+      "componentName": "SvgBellOff"
+    },
+    {
+      "filename": "bell-ring",
+      "importPath": "@loomhq/lens/icons/bell-ring",
+      "componentName": "SvgBellRing"
+    },
+    {
+      "filename": "bitbucket",
+      "importPath": "@loomhq/lens/icons/bitbucket",
+      "componentName": "SvgBitbucket"
+    },
+    {
+      "filename": "blur",
+      "importPath": "@loomhq/lens/icons/blur",
+      "componentName": "SvgBlur"
+    },
+    {
+      "filename": "bold",
+      "importPath": "@loomhq/lens/icons/bold",
+      "componentName": "SvgBold"
+    },
+    {
+      "filename": "book",
+      "importPath": "@loomhq/lens/icons/book",
+      "componentName": "SvgBook"
+    },
+    {
+      "filename": "border-color",
+      "importPath": "@loomhq/lens/icons/border-color",
+      "componentName": "SvgBorderColor"
+    },
+    {
+      "filename": "bug",
+      "importPath": "@loomhq/lens/icons/bug",
+      "componentName": "SvgBug"
+    },
+    {
+      "filename": "bulb",
+      "importPath": "@loomhq/lens/icons/bulb",
+      "componentName": "SvgBulb"
+    },
+    {
+      "filename": "calendar",
+      "importPath": "@loomhq/lens/icons/calendar",
+      "componentName": "SvgCalendar"
+    },
+    {
+      "filename": "calendly",
+      "importPath": "@loomhq/lens/icons/calendly",
+      "componentName": "SvgCalendly"
+    },
+    {
+      "filename": "call-to-action",
+      "importPath": "@loomhq/lens/icons/call-to-action",
+      "componentName": "SvgCallToAction"
+    },
+    {
+      "filename": "cam-bubble",
+      "importPath": "@loomhq/lens/icons/cam-bubble",
+      "componentName": "SvgCamBubble"
+    },
+    {
+      "filename": "cam-bubble-small",
+      "importPath": "@loomhq/lens/icons/cam-bubble-small",
+      "componentName": "SvgCamBubbleSmall"
+    },
+    {
+      "filename": "camera",
+      "importPath": "@loomhq/lens/icons/camera",
+      "componentName": "SvgCamera"
+    },
+    {
+      "filename": "canvas",
+      "importPath": "@loomhq/lens/icons/canvas",
+      "componentName": "SvgCanvas"
+    },
+    {
+      "filename": "captions",
+      "importPath": "@loomhq/lens/icons/captions",
+      "componentName": "SvgCaptions"
+    },
+    {
+      "filename": "caret-folder",
+      "importPath": "@loomhq/lens/icons/caret-folder",
+      "componentName": "SvgCaretFolder"
+    },
+    {
+      "filename": "cc-off",
+      "importPath": "@loomhq/lens/icons/cc-off",
+      "componentName": "SvgCcOff"
+    },
+    {
+      "filename": "cc-on",
+      "importPath": "@loomhq/lens/icons/cc-on",
+      "componentName": "SvgCcOn"
+    },
+    {
+      "filename": "chart",
+      "importPath": "@loomhq/lens/icons/chart",
+      "componentName": "SvgChart"
+    },
+    {
+      "filename": "check",
+      "importPath": "@loomhq/lens/icons/check",
+      "componentName": "SvgCheck"
+    },
+    {
+      "filename": "check-circle",
+      "importPath": "@loomhq/lens/icons/check-circle",
+      "componentName": "SvgCheckCircle"
+    },
+    {
+      "filename": "check-circle-fill",
+      "importPath": "@loomhq/lens/icons/check-circle-fill",
+      "componentName": "SvgCheckCircleFill"
+    },
+    {
+      "filename": "check-circle-outline",
+      "importPath": "@loomhq/lens/icons/check-circle-outline",
+      "componentName": "SvgCheckCircleOutline"
+    },
+    {
+      "filename": "check-circle-small",
+      "importPath": "@loomhq/lens/icons/check-circle-small",
+      "componentName": "SvgCheckCircleSmall"
+    },
+    {
+      "filename": "chevron-down",
+      "importPath": "@loomhq/lens/icons/chevron-down",
+      "componentName": "SvgChevronDown"
+    },
+    {
+      "filename": "chevron-left",
+      "importPath": "@loomhq/lens/icons/chevron-left",
+      "componentName": "SvgChevronLeft"
+    },
+    {
+      "filename": "chevron-right",
+      "importPath": "@loomhq/lens/icons/chevron-right",
+      "componentName": "SvgChevronRight"
+    },
+    {
+      "filename": "chevron-small-left",
+      "importPath": "@loomhq/lens/icons/chevron-small-left",
+      "componentName": "SvgChevronSmallLeft"
+    },
+    {
+      "filename": "chevron-small-right",
+      "importPath": "@loomhq/lens/icons/chevron-small-right",
+      "componentName": "SvgChevronSmallRight"
+    },
+    {
+      "filename": "chevron-small-up",
+      "importPath": "@loomhq/lens/icons/chevron-small-up",
+      "componentName": "SvgChevronSmallUp"
+    },
+    {
+      "filename": "chevron-up",
+      "importPath": "@loomhq/lens/icons/chevron-up",
+      "componentName": "SvgChevronUp"
+    },
+    {
+      "filename": "chevrons-left",
+      "importPath": "@loomhq/lens/icons/chevrons-left",
+      "componentName": "SvgChevronsLeft"
+    },
+    {
+      "filename": "chevrons-right",
+      "importPath": "@loomhq/lens/icons/chevrons-right",
+      "componentName": "SvgChevronsRight"
+    },
+    {
+      "filename": "chrome",
+      "importPath": "@loomhq/lens/icons/chrome",
+      "componentName": "SvgChrome"
+    },
+    {
+      "filename": "chrome-logo",
+      "importPath": "@loomhq/lens/icons/chrome-logo",
+      "componentName": "SvgChromeLogo"
+    },
+    {
+      "filename": "chunk-23KFCWJL",
+      "importPath": "@loomhq/lens/icons/chunk-23KFCWJL",
+      "componentName": "SvgChunk23KFCWJL"
+    },
+    {
+      "filename": "chunk-24RL2WNZ",
+      "importPath": "@loomhq/lens/icons/chunk-24RL2WNZ",
+      "componentName": "SvgChunk24RL2WNZ"
+    },
+    {
+      "filename": "chunk-27MMXUO5",
+      "importPath": "@loomhq/lens/icons/chunk-27MMXUO5",
+      "componentName": "SvgChunk27MMXUO5"
+    },
+    {
+      "filename": "chunk-2FKO2VHS",
+      "importPath": "@loomhq/lens/icons/chunk-2FKO2VHS",
+      "componentName": "SvgChunk2FKO2VHS"
+    },
+    {
+      "filename": "chunk-2GNR5PZB",
+      "importPath": "@loomhq/lens/icons/chunk-2GNR5PZB",
+      "componentName": "SvgChunk2GNR5PZB"
+    },
+    {
+      "filename": "chunk-2JHD3WDR",
+      "importPath": "@loomhq/lens/icons/chunk-2JHD3WDR",
+      "componentName": "SvgChunk2JHD3WDR"
+    },
+    {
+      "filename": "chunk-2JPBEH6W",
+      "importPath": "@loomhq/lens/icons/chunk-2JPBEH6W",
+      "componentName": "SvgChunk2JPBEH6W"
+    },
+    {
+      "filename": "chunk-2JTYYRGS",
+      "importPath": "@loomhq/lens/icons/chunk-2JTYYRGS",
+      "componentName": "SvgChunk2JTYYRGS"
+    },
+    {
+      "filename": "chunk-2LIQYH5D",
+      "importPath": "@loomhq/lens/icons/chunk-2LIQYH5D",
+      "componentName": "SvgChunk2LIQYH5D"
+    },
+    {
+      "filename": "chunk-2S6VYRXG",
+      "importPath": "@loomhq/lens/icons/chunk-2S6VYRXG",
+      "componentName": "SvgChunk2S6VYRXG"
+    },
+    {
+      "filename": "chunk-2WM7CTYF",
+      "importPath": "@loomhq/lens/icons/chunk-2WM7CTYF",
+      "componentName": "SvgChunk2WM7CTYF"
+    },
+    {
+      "filename": "chunk-2XIPBRGX",
+      "importPath": "@loomhq/lens/icons/chunk-2XIPBRGX",
+      "componentName": "SvgChunk2XIPBRGX"
+    },
+    {
+      "filename": "chunk-2ZZCR6HM",
+      "importPath": "@loomhq/lens/icons/chunk-2ZZCR6HM",
+      "componentName": "SvgChunk2ZZCR6HM"
+    },
+    {
+      "filename": "chunk-32YIK5SS",
+      "importPath": "@loomhq/lens/icons/chunk-32YIK5SS",
+      "componentName": "SvgChunk32YIK5SS"
+    },
+    {
+      "filename": "chunk-33YWYPE7",
+      "importPath": "@loomhq/lens/icons/chunk-33YWYPE7",
+      "componentName": "SvgChunk33YWYPE7"
+    },
+    {
+      "filename": "chunk-37C3MZHT",
+      "importPath": "@loomhq/lens/icons/chunk-37C3MZHT",
+      "componentName": "SvgChunk37C3MZHT"
+    },
+    {
+      "filename": "chunk-37YTVMBN",
+      "importPath": "@loomhq/lens/icons/chunk-37YTVMBN",
+      "componentName": "SvgChunk37YTVMBN"
+    },
+    {
+      "filename": "chunk-3B4Y5TCU",
+      "importPath": "@loomhq/lens/icons/chunk-3B4Y5TCU",
+      "componentName": "SvgChunk3B4Y5TCU"
+    },
+    {
+      "filename": "chunk-3CRP27HY",
+      "importPath": "@loomhq/lens/icons/chunk-3CRP27HY",
+      "componentName": "SvgChunk3CRP27HY"
+    },
+    {
+      "filename": "chunk-3G43DSBG",
+      "importPath": "@loomhq/lens/icons/chunk-3G43DSBG",
+      "componentName": "SvgChunk3G43DSBG"
+    },
+    {
+      "filename": "chunk-3IFD2STQ",
+      "importPath": "@loomhq/lens/icons/chunk-3IFD2STQ",
+      "componentName": "SvgChunk3IFD2STQ"
+    },
+    {
+      "filename": "chunk-3LQBN542",
+      "importPath": "@loomhq/lens/icons/chunk-3LQBN542",
+      "componentName": "SvgChunk3LQBN542"
+    },
+    {
+      "filename": "chunk-3OR7GMMB",
+      "importPath": "@loomhq/lens/icons/chunk-3OR7GMMB",
+      "componentName": "SvgChunk3OR7GMMB"
+    },
+    {
+      "filename": "chunk-3T4Y3MZ7",
+      "importPath": "@loomhq/lens/icons/chunk-3T4Y3MZ7",
+      "componentName": "SvgChunk3T4Y3MZ7"
+    },
+    {
+      "filename": "chunk-3VTCJYNO",
+      "importPath": "@loomhq/lens/icons/chunk-3VTCJYNO",
+      "componentName": "SvgChunk3VTCJYNO"
+    },
+    {
+      "filename": "chunk-43B5J3EU",
+      "importPath": "@loomhq/lens/icons/chunk-43B5J3EU",
+      "componentName": "SvgChunk43B5J3EU"
+    },
+    {
+      "filename": "chunk-43MA57P2",
+      "importPath": "@loomhq/lens/icons/chunk-43MA57P2",
+      "componentName": "SvgChunk43MA57P2"
+    },
+    {
+      "filename": "chunk-43SGNDEK",
+      "importPath": "@loomhq/lens/icons/chunk-43SGNDEK",
+      "componentName": "SvgChunk43SGNDEK"
+    },
+    {
+      "filename": "chunk-445D5NCB",
+      "importPath": "@loomhq/lens/icons/chunk-445D5NCB",
+      "componentName": "SvgChunk445D5NCB"
+    },
+    {
+      "filename": "chunk-47EYZJ4Q",
+      "importPath": "@loomhq/lens/icons/chunk-47EYZJ4Q",
+      "componentName": "SvgChunk47EYZJ4Q"
+    },
+    {
+      "filename": "chunk-4FI6A6B7",
+      "importPath": "@loomhq/lens/icons/chunk-4FI6A6B7",
+      "componentName": "SvgChunk4FI6A6B7"
+    },
+    {
+      "filename": "chunk-4IALP3GK",
+      "importPath": "@loomhq/lens/icons/chunk-4IALP3GK",
+      "componentName": "SvgChunk4IALP3GK"
+    },
+    {
+      "filename": "chunk-4IKQ6RTL",
+      "importPath": "@loomhq/lens/icons/chunk-4IKQ6RTL",
+      "componentName": "SvgChunk4IKQ6RTL"
+    },
+    {
+      "filename": "chunk-4M3VG6OX",
+      "importPath": "@loomhq/lens/icons/chunk-4M3VG6OX",
+      "componentName": "SvgChunk4M3VG6OX"
+    },
+    {
+      "filename": "chunk-4QUENNQ6",
+      "importPath": "@loomhq/lens/icons/chunk-4QUENNQ6",
+      "componentName": "SvgChunk4QUENNQ6"
+    },
+    {
+      "filename": "chunk-4RZH26BD",
+      "importPath": "@loomhq/lens/icons/chunk-4RZH26BD",
+      "componentName": "SvgChunk4RZH26BD"
+    },
+    {
+      "filename": "chunk-4TDO4WST",
+      "importPath": "@loomhq/lens/icons/chunk-4TDO4WST",
+      "componentName": "SvgChunk4TDO4WST"
+    },
+    {
+      "filename": "chunk-56JQ7YLD",
+      "importPath": "@loomhq/lens/icons/chunk-56JQ7YLD",
+      "componentName": "SvgChunk56JQ7YLD"
+    },
+    {
+      "filename": "chunk-5CR7CSTY",
+      "importPath": "@loomhq/lens/icons/chunk-5CR7CSTY",
+      "componentName": "SvgChunk5CR7CSTY"
+    },
+    {
+      "filename": "chunk-5GSYSJ77",
+      "importPath": "@loomhq/lens/icons/chunk-5GSYSJ77",
+      "componentName": "SvgChunk5GSYSJ77"
+    },
+    {
+      "filename": "chunk-5HUPGCDS",
+      "importPath": "@loomhq/lens/icons/chunk-5HUPGCDS",
+      "componentName": "SvgChunk5HUPGCDS"
+    },
+    {
+      "filename": "chunk-5NZDSUP4",
+      "importPath": "@loomhq/lens/icons/chunk-5NZDSUP4",
+      "componentName": "SvgChunk5NZDSUP4"
+    },
+    {
+      "filename": "chunk-5PTYY5FO",
+      "importPath": "@loomhq/lens/icons/chunk-5PTYY5FO",
+      "componentName": "SvgChunk5PTYY5FO"
+    },
+    {
+      "filename": "chunk-5WR3Q2XT",
+      "importPath": "@loomhq/lens/icons/chunk-5WR3Q2XT",
+      "componentName": "SvgChunk5WR3Q2XT"
+    },
+    {
+      "filename": "chunk-5XNPVJRF",
+      "importPath": "@loomhq/lens/icons/chunk-5XNPVJRF",
+      "componentName": "SvgChunk5XNPVJRF"
+    },
+    {
+      "filename": "chunk-5YFCJG3Y",
+      "importPath": "@loomhq/lens/icons/chunk-5YFCJG3Y",
+      "componentName": "SvgChunk5YFCJG3Y"
+    },
+    {
+      "filename": "chunk-5YHLURTI",
+      "importPath": "@loomhq/lens/icons/chunk-5YHLURTI",
+      "componentName": "SvgChunk5YHLURTI"
+    },
+    {
+      "filename": "chunk-64CJN3SZ",
+      "importPath": "@loomhq/lens/icons/chunk-64CJN3SZ",
+      "componentName": "SvgChunk64CJN3SZ"
+    },
+    {
+      "filename": "chunk-6JFUNHZZ",
+      "importPath": "@loomhq/lens/icons/chunk-6JFUNHZZ",
+      "componentName": "SvgChunk6JFUNHZZ"
+    },
+    {
+      "filename": "chunk-6JFYWVAP",
+      "importPath": "@loomhq/lens/icons/chunk-6JFYWVAP",
+      "componentName": "SvgChunk6JFYWVAP"
+    },
+    {
+      "filename": "chunk-6JP7WWON",
+      "importPath": "@loomhq/lens/icons/chunk-6JP7WWON",
+      "componentName": "SvgChunk6JP7WWON"
+    },
+    {
+      "filename": "chunk-6LTCMS66",
+      "importPath": "@loomhq/lens/icons/chunk-6LTCMS66",
+      "componentName": "SvgChunk6LTCMS66"
+    },
+    {
+      "filename": "chunk-6NTXV7FB",
+      "importPath": "@loomhq/lens/icons/chunk-6NTXV7FB",
+      "componentName": "SvgChunk6NTXV7FB"
+    },
+    {
+      "filename": "chunk-6NWQRPUY",
+      "importPath": "@loomhq/lens/icons/chunk-6NWQRPUY",
+      "componentName": "SvgChunk6NWQRPUY"
+    },
+    {
+      "filename": "chunk-6NX5OUP7",
+      "importPath": "@loomhq/lens/icons/chunk-6NX5OUP7",
+      "componentName": "SvgChunk6NX5OUP7"
+    },
+    {
+      "filename": "chunk-6PY2XWXO",
+      "importPath": "@loomhq/lens/icons/chunk-6PY2XWXO",
+      "componentName": "SvgChunk6PY2XWXO"
+    },
+    {
+      "filename": "chunk-6RMAHJNH",
+      "importPath": "@loomhq/lens/icons/chunk-6RMAHJNH",
+      "componentName": "SvgChunk6RMAHJNH"
+    },
+    {
+      "filename": "chunk-6SQCU6IN",
+      "importPath": "@loomhq/lens/icons/chunk-6SQCU6IN",
+      "componentName": "SvgChunk6SQCU6IN"
+    },
+    {
+      "filename": "chunk-6VICJ5ZD",
+      "importPath": "@loomhq/lens/icons/chunk-6VICJ5ZD",
+      "componentName": "SvgChunk6VICJ5ZD"
+    },
+    {
+      "filename": "chunk-6WEM4FKX",
+      "importPath": "@loomhq/lens/icons/chunk-6WEM4FKX",
+      "componentName": "SvgChunk6WEM4FKX"
+    },
+    {
+      "filename": "chunk-6WJ5SW36",
+      "importPath": "@loomhq/lens/icons/chunk-6WJ5SW36",
+      "componentName": "SvgChunk6WJ5SW36"
+    },
+    {
+      "filename": "chunk-6WPCXCEV",
+      "importPath": "@loomhq/lens/icons/chunk-6WPCXCEV",
+      "componentName": "SvgChunk6WPCXCEV"
+    },
+    {
+      "filename": "chunk-6ZJHPGYP",
+      "importPath": "@loomhq/lens/icons/chunk-6ZJHPGYP",
+      "componentName": "SvgChunk6ZJHPGYP"
+    },
+    {
+      "filename": "chunk-774PQBBN",
+      "importPath": "@loomhq/lens/icons/chunk-774PQBBN",
+      "componentName": "SvgChunk774PQBBN"
+    },
+    {
+      "filename": "chunk-7AB2BP5I",
+      "importPath": "@loomhq/lens/icons/chunk-7AB2BP5I",
+      "componentName": "SvgChunk7AB2BP5I"
+    },
+    {
+      "filename": "chunk-7BJ2VKTS",
+      "importPath": "@loomhq/lens/icons/chunk-7BJ2VKTS",
+      "componentName": "SvgChunk7BJ2VKTS"
+    },
+    {
+      "filename": "chunk-7BUGMAD3",
+      "importPath": "@loomhq/lens/icons/chunk-7BUGMAD3",
+      "componentName": "SvgChunk7BUGMAD3"
+    },
+    {
+      "filename": "chunk-7DXLMQ7D",
+      "importPath": "@loomhq/lens/icons/chunk-7DXLMQ7D",
+      "componentName": "SvgChunk7DXLMQ7D"
+    },
+    {
+      "filename": "chunk-7GTW5LE6",
+      "importPath": "@loomhq/lens/icons/chunk-7GTW5LE6",
+      "componentName": "SvgChunk7GTW5LE6"
+    },
+    {
+      "filename": "chunk-7KHUK7CK",
+      "importPath": "@loomhq/lens/icons/chunk-7KHUK7CK",
+      "componentName": "SvgChunk7KHUK7CK"
+    },
+    {
+      "filename": "chunk-7OESI7PR",
+      "importPath": "@loomhq/lens/icons/chunk-7OESI7PR",
+      "componentName": "SvgChunk7OESI7PR"
+    },
+    {
+      "filename": "chunk-7P55ATBS",
+      "importPath": "@loomhq/lens/icons/chunk-7P55ATBS",
+      "componentName": "SvgChunk7P55ATBS"
+    },
+    {
+      "filename": "chunk-7R3HFRXT",
+      "importPath": "@loomhq/lens/icons/chunk-7R3HFRXT",
+      "componentName": "SvgChunk7R3HFRXT"
+    },
+    {
+      "filename": "chunk-7R5X5NJH",
+      "importPath": "@loomhq/lens/icons/chunk-7R5X5NJH",
+      "componentName": "SvgChunk7R5X5NJH"
+    },
+    {
+      "filename": "chunk-7TNQK2NH",
+      "importPath": "@loomhq/lens/icons/chunk-7TNQK2NH",
+      "componentName": "SvgChunk7TNQK2NH"
+    },
+    {
+      "filename": "chunk-7ZAKNS6B",
+      "importPath": "@loomhq/lens/icons/chunk-7ZAKNS6B",
+      "componentName": "SvgChunk7ZAKNS6B"
+    },
+    {
+      "filename": "chunk-A62IIGFG",
+      "importPath": "@loomhq/lens/icons/chunk-A62IIGFG",
+      "componentName": "SvgChunkA62IIGFG"
+    },
+    {
+      "filename": "chunk-A7FCXZAO",
+      "importPath": "@loomhq/lens/icons/chunk-A7FCXZAO",
+      "componentName": "SvgChunkA7FCXZAO"
+    },
+    {
+      "filename": "chunk-A7S7BUZG",
+      "importPath": "@loomhq/lens/icons/chunk-A7S7BUZG",
+      "componentName": "SvgChunkA7S7BUZG"
+    },
+    {
+      "filename": "chunk-AA7SIBLA",
+      "importPath": "@loomhq/lens/icons/chunk-AA7SIBLA",
+      "componentName": "SvgChunkAA7SIBLA"
+    },
+    {
+      "filename": "chunk-AE4HQ3OA",
+      "importPath": "@loomhq/lens/icons/chunk-AE4HQ3OA",
+      "componentName": "SvgChunkAE4HQ3OA"
+    },
+    {
+      "filename": "chunk-ALDOBFOW",
+      "importPath": "@loomhq/lens/icons/chunk-ALDOBFOW",
+      "componentName": "SvgChunkALDOBFOW"
+    },
+    {
+      "filename": "chunk-AOPQUDFU",
+      "importPath": "@loomhq/lens/icons/chunk-AOPQUDFU",
+      "componentName": "SvgChunkAOPQUDFU"
+    },
+    {
+      "filename": "chunk-AP23UZUY",
+      "importPath": "@loomhq/lens/icons/chunk-AP23UZUY",
+      "componentName": "SvgChunkAP23UZUY"
+    },
+    {
+      "filename": "chunk-AQQFDIWW",
+      "importPath": "@loomhq/lens/icons/chunk-AQQFDIWW",
+      "componentName": "SvgChunkAQQFDIWW"
+    },
+    {
+      "filename": "chunk-AXJ6VJAQ",
+      "importPath": "@loomhq/lens/icons/chunk-AXJ6VJAQ",
+      "componentName": "SvgChunkAXJ6VJAQ"
+    },
+    {
+      "filename": "chunk-BDJYPOQF",
+      "importPath": "@loomhq/lens/icons/chunk-BDJYPOQF",
+      "componentName": "SvgChunkBDJYPOQF"
+    },
+    {
+      "filename": "chunk-BF4GOGIM",
+      "importPath": "@loomhq/lens/icons/chunk-BF4GOGIM",
+      "componentName": "SvgChunkBF4GOGIM"
+    },
+    {
+      "filename": "chunk-BFHJUXMR",
+      "importPath": "@loomhq/lens/icons/chunk-BFHJUXMR",
+      "componentName": "SvgChunkBFHJUXMR"
+    },
+    {
+      "filename": "chunk-BFPFVG5V",
+      "importPath": "@loomhq/lens/icons/chunk-BFPFVG5V",
+      "componentName": "SvgChunkBFPFVG5V"
+    },
+    {
+      "filename": "chunk-BU5E5OMI",
+      "importPath": "@loomhq/lens/icons/chunk-BU5E5OMI",
+      "componentName": "SvgChunkBU5E5OMI"
+    },
+    {
+      "filename": "chunk-BUNEIPKT",
+      "importPath": "@loomhq/lens/icons/chunk-BUNEIPKT",
+      "componentName": "SvgChunkBUNEIPKT"
+    },
+    {
+      "filename": "chunk-BUYNOYOF",
+      "importPath": "@loomhq/lens/icons/chunk-BUYNOYOF",
+      "componentName": "SvgChunkBUYNOYOF"
+    },
+    {
+      "filename": "chunk-C4QEUX3Y",
+      "importPath": "@loomhq/lens/icons/chunk-C4QEUX3Y",
+      "componentName": "SvgChunkC4QEUX3Y"
+    },
+    {
+      "filename": "chunk-CAXAOBJ4",
+      "importPath": "@loomhq/lens/icons/chunk-CAXAOBJ4",
+      "componentName": "SvgChunkCAXAOBJ4"
+    },
+    {
+      "filename": "chunk-CCNVXINF",
+      "importPath": "@loomhq/lens/icons/chunk-CCNVXINF",
+      "componentName": "SvgChunkCCNVXINF"
+    },
+    {
+      "filename": "chunk-CKTMKAKK",
+      "importPath": "@loomhq/lens/icons/chunk-CKTMKAKK",
+      "componentName": "SvgChunkCKTMKAKK"
+    },
+    {
+      "filename": "chunk-COZDZ5YJ",
+      "importPath": "@loomhq/lens/icons/chunk-COZDZ5YJ",
+      "componentName": "SvgChunkCOZDZ5YJ"
+    },
+    {
+      "filename": "chunk-COZELPRW",
+      "importPath": "@loomhq/lens/icons/chunk-COZELPRW",
+      "componentName": "SvgChunkCOZELPRW"
+    },
+    {
+      "filename": "chunk-CR4N5ZMW",
+      "importPath": "@loomhq/lens/icons/chunk-CR4N5ZMW",
+      "componentName": "SvgChunkCR4N5ZMW"
+    },
+    {
+      "filename": "chunk-CU7Y5BBX",
+      "importPath": "@loomhq/lens/icons/chunk-CU7Y5BBX",
+      "componentName": "SvgChunkCU7Y5BBX"
+    },
+    {
+      "filename": "chunk-CUJRFEAF",
+      "importPath": "@loomhq/lens/icons/chunk-CUJRFEAF",
+      "componentName": "SvgChunkCUJRFEAF"
+    },
+    {
+      "filename": "chunk-D2QZEZXI",
+      "importPath": "@loomhq/lens/icons/chunk-D2QZEZXI",
+      "componentName": "SvgChunkD2QZEZXI"
+    },
+    {
+      "filename": "chunk-DCUCX55W",
+      "importPath": "@loomhq/lens/icons/chunk-DCUCX55W",
+      "componentName": "SvgChunkDCUCX55W"
+    },
+    {
+      "filename": "chunk-DDAAVRWG",
+      "importPath": "@loomhq/lens/icons/chunk-DDAAVRWG",
+      "componentName": "SvgChunkDDAAVRWG"
+    },
+    {
+      "filename": "chunk-DDW32UJ6",
+      "importPath": "@loomhq/lens/icons/chunk-DDW32UJ6",
+      "componentName": "SvgChunkDDW32UJ6"
+    },
+    {
+      "filename": "chunk-DFYMBHZP",
+      "importPath": "@loomhq/lens/icons/chunk-DFYMBHZP",
+      "componentName": "SvgChunkDFYMBHZP"
+    },
+    {
+      "filename": "chunk-DHTMHG3V",
+      "importPath": "@loomhq/lens/icons/chunk-DHTMHG3V",
+      "componentName": "SvgChunkDHTMHG3V"
+    },
+    {
+      "filename": "chunk-DJW4RHHD",
+      "importPath": "@loomhq/lens/icons/chunk-DJW4RHHD",
+      "componentName": "SvgChunkDJW4RHHD"
+    },
+    {
+      "filename": "chunk-DV7DTSLT",
+      "importPath": "@loomhq/lens/icons/chunk-DV7DTSLT",
+      "componentName": "SvgChunkDV7DTSLT"
+    },
+    {
+      "filename": "chunk-E5N2ZJOF",
+      "importPath": "@loomhq/lens/icons/chunk-E5N2ZJOF",
+      "componentName": "SvgChunkE5N2ZJOF"
+    },
+    {
+      "filename": "chunk-E7NOP4A2",
+      "importPath": "@loomhq/lens/icons/chunk-E7NOP4A2",
+      "componentName": "SvgChunkE7NOP4A2"
+    },
+    {
+      "filename": "chunk-ECPUUMQ4",
+      "importPath": "@loomhq/lens/icons/chunk-ECPUUMQ4",
+      "componentName": "SvgChunkECPUUMQ4"
+    },
+    {
+      "filename": "chunk-EEKIA4WP",
+      "importPath": "@loomhq/lens/icons/chunk-EEKIA4WP",
+      "componentName": "SvgChunkEEKIA4WP"
+    },
+    {
+      "filename": "chunk-EGS26V5P",
+      "importPath": "@loomhq/lens/icons/chunk-EGS26V5P",
+      "componentName": "SvgChunkEGS26V5P"
+    },
+    {
+      "filename": "chunk-EIKAXIVU",
+      "importPath": "@loomhq/lens/icons/chunk-EIKAXIVU",
+      "componentName": "SvgChunkEIKAXIVU"
+    },
+    {
+      "filename": "chunk-EJWFIZMS",
+      "importPath": "@loomhq/lens/icons/chunk-EJWFIZMS",
+      "componentName": "SvgChunkEJWFIZMS"
+    },
+    {
+      "filename": "chunk-EKNLUIM2",
+      "importPath": "@loomhq/lens/icons/chunk-EKNLUIM2",
+      "componentName": "SvgChunkEKNLUIM2"
+    },
+    {
+      "filename": "chunk-EM7GTSIT",
+      "importPath": "@loomhq/lens/icons/chunk-EM7GTSIT",
+      "componentName": "SvgChunkEM7GTSIT"
+    },
+    {
+      "filename": "chunk-EOBCFXCG",
+      "importPath": "@loomhq/lens/icons/chunk-EOBCFXCG",
+      "componentName": "SvgChunkEOBCFXCG"
+    },
+    {
+      "filename": "chunk-ESRRXLZJ",
+      "importPath": "@loomhq/lens/icons/chunk-ESRRXLZJ",
+      "componentName": "SvgChunkESRRXLZJ"
+    },
+    {
+      "filename": "chunk-ET2Z6BI5",
+      "importPath": "@loomhq/lens/icons/chunk-ET2Z6BI5",
+      "componentName": "SvgChunkET2Z6BI5"
+    },
+    {
+      "filename": "chunk-EUZW57TP",
+      "importPath": "@loomhq/lens/icons/chunk-EUZW57TP",
+      "componentName": "SvgChunkEUZW57TP"
+    },
+    {
+      "filename": "chunk-F3ACOL4D",
+      "importPath": "@loomhq/lens/icons/chunk-F3ACOL4D",
+      "componentName": "SvgChunkF3ACOL4D"
+    },
+    {
+      "filename": "chunk-F5L4NQJW",
+      "importPath": "@loomhq/lens/icons/chunk-F5L4NQJW",
+      "componentName": "SvgChunkF5L4NQJW"
+    },
+    {
+      "filename": "chunk-F7KDVKVO",
+      "importPath": "@loomhq/lens/icons/chunk-F7KDVKVO",
+      "componentName": "SvgChunkF7KDVKVO"
+    },
+    {
+      "filename": "chunk-FFUISP3K",
+      "importPath": "@loomhq/lens/icons/chunk-FFUISP3K",
+      "componentName": "SvgChunkFFUISP3K"
+    },
+    {
+      "filename": "chunk-FKVN6BTG",
+      "importPath": "@loomhq/lens/icons/chunk-FKVN6BTG",
+      "componentName": "SvgChunkFKVN6BTG"
+    },
+    {
+      "filename": "chunk-FL7WZQA7",
+      "importPath": "@loomhq/lens/icons/chunk-FL7WZQA7",
+      "componentName": "SvgChunkFL7WZQA7"
+    },
+    {
+      "filename": "chunk-FOSSWZIU",
+      "importPath": "@loomhq/lens/icons/chunk-FOSSWZIU",
+      "componentName": "SvgChunkFOSSWZIU"
+    },
+    {
+      "filename": "chunk-FTISGJNM",
+      "importPath": "@loomhq/lens/icons/chunk-FTISGJNM",
+      "componentName": "SvgChunkFTISGJNM"
+    },
+    {
+      "filename": "chunk-FXIZRQDV",
+      "importPath": "@loomhq/lens/icons/chunk-FXIZRQDV",
+      "componentName": "SvgChunkFXIZRQDV"
+    },
+    {
+      "filename": "chunk-FZL3BQHV",
+      "importPath": "@loomhq/lens/icons/chunk-FZL3BQHV",
+      "componentName": "SvgChunkFZL3BQHV"
+    },
+    {
+      "filename": "chunk-G2U2YBS7",
+      "importPath": "@loomhq/lens/icons/chunk-G2U2YBS7",
+      "componentName": "SvgChunkG2U2YBS7"
+    },
+    {
+      "filename": "chunk-G4NHYHCI",
+      "importPath": "@loomhq/lens/icons/chunk-G4NHYHCI",
+      "componentName": "SvgChunkG4NHYHCI"
+    },
+    {
+      "filename": "chunk-G6TTJAGH",
+      "importPath": "@loomhq/lens/icons/chunk-G6TTJAGH",
+      "componentName": "SvgChunkG6TTJAGH"
+    },
+    {
+      "filename": "chunk-GAV52C5I",
+      "importPath": "@loomhq/lens/icons/chunk-GAV52C5I",
+      "componentName": "SvgChunkGAV52C5I"
+    },
+    {
+      "filename": "chunk-GCQLGUVE",
+      "importPath": "@loomhq/lens/icons/chunk-GCQLGUVE",
+      "componentName": "SvgChunkGCQLGUVE"
+    },
+    {
+      "filename": "chunk-GIN6ZYJC",
+      "importPath": "@loomhq/lens/icons/chunk-GIN6ZYJC",
+      "componentName": "SvgChunkGIN6ZYJC"
+    },
+    {
+      "filename": "chunk-GOYURRTO",
+      "importPath": "@loomhq/lens/icons/chunk-GOYURRTO",
+      "componentName": "SvgChunkGOYURRTO"
+    },
+    {
+      "filename": "chunk-GTUDJXYC",
+      "importPath": "@loomhq/lens/icons/chunk-GTUDJXYC",
+      "componentName": "SvgChunkGTUDJXYC"
+    },
+    {
+      "filename": "chunk-GULNQN2C",
+      "importPath": "@loomhq/lens/icons/chunk-GULNQN2C",
+      "componentName": "SvgChunkGULNQN2C"
+    },
+    {
+      "filename": "chunk-GVLXNX6D",
+      "importPath": "@loomhq/lens/icons/chunk-GVLXNX6D",
+      "componentName": "SvgChunkGVLXNX6D"
+    },
+    {
+      "filename": "chunk-GVNO3KAB",
+      "importPath": "@loomhq/lens/icons/chunk-GVNO3KAB",
+      "componentName": "SvgChunkGVNO3KAB"
+    },
+    {
+      "filename": "chunk-GZUPKYEY",
+      "importPath": "@loomhq/lens/icons/chunk-GZUPKYEY",
+      "componentName": "SvgChunkGZUPKYEY"
+    },
+    {
+      "filename": "chunk-H3KNCQWK",
+      "importPath": "@loomhq/lens/icons/chunk-H3KNCQWK",
+      "componentName": "SvgChunkH3KNCQWK"
+    },
+    {
+      "filename": "chunk-H4XXB5RO",
+      "importPath": "@loomhq/lens/icons/chunk-H4XXB5RO",
+      "componentName": "SvgChunkH4XXB5RO"
+    },
+    {
+      "filename": "chunk-H62FBNYX",
+      "importPath": "@loomhq/lens/icons/chunk-H62FBNYX",
+      "componentName": "SvgChunkH62FBNYX"
+    },
+    {
+      "filename": "chunk-HBVUD5LH",
+      "importPath": "@loomhq/lens/icons/chunk-HBVUD5LH",
+      "componentName": "SvgChunkHBVUD5LH"
+    },
+    {
+      "filename": "chunk-HCXUVVM6",
+      "importPath": "@loomhq/lens/icons/chunk-HCXUVVM6",
+      "componentName": "SvgChunkHCXUVVM6"
+    },
+    {
+      "filename": "chunk-HDZJKE7H",
+      "importPath": "@loomhq/lens/icons/chunk-HDZJKE7H",
+      "componentName": "SvgChunkHDZJKE7H"
+    },
+    {
+      "filename": "chunk-HE25OX6G",
+      "importPath": "@loomhq/lens/icons/chunk-HE25OX6G",
+      "componentName": "SvgChunkHE25OX6G"
+    },
+    {
+      "filename": "chunk-HQMCOUIT",
+      "importPath": "@loomhq/lens/icons/chunk-HQMCOUIT",
+      "componentName": "SvgChunkHQMCOUIT"
+    },
+    {
+      "filename": "chunk-HXT75SNG",
+      "importPath": "@loomhq/lens/icons/chunk-HXT75SNG",
+      "componentName": "SvgChunkHXT75SNG"
+    },
+    {
+      "filename": "chunk-HXWQNGH4",
+      "importPath": "@loomhq/lens/icons/chunk-HXWQNGH4",
+      "componentName": "SvgChunkHXWQNGH4"
+    },
+    {
+      "filename": "chunk-HZJRA7SF",
+      "importPath": "@loomhq/lens/icons/chunk-HZJRA7SF",
+      "componentName": "SvgChunkHZJRA7SF"
+    },
+    {
+      "filename": "chunk-HZPHRZ5J",
+      "importPath": "@loomhq/lens/icons/chunk-HZPHRZ5J",
+      "componentName": "SvgChunkHZPHRZ5J"
+    },
+    {
+      "filename": "chunk-HZTGQJYD",
+      "importPath": "@loomhq/lens/icons/chunk-HZTGQJYD",
+      "componentName": "SvgChunkHZTGQJYD"
+    },
+    {
+      "filename": "chunk-I2GY7HI4",
+      "importPath": "@loomhq/lens/icons/chunk-I2GY7HI4",
+      "componentName": "SvgChunkI2GY7HI4"
+    },
+    {
+      "filename": "chunk-I4ITA7EL",
+      "importPath": "@loomhq/lens/icons/chunk-I4ITA7EL",
+      "componentName": "SvgChunkI4ITA7EL"
+    },
+    {
+      "filename": "chunk-INF2HDAO",
+      "importPath": "@loomhq/lens/icons/chunk-INF2HDAO",
+      "componentName": "SvgChunkINF2HDAO"
+    },
+    {
+      "filename": "chunk-IOMJDTOW",
+      "importPath": "@loomhq/lens/icons/chunk-IOMJDTOW",
+      "componentName": "SvgChunkIOMJDTOW"
+    },
+    {
+      "filename": "chunk-IPK2TGIQ",
+      "importPath": "@loomhq/lens/icons/chunk-IPK2TGIQ",
+      "componentName": "SvgChunkIPK2TGIQ"
+    },
+    {
+      "filename": "chunk-IRJ7ZBRL",
+      "importPath": "@loomhq/lens/icons/chunk-IRJ7ZBRL",
+      "componentName": "SvgChunkIRJ7ZBRL"
+    },
+    {
+      "filename": "chunk-ISQWZOBA",
+      "importPath": "@loomhq/lens/icons/chunk-ISQWZOBA",
+      "componentName": "SvgChunkISQWZOBA"
+    },
+    {
+      "filename": "chunk-IYZYMH35",
+      "importPath": "@loomhq/lens/icons/chunk-IYZYMH35",
+      "componentName": "SvgChunkIYZYMH35"
+    },
+    {
+      "filename": "chunk-J2WF5I7K",
+      "importPath": "@loomhq/lens/icons/chunk-J2WF5I7K",
+      "componentName": "SvgChunkJ2WF5I7K"
+    },
+    {
+      "filename": "chunk-J3DMC6VO",
+      "importPath": "@loomhq/lens/icons/chunk-J3DMC6VO",
+      "componentName": "SvgChunkJ3DMC6VO"
+    },
+    {
+      "filename": "chunk-J5YSTD2O",
+      "importPath": "@loomhq/lens/icons/chunk-J5YSTD2O",
+      "componentName": "SvgChunkJ5YSTD2O"
+    },
+    {
+      "filename": "chunk-J6466Z3N",
+      "importPath": "@loomhq/lens/icons/chunk-J6466Z3N",
+      "componentName": "SvgChunkJ6466Z3N"
+    },
+    {
+      "filename": "chunk-J77NGKIV",
+      "importPath": "@loomhq/lens/icons/chunk-J77NGKIV",
+      "componentName": "SvgChunkJ77NGKIV"
+    },
+    {
+      "filename": "chunk-JE7VWMUB",
+      "importPath": "@loomhq/lens/icons/chunk-JE7VWMUB",
+      "componentName": "SvgChunkJE7VWMUB"
+    },
+    {
+      "filename": "chunk-JHH2EMTN",
+      "importPath": "@loomhq/lens/icons/chunk-JHH2EMTN",
+      "componentName": "SvgChunkJHH2EMTN"
+    },
+    {
+      "filename": "chunk-JMAS7HF6",
+      "importPath": "@loomhq/lens/icons/chunk-JMAS7HF6",
+      "componentName": "SvgChunkJMAS7HF6"
+    },
+    {
+      "filename": "chunk-JPT4IOPX",
+      "importPath": "@loomhq/lens/icons/chunk-JPT4IOPX",
+      "componentName": "SvgChunkJPT4IOPX"
+    },
+    {
+      "filename": "chunk-JPXEDTZQ",
+      "importPath": "@loomhq/lens/icons/chunk-JPXEDTZQ",
+      "componentName": "SvgChunkJPXEDTZQ"
+    },
+    {
+      "filename": "chunk-JR7FDBMN",
+      "importPath": "@loomhq/lens/icons/chunk-JR7FDBMN",
+      "componentName": "SvgChunkJR7FDBMN"
+    },
+    {
+      "filename": "chunk-JRTGKL53",
+      "importPath": "@loomhq/lens/icons/chunk-JRTGKL53",
+      "componentName": "SvgChunkJRTGKL53"
+    },
+    {
+      "filename": "chunk-JRVAE4EQ",
+      "importPath": "@loomhq/lens/icons/chunk-JRVAE4EQ",
+      "componentName": "SvgChunkJRVAE4EQ"
+    },
+    {
+      "filename": "chunk-JT3UJFUA",
+      "importPath": "@loomhq/lens/icons/chunk-JT3UJFUA",
+      "componentName": "SvgChunkJT3UJFUA"
+    },
+    {
+      "filename": "chunk-JVD64AVJ",
+      "importPath": "@loomhq/lens/icons/chunk-JVD64AVJ",
+      "componentName": "SvgChunkJVD64AVJ"
+    },
+    {
+      "filename": "chunk-JX3TFVPZ",
+      "importPath": "@loomhq/lens/icons/chunk-JX3TFVPZ",
+      "componentName": "SvgChunkJX3TFVPZ"
+    },
+    {
+      "filename": "chunk-JZ42LZF6",
+      "importPath": "@loomhq/lens/icons/chunk-JZ42LZF6",
+      "componentName": "SvgChunkJZ42LZF6"
+    },
+    {
+      "filename": "chunk-K6JVLXSS",
+      "importPath": "@loomhq/lens/icons/chunk-K6JVLXSS",
+      "componentName": "SvgChunkK6JVLXSS"
+    },
+    {
+      "filename": "chunk-KB5FU4C5",
+      "importPath": "@loomhq/lens/icons/chunk-KB5FU4C5",
+      "componentName": "SvgChunkKB5FU4C5"
+    },
+    {
+      "filename": "chunk-KHP3RVG4",
+      "importPath": "@loomhq/lens/icons/chunk-KHP3RVG4",
+      "componentName": "SvgChunkKHP3RVG4"
+    },
+    {
+      "filename": "chunk-KIMRTGIR",
+      "importPath": "@loomhq/lens/icons/chunk-KIMRTGIR",
+      "componentName": "SvgChunkKIMRTGIR"
+    },
+    {
+      "filename": "chunk-KKDUUWDW",
+      "importPath": "@loomhq/lens/icons/chunk-KKDUUWDW",
+      "componentName": "SvgChunkKKDUUWDW"
+    },
+    {
+      "filename": "chunk-KKJEVJGK",
+      "importPath": "@loomhq/lens/icons/chunk-KKJEVJGK",
+      "componentName": "SvgChunkKKJEVJGK"
+    },
+    {
+      "filename": "chunk-KRDPKGQU",
+      "importPath": "@loomhq/lens/icons/chunk-KRDPKGQU",
+      "componentName": "SvgChunkKRDPKGQU"
+    },
+    {
+      "filename": "chunk-KVOGDZ34",
+      "importPath": "@loomhq/lens/icons/chunk-KVOGDZ34",
+      "componentName": "SvgChunkKVOGDZ34"
+    },
+    {
+      "filename": "chunk-KYA6XCZU",
+      "importPath": "@loomhq/lens/icons/chunk-KYA6XCZU",
+      "componentName": "SvgChunkKYA6XCZU"
+    },
+    {
+      "filename": "chunk-KYXXFMMG",
+      "importPath": "@loomhq/lens/icons/chunk-KYXXFMMG",
+      "componentName": "SvgChunkKYXXFMMG"
+    },
+    {
+      "filename": "chunk-L45JR2PK",
+      "importPath": "@loomhq/lens/icons/chunk-L45JR2PK",
+      "componentName": "SvgChunkL45JR2PK"
+    },
+    {
+      "filename": "chunk-L5ZPSV3X",
+      "importPath": "@loomhq/lens/icons/chunk-L5ZPSV3X",
+      "componentName": "SvgChunkL5ZPSV3X"
+    },
+    {
+      "filename": "chunk-LARUAEG2",
+      "importPath": "@loomhq/lens/icons/chunk-LARUAEG2",
+      "componentName": "SvgChunkLARUAEG2"
+    },
+    {
+      "filename": "chunk-LFQ7F5MO",
+      "importPath": "@loomhq/lens/icons/chunk-LFQ7F5MO",
+      "componentName": "SvgChunkLFQ7F5MO"
+    },
+    {
+      "filename": "chunk-LFV2G7IY",
+      "importPath": "@loomhq/lens/icons/chunk-LFV2G7IY",
+      "componentName": "SvgChunkLFV2G7IY"
+    },
+    {
+      "filename": "chunk-LFYDVORH",
+      "importPath": "@loomhq/lens/icons/chunk-LFYDVORH",
+      "componentName": "SvgChunkLFYDVORH"
+    },
+    {
+      "filename": "chunk-LUMQRR5U",
+      "importPath": "@loomhq/lens/icons/chunk-LUMQRR5U",
+      "componentName": "SvgChunkLUMQRR5U"
+    },
+    {
+      "filename": "chunk-LXY65TPZ",
+      "importPath": "@loomhq/lens/icons/chunk-LXY65TPZ",
+      "componentName": "SvgChunkLXY65TPZ"
+    },
+    {
+      "filename": "chunk-LZAJY54Z",
+      "importPath": "@loomhq/lens/icons/chunk-LZAJY54Z",
+      "componentName": "SvgChunkLZAJY54Z"
+    },
+    {
+      "filename": "chunk-M2BLOGSQ",
+      "importPath": "@loomhq/lens/icons/chunk-M2BLOGSQ",
+      "componentName": "SvgChunkM2BLOGSQ"
+    },
+    {
+      "filename": "chunk-M35LKLMJ",
+      "importPath": "@loomhq/lens/icons/chunk-M35LKLMJ",
+      "componentName": "SvgChunkM35LKLMJ"
+    },
+    {
+      "filename": "chunk-M4GAFFLM",
+      "importPath": "@loomhq/lens/icons/chunk-M4GAFFLM",
+      "componentName": "SvgChunkM4GAFFLM"
+    },
+    {
+      "filename": "chunk-MBVDHFO7",
+      "importPath": "@loomhq/lens/icons/chunk-MBVDHFO7",
+      "componentName": "SvgChunkMBVDHFO7"
+    },
+    {
+      "filename": "chunk-MC37PNUO",
+      "importPath": "@loomhq/lens/icons/chunk-MC37PNUO",
+      "componentName": "SvgChunkMC37PNUO"
+    },
+    {
+      "filename": "chunk-ME3FTKYS",
+      "importPath": "@loomhq/lens/icons/chunk-ME3FTKYS",
+      "componentName": "SvgChunkME3FTKYS"
+    },
+    {
+      "filename": "chunk-MNSIAPHQ",
+      "importPath": "@loomhq/lens/icons/chunk-MNSIAPHQ",
+      "componentName": "SvgChunkMNSIAPHQ"
+    },
+    {
+      "filename": "chunk-MOWIQSFA",
+      "importPath": "@loomhq/lens/icons/chunk-MOWIQSFA",
+      "componentName": "SvgChunkMOWIQSFA"
+    },
+    {
+      "filename": "chunk-MQAJJVWH",
+      "importPath": "@loomhq/lens/icons/chunk-MQAJJVWH",
+      "componentName": "SvgChunkMQAJJVWH"
+    },
+    {
+      "filename": "chunk-MRRULPSM",
+      "importPath": "@loomhq/lens/icons/chunk-MRRULPSM",
+      "componentName": "SvgChunkMRRULPSM"
+    },
+    {
+      "filename": "chunk-MRZGD3DF",
+      "importPath": "@loomhq/lens/icons/chunk-MRZGD3DF",
+      "componentName": "SvgChunkMRZGD3DF"
+    },
+    {
+      "filename": "chunk-MT7JK6II",
+      "importPath": "@loomhq/lens/icons/chunk-MT7JK6II",
+      "componentName": "SvgChunkMT7JK6II"
+    },
+    {
+      "filename": "chunk-MWN7G4WV",
+      "importPath": "@loomhq/lens/icons/chunk-MWN7G4WV",
+      "componentName": "SvgChunkMWN7G4WV"
+    },
+    {
+      "filename": "chunk-MWZUF6KL",
+      "importPath": "@loomhq/lens/icons/chunk-MWZUF6KL",
+      "componentName": "SvgChunkMWZUF6KL"
+    },
+    {
+      "filename": "chunk-N2JRCTGF",
+      "importPath": "@loomhq/lens/icons/chunk-N2JRCTGF",
+      "componentName": "SvgChunkN2JRCTGF"
+    },
+    {
+      "filename": "chunk-N4GM347V",
+      "importPath": "@loomhq/lens/icons/chunk-N4GM347V",
+      "componentName": "SvgChunkN4GM347V"
+    },
+    {
+      "filename": "chunk-N5XZMYKL",
+      "importPath": "@loomhq/lens/icons/chunk-N5XZMYKL",
+      "componentName": "SvgChunkN5XZMYKL"
+    },
+    {
+      "filename": "chunk-ND5YI7HF",
+      "importPath": "@loomhq/lens/icons/chunk-ND5YI7HF",
+      "componentName": "SvgChunkND5YI7HF"
+    },
+    {
+      "filename": "chunk-NFUMBA6M",
+      "importPath": "@loomhq/lens/icons/chunk-NFUMBA6M",
+      "componentName": "SvgChunkNFUMBA6M"
+    },
+    {
+      "filename": "chunk-NGRWAPLN",
+      "importPath": "@loomhq/lens/icons/chunk-NGRWAPLN",
+      "componentName": "SvgChunkNGRWAPLN"
+    },
+    {
+      "filename": "chunk-NHRDAMUT",
+      "importPath": "@loomhq/lens/icons/chunk-NHRDAMUT",
+      "componentName": "SvgChunkNHRDAMUT"
+    },
+    {
+      "filename": "chunk-NINABXFB",
+      "importPath": "@loomhq/lens/icons/chunk-NINABXFB",
+      "componentName": "SvgChunkNINABXFB"
+    },
+    {
+      "filename": "chunk-NLJWFPWA",
+      "importPath": "@loomhq/lens/icons/chunk-NLJWFPWA",
+      "componentName": "SvgChunkNLJWFPWA"
+    },
+    {
+      "filename": "chunk-NLPEZTZW",
+      "importPath": "@loomhq/lens/icons/chunk-NLPEZTZW",
+      "componentName": "SvgChunkNLPEZTZW"
+    },
+    {
+      "filename": "chunk-NR4EYJPQ",
+      "importPath": "@loomhq/lens/icons/chunk-NR4EYJPQ",
+      "componentName": "SvgChunkNR4EYJPQ"
+    },
+    {
+      "filename": "chunk-NZ3BELZX",
+      "importPath": "@loomhq/lens/icons/chunk-NZ3BELZX",
+      "componentName": "SvgChunkNZ3BELZX"
+    },
+    {
+      "filename": "chunk-NZVDBUCK",
+      "importPath": "@loomhq/lens/icons/chunk-NZVDBUCK",
+      "componentName": "SvgChunkNZVDBUCK"
+    },
+    {
+      "filename": "chunk-O7P4LDS5",
+      "importPath": "@loomhq/lens/icons/chunk-O7P4LDS5",
+      "componentName": "SvgChunkO7P4LDS5"
+    },
+    {
+      "filename": "chunk-OA5L6R37",
+      "importPath": "@loomhq/lens/icons/chunk-OA5L6R37",
+      "componentName": "SvgChunkOA5L6R37"
+    },
+    {
+      "filename": "chunk-OBT2YRVO",
+      "importPath": "@loomhq/lens/icons/chunk-OBT2YRVO",
+      "componentName": "SvgChunkOBT2YRVO"
+    },
+    {
+      "filename": "chunk-OLTO5ACV",
+      "importPath": "@loomhq/lens/icons/chunk-OLTO5ACV",
+      "componentName": "SvgChunkOLTO5ACV"
+    },
+    {
+      "filename": "chunk-OMIZYFAG",
+      "importPath": "@loomhq/lens/icons/chunk-OMIZYFAG",
+      "componentName": "SvgChunkOMIZYFAG"
+    },
+    {
+      "filename": "chunk-ONN3RIRK",
+      "importPath": "@loomhq/lens/icons/chunk-ONN3RIRK",
+      "componentName": "SvgChunkONN3RIRK"
+    },
+    {
+      "filename": "chunk-OOC5532F",
+      "importPath": "@loomhq/lens/icons/chunk-OOC5532F",
+      "componentName": "SvgChunkOOC5532F"
+    },
+    {
+      "filename": "chunk-OOLVJGG2",
+      "importPath": "@loomhq/lens/icons/chunk-OOLVJGG2",
+      "componentName": "SvgChunkOOLVJGG2"
+    },
+    {
+      "filename": "chunk-OSEHZ2FL",
+      "importPath": "@loomhq/lens/icons/chunk-OSEHZ2FL",
+      "componentName": "SvgChunkOSEHZ2FL"
+    },
+    {
+      "filename": "chunk-OSWSD6NQ",
+      "importPath": "@loomhq/lens/icons/chunk-OSWSD6NQ",
+      "componentName": "SvgChunkOSWSD6NQ"
+    },
+    {
+      "filename": "chunk-P32PSGWS",
+      "importPath": "@loomhq/lens/icons/chunk-P32PSGWS",
+      "componentName": "SvgChunkP32PSGWS"
+    },
+    {
+      "filename": "chunk-PCM47JLY",
+      "importPath": "@loomhq/lens/icons/chunk-PCM47JLY",
+      "componentName": "SvgChunkPCM47JLY"
+    },
+    {
+      "filename": "chunk-PDJ7WDI4",
+      "importPath": "@loomhq/lens/icons/chunk-PDJ7WDI4",
+      "componentName": "SvgChunkPDJ7WDI4"
+    },
+    {
+      "filename": "chunk-PL4EIDC6",
+      "importPath": "@loomhq/lens/icons/chunk-PL4EIDC6",
+      "componentName": "SvgChunkPL4EIDC6"
+    },
+    {
+      "filename": "chunk-PMVSTVAX",
+      "importPath": "@loomhq/lens/icons/chunk-PMVSTVAX",
+      "componentName": "SvgChunkPMVSTVAX"
+    },
+    {
+      "filename": "chunk-PPB2A6RQ",
+      "importPath": "@loomhq/lens/icons/chunk-PPB2A6RQ",
+      "componentName": "SvgChunkPPB2A6RQ"
+    },
+    {
+      "filename": "chunk-PTEENQFK",
+      "importPath": "@loomhq/lens/icons/chunk-PTEENQFK",
+      "componentName": "SvgChunkPTEENQFK"
+    },
+    {
+      "filename": "chunk-PY6LUFHU",
+      "importPath": "@loomhq/lens/icons/chunk-PY6LUFHU",
+      "componentName": "SvgChunkPY6LUFHU"
+    },
+    {
+      "filename": "chunk-Q2DXN42B",
+      "importPath": "@loomhq/lens/icons/chunk-Q2DXN42B",
+      "componentName": "SvgChunkQ2DXN42B"
+    },
+    {
+      "filename": "chunk-Q4UBTI6A",
+      "importPath": "@loomhq/lens/icons/chunk-Q4UBTI6A",
+      "componentName": "SvgChunkQ4UBTI6A"
+    },
+    {
+      "filename": "chunk-QCPPIAW2",
+      "importPath": "@loomhq/lens/icons/chunk-QCPPIAW2",
+      "componentName": "SvgChunkQCPPIAW2"
+    },
+    {
+      "filename": "chunk-QETDZT7X",
+      "importPath": "@loomhq/lens/icons/chunk-QETDZT7X",
+      "componentName": "SvgChunkQETDZT7X"
+    },
+    {
+      "filename": "chunk-QGQZVLOL",
+      "importPath": "@loomhq/lens/icons/chunk-QGQZVLOL",
+      "componentName": "SvgChunkQGQZVLOL"
+    },
+    {
+      "filename": "chunk-QHLM45W4",
+      "importPath": "@loomhq/lens/icons/chunk-QHLM45W4",
+      "componentName": "SvgChunkQHLM45W4"
+    },
+    {
+      "filename": "chunk-QMW2HATK",
+      "importPath": "@loomhq/lens/icons/chunk-QMW2HATK",
+      "componentName": "SvgChunkQMW2HATK"
+    },
+    {
+      "filename": "chunk-QPBLK6YT",
+      "importPath": "@loomhq/lens/icons/chunk-QPBLK6YT",
+      "componentName": "SvgChunkQPBLK6YT"
+    },
+    {
+      "filename": "chunk-QWF6NZT3",
+      "importPath": "@loomhq/lens/icons/chunk-QWF6NZT3",
+      "componentName": "SvgChunkQWF6NZT3"
+    },
+    {
+      "filename": "chunk-QYM434Z4",
+      "importPath": "@loomhq/lens/icons/chunk-QYM434Z4",
+      "componentName": "SvgChunkQYM434Z4"
+    },
+    {
+      "filename": "chunk-R7X5FZFZ",
+      "importPath": "@loomhq/lens/icons/chunk-R7X5FZFZ",
+      "componentName": "SvgChunkR7X5FZFZ"
+    },
+    {
+      "filename": "chunk-RACOCASF",
+      "importPath": "@loomhq/lens/icons/chunk-RACOCASF",
+      "componentName": "SvgChunkRACOCASF"
+    },
+    {
+      "filename": "chunk-RBTSB3JM",
+      "importPath": "@loomhq/lens/icons/chunk-RBTSB3JM",
+      "componentName": "SvgChunkRBTSB3JM"
+    },
+    {
+      "filename": "chunk-RCV6EMGX",
+      "importPath": "@loomhq/lens/icons/chunk-RCV6EMGX",
+      "componentName": "SvgChunkRCV6EMGX"
+    },
+    {
+      "filename": "chunk-RDA3AFVD",
+      "importPath": "@loomhq/lens/icons/chunk-RDA3AFVD",
+      "componentName": "SvgChunkRDA3AFVD"
+    },
+    {
+      "filename": "chunk-RE5YUC67",
+      "importPath": "@loomhq/lens/icons/chunk-RE5YUC67",
+      "componentName": "SvgChunkRE5YUC67"
+    },
+    {
+      "filename": "chunk-RGI6HF4Q",
+      "importPath": "@loomhq/lens/icons/chunk-RGI6HF4Q",
+      "componentName": "SvgChunkRGI6HF4Q"
+    },
+    {
+      "filename": "chunk-RJFOILDN",
+      "importPath": "@loomhq/lens/icons/chunk-RJFOILDN",
+      "componentName": "SvgChunkRJFOILDN"
+    },
+    {
+      "filename": "chunk-RLRBVO62",
+      "importPath": "@loomhq/lens/icons/chunk-RLRBVO62",
+      "componentName": "SvgChunkRLRBVO62"
+    },
+    {
+      "filename": "chunk-RR2USMMV",
+      "importPath": "@loomhq/lens/icons/chunk-RR2USMMV",
+      "componentName": "SvgChunkRR2USMMV"
+    },
+    {
+      "filename": "chunk-S2YQZFRO",
+      "importPath": "@loomhq/lens/icons/chunk-S2YQZFRO",
+      "componentName": "SvgChunkS2YQZFRO"
+    },
+    {
+      "filename": "chunk-S73LDMJR",
+      "importPath": "@loomhq/lens/icons/chunk-S73LDMJR",
+      "componentName": "SvgChunkS73LDMJR"
+    },
+    {
+      "filename": "chunk-SCWSS4CT",
+      "importPath": "@loomhq/lens/icons/chunk-SCWSS4CT",
+      "componentName": "SvgChunkSCWSS4CT"
+    },
+    {
+      "filename": "chunk-SOFWAOZ4",
+      "importPath": "@loomhq/lens/icons/chunk-SOFWAOZ4",
+      "componentName": "SvgChunkSOFWAOZ4"
+    },
+    {
+      "filename": "chunk-SP64S4HO",
+      "importPath": "@loomhq/lens/icons/chunk-SP64S4HO",
+      "componentName": "SvgChunkSP64S4HO"
+    },
+    {
+      "filename": "chunk-SPTM4NUO",
+      "importPath": "@loomhq/lens/icons/chunk-SPTM4NUO",
+      "componentName": "SvgChunkSPTM4NUO"
+    },
+    {
+      "filename": "chunk-SQJ4LMXN",
+      "importPath": "@loomhq/lens/icons/chunk-SQJ4LMXN",
+      "componentName": "SvgChunkSQJ4LMXN"
+    },
+    {
+      "filename": "chunk-SWCCHCXL",
+      "importPath": "@loomhq/lens/icons/chunk-SWCCHCXL",
+      "componentName": "SvgChunkSWCCHCXL"
+    },
+    {
+      "filename": "chunk-SY7SMBFL",
+      "importPath": "@loomhq/lens/icons/chunk-SY7SMBFL",
+      "componentName": "SvgChunkSY7SMBFL"
+    },
+    {
+      "filename": "chunk-TE43AMRP",
+      "importPath": "@loomhq/lens/icons/chunk-TE43AMRP",
+      "componentName": "SvgChunkTE43AMRP"
+    },
+    {
+      "filename": "chunk-THG45YYP",
+      "importPath": "@loomhq/lens/icons/chunk-THG45YYP",
+      "componentName": "SvgChunkTHG45YYP"
+    },
+    {
+      "filename": "chunk-TLW24HLY",
+      "importPath": "@loomhq/lens/icons/chunk-TLW24HLY",
+      "componentName": "SvgChunkTLW24HLY"
+    },
+    {
+      "filename": "chunk-TMXYGLRV",
+      "importPath": "@loomhq/lens/icons/chunk-TMXYGLRV",
+      "componentName": "SvgChunkTMXYGLRV"
+    },
+    {
+      "filename": "chunk-TQBN3EAV",
+      "importPath": "@loomhq/lens/icons/chunk-TQBN3EAV",
+      "componentName": "SvgChunkTQBN3EAV"
+    },
+    {
+      "filename": "chunk-TRQRZIOC",
+      "importPath": "@loomhq/lens/icons/chunk-TRQRZIOC",
+      "componentName": "SvgChunkTRQRZIOC"
+    },
+    {
+      "filename": "chunk-TVTTMZZ4",
+      "importPath": "@loomhq/lens/icons/chunk-TVTTMZZ4",
+      "componentName": "SvgChunkTVTTMZZ4"
+    },
+    {
+      "filename": "chunk-TZJSLHBR",
+      "importPath": "@loomhq/lens/icons/chunk-TZJSLHBR",
+      "componentName": "SvgChunkTZJSLHBR"
+    },
+    {
+      "filename": "chunk-U4E3DMZI",
+      "importPath": "@loomhq/lens/icons/chunk-U4E3DMZI",
+      "componentName": "SvgChunkU4E3DMZI"
+    },
+    {
+      "filename": "chunk-U4IMY2H2",
+      "importPath": "@loomhq/lens/icons/chunk-U4IMY2H2",
+      "componentName": "SvgChunkU4IMY2H2"
+    },
+    {
+      "filename": "chunk-U5EBYVLS",
+      "importPath": "@loomhq/lens/icons/chunk-U5EBYVLS",
+      "componentName": "SvgChunkU5EBYVLS"
+    },
+    {
+      "filename": "chunk-UCDRWJOM",
+      "importPath": "@loomhq/lens/icons/chunk-UCDRWJOM",
+      "componentName": "SvgChunkUCDRWJOM"
+    },
+    {
+      "filename": "chunk-UHA3RCGM",
+      "importPath": "@loomhq/lens/icons/chunk-UHA3RCGM",
+      "componentName": "SvgChunkUHA3RCGM"
+    },
+    {
+      "filename": "chunk-UHAMA5YO",
+      "importPath": "@loomhq/lens/icons/chunk-UHAMA5YO",
+      "componentName": "SvgChunkUHAMA5YO"
+    },
+    {
+      "filename": "chunk-UIQU5F6E",
+      "importPath": "@loomhq/lens/icons/chunk-UIQU5F6E",
+      "componentName": "SvgChunkUIQU5F6E"
+    },
+    {
+      "filename": "chunk-ULZMLWMA",
+      "importPath": "@loomhq/lens/icons/chunk-ULZMLWMA",
+      "componentName": "SvgChunkULZMLWMA"
+    },
+    {
+      "filename": "chunk-UNBBZS6J",
+      "importPath": "@loomhq/lens/icons/chunk-UNBBZS6J",
+      "componentName": "SvgChunkUNBBZS6J"
+    },
+    {
+      "filename": "chunk-UNK3JWYL",
+      "importPath": "@loomhq/lens/icons/chunk-UNK3JWYL",
+      "componentName": "SvgChunkUNK3JWYL"
+    },
+    {
+      "filename": "chunk-UP7WLXQW",
+      "importPath": "@loomhq/lens/icons/chunk-UP7WLXQW",
+      "componentName": "SvgChunkUP7WLXQW"
+    },
+    {
+      "filename": "chunk-UU2MGRM5",
+      "importPath": "@loomhq/lens/icons/chunk-UU2MGRM5",
+      "componentName": "SvgChunkUU2MGRM5"
+    },
+    {
+      "filename": "chunk-V3JG2NZW",
+      "importPath": "@loomhq/lens/icons/chunk-V3JG2NZW",
+      "componentName": "SvgChunkV3JG2NZW"
+    },
+    {
+      "filename": "chunk-V5EVYTU3",
+      "importPath": "@loomhq/lens/icons/chunk-V5EVYTU3",
+      "componentName": "SvgChunkV5EVYTU3"
+    },
+    {
+      "filename": "chunk-V5PKCEDD",
+      "importPath": "@loomhq/lens/icons/chunk-V5PKCEDD",
+      "componentName": "SvgChunkV5PKCEDD"
+    },
+    {
+      "filename": "chunk-VDARRVZ2",
+      "importPath": "@loomhq/lens/icons/chunk-VDARRVZ2",
+      "componentName": "SvgChunkVDARRVZ2"
+    },
+    {
+      "filename": "chunk-VG3SGXWL",
+      "importPath": "@loomhq/lens/icons/chunk-VG3SGXWL",
+      "componentName": "SvgChunkVG3SGXWL"
+    },
+    {
+      "filename": "chunk-VHFXR25I",
+      "importPath": "@loomhq/lens/icons/chunk-VHFXR25I",
+      "componentName": "SvgChunkVHFXR25I"
+    },
+    {
+      "filename": "chunk-VIGGSGOL",
+      "importPath": "@loomhq/lens/icons/chunk-VIGGSGOL",
+      "componentName": "SvgChunkVIGGSGOL"
+    },
+    {
+      "filename": "chunk-VJDPHGNV",
+      "importPath": "@loomhq/lens/icons/chunk-VJDPHGNV",
+      "componentName": "SvgChunkVJDPHGNV"
+    },
+    {
+      "filename": "chunk-VKMX2WL3",
+      "importPath": "@loomhq/lens/icons/chunk-VKMX2WL3",
+      "componentName": "SvgChunkVKMX2WL3"
+    },
+    {
+      "filename": "chunk-VQTS3NUI",
+      "importPath": "@loomhq/lens/icons/chunk-VQTS3NUI",
+      "componentName": "SvgChunkVQTS3NUI"
+    },
+    {
+      "filename": "chunk-VS4ALGP7",
+      "importPath": "@loomhq/lens/icons/chunk-VS4ALGP7",
+      "componentName": "SvgChunkVS4ALGP7"
+    },
+    {
+      "filename": "chunk-VSKPW4OH",
+      "importPath": "@loomhq/lens/icons/chunk-VSKPW4OH",
+      "componentName": "SvgChunkVSKPW4OH"
+    },
+    {
+      "filename": "chunk-VSSSRXRI",
+      "importPath": "@loomhq/lens/icons/chunk-VSSSRXRI",
+      "componentName": "SvgChunkVSSSRXRI"
+    },
+    {
+      "filename": "chunk-VUTVG733",
+      "importPath": "@loomhq/lens/icons/chunk-VUTVG733",
+      "componentName": "SvgChunkVUTVG733"
+    },
+    {
+      "filename": "chunk-VV7RTE64",
+      "importPath": "@loomhq/lens/icons/chunk-VV7RTE64",
+      "componentName": "SvgChunkVV7RTE64"
+    },
+    {
+      "filename": "chunk-W3USM4NX",
+      "importPath": "@loomhq/lens/icons/chunk-W3USM4NX",
+      "componentName": "SvgChunkW3USM4NX"
+    },
+    {
+      "filename": "chunk-W4PMGSRS",
+      "importPath": "@loomhq/lens/icons/chunk-W4PMGSRS",
+      "componentName": "SvgChunkW4PMGSRS"
+    },
+    {
+      "filename": "chunk-WC5NUE22",
+      "importPath": "@loomhq/lens/icons/chunk-WC5NUE22",
+      "componentName": "SvgChunkWC5NUE22"
+    },
+    {
+      "filename": "chunk-WCXLT4Z4",
+      "importPath": "@loomhq/lens/icons/chunk-WCXLT4Z4",
+      "componentName": "SvgChunkWCXLT4Z4"
+    },
+    {
+      "filename": "chunk-WIDBKSIN",
+      "importPath": "@loomhq/lens/icons/chunk-WIDBKSIN",
+      "componentName": "SvgChunkWIDBKSIN"
+    },
+    {
+      "filename": "chunk-WVKHMLWO",
+      "importPath": "@loomhq/lens/icons/chunk-WVKHMLWO",
+      "componentName": "SvgChunkWVKHMLWO"
+    },
+    {
+      "filename": "chunk-WZOKCVG5",
+      "importPath": "@loomhq/lens/icons/chunk-WZOKCVG5",
+      "componentName": "SvgChunkWZOKCVG5"
+    },
+    {
+      "filename": "chunk-X3OLNRRS",
+      "importPath": "@loomhq/lens/icons/chunk-X3OLNRRS",
+      "componentName": "SvgChunkX3OLNRRS"
+    },
+    {
+      "filename": "chunk-X7A4Z2CJ",
+      "importPath": "@loomhq/lens/icons/chunk-X7A4Z2CJ",
+      "componentName": "SvgChunkX7A4Z2CJ"
+    },
+    {
+      "filename": "chunk-XACNDKS3",
+      "importPath": "@loomhq/lens/icons/chunk-XACNDKS3",
+      "componentName": "SvgChunkXACNDKS3"
+    },
+    {
+      "filename": "chunk-XEF5FSXN",
+      "importPath": "@loomhq/lens/icons/chunk-XEF5FSXN",
+      "componentName": "SvgChunkXEF5FSXN"
+    },
+    {
+      "filename": "chunk-XEMYW3LC",
+      "importPath": "@loomhq/lens/icons/chunk-XEMYW3LC",
+      "componentName": "SvgChunkXEMYW3LC"
+    },
+    {
+      "filename": "chunk-XG4QY5UD",
+      "importPath": "@loomhq/lens/icons/chunk-XG4QY5UD",
+      "componentName": "SvgChunkXG4QY5UD"
+    },
+    {
+      "filename": "chunk-XLYJ5RGM",
+      "importPath": "@loomhq/lens/icons/chunk-XLYJ5RGM",
+      "componentName": "SvgChunkXLYJ5RGM"
+    },
+    {
+      "filename": "chunk-XQB6D65H",
+      "importPath": "@loomhq/lens/icons/chunk-XQB6D65H",
+      "componentName": "SvgChunkXQB6D65H"
+    },
+    {
+      "filename": "chunk-XW7TC77Y",
+      "importPath": "@loomhq/lens/icons/chunk-XW7TC77Y",
+      "componentName": "SvgChunkXW7TC77Y"
+    },
+    {
+      "filename": "chunk-XZNFR7L7",
+      "importPath": "@loomhq/lens/icons/chunk-XZNFR7L7",
+      "componentName": "SvgChunkXZNFR7L7"
+    },
+    {
+      "filename": "chunk-YPE5T5MS",
+      "importPath": "@loomhq/lens/icons/chunk-YPE5T5MS",
+      "componentName": "SvgChunkYPE5T5MS"
+    },
+    {
+      "filename": "chunk-YQ5OKXIL",
+      "importPath": "@loomhq/lens/icons/chunk-YQ5OKXIL",
+      "componentName": "SvgChunkYQ5OKXIL"
+    },
+    {
+      "filename": "chunk-YSSA4HKD",
+      "importPath": "@loomhq/lens/icons/chunk-YSSA4HKD",
+      "componentName": "SvgChunkYSSA4HKD"
+    },
+    {
+      "filename": "chunk-YZBANLJ6",
+      "importPath": "@loomhq/lens/icons/chunk-YZBANLJ6",
+      "componentName": "SvgChunkYZBANLJ6"
+    },
+    {
+      "filename": "chunk-Z7NDZGNO",
+      "importPath": "@loomhq/lens/icons/chunk-Z7NDZGNO",
+      "componentName": "SvgChunkZ7NDZGNO"
+    },
+    {
+      "filename": "chunk-Z7UY6QT5",
+      "importPath": "@loomhq/lens/icons/chunk-Z7UY6QT5",
+      "componentName": "SvgChunkZ7UY6QT5"
+    },
+    {
+      "filename": "chunk-ZESRCECW",
+      "importPath": "@loomhq/lens/icons/chunk-ZESRCECW",
+      "componentName": "SvgChunkZESRCECW"
+    },
+    {
+      "filename": "chunk-ZESVQWJU",
+      "importPath": "@loomhq/lens/icons/chunk-ZESVQWJU",
+      "componentName": "SvgChunkZESVQWJU"
+    },
+    {
+      "filename": "chunk-ZGGHO72D",
+      "importPath": "@loomhq/lens/icons/chunk-ZGGHO72D",
+      "componentName": "SvgChunkZGGHO72D"
+    },
+    {
+      "filename": "chunk-ZIKNP5HT",
+      "importPath": "@loomhq/lens/icons/chunk-ZIKNP5HT",
+      "componentName": "SvgChunkZIKNP5HT"
+    },
+    {
+      "filename": "chunk-ZMBXTFPA",
+      "importPath": "@loomhq/lens/icons/chunk-ZMBXTFPA",
+      "componentName": "SvgChunkZMBXTFPA"
+    },
+    {
+      "filename": "chunk-ZVIGWAMV",
+      "importPath": "@loomhq/lens/icons/chunk-ZVIGWAMV",
+      "componentName": "SvgChunkZVIGWAMV"
+    },
+    {
+      "filename": "clip",
+      "importPath": "@loomhq/lens/icons/clip",
+      "componentName": "SvgClip"
+    },
+    {
+      "filename": "clock",
+      "importPath": "@loomhq/lens/icons/clock",
+      "componentName": "SvgClock"
+    },
+    {
+      "filename": "close",
+      "importPath": "@loomhq/lens/icons/close",
+      "componentName": "SvgClose"
+    },
+    {
+      "filename": "coda",
+      "importPath": "@loomhq/lens/icons/coda",
+      "componentName": "SvgCoda"
+    },
+    {
+      "filename": "code",
+      "importPath": "@loomhq/lens/icons/code",
+      "componentName": "SvgCode"
+    },
+    {
+      "filename": "collapse",
+      "importPath": "@loomhq/lens/icons/collapse",
+      "componentName": "SvgCollapse"
+    },
+    {
+      "filename": "collapse-replies",
+      "importPath": "@loomhq/lens/icons/collapse-replies",
+      "componentName": "SvgCollapseReplies"
+    },
+    {
+      "filename": "color-lens",
+      "importPath": "@loomhq/lens/icons/color-lens",
+      "componentName": "SvgColorLens"
+    },
+    {
+      "filename": "color-none",
+      "importPath": "@loomhq/lens/icons/color-none",
+      "componentName": "SvgColorNone"
+    },
+    {
+      "filename": "comment",
+      "importPath": "@loomhq/lens/icons/comment",
+      "componentName": "SvgComment"
+    },
+    {
+      "filename": "comment-add",
+      "importPath": "@loomhq/lens/icons/comment-add",
+      "componentName": "SvgCommentAdd"
+    },
+    {
+      "filename": "confetti",
+      "importPath": "@loomhq/lens/icons/confetti",
+      "componentName": "SvgConfetti"
+    },
+    {
+      "filename": "confluence",
+      "importPath": "@loomhq/lens/icons/confluence",
+      "componentName": "SvgConfluence"
+    },
+    {
+      "filename": "confluence-inverse",
+      "importPath": "@loomhq/lens/icons/confluence-inverse",
+      "componentName": "SvgConfluenceInverse"
+    },
+    {
+      "filename": "confluence-neutral",
+      "importPath": "@loomhq/lens/icons/confluence-neutral",
+      "componentName": "SvgConfluenceNeutral"
+    },
+    {
+      "filename": "contact-support",
+      "importPath": "@loomhq/lens/icons/contact-support",
+      "componentName": "SvgContactSupport"
+    },
+    {
+      "filename": "copy",
+      "importPath": "@loomhq/lens/icons/copy",
+      "componentName": "SvgCopy"
+    },
+    {
+      "filename": "copy-plus",
+      "importPath": "@loomhq/lens/icons/copy-plus",
+      "componentName": "SvgCopyPlus"
+    },
+    {
+      "filename": "create",
+      "importPath": "@loomhq/lens/icons/create",
+      "componentName": "SvgCreate"
+    },
+    {
+      "filename": "create-ticket",
+      "importPath": "@loomhq/lens/icons/create-ticket",
+      "componentName": "SvgCreateTicket"
+    },
+    {
+      "filename": "crop-16-9",
+      "importPath": "@loomhq/lens/icons/crop-16-9",
+      "componentName": "SvgCrop169"
+    },
+    {
+      "filename": "crop-expanded-16-9",
+      "importPath": "@loomhq/lens/icons/crop-expanded-16-9",
+      "componentName": "SvgCropExpanded169"
+    },
+    {
+      "filename": "crop-tool",
+      "importPath": "@loomhq/lens/icons/crop-tool",
+      "componentName": "SvgCropTool"
+    },
+    {
+      "filename": "crop169",
+      "importPath": "@loomhq/lens/icons/crop169",
+      "componentName": "SvgCrop169"
+    },
+    {
+      "filename": "crop169-expanded",
+      "importPath": "@loomhq/lens/icons/crop169-expanded",
+      "componentName": "SvgCrop169Expanded"
+    },
+    {
+      "filename": "cursor",
+      "importPath": "@loomhq/lens/icons/cursor",
+      "componentName": "SvgCursor"
+    },
+    {
+      "filename": "cut",
+      "importPath": "@loomhq/lens/icons/cut",
+      "componentName": "SvgCut"
+    },
+    {
+      "filename": "delete",
+      "importPath": "@loomhq/lens/icons/delete",
+      "componentName": "SvgDelete"
+    },
+    {
+      "filename": "delete-forever",
+      "importPath": "@loomhq/lens/icons/delete-forever",
+      "componentName": "SvgDeleteForever"
+    },
+    {
+      "filename": "desktop-mac",
+      "importPath": "@loomhq/lens/icons/desktop-mac",
+      "componentName": "SvgDesktopMac"
+    },
+    {
+      "filename": "diagram-symbol-decision",
+      "importPath": "@loomhq/lens/icons/diagram-symbol-decision",
+      "componentName": "SvgDiagramSymbolDecision"
+    },
+    {
+      "filename": "domain",
+      "importPath": "@loomhq/lens/icons/domain",
+      "componentName": "SvgDomain"
+    },
+    {
+      "filename": "download",
+      "importPath": "@loomhq/lens/icons/download",
+      "componentName": "SvgDownload"
+    },
+    {
+      "filename": "edge-logo",
+      "importPath": "@loomhq/lens/icons/edge-logo",
+      "componentName": "SvgEdgeLogo"
+    },
+    {
+      "filename": "edit",
+      "importPath": "@loomhq/lens/icons/edit",
+      "componentName": "SvgEdit"
+    },
+    {
+      "filename": "edit-border",
+      "importPath": "@loomhq/lens/icons/edit-border",
+      "componentName": "SvgEditBorder"
+    },
+    {
+      "filename": "editions",
+      "importPath": "@loomhq/lens/icons/editions",
+      "componentName": "SvgEditions"
+    },
+    {
+      "filename": "editions-icon",
+      "importPath": "@loomhq/lens/icons/editions-icon",
+      "componentName": "SvgEditionsIcon"
+    },
+    {
+      "filename": "exit-to-app",
+      "importPath": "@loomhq/lens/icons/exit-to-app",
+      "componentName": "SvgExitToApp"
+    },
+    {
+      "filename": "expand",
+      "importPath": "@loomhq/lens/icons/expand",
+      "componentName": "SvgExpand"
+    },
+    {
+      "filename": "expand-replies",
+      "importPath": "@loomhq/lens/icons/expand-replies",
+      "componentName": "SvgExpandReplies"
+    },
+    {
+      "filename": "extension",
+      "importPath": "@loomhq/lens/icons/extension",
+      "componentName": "SvgExtension"
+    },
+    {
+      "filename": "external-link",
+      "importPath": "@loomhq/lens/icons/external-link",
+      "componentName": "SvgExternalLink"
+    },
+    {
+      "filename": "eye",
+      "importPath": "@loomhq/lens/icons/eye",
+      "componentName": "SvgEye"
+    },
+    {
+      "filename": "eye-off",
+      "importPath": "@loomhq/lens/icons/eye-off",
+      "componentName": "SvgEyeOff"
+    },
+    {
+      "filename": "facebook",
+      "importPath": "@loomhq/lens/icons/facebook",
+      "componentName": "SvgFacebook"
+    },
+    {
+      "filename": "fiber-manual-record",
+      "importPath": "@loomhq/lens/icons/fiber-manual-record",
+      "componentName": "SvgFiberManualRecord"
+    },
+    {
+      "filename": "figma",
+      "importPath": "@loomhq/lens/icons/figma",
+      "componentName": "SvgFigma"
+    },
+    {
+      "filename": "filler-word-removal",
+      "importPath": "@loomhq/lens/icons/filler-word-removal",
+      "componentName": "SvgFillerWordRemoval"
+    },
+    {
+      "filename": "firefox-logo",
+      "importPath": "@loomhq/lens/icons/firefox-logo",
+      "componentName": "SvgFirefoxLogo"
+    },
+    {
+      "filename": "first-page",
+      "importPath": "@loomhq/lens/icons/first-page",
+      "componentName": "SvgFirstPage"
+    },
+    {
+      "filename": "folder",
+      "importPath": "@loomhq/lens/icons/folder",
+      "componentName": "SvgFolder"
+    },
+    {
+      "filename": "folder-plus-deprecated",
+      "importPath": "@loomhq/lens/icons/folder-plus-deprecated",
+      "componentName": "SvgFolderPlusDeprecated"
+    },
+    {
+      "filename": "folder-shared",
+      "importPath": "@loomhq/lens/icons/folder-shared",
+      "componentName": "SvgFolderShared"
+    },
+    {
+      "filename": "forward",
+      "importPath": "@loomhq/lens/icons/forward",
+      "componentName": "SvgForward"
+    },
+    {
+      "filename": "forward5",
+      "importPath": "@loomhq/lens/icons/forward5",
+      "componentName": "SvgForward5"
+    },
+    {
+      "filename": "full-screen",
+      "importPath": "@loomhq/lens/icons/full-screen",
+      "componentName": "SvgFullScreen"
+    },
+    {
+      "filename": "fullscreen",
+      "importPath": "@loomhq/lens/icons/fullscreen",
+      "componentName": "SvgFullscreen"
+    },
+    {
+      "filename": "fullscreen-exit",
+      "importPath": "@loomhq/lens/icons/fullscreen-exit",
+      "componentName": "SvgFullscreenExit"
+    },
+    {
+      "filename": "github",
+      "importPath": "@loomhq/lens/icons/github",
+      "componentName": "SvgGithub"
+    },
+    {
+      "filename": "globe",
+      "importPath": "@loomhq/lens/icons/globe",
+      "componentName": "SvgGlobe"
+    },
+    {
+      "filename": "google",
+      "importPath": "@loomhq/lens/icons/google",
+      "componentName": "SvgGoogle"
+    },
+    {
+      "filename": "google-calendar-logo",
+      "importPath": "@loomhq/lens/icons/google-calendar-logo",
+      "componentName": "SvgGoogleCalendarLogo"
+    },
+    {
+      "filename": "google_docs",
+      "importPath": "@loomhq/lens/icons/google_docs",
+      "componentName": "SvgGoogle_docs"
+    },
+    {
+      "filename": "google_drive",
+      "importPath": "@loomhq/lens/icons/google_drive",
+      "componentName": "SvgGoogle_drive"
+    },
+    {
+      "filename": "google_forms",
+      "importPath": "@loomhq/lens/icons/google_forms",
+      "componentName": "SvgGoogle_forms"
+    },
+    {
+      "filename": "google_sheets",
+      "importPath": "@loomhq/lens/icons/google_sheets",
+      "componentName": "SvgGoogle_sheets"
+    },
+    {
+      "filename": "google_slides",
+      "importPath": "@loomhq/lens/icons/google_slides",
+      "componentName": "SvgGoogle_slides"
+    },
+    {
+      "filename": "grid",
+      "importPath": "@loomhq/lens/icons/grid",
+      "componentName": "SvgGrid"
+    },
+    {
+      "filename": "group-add",
+      "importPath": "@loomhq/lens/icons/group-add",
+      "componentName": "SvgGroupAdd"
+    },
+    {
+      "filename": "help",
+      "importPath": "@loomhq/lens/icons/help",
+      "componentName": "SvgHelp"
+    },
+    {
+      "filename": "help-circle",
+      "importPath": "@loomhq/lens/icons/help-circle",
+      "componentName": "SvgHelpCircle"
+    },
+    {
+      "filename": "highlight-off",
+      "importPath": "@loomhq/lens/icons/highlight-off",
+      "componentName": "SvgHighlightOff"
+    },
+    {
+      "filename": "highlight-text",
+      "importPath": "@loomhq/lens/icons/highlight-text",
+      "componentName": "SvgHighlightText"
+    },
+    {
+      "filename": "home",
+      "importPath": "@loomhq/lens/icons/home",
+      "componentName": "SvgHome"
+    },
+    {
+      "filename": "image",
+      "importPath": "@loomhq/lens/icons/image",
+      "componentName": "SvgImage"
+    },
+    {
+      "filename": "image-inline",
+      "importPath": "@loomhq/lens/icons/image-inline",
+      "componentName": "SvgImageInline"
+    },
+    {
+      "filename": "image-strikethrough",
+      "importPath": "@loomhq/lens/icons/image-strikethrough",
+      "componentName": "SvgImageStrikethrough"
+    },
+    {
+      "filename": "image1",
+      "importPath": "@loomhq/lens/icons/image1",
+      "componentName": "SvgImage1"
+    },
+    {
+      "filename": "image2",
+      "importPath": "@loomhq/lens/icons/image2",
+      "componentName": "SvgImage2"
+    },
+    {
+      "filename": "import",
+      "importPath": "@loomhq/lens/icons/import",
+      "componentName": "SvgImport"
+    },
+    {
+      "filename": "index",
+      "importPath": "@loomhq/lens/icons/index",
+      "componentName": "SvgIndex"
+    },
+    {
+      "filename": "info",
+      "importPath": "@loomhq/lens/icons/info",
+      "componentName": "SvgInfo"
+    },
+    {
+      "filename": "info-fill",
+      "importPath": "@loomhq/lens/icons/info-fill",
+      "componentName": "SvgInfoFill"
+    },
+    {
+      "filename": "info-outline",
+      "importPath": "@loomhq/lens/icons/info-outline",
+      "componentName": "SvgInfoOutline"
+    },
+    {
+      "filename": "italics",
+      "importPath": "@loomhq/lens/icons/italics",
+      "componentName": "SvgItalics"
+    },
+    {
+      "filename": "jira",
+      "importPath": "@loomhq/lens/icons/jira",
+      "componentName": "SvgJira"
+    },
+    {
+      "filename": "jira-neutral",
+      "importPath": "@loomhq/lens/icons/jira-neutral",
+      "componentName": "SvgJiraNeutral"
+    },
+    {
+      "filename": "keyboard-arrow-down",
+      "importPath": "@loomhq/lens/icons/keyboard-arrow-down",
+      "componentName": "SvgKeyboardArrowDown"
+    },
+    {
+      "filename": "keyboard-arrow-left",
+      "importPath": "@loomhq/lens/icons/keyboard-arrow-left",
+      "componentName": "SvgKeyboardArrowLeft"
+    },
+    {
+      "filename": "keyboard-arrow-right",
+      "importPath": "@loomhq/lens/icons/keyboard-arrow-right",
+      "componentName": "SvgKeyboardArrowRight"
+    },
+    {
+      "filename": "keyboard-arrow-up",
+      "importPath": "@loomhq/lens/icons/keyboard-arrow-up",
+      "componentName": "SvgKeyboardArrowUp"
+    },
+    {
+      "filename": "launch",
+      "importPath": "@loomhq/lens/icons/launch",
+      "componentName": "SvgLaunch"
+    },
+    {
+      "filename": "lightbulb-outline",
+      "importPath": "@loomhq/lens/icons/lightbulb-outline",
+      "componentName": "SvgLightbulbOutline"
+    },
+    {
+      "filename": "line-thickness",
+      "importPath": "@loomhq/lens/icons/line-thickness",
+      "componentName": "SvgLineThickness"
+    },
+    {
+      "filename": "linearDark",
+      "importPath": "@loomhq/lens/icons/linearDark",
+      "componentName": "SvgLinearDark"
+    },
+    {
+      "filename": "link",
+      "importPath": "@loomhq/lens/icons/link",
+      "componentName": "SvgLink"
+    },
+    {
+      "filename": "link-broken",
+      "importPath": "@loomhq/lens/icons/link-broken",
+      "componentName": "SvgLinkBroken"
+    },
+    {
+      "filename": "link-off",
+      "importPath": "@loomhq/lens/icons/link-off",
+      "componentName": "SvgLinkOff"
+    },
+    {
+      "filename": "linkedin",
+      "importPath": "@loomhq/lens/icons/linkedin",
+      "componentName": "SvgLinkedin"
+    },
+    {
+      "filename": "list",
+      "importPath": "@loomhq/lens/icons/list",
+      "componentName": "SvgList"
+    },
+    {
+      "filename": "lock",
+      "importPath": "@loomhq/lens/icons/lock",
+      "componentName": "SvgLock"
+    },
+    {
+      "filename": "lock-fill",
+      "importPath": "@loomhq/lens/icons/lock-fill",
+      "componentName": "SvgLockFill"
+    },
+    {
+      "filename": "lock-unlocked",
+      "importPath": "@loomhq/lens/icons/lock-unlocked",
+      "componentName": "SvgLockUnlocked"
+    },
+    {
+      "filename": "log-out",
+      "importPath": "@loomhq/lens/icons/log-out",
+      "componentName": "SvgLogOut"
+    },
+    {
+      "filename": "lucidchart",
+      "importPath": "@loomhq/lens/icons/lucidchart",
+      "componentName": "SvgLucidchart"
+    },
+    {
+      "filename": "mail",
+      "importPath": "@loomhq/lens/icons/mail",
+      "componentName": "SvgMail"
+    },
+    {
+      "filename": "maximize",
+      "importPath": "@loomhq/lens/icons/maximize",
+      "componentName": "SvgMaximize"
+    },
+    {
+      "filename": "menu",
+      "importPath": "@loomhq/lens/icons/menu",
+      "componentName": "SvgMenu"
+    },
+    {
+      "filename": "menu-hide",
+      "importPath": "@loomhq/lens/icons/menu-hide",
+      "componentName": "SvgMenuHide"
+    },
+    {
+      "filename": "menu-show",
+      "importPath": "@loomhq/lens/icons/menu-show",
+      "componentName": "SvgMenuShow"
+    },
+    {
+      "filename": "mic",
+      "importPath": "@loomhq/lens/icons/mic",
+      "componentName": "SvgMic"
+    },
+    {
+      "filename": "mic-off",
+      "importPath": "@loomhq/lens/icons/mic-off",
+      "componentName": "SvgMicOff"
+    },
+    {
+      "filename": "microsoft-teams-logo",
+      "importPath": "@loomhq/lens/icons/microsoft-teams-logo",
+      "componentName": "SvgMicrosoftTeamsLogo"
+    },
+    {
+      "filename": "microsoft_excel",
+      "importPath": "@loomhq/lens/icons/microsoft_excel",
+      "componentName": "SvgMicrosoft_excel"
+    },
+    {
+      "filename": "microsoft_one_note",
+      "importPath": "@loomhq/lens/icons/microsoft_one_note",
+      "componentName": "SvgMicrosoft_one_note"
+    },
+    {
+      "filename": "microsoft_powerpoint",
+      "importPath": "@loomhq/lens/icons/microsoft_powerpoint",
+      "componentName": "SvgMicrosoft_powerpoint"
+    },
+    {
+      "filename": "microsoft_word",
+      "importPath": "@loomhq/lens/icons/microsoft_word",
+      "componentName": "SvgMicrosoft_word"
+    },
+    {
+      "filename": "minimize",
+      "importPath": "@loomhq/lens/icons/minimize",
+      "componentName": "SvgMinimize"
+    },
+    {
+      "filename": "minus",
+      "importPath": "@loomhq/lens/icons/minus",
+      "componentName": "SvgMinus"
+    },
+    {
+      "filename": "minus-circle",
+      "importPath": "@loomhq/lens/icons/minus-circle",
+      "componentName": "SvgMinusCircle"
+    },
+    {
+      "filename": "mobile-devices",
+      "importPath": "@loomhq/lens/icons/mobile-devices",
+      "componentName": "SvgMobileDevices"
+    },
+    {
+      "filename": "money",
+      "importPath": "@loomhq/lens/icons/money",
+      "componentName": "SvgMoney"
+    },
+    {
+      "filename": "moon",
+      "importPath": "@loomhq/lens/icons/moon",
+      "componentName": "SvgMoon"
+    },
+    {
+      "filename": "more-horiz",
+      "importPath": "@loomhq/lens/icons/more-horiz",
+      "componentName": "SvgMoreHoriz"
+    },
+    {
+      "filename": "movie-filter",
+      "importPath": "@loomhq/lens/icons/movie-filter",
+      "componentName": "SvgMovieFilter"
+    },
+    {
+      "filename": "mute",
+      "importPath": "@loomhq/lens/icons/mute",
+      "componentName": "SvgMute"
+    },
+    {
+      "filename": "near-me",
+      "importPath": "@loomhq/lens/icons/near-me",
+      "componentName": "SvgNearMe"
+    },
+    {
+      "filename": "notes",
+      "importPath": "@loomhq/lens/icons/notes",
+      "componentName": "SvgNotes"
+    },
+    {
+      "filename": "notifications",
+      "importPath": "@loomhq/lens/icons/notifications",
+      "componentName": "SvgNotifications"
+    },
+    {
+      "filename": "notion",
+      "importPath": "@loomhq/lens/icons/notion",
+      "componentName": "SvgNotion"
+    },
+    {
+      "filename": "numbered-list",
+      "importPath": "@loomhq/lens/icons/numbered-list",
+      "componentName": "SvgNumberedList"
+    },
+    {
+      "filename": "offline-bolt",
+      "importPath": "@loomhq/lens/icons/offline-bolt",
+      "componentName": "SvgOfflineBolt"
+    },
+    {
+      "filename": "outlook",
+      "importPath": "@loomhq/lens/icons/outlook",
+      "componentName": "SvgOutlook"
+    },
+    {
+      "filename": "overlays",
+      "importPath": "@loomhq/lens/icons/overlays",
+      "componentName": "SvgOverlays"
+    },
+    {
+      "filename": "paint-bucket",
+      "importPath": "@loomhq/lens/icons/paint-bucket",
+      "componentName": "SvgPaintBucket"
+    },
+    {
+      "filename": "palette",
+      "importPath": "@loomhq/lens/icons/palette",
+      "componentName": "SvgPalette"
+    },
+    {
+      "filename": "pause",
+      "importPath": "@loomhq/lens/icons/pause",
+      "componentName": "SvgPause"
+    },
+    {
+      "filename": "people",
+      "importPath": "@loomhq/lens/icons/people",
+      "componentName": "SvgPeople"
+    },
+    {
+      "filename": "person",
+      "importPath": "@loomhq/lens/icons/person",
+      "componentName": "SvgPerson"
+    },
+    {
+      "filename": "photo-size-select-actual",
+      "importPath": "@loomhq/lens/icons/photo-size-select-actual",
+      "componentName": "SvgPhotoSizeSelectActual"
+    },
+    {
+      "filename": "picture-in-picture",
+      "importPath": "@loomhq/lens/icons/picture-in-picture",
+      "componentName": "SvgPictureInPicture"
+    },
+    {
+      "filename": "picture-in-picture-deprecated",
+      "importPath": "@loomhq/lens/icons/picture-in-picture-deprecated",
+      "componentName": "SvgPictureInPictureDeprecated"
+    },
+    {
+      "filename": "pin",
+      "importPath": "@loomhq/lens/icons/pin",
+      "componentName": "SvgPin"
+    },
+    {
+      "filename": "pin-fill",
+      "importPath": "@loomhq/lens/icons/pin-fill",
+      "componentName": "SvgPinFill"
+    },
+    {
+      "filename": "play",
+      "importPath": "@loomhq/lens/icons/play",
+      "componentName": "SvgPlay"
+    },
+    {
+      "filename": "play-arrow",
+      "importPath": "@loomhq/lens/icons/play-arrow",
+      "componentName": "SvgPlayArrow"
+    },
+    {
+      "filename": "play-circle",
+      "importPath": "@loomhq/lens/icons/play-circle",
+      "componentName": "SvgPlayCircle"
+    },
+    {
+      "filename": "play-circle-filled",
+      "importPath": "@loomhq/lens/icons/play-circle-filled",
+      "componentName": "SvgPlayCircleFilled"
+    },
+    {
+      "filename": "plus-circle",
+      "importPath": "@loomhq/lens/icons/plus-circle",
+      "componentName": "SvgPlusCircle"
+    },
+    {
+      "filename": "power",
+      "importPath": "@loomhq/lens/icons/power",
+      "componentName": "SvgPower"
+    },
+    {
+      "filename": "present",
+      "importPath": "@loomhq/lens/icons/present",
+      "componentName": "SvgPresent"
+    },
+    {
+      "filename": "presenter-mode",
+      "importPath": "@loomhq/lens/icons/presenter-mode",
+      "componentName": "SvgPresenterMode"
+    },
+    {
+      "filename": "pronunciation",
+      "importPath": "@loomhq/lens/icons/pronunciation",
+      "componentName": "SvgPronunciation"
+    },
+    {
+      "filename": "public-off",
+      "importPath": "@loomhq/lens/icons/public-off",
+      "componentName": "SvgPublicOff"
+    },
+    {
+      "filename": "public-on",
+      "importPath": "@loomhq/lens/icons/public-on",
+      "componentName": "SvgPublicOn"
+    },
+    {
+      "filename": "publicon",
+      "importPath": "@loomhq/lens/icons/publicon",
+      "componentName": "SvgPublicon"
+    },
+    {
+      "filename": "pull-request",
+      "importPath": "@loomhq/lens/icons/pull-request",
+      "componentName": "SvgPullRequest"
+    },
+    {
+      "filename": "quick-edit",
+      "importPath": "@loomhq/lens/icons/quick-edit",
+      "componentName": "SvgQuickEdit"
+    },
+    {
+      "filename": "record",
+      "importPath": "@loomhq/lens/icons/record",
+      "componentName": "SvgRecord"
+    },
+    {
+      "filename": "redo",
+      "importPath": "@loomhq/lens/icons/redo",
+      "componentName": "SvgRedo"
+    },
+    {
+      "filename": "redo-alt",
+      "importPath": "@loomhq/lens/icons/redo-alt",
+      "componentName": "SvgRedoAlt"
+    },
+    {
+      "filename": "refresh",
+      "importPath": "@loomhq/lens/icons/refresh",
+      "componentName": "SvgRefresh"
+    },
+    {
+      "filename": "remove-circle-outline",
+      "importPath": "@loomhq/lens/icons/remove-circle-outline",
+      "componentName": "SvgRemoveCircleOutline"
+    },
+    {
+      "filename": "remove-red-eye",
+      "importPath": "@loomhq/lens/icons/remove-red-eye",
+      "componentName": "SvgRemoveRedEye"
+    },
+    {
+      "filename": "repeat",
+      "importPath": "@loomhq/lens/icons/repeat",
+      "componentName": "SvgRepeat"
+    },
+    {
+      "filename": "replay",
+      "importPath": "@loomhq/lens/icons/replay",
+      "componentName": "SvgReplay"
+    },
+    {
+      "filename": "replay-5",
+      "importPath": "@loomhq/lens/icons/replay-5",
+      "componentName": "SvgReplay5"
+    },
+    {
+      "filename": "reply",
+      "importPath": "@loomhq/lens/icons/reply",
+      "componentName": "SvgReply"
+    },
+    {
+      "filename": "reply-left",
+      "importPath": "@loomhq/lens/icons/reply-left",
+      "componentName": "SvgReplyLeft"
+    },
+    {
+      "filename": "reply-right",
+      "importPath": "@loomhq/lens/icons/reply-right",
+      "componentName": "SvgReplyRight"
+    },
+    {
+      "filename": "rewind",
+      "importPath": "@loomhq/lens/icons/rewind",
+      "componentName": "SvgRewind"
+    },
+    {
+      "filename": "rotate-left",
+      "importPath": "@loomhq/lens/icons/rotate-left",
+      "componentName": "SvgRotateLeft"
+    },
+    {
+      "filename": "rovo",
+      "importPath": "@loomhq/lens/icons/rovo",
+      "componentName": "SvgRovo"
+    },
+    {
+      "filename": "safari-logo",
+      "importPath": "@loomhq/lens/icons/safari-logo",
+      "componentName": "SvgSafariLogo"
+    },
+    {
+      "filename": "salesforce",
+      "importPath": "@loomhq/lens/icons/salesforce",
+      "componentName": "SvgSalesforce"
+    },
+    {
+      "filename": "salesforce-blk",
+      "importPath": "@loomhq/lens/icons/salesforce-blk",
+      "componentName": "SvgSalesforceBlk"
+    },
+    {
+      "filename": "school",
+      "importPath": "@loomhq/lens/icons/school",
+      "componentName": "SvgSchool"
+    },
+    {
+      "filename": "scissors",
+      "importPath": "@loomhq/lens/icons/scissors",
+      "componentName": "SvgScissors"
+    },
+    {
+      "filename": "screen-cam",
+      "importPath": "@loomhq/lens/icons/screen-cam",
+      "componentName": "SvgScreenCam"
+    },
+    {
+      "filename": "search",
+      "importPath": "@loomhq/lens/icons/search",
+      "componentName": "SvgSearch"
+    },
+    {
+      "filename": "send",
+      "importPath": "@loomhq/lens/icons/send",
+      "componentName": "SvgSend"
+    },
+    {
+      "filename": "sentiment-dissatisfied",
+      "importPath": "@loomhq/lens/icons/sentiment-dissatisfied",
+      "componentName": "SvgSentimentDissatisfied"
+    },
+    {
+      "filename": "sentiment-satisfied",
+      "importPath": "@loomhq/lens/icons/sentiment-satisfied",
+      "componentName": "SvgSentimentSatisfied"
+    },
+    {
+      "filename": "settings",
+      "importPath": "@loomhq/lens/icons/settings",
+      "componentName": "SvgSettings"
+    },
+    {
+      "filename": "share",
+      "importPath": "@loomhq/lens/icons/share",
+      "componentName": "SvgShare"
+    },
+    {
+      "filename": "show-chart",
+      "importPath": "@loomhq/lens/icons/show-chart",
+      "componentName": "SvgShowChart"
+    },
+    {
+      "filename": "silence-removal",
+      "importPath": "@loomhq/lens/icons/silence-removal",
+      "componentName": "SvgSilenceRemoval"
+    },
+    {
+      "filename": "skip-back",
+      "importPath": "@loomhq/lens/icons/skip-back",
+      "componentName": "SvgSkipBack"
+    },
+    {
+      "filename": "slack",
+      "importPath": "@loomhq/lens/icons/slack",
+      "componentName": "SvgSlack"
+    },
+    {
+      "filename": "smile",
+      "importPath": "@loomhq/lens/icons/smile",
+      "componentName": "SvgSmile"
+    },
+    {
+      "filename": "smile-alt",
+      "importPath": "@loomhq/lens/icons/smile-alt",
+      "componentName": "SvgSmileAlt"
+    },
+    {
+      "filename": "smile-select",
+      "importPath": "@loomhq/lens/icons/smile-select",
+      "componentName": "SvgSmileSelect"
+    },
+    {
+      "filename": "spaces",
+      "importPath": "@loomhq/lens/icons/spaces",
+      "componentName": "SvgSpaces"
+    },
+    {
+      "filename": "sparkle",
+      "importPath": "@loomhq/lens/icons/sparkle",
+      "componentName": "SvgSparkle"
+    },
+    {
+      "filename": "speed-fast",
+      "importPath": "@loomhq/lens/icons/speed-fast",
+      "componentName": "SvgSpeedFast"
+    },
+    {
+      "filename": "speed-medium",
+      "importPath": "@loomhq/lens/icons/speed-medium",
+      "componentName": "SvgSpeedMedium"
+    },
+    {
+      "filename": "speed-slow",
+      "importPath": "@loomhq/lens/icons/speed-slow",
+      "componentName": "SvgSpeedSlow"
+    },
+    {
+      "filename": "speed-x-fast",
+      "importPath": "@loomhq/lens/icons/speed-x-fast",
+      "componentName": "SvgSpeedXFast"
+    },
+    {
+      "filename": "speed-x-slow",
+      "importPath": "@loomhq/lens/icons/speed-x-slow",
+      "componentName": "SvgSpeedXSlow"
+    },
+    {
+      "filename": "split",
+      "importPath": "@loomhq/lens/icons/split",
+      "componentName": "SvgSplit"
+    },
+    {
+      "filename": "square",
+      "importPath": "@loomhq/lens/icons/square",
+      "componentName": "SvgSquare"
+    },
+    {
+      "filename": "star",
+      "importPath": "@loomhq/lens/icons/star",
+      "componentName": "SvgStar"
+    },
+    {
+      "filename": "star-outline",
+      "importPath": "@loomhq/lens/icons/star-outline",
+      "componentName": "SvgStarOutline"
+    },
+    {
+      "filename": "stop",
+      "importPath": "@loomhq/lens/icons/stop",
+      "componentName": "SvgStop"
+    },
+    {
+      "filename": "sun",
+      "importPath": "@loomhq/lens/icons/sun",
+      "componentName": "SvgSun"
+    },
+    {
+      "filename": "tag-faces",
+      "importPath": "@loomhq/lens/icons/tag-faces",
+      "componentName": "SvgTagFaces"
+    },
+    {
+      "filename": "task",
+      "importPath": "@loomhq/lens/icons/task",
+      "componentName": "SvgTask"
+    },
+    {
+      "filename": "teamwork-agent-big",
+      "importPath": "@loomhq/lens/icons/teamwork-agent-big",
+      "componentName": "SvgTeamworkAgentBig"
+    },
+    {
+      "filename": "teamwork-agent-small",
+      "importPath": "@loomhq/lens/icons/teamwork-agent-small",
+      "componentName": "SvgTeamworkAgentSmall"
+    },
+    {
+      "filename": "teamwork-graph",
+      "importPath": "@loomhq/lens/icons/teamwork-graph",
+      "componentName": "SvgTeamworkGraph"
+    },
+    {
+      "filename": "text",
+      "importPath": "@loomhq/lens/icons/text",
+      "componentName": "SvgText"
+    },
+    {
+      "filename": "text-rephrase",
+      "importPath": "@loomhq/lens/icons/text-rephrase",
+      "componentName": "SvgTextRephrase"
+    },
+    {
+      "filename": "thumbs-down",
+      "importPath": "@loomhq/lens/icons/thumbs-down",
+      "componentName": "SvgThumbsDown"
+    },
+    {
+      "filename": "thumbs-up",
+      "importPath": "@loomhq/lens/icons/thumbs-up",
+      "componentName": "SvgThumbsUp"
+    },
+    {
+      "filename": "timeline-editor",
+      "importPath": "@loomhq/lens/icons/timeline-editor",
+      "componentName": "SvgTimelineEditor"
+    },
+    {
+      "filename": "timer",
+      "importPath": "@loomhq/lens/icons/timer",
+      "componentName": "SvgTimer"
+    },
+    {
+      "filename": "touch-app",
+      "importPath": "@loomhq/lens/icons/touch-app",
+      "componentName": "SvgTouchApp"
+    },
+    {
+      "filename": "transcript",
+      "importPath": "@loomhq/lens/icons/transcript",
+      "componentName": "SvgTranscript"
+    },
+    {
+      "filename": "trash",
+      "importPath": "@loomhq/lens/icons/trash",
+      "componentName": "SvgTrash"
+    },
+    {
+      "filename": "trash-forever",
+      "importPath": "@loomhq/lens/icons/trash-forever",
+      "componentName": "SvgTrashForever"
+    },
+    {
+      "filename": "trello",
+      "importPath": "@loomhq/lens/icons/trello",
+      "componentName": "SvgTrello"
+    },
+    {
+      "filename": "trello-neutral",
+      "importPath": "@loomhq/lens/icons/trello-neutral",
+      "componentName": "SvgTrelloNeutral"
+    },
+    {
+      "filename": "tune",
+      "importPath": "@loomhq/lens/icons/tune",
+      "componentName": "SvgTune"
+    },
+    {
+      "filename": "underline",
+      "importPath": "@loomhq/lens/icons/underline",
+      "componentName": "SvgUnderline"
+    },
+    {
+      "filename": "undo",
+      "importPath": "@loomhq/lens/icons/undo",
+      "componentName": "SvgUndo"
+    },
+    {
+      "filename": "undo-alt",
+      "importPath": "@loomhq/lens/icons/undo-alt",
+      "componentName": "SvgUndoAlt"
+    },
+    {
+      "filename": "upload",
+      "importPath": "@loomhq/lens/icons/upload",
+      "componentName": "SvgUpload"
+    },
+    {
+      "filename": "user",
+      "importPath": "@loomhq/lens/icons/user",
+      "componentName": "SvgUser"
+    },
+    {
+      "filename": "users",
+      "importPath": "@loomhq/lens/icons/users",
+      "componentName": "SvgUsers"
+    },
+    {
+      "filename": "users-add",
+      "importPath": "@loomhq/lens/icons/users-add",
+      "componentName": "SvgUsersAdd"
+    },
+    {
+      "filename": "variables",
+      "importPath": "@loomhq/lens/icons/variables",
+      "componentName": "SvgVariables"
+    },
+    {
+      "filename": "version-control",
+      "importPath": "@loomhq/lens/icons/version-control",
+      "componentName": "SvgVersionControl"
+    },
+    {
+      "filename": "vertical-align-bottom",
+      "importPath": "@loomhq/lens/icons/vertical-align-bottom",
+      "componentName": "SvgVerticalAlignBottom"
+    },
+    {
+      "filename": "video-cam",
+      "importPath": "@loomhq/lens/icons/video-cam",
+      "componentName": "SvgVideoCam"
+    },
+    {
+      "filename": "video-library",
+      "importPath": "@loomhq/lens/icons/video-library",
+      "componentName": "SvgVideoLibrary"
+    },
+    {
+      "filename": "video-off",
+      "importPath": "@loomhq/lens/icons/video-off",
+      "componentName": "SvgVideoOff"
+    },
+    {
+      "filename": "videocam",
+      "importPath": "@loomhq/lens/icons/videocam",
+      "componentName": "SvgVideocam"
+    },
+    {
+      "filename": "videocam-off",
+      "importPath": "@loomhq/lens/icons/videocam-off",
+      "componentName": "SvgVideocamOff"
+    },
+    {
+      "filename": "view-list",
+      "importPath": "@loomhq/lens/icons/view-list",
+      "componentName": "SvgViewList"
+    },
+    {
+      "filename": "volume-down",
+      "importPath": "@loomhq/lens/icons/volume-down",
+      "componentName": "SvgVolumeDown"
+    },
+    {
+      "filename": "volume-mute",
+      "importPath": "@loomhq/lens/icons/volume-mute",
+      "componentName": "SvgVolumeMute"
+    },
+    {
+      "filename": "volume-off",
+      "importPath": "@loomhq/lens/icons/volume-off",
+      "componentName": "SvgVolumeOff"
+    },
+    {
+      "filename": "volume-up",
+      "importPath": "@loomhq/lens/icons/volume-up",
+      "componentName": "SvgVolumeUp"
+    },
+    {
+      "filename": "volume-x",
+      "importPath": "@loomhq/lens/icons/volume-x",
+      "componentName": "SvgVolumeX"
+    },
+    {
+      "filename": "volume1",
+      "importPath": "@loomhq/lens/icons/volume1",
+      "componentName": "SvgVolume1"
+    },
+    {
+      "filename": "volume2",
+      "importPath": "@loomhq/lens/icons/volume2",
+      "componentName": "SvgVolume2"
+    },
+    {
+      "filename": "warning-alert",
+      "importPath": "@loomhq/lens/icons/warning-alert",
+      "componentName": "SvgWarningAlert"
+    },
+    {
+      "filename": "warning-amber",
+      "importPath": "@loomhq/lens/icons/warning-amber",
+      "componentName": "SvgWarningAmber"
+    },
+    {
+      "filename": "watch-later",
+      "importPath": "@loomhq/lens/icons/watch-later",
+      "componentName": "SvgWatchLater"
+    },
+    {
+      "filename": "watch-later-added",
+      "importPath": "@loomhq/lens/icons/watch-later-added",
+      "componentName": "SvgWatchLaterAdded"
+    },
+    {
+      "filename": "watch-later-remove",
+      "importPath": "@loomhq/lens/icons/watch-later-remove",
+      "componentName": "SvgWatchLaterRemove"
+    },
+    {
+      "filename": "waveform",
+      "importPath": "@loomhq/lens/icons/waveform",
+      "componentName": "SvgWaveform"
+    },
+    {
+      "filename": "window",
+      "importPath": "@loomhq/lens/icons/window",
+      "componentName": "SvgWindow"
+    },
+    {
+      "filename": "windows",
+      "importPath": "@loomhq/lens/icons/windows",
+      "componentName": "SvgWindows"
+    },
+    {
+      "filename": "write-document",
+      "importPath": "@loomhq/lens/icons/write-document",
+      "componentName": "SvgWriteDocument"
+    },
+    {
+      "filename": "write-message",
+      "importPath": "@loomhq/lens/icons/write-message",
+      "componentName": "SvgWriteMessage"
+    },
+    {
+      "filename": "x-circle",
+      "importPath": "@loomhq/lens/icons/x-circle",
+      "componentName": "SvgXCircle"
+    },
+    {
+      "filename": "x-twitter",
+      "importPath": "@loomhq/lens/icons/x-twitter",
+      "componentName": "SvgXTwitter"
+    },
+    {
+      "filename": "zap",
+      "importPath": "@loomhq/lens/icons/zap",
+      "componentName": "SvgZap"
+    },
+    {
+      "filename": "zap-outline",
+      "importPath": "@loomhq/lens/icons/zap-outline",
+      "componentName": "SvgZapOutline"
+    },
+    {
+      "filename": "zoom-in",
+      "importPath": "@loomhq/lens/icons/zoom-in",
+      "componentName": "SvgZoomIn"
+    },
+    {
+      "filename": "zoom-logo",
+      "importPath": "@loomhq/lens/icons/zoom-logo",
+      "componentName": "SvgZoomLogo"
+    },
+    {
+      "filename": "zoom-out",
+      "importPath": "@loomhq/lens/icons/zoom-out",
+      "componentName": "SvgZoomOut"
+    }
+  ]
+}

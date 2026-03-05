@@ -12,7 +12,7 @@ Before adding a new component to the design system consider the definition of th
 
 - **Components are content agnostic.** Some components contain text and it can be different depending on the context. These components also can be translated into other languages.
 
-# Designing custom elements
+## Designing custom elements
 
 Sometimes components don't fit a specific use case and a custom element is needed. You can design custom UI elements that are not in the components library but still follow the Lens design language.
 
@@ -28,7 +28,7 @@ In this example, we need to design an integration card. We can use Lens text siz
 
 The result is a one-off element for a specific use case but it feels like part of Lens design language.
 
-# Components list :
+## Components list :
 
 # 1.Avatar
 
@@ -1929,9 +1929,7 @@ The `variant` prop controls list styling.
 
 ---
 
-# Props
-
-## List
+## Props
 
 | Name            | Type                               | Default    |
 | --------------- | ---------------------------------- | ---------- |
@@ -2020,7 +2018,7 @@ Set maximum width in theme units (e.g., `13`, `6`).
 
 ---
 
-# New Brands
+## New Brands
 
 ```tsx
 <Arrange gap="xlarge" alignment="center">
@@ -2046,7 +2044,7 @@ Set maximum width in theme units (e.g., `13`, `6`).
 
 ---
 
-# Deprecated Brands
+## Deprecated Brands
 
 ```tsx
 <Arrange gap="xlarge" alignment="center">
@@ -2060,7 +2058,7 @@ Set maximum width in theme units (e.g., `13`, `6`).
 
 ---
 
-# New Variants
+## New Variants
 
 ```tsx
 <Arrange gap="xlarge" alignment="center">
@@ -2082,7 +2080,7 @@ Set maximum width in theme units (e.g., `13`, `6`).
 
 ---
 
-# Deprecated Variants
+## Deprecated Variants
 
 ```tsx
 <Arrange gap="xlarge" alignment="center">
@@ -2096,7 +2094,7 @@ Set maximum width in theme units (e.g., `13`, `6`).
 
 ---
 
-# Size
+### Size
 
 ```tsx
 <Arrange gap="medium">
@@ -2108,7 +2106,7 @@ Set maximum width in theme units (e.g., `13`, `6`).
 
 ---
 
-# Custom ID
+### Custom ID
 
 > Note: This section currently only affects the AI symbol.
 
@@ -2120,7 +2118,7 @@ When multiple elements on the same page reference `radialGradient` with the same
 
 ---
 
-# Custom Colors
+## Custom Colors
 
 Symbol and wordmark colors can be assigned independently using `symbolColor` and `wordmarkColor`.
 
@@ -2150,7 +2148,7 @@ Symbol and wordmark colors can be assigned independently using `symbolColor` and
 
 ---
 
-# Props
+## Props
 
 | name          | type                                                                      | default      |
 | ------------- | ------------------------------------------------------------------------- | ------------ |
@@ -2186,7 +2184,7 @@ import { Menu, MenuItem } from '@loomhq/lens'
 
 ---
 
-# Actions Menu
+## Actions Menu
 
 ```tsx
 <Menu maxWidth={24}>
@@ -2221,7 +2219,7 @@ import { Menu, MenuItem } from '@loomhq/lens'
 
 ---
 
-# Select Menu
+## Select Menu
 
 ```tsx
 <Menu maxWidth={24}>
@@ -2234,7 +2232,7 @@ import { Menu, MenuItem } from '@loomhq/lens'
 
 ---
 
-# With Divider
+## With Divider
 
 ```tsx
 <Menu maxWidth={24}>
@@ -2247,7 +2245,7 @@ import { Menu, MenuItem } from '@loomhq/lens'
 
 ---
 
-# Custom Content
+## Custom Content
 
 ```tsx
 ;() => {
@@ -2285,7 +2283,7 @@ import { Menu, MenuItem } from '@loomhq/lens'
 
 ---
 
-# With Popover and Downshift
+## With Popover and Downshift
 
 Combine with `Popover` to position `Menu` as an overlay.  
  Use `Downshift` to manage state, keyboard navigation, and selection.
@@ -2365,7 +2363,7 @@ Combine with `Popover` to position `Menu` as an overlay.
 
 ---
 
-# Props
+## Props
 
 ## Menu
 
@@ -2631,8 +2629,6 @@ const inputRef = React.useRef(null)
 
 ## Props
 
-## Modal
-
 | Name         | Type                                                                                                                             | Default     |
 | ------------ | -------------------------------------------------------------------------------------------------------------------------------- | ----------- |
 | maxHeight    | `string`                                                                                                                         | `'70vh'`    |
@@ -2654,7 +2650,7 @@ const inputRef = React.useRef(null)
 | closeOnEscape | `boolean`                                                                                                                        | `true`      |
 | initialFocus  | `HTMLElement \| SVGElement \| string \| (() => HTMLElement \| SVGElement \| string \| false \| undefined) \| false \| undefined` | `undefined` |
 
-# NotificationBar
+# 16.NotificationBar
 
 ---
 
@@ -2840,7 +2836,7 @@ Out-of-the-box, `NotificationBar` supports:
 
 ---
 
-# Pill
+# 17.Pill
 
 ---
 
@@ -2922,7 +2918,7 @@ Pills can include an **icon** on either the left or right side of the text.
 
 ---
 
-# Radio
+# 18.Radio
 
 ---
 
@@ -3016,7 +3012,7 @@ You can use the `ref` prop to access the **DOM node** of a radio input:
 
 ---
 
-# Select
+# 19.Select
 
 ---
 
@@ -3307,7 +3303,7 @@ Custom trigger showing icons:
 
 ---
 
-# Skeleton
+# 20.Skeleton
 
 ---
 
@@ -3434,7 +3430,7 @@ Combine them to **represent richer UI elements**, such as cards or list items:
 
 ---
 
-# Switch
+# 21.Switch
 
 ---
 
@@ -3504,7 +3500,7 @@ You can wrap a `Switch` in a `FormField` to provide a label:
 | ariaLabelledby  | string                  | —        | ID of element that labels the switch for accessibility    |
 | ariaDescribedby | string                  | —        | ID of element that describes the switch for accessibility |
 
-# Tabs
+# 22.Tabs
 
 ---
 
@@ -3724,7 +3720,7 @@ The old `<Tabs>` + `<Tab>` approach is deprecated and **should not be used**. Us
 | children       | React.ReactNode           | —        | Tab label content                |
 | isPilledDesign | boolean                   | false    | Pilled design for individual tab |
 
-# Text
+# 23.Text
 
 ---
 
@@ -3744,7 +3740,7 @@ import { Text } from '@loomhq/lens'
 
 ---
 
-# Typography System
+## Typography System
 
 ## Sizes
 
@@ -3811,8 +3807,6 @@ Variants define **meaning and hierarchy**, not just appearance.
 
 ---
 
-# Layout Controls
-
 ## Alignment
 
 ```jsx
@@ -3871,7 +3865,7 @@ Supported tags:
 
 ---
 
-# Styling Controls
+## Styling Controls
 
 ## Color
 
@@ -3922,7 +3916,7 @@ Options:
 
 ---
 
-# Truncation & Overflow
+## Truncation & Overflow
 
 ## Single-Line Ellipsis
 
@@ -3997,7 +3991,7 @@ Options:
 
 ---
 
-# Inline & Display Behavior
+## Inline & Display Behavior
 
 ## Inline Text
 
@@ -4019,7 +4013,7 @@ Use `isDimmed` for lower visual emphasis.
 
 ---
 
-# Responsive Typography
+## Responsive Typography
 
 ## sizeMinMax
 
@@ -4031,7 +4025,7 @@ Allows responsive scaling between two size values.
 
 ---
 
-# Props
+## Props
 
 | Prop          | Type                                                   | Default      |
 | ------------- | ------------------------------------------------------ | ------------ |
@@ -4055,7 +4049,7 @@ Allows responsive scaling between two size values.
 
 ---
 
-# Textarea
+# 24.Textarea
 
 Multi-line text input component for longer form content.
 
@@ -4205,7 +4199,7 @@ import { useRef } from 'react'
 
 ---
 
-# TextButton
+# 25.TextButton
 
 A lightweight button used for secondary actions, inline actions, and low-emphasis interactions.
 
@@ -4219,7 +4213,7 @@ import { TextButton } from '@loomhq/lens'
 
 ---
 
-# Usage Guidelines
+## Usage Guidelines
 
 ## When to Use
 
@@ -4235,7 +4229,7 @@ Avoid using `TextButton` for primary actions — use `Button` instead.
 
 ---
 
-# Basic Usage
+## Basic Usage
 
 ```tsx
 <TextButton icon={<SvgSearch />}>Search</TextButton>
@@ -4243,7 +4237,7 @@ Avoid using `TextButton` for primary actions — use `Button` instead.
 
 ---
 
-# Sizes
+### Sizes
 
 Available sizes:
 
@@ -4267,7 +4261,7 @@ Available sizes:
 
 ---
 
-# With Icon
+### With Icon
 
 ```tsx
 <Arrange gap="xsmall">
@@ -4281,7 +4275,7 @@ Available sizes:
 
 ---
 
-# Icon Position
+### Icon Position
 
 Control icon placement with `iconPosition`.
 
@@ -4304,7 +4298,7 @@ Options:
 
 ---
 
-# Without Icon
+### Without Icon
 
 ```tsx
 <Arrange gap="xsmall">
@@ -4316,7 +4310,7 @@ Options:
 
 ---
 
-# Offset
+### Offset
 
 Use `offsetSide` to align the button flush with one side by offsetting padding.
 
@@ -4357,7 +4351,7 @@ Options:
 
 ---
 
-# Active State
+## Active State
 
 Use `isActive` to indicate selected or current state.
 
@@ -4369,7 +4363,7 @@ Use `isActive` to indicate selected or current state.
 
 ---
 
-# Disabled State
+## Disabled State
 
 ```tsx
 <TextButton isDisabled icon={<SvgAdd />}>
@@ -4379,7 +4373,7 @@ Use `isActive` to indicate selected or current state.
 
 ---
 
-# Rendering as Link
+## Rendering as Link
 
 Use `htmlTag="a"` with `href`.
 
@@ -4391,7 +4385,7 @@ Use `htmlTag="a"` with `href`.
 
 ---
 
-# Forwarding Refs
+## Forwarding Refs
 
 Access the DOM node using `ref`.
 
@@ -4420,7 +4414,7 @@ import { useRef } from 'react'
 
 ---
 
-# Props
+## Props
 
 | Name         | Type                             | Default      |
 | ------------ | -------------------------------- | ------------ |
@@ -4439,7 +4433,7 @@ import { useRef } from 'react'
 
 ---
 
-# TextInput
+# 26.TextInput
 
 A single-line input field used to enter strings of text, numbers, or characters.  
 Commonly used in forms, dialogs, and search interfaces.
@@ -4454,7 +4448,7 @@ import { TextInput } from '@loomhq/lens'
 
 ---
 
-# Usage Guidelines
+## Usage Guidelines
 
 ## Purpose
 
@@ -4489,7 +4483,7 @@ Use `TextInput` when collecting structured or short-form data such as:
 
 ---
 
-# Basic Usage
+## Basic Usage
 
 ```tsx
 <TextInput />
@@ -4497,7 +4491,7 @@ Use `TextInput` when collecting structured or short-form data such as:
 
 ---
 
-# With Icon
+## With Icon
 
 The `icon` prop accepts:
 
@@ -4520,7 +4514,7 @@ The `icon` prop accepts:
 
 ---
 
-# Add-On
+## Add-On
 
 The `addOn` appears on the right side of the input (opposite of `icon`).
 
@@ -4548,7 +4542,7 @@ Best used with:
 
 ---
 
-# Sizes
+## Sizes
 
 | Size   | Usage Context                                |
 | ------ | -------------------------------------------- |
@@ -4566,7 +4560,7 @@ Best used with:
 
 ---
 
-# Type
+## Type
 
 Choose a type that best matches the expected data.
 
@@ -4604,7 +4598,7 @@ Supported types:
 
 ---
 
-# Error State
+## Error State
 
 Use `hasError` for validation styling.
 
@@ -4614,7 +4608,7 @@ Use `hasError` for validation styling.
 
 ---
 
-# Disabled State
+## Disabled State
 
 ```tsx
 <Arrange columns="1fr" gap="small">
@@ -4632,7 +4626,7 @@ Use `hasError` for validation styling.
 
 ---
 
-# Forwarding Refs
+## Forwarding Refs
 
 Access the DOM node using `ref`.
 
@@ -4659,7 +4653,7 @@ import { useRef } from 'react'
 
 ---
 
-# Props
+## Props
 
 | Name        | Type                                                                                                                                     | Default    |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------- | ---------- |
@@ -4679,7 +4673,7 @@ import { useRef } from 'react'
 
 ---
 
-# Typeahead
+# 27.Typeahead
 
 ### Usage
 
@@ -4835,7 +4829,7 @@ Use the `ref` prop to access the DOM node.
 />
 ```
 
-# Props Table for Typeahead Component
+## Props Table for Typeahead Component
 
 | Name                | Type                                            | Default  | Description                                                   |
 | ------------------- | ----------------------------------------------- | -------- | ------------------------------------------------------------- |
@@ -4859,7 +4853,7 @@ Use the `ref` prop to access the DOM node.
 | onOpenChange        | (isOpen: boolean) => void                       |          | Callback triggered when the menu opens or closes.             |
 | onOuterClick        | () => void                                      |          | Callback triggered when a click occurs outside the component. |
 
-# Toast
+# 28.Toast
 
 ## Usage Guidelines
 
@@ -4879,7 +4873,7 @@ Toasts are used to show confirmations of user action.
 
 ---
 
-# Variants
+## Variants
 
 Toasts should behave and appear consistently within a platform while also respecting the unique context and needs of each platform.
 
@@ -4893,7 +4887,7 @@ Each platform has its own Toast variant.
 
 ---
 
-# Usage
+## Usage
 
 ```javascript
 import { Toast } from '@loomhq/lens'
@@ -4902,7 +4896,7 @@ import { Toast } from '@loomhq/lens'
 
 ---
 
-# Examples
+## Examples
 
 ## Simple Toast
 
@@ -5012,7 +5006,7 @@ import { Toast } from '@loomhq/lens'
 
 ---
 
-# Props
+## Props
 
 | Name         | Type                              | Default     |
 | ------------ | --------------------------------- | ----------- |
@@ -5023,7 +5017,7 @@ import { Toast } from '@loomhq/lens'
 | isOpen       | `boolean`                         | —           |
 | onCloseClick | `() => void`                      | —           |
 
-# Tooltip
+# 29.Tooltip
 
 ## Usage Guidelines
 
@@ -5040,7 +5034,7 @@ import { Tooltip } from '@loomhq/lens'
 
 ---
 
-# Accessibility
+## Accessibility
 
 Please verify that your component supports the following accessibility features and that none of your modifications remove them.
 
@@ -5081,7 +5075,7 @@ Tooltip closes:
 
 ---
 
-# Screenreader Support
+## Screenreader Support
 
 Screenreader support is currently **Work In Progress (WIP)**.
 
@@ -5106,7 +5100,7 @@ If a tooltip contains **focusable elements** such as a `Link` or `Button`, you s
 
 ---
 
-# Gotchas
+## Gotchas
 
 ### Focusable children
 
@@ -5147,7 +5141,7 @@ Recommendation:
 
 ---
 
-# Placement
+## Placement
 
 Available placement options:
 
@@ -5193,7 +5187,7 @@ Available placement options:
 
 ---
 
-# Max Width
+## Max Width
 
 ```javascript
 <Tooltip maxWidth={40} content={demoText.medium}>
@@ -5203,7 +5197,7 @@ Available placement options:
 
 ---
 
-# Trigger Offset
+## Trigger Offset
 
 Controls spacing between tooltip and trigger.
 
@@ -5221,7 +5215,7 @@ Controls spacing between tooltip and trigger.
 
 ---
 
-# Keep Open
+## Keep Open
 
 When `keepOpen` is `true`, the tooltip stays open while hovered.
 
@@ -5235,7 +5229,7 @@ By default, tooltips remain open when **keyboard focused**.
 
 ---
 
-# Disabled Tooltip
+## Disabled Tooltip
 
 When `isDisabled` is `true`, the tooltip will **never display**.
 
@@ -5259,7 +5253,7 @@ When `isDisabled` is `true`, the tooltip will **never display**.
 
 ---
 
-# Inline vs Block
+## Inline vs Block
 
 ```javascript
 <>
@@ -5279,7 +5273,7 @@ When `isDisabled` is `true`, the tooltip will **never display**.
 
 ---
 
-# Delay
+## Delay
 
 Controls delay before showing tooltip on hover.
 
@@ -5303,7 +5297,7 @@ Focus behavior **always shows immediately**.
 
 ---
 
-# Tooltip With Keyboard Shortcut
+## Tooltip With Keyboard Shortcut
 
 ```javascript
 <Arrange gap="small">
@@ -5323,7 +5317,7 @@ Focus behavior **always shows immediately**.
 
 ---
 
-# ARIA Live Regions
+## ARIA Live Regions
 
 Use when tooltip content should be **read by screen readers**.
 
@@ -5341,7 +5335,7 @@ Use when tooltip content should be **read by screen readers**.
 
 ---
 
-# Container
+## Container
 
 Specify where the tooltip is rendered in the DOM.
 
@@ -5358,7 +5352,7 @@ Useful when working with **Shadow DOM**.
 
 ---
 
-# TooltipBox
+## TooltipBox
 
 `Tooltip` internally uses `TooltipBox`.
 
@@ -5370,7 +5364,7 @@ Use it if you need to **build custom tooltip behavior**.
 
 ---
 
-# Examples
+## Examples
 
 ## IconButton with Tooltip (Natively Focusable Child)
 
@@ -5398,7 +5392,7 @@ tabIndex={-1}
 
 ---
 
-# Props
+## Props
 
 ## Tooltip
 
@@ -5434,9 +5428,7 @@ tabIndex={-1}
 | layerProps   | any                     | —       |
 | zIndex       | number                  | —       |
 
-# Loaders
-
-# Loader
+# 30.Loader
 
 ## Usage Guidelines
 
@@ -5449,7 +5441,7 @@ import { Loader } from '@loomhq/lens'
 
 ---
 
-# Sizes
+## Sizes
 
 ```javascript
 <Arrange gap="medium">
@@ -5461,7 +5453,7 @@ import { Loader } from '@loomhq/lens'
 
 ---
 
-# Color
+## Color
 
 Use one of the **palette colors**.
 
@@ -5471,7 +5463,7 @@ Use one of the **palette colors**.
 
 ---
 
-# Props
+## Props
 
 | Name  | Type                             | Default    |
 | ----- | -------------------------------- | ---------- |
@@ -5480,11 +5472,7 @@ Use one of the **palette colors**.
 
 ---
 
-# Feedback
-
-For feedback or questions, contact the **Slack channel**.
-
-# LogoLoader
+# 31.LogoLoader
 
 ## Usage Guidelines
 
@@ -5499,7 +5487,7 @@ If you need a general-purpose loading indicator, use **`<Loader>`** instead.
 
 ---
 
-# Usage
+## Usage
 
 ```javascript
 import { LogoLoader } from '@loomhq/lens'
@@ -5508,7 +5496,7 @@ import { LogoLoader } from '@loomhq/lens'
 
 ---
 
-# Animation
+## Animation
 
 By default, the animation runs **indefinitely**.
 
@@ -5523,7 +5511,7 @@ If the animation should run **only once**, set `animation-iteration-count` to `1
 
 ---
 
-# Brand
+## Brand
 
 You can switch between **Loom branding** and **AI branding**.
 
@@ -5536,7 +5524,7 @@ You can switch between **Loom branding** and **AI branding**.
 
 ---
 
-# Size
+## Size
 
 ```javascript
 <LogoLoader animation="spin 2s infinite steps(49) forwards" size="small" />
@@ -5544,7 +5532,7 @@ You can switch between **Loom branding** and **AI branding**.
 
 ---
 
-# Props
+## Props
 
 | Name      | Type                  | Default                                 |
 | --------- | --------------------- | --------------------------------------- |
@@ -5554,7 +5542,7 @@ You can switch between **Loom branding** and **AI branding**.
 
 ---
 
-# Ellipses Loader
+# 32.Ellipses Loader
 
 ## Usage Guidelines
 
@@ -5567,7 +5555,7 @@ import { EllipsesLoader } from '@loomhq/lens'
 
 ---
 
-# Sizes
+## Sizes
 
 ```javascript
 <Arrange gap="medium">
@@ -5579,7 +5567,7 @@ import { EllipsesLoader } from '@loomhq/lens'
 
 ---
 
-# Color
+## Color
 
 Use one of the **palette colors**.
 
@@ -5589,7 +5577,7 @@ Use one of the **palette colors**.
 
 ---
 
-# Props
+## Props
 
 | Name  | Type                             | Default    |
 | ----- | -------------------------------- | ---------- |
@@ -5598,7 +5586,7 @@ Use one of the **palette colors**.
 
 ---
 
-# Waveform Loader
+# 33.Waveform Loader
 
 ## Usage Guidelines
 
@@ -5643,9 +5631,7 @@ Use one of the **palette colors**.
 | speed | `'fast' \| 'slow'` | `'fast'`   |
 | color | string             | `'body'`   |
 
-# Layout
-
-## Align
+# 34.Align
 
 ## Usage
 
@@ -5690,7 +5676,7 @@ Available alignment values:
 
 ---
 
-# Examples
+## Examples
 
 ## Icon alignments inside a Container
 
@@ -5718,7 +5704,7 @@ Available alignment values:
 
 ---
 
-# Semantic HTML
+## Semantic HTML
 
 Use the `htmlTag` prop to render a **semantic HTML element** when appropriate.
 
@@ -5736,7 +5722,7 @@ Example options include:
 
 ---
 
-# Responsive Props
+## Responsive Props
 
 Responsive props allow values to change based on **breakpoints**.
 
@@ -5778,7 +5764,7 @@ prop={{
 
 ---
 
-# Responsive Example
+## Responsive Example
 
 Resize the browser to see how the alignment changes.
 
@@ -5800,7 +5786,7 @@ Resize the browser to see how the alignment changes.
 
 ---
 
-# Props
+## Props
 
 | Name      | Type                                                                                                                                                     | Default    | Notes                      |
 | --------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------- | -------------------------- |
@@ -5808,7 +5794,7 @@ Resize the browser to see how the alignment changes.
 | htmlTag   | `'div' \| 'header' \| 'article' \| 'section' \| 'nav' \| 'aside' \| 'footer' \| 'main'`                                                                  | `'div'`    | Semantic HTML element      |
 | children  | `React.ReactNode`                                                                                                                                        | required   | Content to align           |
 
-## Arrange
+# 35.Arrange
 
 ## Content
 
@@ -6046,7 +6032,7 @@ Pass responsive objects where keys are **min-width breakpoints**:
 | columns        | `ResponsiveGridSections`                                                                                           | —          | Defines grid columns     |
 | rows           | `ResponsiveGridSections`                                                                                           | —          | Defines grid rows        |
 
-# Backdrop
+# 36.Backdrop
 
 Backdrop provides a full-screen overlay that can be used to focus attention on a specific piece of content.
 
@@ -6129,7 +6115,7 @@ const ExampleCustom = () => {
 | zIndex          | number | `1000`           | Stacking order of the backdrop     |
 | backgroundColor | string | `'backdropDark'` | Sets the backdrop background color |
 
-## Container
+# 37.Container
 
 `Container` is a versatile layout component that provides padding, borders, colors, radius, and responsive sizing for content blocks.
 
@@ -6329,7 +6315,7 @@ const refHandler = (newRef) => {
 | zIndex                                                                                  | number \| string                                  |            | Stacking order                               |
 | refHandler                                                                              | function                                          |            | Pass a function to receive the container ref |
 
-# ErrorContainer
+# 38.ErrorContainer
 
 `ErrorContainer` is used to display inline errors close to the component where the error occurs. This is especially useful for buttons, inputs, or components that trigger actions like GraphQL mutations.
 
@@ -6422,7 +6408,7 @@ You can override the default error message:
 - Wrap your interactive component with `ErrorContainer` to show errors inline.
 - Keep error messages short and actionable for the best user experience.
 
-## Popover
+# 39.Popover
 
 `Popover` is a versatile component used to display floating content relative to a trigger element. It can open on click, hover, or programmatically, and supports custom placement, offsets, transitions, and boundary constraints.
 
@@ -6638,7 +6624,7 @@ useOnClickOutside(ref, () => setIsOpen(false))
 - For long content, consider wrapping content in a `Container` with padding and shadow.
 - Use `boundaryElement` to prevent Popover from overflowing parent containers.
 
-## Spacer
+# 40.Spacer
 
 `Spacer` is a utility component used to create consistent spacing between elements in your layout. It works by adding margin around its children and supports responsive values, semantic spacing, and custom CSS measurements.
 
@@ -6774,7 +6760,7 @@ You can pass an object to specify different spacing at different breakpoints:
 - Use responsive props for spacing adjustments across different screen sizes.
 - Combine `x`/`y` or `all` for concise syntax when spacing multiple sides.
 
-## Split
+# 41.Split
 
 `Split` is a flexbox-based layout component used to arrange elements horizontally or vertically with flexible spacing, alignment, and wrapping options. Use `SplitSection` for flex-item properties like `grow`, `shrink`, and `basis`.
 
@@ -6794,7 +6780,7 @@ import { Split, SplitSection } from '@loomhq/lens'
 
 ---
 
-# Based on CSS flexbox
+## Based on CSS flexbox
 
 Split component is built with CSS flexbox. Learn more about CSS flexbox A Complete Guide to Flexbox.
 

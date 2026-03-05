@@ -1,0 +1,28 @@
+# WINDSURF PROJECT RULES — LENS DESIGN SYSTEM
+
+## MANDATE
+This project uses ONLY `@loomhq/lens@12.14.0`. No other UI library permitted.
+
+## KEY DIFFERENCES FROM OTHER LIBRARIES
+- Layout: <Container> (not Box), <Split> (not Flex), <Arrange> (not Grid)
+- Typography: <Text size="heading-lg" htmlTag="h1"> (no Heading component)
+- Boolean props: isDisabled, hasLoader (not disabled, loading)
+- Element override: htmlTag="a" (not as="a")
+- Refs: refHandler={(r) => ref.current = r} (not ref={ref})
+- Icons: <Icon icon={<SvgName />} /> with Svg prefix
+- Spacing: "small"/"medium"/"large" tokens (not numbers)
+- Button icons: iconBefore/iconAfter (not leftIcon/rightIcon)
+
+## RULES
+1. ALL UI from `@loomhq/lens` exclusively
+2. Container/Split/Arrange for layout — never raw div
+3. Text component for ALL typography — never raw p/h1-h6/span
+4. Named spacing tokens (xsmall/small/medium/large/xlarge/xxlarge)
+5. Lens color tokens for all colors
+6. NEVER create CSS files or use className/style
+7. NEVER import from other UI libraries
+
+## REFERENCE
+- Docs: .lens-knowledge-base/components.md
+- Styles: .lens-knowledge-base/styles.md
+- Site: https://lens.loom.dev

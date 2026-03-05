@@ -1,0 +1,52 @@
+---
+description: Code review checklist for Lens compliance
+globs: ["src/**/*.tsx", "src/**/*.jsx"]
+alwaysApply: true
+---
+
+# PRE-COMMIT LENS COMPLIANCE CHECK
+
+## Forbidden Imports — REJECT if found:
+- `from 'styled-components'`
+- `from '@emotion/react'` (except internal Lens use)
+- `from '@emotion/styled'` (except internal Lens use)
+- `from '@chakra-ui'`
+- `from '@mui/'`
+- `from 'antd'`
+- `from 'react-bootstrap'`
+- `from 'react-icons'`
+- `from '@heroicons'`
+- `from 'lucide-react'`
+- `from '@headlessui'`
+- `from '@radix-ui'`
+- `*.module.css`
+- `*.css'`
+- `*.scss'`
+
+## Forbidden JSX — REJECT if found:
+- Raw HTML: `<div>`, `<span>`, `<p>`, `<h1>-<h6>`, `<button>`,
+  `<input>`, `<select>`, `<textarea>`, `<table>`, `<form>`,
+  `<img>`, `<ul>`, `<ol>`, `<li>`, `<nav>`, `<header>`,
+  `<footer>`, `<section>`, `<aside>`, `<main>`, `<article>`, `<a>`, `<hr>`
+- `style={{` with hardcoded values
+- className= with custom classes (unless documented Lens component accepts it)
+
+## Wrong Prop Names — CORRECT these:
+- `disabled` → `isDisabled`
+- `loading` → `hasLoader`
+- `as="..."` → `htmlTag="..."`
+- `leftIcon` → `iconBefore`
+- `rightIcon` → `iconAfter`
+- `size="sm"` → `size="small"`
+- `size="md"` → `size="medium"`
+- `size="lg"` → `size="large"`
+- `variant="ghost"` → Does not exist in Lens
+- `ref={ref}` → `refHandler={(r) => { ref.current = r }}`
+- `padding="4"` → `padding="medium"` or `padding={2}` (number × 8px)
+- `gap="2"` → `gap="small"`
+
+## Forbidden Files — NEVER create:
+- Any `.css` file
+- Any `.scss` file
+- Any `.styled.ts` file
+- `tailwind.config.*`
