@@ -1,0 +1,312 @@
+{
+  "components": {
+    "Avatar": {
+      "props": {
+        "themeColor": ["orange", "blue", "yellow", "teal"]
+      },
+      "required": []
+    },
+    "Button": {
+      "props": {
+        "size": ["small", "medium", "large"],
+        "variant": [
+          "neutral",
+          "neutralSecondary",
+          "primary",
+          "secondary",
+          "record",
+          "upgrade",
+          "danger",
+          "ai"
+        ],
+        "width": ["auto", "full", "maxContent"],
+        "iconPosition": ["left", "right"],
+        "htmlTag": ["button", "a"]
+      },
+      "required": []
+    },
+    "Checkbox": {
+      "props": {
+        "isChecked": ["boolean"],
+        "isIndeterminate": ["boolean"],
+        "isDisabled": ["boolean"],
+        "onFocus": ["React.ReactEventHandler"],
+        "onChange": ["React.ReactEventHandler"],
+        "onBlur": ["React.ReactEventHandler"]
+      },
+      "required": []
+    },
+    "ColorPicker": {
+      "props": {
+        "defaultColor": ["string"],
+        "confirmButton": ["React.ReactNode"],
+        "swatches": ["string[]"],
+        "onChange": ["(selectedColor: string) => void"]
+      },
+      "required": []
+    },
+    "Dropdown": {
+      "props": {
+        "menuPosition": [
+          "left",
+          "right",
+          "topRight",
+          "topLeft",
+          "leftSide",
+          "rightSide"
+        ],
+        "search": ["contains", "startsWith"]
+      },
+      "required": []
+    },
+    "FormField": {
+      "props": {
+        "direction": ["row", "column", "row-reverse"]
+      },
+      "required": []
+    },
+    "IconButton": {
+      "props": {
+        "size": ["small", "medium", "large"],
+        "htmlTag": ["button", "a"]
+      },
+      "required": ["altText"]
+    },
+    "Indicator": {
+      "props": {
+        "color": ["blue", "orange"]
+      },
+      "required": ["children"]
+    },
+    "Link": {
+      "props": {
+        "variant": ["neutral", "primary", "subtle"],
+        "htmlTag": ["button", "a"]
+      },
+      "required": []
+    },
+    "List": {
+      "props": {
+        "variant": ["clear", "border", "stripe"]
+      },
+      "required": []
+    },
+    "Logo": {
+      "props": {
+        "variant": ["combined", "symbol", "wordmark"],
+        "brand": ["loom", "ai", "apptile", "product", "marketing", "attributed"]
+      },
+      "required": []
+    },
+    "Pill": {
+      "props": {
+        "iconPosition": ["left", "right"]
+      },
+      "required": []
+    },
+    "Select": {
+      "props": {
+        "menuPosition": ["left"],
+        "search": ["contains", "startsWith"]
+      },
+      "required": []
+    },
+    "SkeletonContainer": {
+      "props": {
+        "radius": ["medium", "large", "xlarge", "full", "175"]
+      },
+      "required": []
+    },
+    "Switch": {
+      "props": {
+        "size": ["medium", "large"]
+      },
+      "required": []
+    },
+    "Text": {
+      "props": {
+        "fontFamily": ["sans-serif", "mono"],
+        "fontWeight": ["book", "regular", "medium", "bold"],
+        "htmlTag": ["h1", "h2", "h3", "h4", "p", "span", "div"],
+        "fontSetting": ["tnum", "normal"],
+        "variant": ["body", "title", "mainTitle"],
+        "alignment": ["left", "center", "right"],
+        "overflowWrap": ["normal", "break-word", "anywhere"]
+      },
+      "required": []
+    },
+    "Textarea": {
+      "props": {
+        "size": ["small", "medium"],
+        "resize": ["none", "both", "horizontal", "vertical"]
+      },
+      "required": []
+    },
+    "TextButton": {
+      "props": {
+        "size": ["small", "medium", "large"],
+        "iconPosition": ["left", "right"],
+        "htmlTag": ["button", "a"],
+        "offsetSide": ["left", "right"]
+      },
+      "required": ["children"]
+    },
+    "TextInput": {
+      "props": {
+        "type": [
+          "date",
+          "datetime-local",
+          "email",
+          "month",
+          "number",
+          "password",
+          "search",
+          "tel",
+          "text",
+          "time",
+          "url",
+          "week"
+        ],
+        "size": ["small", "medium", "large"]
+      },
+      "required": []
+    },
+    "Typeahead": {
+      "props": {
+        "menuPosition": ["left", "right", "topRight", "topLeft"]
+      },
+      "required": ["options", "selectedOptionValue"]
+    },
+    "Toast": {
+      "props": {
+        "duration": ["short", "medium", "long"],
+        "platform": ["web-app", "chrome-extension"]
+      },
+      "required": []
+    },
+    "Tooltip": {
+      "props": {
+        "delay": ["immediate", "long"]
+      },
+      "required": []
+    },
+    "Loader": {
+      "props": {
+        "size": ["small", "medium", "large"]
+      },
+      "required": []
+    },
+    "LogoLoader": {
+      "props": {
+        "brand": ["loom", "ai"],
+        "size": ["small", "medium", "large"],
+        "speed": ["fast", "slow"]
+      },
+      "required": []
+    },
+    "Align": {
+      "props": {
+        "alignment": [
+          "topLeft",
+          "topCenter",
+          "topRight",
+          "centerLeft",
+          "center",
+          "centerRight",
+          "bottomLeft",
+          "bottomCenter",
+          "bottomRight"
+        ],
+        "htmlTag": [
+          "div",
+          "header",
+          "article",
+          "section",
+          "nav",
+          "aside",
+          "footer",
+          "main"
+        ]
+      },
+      "required": ["children"]
+    },
+    "Arrange": {
+      "props": {
+        "alignItems": ["start", "end", "center", "stretch", "baseline"],
+        "justifyContent": [
+          "start",
+          "end",
+          "center",
+          "stretch",
+          "space-around",
+          "space-between",
+          "space-evenly"
+        ],
+        "htmlTag": ["div", "ul", "ol", "li"],
+        "justifyItems": ["start", "end", "center", "stretch"],
+        "alignContent": [
+          "start",
+          "end",
+          "center",
+          "stretch",
+          "space-around",
+          "space-between",
+          "space-evenly"
+        ],
+        "autoFlow": ["column", "row"]
+      },
+      "required": ["children"]
+    },
+    "Container": {
+      "props": {
+        "borderSide": ["all", "left", "right", "top", "bottom"],
+        "shadow": ["small", "medium", "large"]
+      },
+      "required": ["children"]
+    },
+    "ErrorContainer": {
+      "props": {},
+      "required": ["children", "errorActive"]
+    },
+    "Popover": {
+      "props": {
+        "boundaryElement": ["body"]
+      },
+      "required": []
+    },
+    "Split": {
+      "props": {
+        "alignItems": ["start"],
+        "justifyContent": ["flex-start"],
+        "alignContent": ["flex-start"],
+        "wrap": ["nowrap"],
+        "direction": ["column"],
+        "htmlTag": ["div"]
+      },
+      "required": []
+    },
+    "SplitSection": {
+      "props": {
+        "htmlTag": ["div", "li"]
+      },
+      "required": []
+    }
+  },
+  "nesting": {
+    "SplitSection": {
+      "mustBeInside": "Split"
+    },
+    "MenuItem": {
+      "mustBeInside": "Menu"
+    },
+    "ListRow": {
+      "mustBeInside": "List"
+    },
+    "Tab": {
+      "mustBeInside": "Tabs"
+    }
+  },
+  "responsive": {
+    "keys": ["default", "xsmall", "small", "medium", "large"]
+  }
+}
