@@ -11,7 +11,7 @@ export const Test = () => {
 
                   {/* Violation 3: Hallucinated responsive key 'mobile' */}
                   <Button width={{ mobile: 'full', desktop: 'auto' }}>
-                        Bad Responsiveness
+                        Bad Responsivene
                   </Button>
             </div>
       )
