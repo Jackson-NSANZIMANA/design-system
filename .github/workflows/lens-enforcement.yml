@@ -1,0 +1,38 @@
+name: Lens Design System Enforcement
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  enforce-lens:
+    name: 🛡️ Lens Compliance Guard
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout Code
+      uses: actions/checkout@v4
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Install pnpm
+      uses: pnpm/action-setup@v2
+      with:
+        version: 8
+
+    - name: Install Dependencies
+      run: pnpm install --frozen-lockfile
+
+    - name: 🧠 Rebuild Mastery Database
+      run: |
+        node scripts/generate-prop-mastery.js
+        node scripts/generate-mastery-database.js
+        node scripts/sync-lens-whitelist.js
+
+    - name: 🔍 Run Lens Linter
+      run: pnpm eslint 'src/**/*.{ts,tsx}' --max-warnings=0
