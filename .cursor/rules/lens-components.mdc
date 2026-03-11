@@ -4,7 +4,7 @@ globs: ["src/**/*.tsx", "src/**/*.jsx"]
 alwaysApply: true
 ---
 
-# LENS COMPONENT MAPPING
+# LENS COMPONENT MAPPING (Full components list: '@.lens-knowledge-base/COMPONENT-INDEX.md')
 
 ## Instead of HTML elements, use:
 

@@ -4,36 +4,33 @@ globs: ["src/**/*.tsx", "src/**/*.ts", "src/**/*.jsx", "src/**/*.js"]
 alwaysApply: true
 ---
 
-# LENS DESIGN SYSTEM — MANDATORY
+# LENS DESIGN SYSTEM — MANDATORY (KB-FIRST)
 
-This project EXCLUSIVELY uses Lens (`@loomhq/lens@12.14.0`) by Loom.
+This project EXCLUSIVELY uses Lens (`@loomhq/lens@12.14.0`).
 
-## Quick Reference
-- Full component docs: @.lens-knowledge-base/COMPONENT-INDEX.md
-- Styles/tokens docs: @.lens-knowledge-base/tokens/styles-complete.md
-- All exports: @.lens-knowledge-base/exports-inventory.json
+## KB-FIRST LOOKUP ORDER (MANDATORY)
 
-## Layout Components
-- `<Container>` = generic container (NOT Box, NOT div)
-- `<Split>` = flexbox layout (NOT Flex, NOT Stack)
-- `<Arrange>` = CSS grid layout (NOT Grid)
-- `<Align>` = content positioning
-- `<Spacer>` = spacing between elements
-- `<SplitSection>` = flex item with grow/shrink/basis
+When you are unsure about a component/prop/token:
 
-## Typography — ALL text through Text component
-- `<Text size="heading-lg" htmlTag="h1">` for headings
-- `<Text size="body-md">` for body text
-- `<Text variant="mainTitle">` for page titles
-- NO separate Heading component exists
+1. **Quick usage & key rules:** @.lens-knowledge-base/QUICK-REFERENCE.md
+2. **Find the right component doc:** @.lens-knowledge-base/COMPONENT-INDEX.md
+3. **Read the component file:** @.lens-knowledge-base/components/<ComponentName>.md
+4. **Tokens router:** @.lens-knowledge-base/tokens/_tokens-index.md
+5. **Then token file:** @.lens-knowledge-base/tokens/*.md
+6. **Verified exports:** @.lens-knowledge-base/exports-verified.json
+7. **Only if still unclear:** https://lens.loom.dev
 
-## Key API Differences from Other Libraries
-- Boolean props: `isDisabled`, `isFloating`, `hasLoader`, `hasEllipsis`
-- Element override: `htmlTag="a"` (NOT `as="a"`)
-- Refs: `refHandler={(r) => ref.current = r}` (NOT `ref={ref}`)
-- Icons: `<Icon icon={<SvgName />} />` with `Svg` prefix
-- Spacing: named tokens `"small"/"medium"/"large"` (NOT numbers like `"4"`)
-- Button icons: `iconBefore` / `iconAfter` (NOT `leftIcon` / `rightIcon`)
+### IMPORTANT
+- Do NOT open `.lens-knowledge-base/reference/components-full.md` or other giant reference files unless steps 1–6 fail.
+- Prefer the small index files + per-component docs.
 
-## Spacing Tokens
-xsmall=4px, small=8px, medium=16px, large=24px, xlarge=40px, xxlarge=64px
+## Core Lens primitives (actual Lens, verified)
+- Layout: `Container`, `Split`, `Arrange`, `Align`, `Spacer`, `Backdrop`
+- Typography: `Text` (covers headings via size + htmlTag)
+- Icons: `Icon` + `@loomhq/lens/icons/*` subpath imports
+- Spacing tokens: xsmall/small/medium/large/xlarge/xxlarge
+
+## Forbidden
+- Inline `style={{...}}` (always forbidden)
+- Non-Lens className (only Lens utility classes allowed)
+- Competing UI libs (MUI, Chakra, Tailwind, etc.)

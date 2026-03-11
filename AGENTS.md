@@ -1,5 +1,3 @@
-cat > CLAUDE.md << 'AGENTEOF'
-
 # PROJECT AI CODING MANDATE — LENS DESIGN SYSTEM
 
 ## ⚠️ CRITICAL: READ BEFORE WRITING ANY FRONTEND CODE
@@ -10,10 +8,12 @@ as the **sole and exclusive** frontend component library and styling system.
 ---
 
 ## Core Philosophy & Principles
+
 **The Core Doctrine**
-*"No frontend element shall exist outside Lens governance."*
+_"No frontend element shall exist outside Lens governance."_
 
 **The Lens Pipeline**
+
 - **Lens First Every UI need starts with a Lens catalog lookup.**
 
 - **Lens Only Zero custom CSS/components unless Lens lacks it.**
@@ -21,7 +21,8 @@ as the **sole and exclusive** frontend component library and styling system.
 - **Lens Always Continuous compliance verification.**
 
 ## Exception Protocol
-- *If Lens genuinely lacks a needed component, follow these steps:*
+
+- _If Lens genuinely lacks a needed component, follow these steps:_
 
 - Compose from existing Lens primitives.
 
@@ -29,9 +30,10 @@ as the **sole and exclusive** frontend component library and styling system.
 
 - Document the gap for future Lens contribution.
 
-- *NEVER* invent raw CSS/HTML outside the Lens token system.
+- _NEVER_ invent raw CSS/HTML outside the Lens token system.
 
 ---
+
 **Documentation:** https://lens.loom.dev
 **Package:** `@loomhq/lens@12.14.0`
 **Local Knowledge Base:** `.lens-knowledge-base/`
@@ -41,6 +43,18 @@ as the **sole and exclusive** frontend component library and styling system.
 ---
 
 ## ABSOLUTE RULES (ZERO EXCEPTIONS)
+
+### Rule 0: KB-FIRST LOOKUP ORDER (MANDATORY)
+
+1. .lens-knowledge-base/QUICK-REFERENCE.md
+2. .lens-knowledge-base/COMPONENT-INDEX.md
+3. .lens-knowledge-base/components/<Component>.md
+4. .lens-knowledge-base/tokens/\_tokens-index.md → then the target token file
+5. .lens-knowledge-base/exports-verified.json
+6. Only then: https://lens.loom.dev (fallback)
+   **Requirement:** In every response that writes UI code, include:
+
+- Sources consulted: with file paths (local), and optionally a URL if needed.
 
 ### Rule 1: ONLY Lens Components
 
@@ -123,7 +137,20 @@ as the **sole and exclusive** frontend component library and styling system.
 
 ---
 
-## LENS COMPONENT MAPPING — USE THIS LOOKUP TABLE
+## Quick Reference
+
+- Full component docs: @.lens-knowledge-base/COMPONENT-INDEX.md
+- Styles/tokens docs: @.lens-knowledge-base/tokens/styles-complete.md || see also: @.lens-knowledge-base/tokens/\_tokens-index.md
+- All exports: @.lens-knowledge-base/exports-inventory.json
+
+---
+
+## LENS COMPONENT MAPPING — USE THIS LOOKUP TABLE (see:@.lens-knowledge-base/COMPONENT-INDEX.md)
+
+**Note:**
+
+- Study components docs(@.lens-knowledge-base/COMPONENT-INDEX.md)
+- Study Styling docs (@.lens-knowledge-base/tokens/)
 
 ### Layout Components (replacing raw HTML)
 
@@ -708,3 +735,17 @@ import {
   colorsNames, // Available color token names
 } from '@loomhq/lens'
 ```
+
+---
+
+## REQUIRED: SOURCES CONSULTED (ANTI-HALLUCINATION)
+
+When you output or modify frontend code, you MUST include a short section:
+
+**Sources consulted:**
+- `.lens-knowledge-base/COMPONENT-INDEX.md`
+- `.lens-knowledge-base/components/<Component>.md`
+- `.lens-knowledge-base/tokens/_tokens-index.md` (if styling)
+- (optional) `https://lens.loom.dev/...` ONLY if local KB was insufficient
+
+If you did not consult any files, say so explicitly and stop to ask for the missing info.

@@ -1,0 +1,19 @@
+1.The agent is trying to correct linting and husk errors by just editing the inforcement rules instead of carefully addressing errors which violates Lens. If linting error says this is a problem the agent edits that rule Just to have the commit pass through. 
+2.The agent is always going to the internet Lens.loom.dev constantly to view the information while neglecting the comprehensive knowledge base (even though it is a good thing to search online but the agent must have first to review the knowledge base and incase it finds a vague/unclear topic it will head online then.)
+3.The agent is diving into huge 7k lines while the knowledge base contains index files for both stylings and components located we have those lines in the CLAUDE and agent.md:
+
+
+**Documentation:** https://lens.loom.dev
+**Package:** `@loomhq/lens@12.14.0`
+**Local Knowledge Base:** `.lens-knowledge-base/`
+**Full component docs:** `.lens-knowledge-base/components.md` (7000+ lines)
+**Full styles docs:** `.lens-knowledge-base/styles.md` (1745 lines).
+
+BUT THERE IS ALSO THESE IMPORTANT FILES
+
+- Full component docs: @.lens-knowledge-base/COMPONENT-INDEX.md (Smaller index file which an agent can use to view other components it is like a table of content for components)
+- Styles/tokens docs: @.lens-knowledge-base/tokens/styles-complete.md   ||  see also: @.lens-knowledge-base/tokens/_tokens-index.md (Smaller index file which an agent can use to view other styles and tokens it is like a table of content for styles and tokens)
+
+- All exports: @.lens-knowledge-base/exports-inventory.json
+
+4.

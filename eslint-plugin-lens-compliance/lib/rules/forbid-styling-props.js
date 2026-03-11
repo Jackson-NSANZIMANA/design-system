@@ -1,43 +1,62 @@
 "use strict";
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
-// Load the Mastery Database
-const dbPath = path.join(__dirname, '../mastery-db.json');
-let mastery = { approvedClasses: [] };
-if (fs.existsSync(dbPath)) {
-  mastery = JSON.parse(fs.readFileSync(dbPath, 'utf8'));
+const whitelistPath = path.join(__dirname, "../mastery-db.json");
+let approved = { approvedClasses: [] };
+
+if (fs.existsSync(whitelistPath)) {
+  approved = JSON.parse(fs.readFileSync(whitelistPath, "utf8"));
+}
+
+function isStringLiteral(node) {
+  return node && (node.type === "Literal" || node.type === "StringLiteral");
 }
 
 module.exports = {
   meta: {
     type: "problem",
     messages: {
-      invalidClass: "❌ LENS MASTERY ERROR: '{{name}}' is not a valid Lens utility. Consult .lens-knowledge-base/tokens/_tokens-index.md for the correct class name.",
-      noStyleProp: "❌ LENS MASTERY ERROR: Inline 'style' props are forbidden. Use Lens component props or approved utility classes."
-    }
+      noStyle: "❌ LENS VIOLATION: inline style={} is forbidden. Use Lens props or tokens. See .lens-knowledge-base/tokens/_tokens-index.md",
+      badClassName: "❌ LENS VIOLATION: class '{{name}}' is not a Lens utility class. Use only Lens utilities from .lens-knowledge-base/tokens/css-utilities.md",
+      dynamicClassName: "❌ LENS VIOLATION: className must be a static string of Lens utility classes (no dynamic expressions).",
+    },
   },
   create(context) {
     return {
       JSXAttribute(node) {
-        // Check className
-        if (node.name.name === "className" && node.value && node.value.type === "Literal") {
-          const classes = node.value.value.split(" ");
-          classes.forEach(cls => {
-            if (cls && !mastery.approvedClasses.includes(cls)) {
+        const attr = node.name && node.name.name;
+
+        // Forbid style always
+        if (attr === "style") {
+          context.report({ node, messageId: "noStyle" });
+          return;
+        }
+
+        if (attr !== "className") return;
+        if (!node.value) return;
+
+        // className="..."
+        if (isStringLiteral(node.value)) {
+          const raw = node.value.value || "";
+          const classes = raw.split(/\s+/).filter(Boolean);
+
+          for (const cls of classes) {
+            if (!approved.approvedClasses.includes(cls)) {
               context.report({
                 node,
-                messageId: "invalidClass",
-                data: { name: cls }
+                messageId: "badClassName",
+                data: { name: cls },
               });
+              return;
             }
-          });
+          }
+          return;
         }
-        // Check style prop
-        if (node.name.name === "style") {
-          context.report({ node, messageId: "noStyleProp" });
-        }
-      }
+
+        // className={...} dynamic -> forbidden (keeps system deterministic for agents)
+        context.report({ node, messageId: "dynamicClassName" });
+      },
     };
-  }
+  },
 };
