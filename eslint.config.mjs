@@ -30,6 +30,7 @@ export default tseslint.config(
       "lens-compliance/enforce-lens-primitives": "error",
       "lens-compliance/forbid-styling-props": "error",
       "lens-compliance/component-mastery": "error",
+       'lens-compliance/no-eslint-disable': 'error',
 
       // Import Lockdown
       "no-restricted-imports": ["error", {
