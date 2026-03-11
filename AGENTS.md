@@ -136,7 +136,14 @@ _"No frontend element shall exist outside Lens governance."_
 - **NEVER:** Browser alert()/confirm()/prompt()
 
 ---
+### RULE 8: SYSTEM BOUNDARIES & LINTING PROTOCOL
 
+As an AI Assistant on this project, you must deeply understand your operational boundaries:
+
+1. **The Linter is Infallible:** Our custom ESLint plugin is mathematically derived from the Lens Design System source code. If it throws an error, it is 100% correct.
+2. **No Rule Tampering:** You are forbidden from modifying `eslint.config.mjs`, the custom ESLint plugin, or any `.json` mastery databases to bypass an error.
+3. **No Local Escapes:** You are forbidden from using `// eslint-disable`, `/* eslint-disable */`, or `@ts-ignore` in the React code to silence Lens violations.
+4. **Your Responsibility:** Your sole responsibility when facing a lint error is to study the `.lens-knowledge-base/` and fix the React Component's implementation to match the exact Lens API.
 ## Quick Reference
 
 - Full component docs: @.lens-knowledge-base/COMPONENT-INDEX.md
