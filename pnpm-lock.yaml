@@ -26,6 +26,9 @@ importers:
       '@emotion/styled':
         specifier: ^11.14.1
         version: 11.14.1(@emotion/react@11.14.0(@types/react@18.3.28)(react@18.3.1))(@types/react@18.3.28)(react@18.3.1)
+      '@jackson_nsanzimana/atlassian-fonts':
+        specifier: ^1.0.0
+        version: 1.0.0
       '@loomhq/lens':
         specifier: ^12.14.0
         version: 12.14.0(@atlaskit/icon-lab@4.19.0(@babel/core@7.29.0)(@types/react@18.3.28)(react@18.3.1))(@atlaskit/icon@25.8.0(@babel/core@7.29.0)(@types/react@18.3.28)(react@18.3.1))(@atlaskit/react-ufo@5.4.4(react@18.3.1))(@emotion/react@11.14.0(@types/react@18.3.28)(react@18.3.1))(@emotion/styled@11.14.1(@emotion/react@11.14.0(@types/react@18.3.28)(react@18.3.1))(@types/react@18.3.28)(react@18.3.1))(@types/react@18.3.28)(prop-types@15.8.1)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -337,6 +340,10 @@ packages:
   '@humanwhocodes/retry@0.4.3':
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
+
+  '@jackson_nsanzimana/atlassian-fonts@1.0.0':
+    resolution: {integrity: sha512-Qg/K8a8dU6Vo8pr7TyPlEpbasiexZmOIWTMqKAxvWX5rSVcrPbUz9unrDIPrOZjM/i2ckSYJzwMi818SyBVM5w==}
+    engines: {node: '>=16.0.0'}
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -2090,6 +2097,8 @@ snapshots:
   '@humanwhocodes/module-importer@1.0.1': {}
 
   '@humanwhocodes/retry@0.4.3': {}
+
+  '@jackson_nsanzimana/atlassian-fonts@1.0.0': {}
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:
