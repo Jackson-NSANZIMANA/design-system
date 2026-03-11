@@ -178,5 +178,7 @@ Use CSS `ch` unit:
 # Related Components
 
 - Text
-
+# CSS helpers
+- CSS utilities
+- CSS variables
 ---

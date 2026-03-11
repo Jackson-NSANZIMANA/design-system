@@ -1,4 +1,4 @@
-# Shadows
+# Shadows 
 
 ---
 
@@ -62,15 +62,11 @@ Strong elevation. Best used for overlays, modals, or components requiring clear 
 
 - Container
 - Arrange
-- Radius
-
----
+- ## Radius
 
 # Radii
 
-Radii define the rounded corners used across components.
-
-Lens components include built-in corner radius support. Radii scale with component size — as a component grows larger, its corner radius should increase proportionally.
+Radii are the rounded corners in components. Lens components have built-in corner radius. Radii ties closely to the size of the component — as size increases, the radius value should too. Please adhere to using the radius token values for defining the corner roundness of a design element, such as frames, groups, or shapes.
 
 ⚠️ Always use **radius token values** when defining corner roundness for frames, groups, shapes, or containers.
 
@@ -92,6 +88,14 @@ This creates a predictable and scalable rounding system.
 ---
 
 # Sizes
+
+Our system is built around a base unit of 8px. The 8px base unit also forms the basis of our token names. Every token is a multiple of the base unit with the number suffix representing the percentage of the base unit.
+
+For example:
+
+100 is 100% of the size of the base unit, therefore represents 8px.
+
+200 is 200% of the size of the base unit, therefore represents 16px.
 
 ## Radius Reference Table
 
