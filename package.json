@@ -3,6 +3,7 @@
     "@atlaskit/icon": "^25.8.0",
     "@atlaskit/icon-lab": "^4.11.0",
     "@atlaskit/react-ufo": "^5.4.0",
+    "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
     "@loomhq/lens": "^12.14.0",
