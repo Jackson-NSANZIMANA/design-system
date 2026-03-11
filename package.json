@@ -1,4 +1,18 @@
 {
+  "name": "lens-design-system",
+  "version": "1.0.0",
+  "description": "Lens design system engineered for AI assisted software development consumption.",
+   "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jackson-NSANZIMANA/design-system.git"
+  },
+  "keywords": [
+    "design-system",
+    "AI-assisted-software-development",
+    "components",
+    "lens"
+  ],
+   "author": "Jackson NSANZIMANA",
   "dependencies": {
     "@atlaskit/icon": "^25.8.0",
     "@atlaskit/icon-lab": "^4.11.0",
