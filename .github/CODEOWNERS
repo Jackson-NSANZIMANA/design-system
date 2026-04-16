@@ -1,6 +1,7 @@
 # Require owner review for enforcement/rules changes
+
 /eslint-plugin-lens-compliance/ @Jackson-NSANZIMANA
-/eslint.config.* @Jackson-NSANZIMANA
+/eslint.config.\* @Jackson-NSANZIMANA
 /.husky/ @Jackson-NSANZIMANA
 /.cursor/rules/ @Jackson-NSANZIMANA
 /CLAUDE.md @Jackson-NSANZIMANA
