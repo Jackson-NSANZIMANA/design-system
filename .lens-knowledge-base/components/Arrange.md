@@ -21,7 +21,7 @@ import { Arrange } from '@loomhq/lens'
 </Arrange>
 ```
 
-Arrange is **built on CSS Grid**. Learn more about CSS Grid: [A Complete Guide to Grid](https://css-tricks.com/snippets/css/complete-guide-grid/).
+Arrange is **built on CSS Grid**.
 
 ---
 
