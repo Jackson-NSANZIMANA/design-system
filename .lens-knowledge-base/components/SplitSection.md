@@ -1,21 +1,45 @@
 # SplitSection
 
-> **Generated stub** (2026-03-11T09:08:48.224Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Import
 
-**Import:** `import { SplitSection } from '@loomhq/lens'`
+```tsx
+import { Split, SplitSection } from '@loomhq/lens'
+```
 
-## Where to read the documentation
+## Purpose
 
-This export is documented inside:
+`SplitSection` is a flex item wrapper used inside `Split` when you need per-item controls like `grow`, `shrink`, and `basis`.
+
+## Usage
+
+```tsx
+<Split gap="small">
+  <SplitSection grow={1} basis={20}>
+    <Text>Primary</Text>
+  </SplitSection>
+  <SplitSection grow={0} shrink={0}>
+    <Text>Secondary</Text>
+  </SplitSection>
+</Split>
+```
+
+## Props
+
+| Name | Type | Default |
+| --- | --- | --- |
+| `htmlTag` | `'div' \| 'li'` | `'div'` |
+| `grow` | `ResponsiveType<number \| string>` | — |
+| `shrink` | `ResponsiveType<number \| string>` | — |
+| `basis` | `ResponsiveType<number \| string>` | — |
+| `width`, `height`, `minWidth`, `minHeight`, `maxWidth`, `maxHeight` | `ResponsiveType<number \| string>` | — |
+| `children` | `React.ReactNode` | — |
+| `className` | `never` | — |
+| `style` | `never` | — |
+
+## Related Docs
 
 - `.lens-knowledge-base/components/Split.md`
 
-## Type definitions (source of truth)
+## Type Source
 
-- Check `.lens-knowledge-base/type-declarations/` (component type file not auto-located)
-
-## Notes
-
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`
+- `.lens-knowledge-base/type-declarations/components/split/split.d.ts`

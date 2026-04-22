@@ -1,21 +1,39 @@
 # TooltipBox
 
-> **Generated stub** (2026-03-11T09:08:48.231Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Import
 
-**Import:** `import { TooltipBox } from '@loomhq/lens'`
+```tsx
+import { TooltipBox } from '@loomhq/lens'
+```
 
-## Where to read the documentation
+## Purpose
 
-This export is documented inside:
+`TooltipBox` is the tooltip content container used internally by `Tooltip`.  
+Use it when building custom tooltip behavior without the full trigger logic.
+
+## Usage
+
+```tsx
+<TooltipBox maxWidth={30}>
+  <Text>TooltipBox content</Text>
+</TooltipBox>
+```
+
+## Props
+
+| Name | Type | Default |
+| --- | --- | --- |
+| `children` | `React.ReactNode` | — |
+| `maxWidth` | `Size \| []` | — |
+| `onMouseEnter` | `React.ReactEventHandler` | — |
+| `onMouseLeave` | `React.ReactEventHandler` | — |
+| `layerProps` | `any` | — |
+| `zIndex` | `number` | — |
+
+## Related Docs
 
 - `.lens-knowledge-base/components/Tooltip.md`
 
-## Type definitions (source of truth)
+## Type Source
 
-- Check `.lens-knowledge-base/type-declarations/` (component type file not auto-located)
-
-## Notes
-
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`
+- `.lens-knowledge-base/type-declarations/components/tooltip/tooltip.d.ts`

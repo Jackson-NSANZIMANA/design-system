@@ -1,21 +1,44 @@
 # ListRow
 
-> **Generated stub** (2026-03-11T09:08:48.191Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Import
 
-**Import:** `import { ListRow } from '@loomhq/lens'`
+```tsx
+import { List, ListRow } from '@loomhq/lens'
+```
 
-## Where to read the documentation
+## Purpose
 
-This export is documented inside:
+`ListRow` is an item row used inside `List`, with support for spacing, height constraints, background, click handlers, and link semantics.
+
+## Usage
+
+```tsx
+<List columns={['2fr', '1fr']}>
+  <ListRow paddingX="medium" paddingY="small">
+    <Text>Name</Text>
+    <Text>Role</Text>
+  </ListRow>
+</List>
+```
+
+## Props
+
+| Name | Type | Default |
+| --- | --- | --- |
+| `htmlTag` | `keyof JSX.IntrinsicElements` | `'li'` |
+| `children` | `React.ReactNode` | — |
+| `className` | `string` | — |
+| `onClick` | `React.ReactEventHandler` | — |
+| `href` | `string` | — |
+| `role` | `string` | — |
+| `padding`, `paddingTop`, `paddingBottom`, `paddingLeft`, `paddingRight`, `paddingY`, `paddingX` | `ResponsiveType<string \| number>` | — |
+| `height`, `minHeight`, `maxHeight` | `ResponsiveType<string \| number>` | — |
+| `backgroundColor` | `string` | — |
+
+## Related Docs
 
 - `.lens-knowledge-base/components/List.md`
 
-## Type definitions (source of truth)
+## Type Source
 
-- Check `.lens-knowledge-base/type-declarations/` (component type file not auto-located)
-
-## Notes
-
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`
+- `.lens-knowledge-base/type-declarations/components/list/list.d.ts`

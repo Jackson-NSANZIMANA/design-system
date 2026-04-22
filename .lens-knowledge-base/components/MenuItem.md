@@ -1,21 +1,45 @@
 # MenuItem
 
-> **Generated stub** (2026-03-11T09:08:48.199Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Import
 
-**Import:** `import { MenuItem } from '@loomhq/lens'`
+```tsx
+import { Menu, MenuItem } from '@loomhq/lens'
+```
 
-## Where to read the documentation
+## Purpose
 
-This export is documented inside:
+`MenuItem` is an interactive row for menus, supporting selected/highlighted/disabled states, optional icons, and divider rendering.
+
+## Usage
+
+```tsx
+<Menu maxWidth={24}>
+  <MenuItem icon={<SvgArchive />}>Archive</MenuItem>
+  <MenuItem isSelected>Selected Item</MenuItem>
+  <MenuItem hasDivider>Item with divider</MenuItem>
+</Menu>
+```
+
+## Props
+
+| Name | Type | Default |
+| --- | --- | --- |
+| `isDisabled` | `boolean` | — |
+| `isHighlighted` | `boolean` | — |
+| `keyboardMove` | `boolean` | — |
+| `isSelected` | `boolean` | — |
+| `icon` | `React.ReactNode \| string` | — |
+| `hasDivider` | `boolean` | — |
+| `children` | `React.ReactNode` | — |
+| `columns` | `string` | — |
+| `hidden` | `boolean` | — |
+| `menuItemRole` | `React.AriaRole` | — |
+| `showDeselectIcon` | `boolean` | `false` |
+
+## Related Docs
 
 - `.lens-knowledge-base/components/Menu.md`
 
-## Type definitions (source of truth)
+## Type Source
 
-- Check `.lens-knowledge-base/type-declarations/` (component type file not auto-located)
-
-## Notes
-
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`
+- `.lens-knowledge-base/type-declarations/components/menu/menu.d.ts`

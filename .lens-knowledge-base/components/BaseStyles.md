@@ -1,15 +1,40 @@
 # BaseStyles
 
-> **Generated stub** (2026-03-11T09:08:48.155Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Import
 
-**Import:** `import { BaseStyles } from '@loomhq/lens'`
+```tsx
+import { BaseStyles } from '@loomhq/lens'
+```
 
-## Type definitions (source of truth)
+## Purpose
 
-- Check `.lens-knowledge-base/type-declarations/` (component type file not auto-located)
+`BaseStyles` injects foundational Lens global styles.  
+Use it once near the root of your app so Lens components and tokens render consistently.
 
-## Notes
+## Usage
 
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`
+```tsx
+<>
+  <BaseStyles />
+  <App />
+</>
+```
+
+## Related Utility
+
+From type declarations, Lens also exports:
+
+```tsx
+import { buildGlobalStylesheet } from '@loomhq/lens'
+```
+
+`buildGlobalStylesheet(rootElement?, bodyElement?)` returns a stylesheet string for custom injection flows.
+
+## Type Source
+
+- `.lens-knowledge-base/type-declarations/components/base-styles/base-styles.d.ts`
+
+## Related Docs
+
+- `.lens-knowledge-base/QUICK-REFERENCE.md`
+- `.lens-knowledge-base/tokens/_tokens-index.md`

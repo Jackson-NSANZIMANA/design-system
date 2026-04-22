@@ -1,15 +1,41 @@
 # Media
 
-> **Generated stub** (2026-03-11T09:08:48.192Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Import
 
-**Import:** `import { Media } from '@loomhq/lens'`
+```tsx
+import { Media } from '@loomhq/lens'
+```
 
-## Type definitions (source of truth)
+## Purpose
 
-- `.lens-knowledge-base/type-declarations/hooks/use-media.d.ts`
+`Media` selects a value based on query conditions and renders children with the resolved value.
+
+## Usage
+
+```tsx
+<Media
+  queries={{ small: '(max-width: 767px)', large: '(min-width: 768px)' }}
+  values={{ small: 'body-sm', large: 'body-md' }}
+  defaultValue="body-sm"
+>
+  {(resolvedSize) => <Text size={resolvedSize}>Responsive text</Text>}
+</Media>
+```
+
+## Props
+
+| Name | Type | Default |
+| --- | --- | --- |
+| `children` | `any` | required |
+| `queries` | `any` | required |
+| `values` | `any` | required |
+| `defaultValue` | `any` | required |
 
 ## Notes
 
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`
+- The current declaration is broad (`any`) in type definitions.
+- Prefer strongly-typed wrapper usage in app code where possible.
+
+## Type Source
+
+- `.lens-knowledge-base/type-declarations/utilities/responsive.d.ts`

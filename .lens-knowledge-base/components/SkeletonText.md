@@ -1,21 +1,33 @@
 # SkeletonText
 
-> **Generated stub** (2026-03-11T09:08:48.219Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Import
 
-**Import:** `import { SkeletonText } from '@loomhq/lens'`
+```tsx
+import { SkeletonText } from '@loomhq/lens'
+```
 
-## Where to read the documentation
+## Purpose
 
-This export is documented inside:
+`SkeletonText` provides loading placeholders for text content while data is being fetched.
+
+## Usage
+
+```tsx
+<SkeletonText lines={3} size="body-md" animated />
+```
+
+## Props
+
+| Name | Type | Default |
+| --- | --- | --- |
+| `animated` | `boolean` | `false` |
+| `lines` | `number` | `1` |
+| `size` | `TextSize` | `'body-md'` |
+
+## Related Docs
 
 - `.lens-knowledge-base/components/Skeleton.md`
 
-## Type definitions (source of truth)
+## Type Source
 
-- Check `.lens-knowledge-base/type-declarations/` (component type file not auto-located)
-
-## Notes
-
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`
+- `.lens-knowledge-base/type-declarations/components/skeleton/skeleton.d.ts`

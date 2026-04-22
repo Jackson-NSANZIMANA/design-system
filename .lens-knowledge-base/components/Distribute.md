@@ -1,15 +1,36 @@
 # Distribute
 
-> **Generated stub** (2026-03-11T09:08:48.168Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Import
 
-**Import:** `import { Distribute } from '@loomhq/lens'`
+```tsx
+import { Distribute } from '@loomhq/lens'
+```
 
-## Type definitions (source of truth)
+## Purpose
+
+`Distribute` is a layout primitive for distributing children along a row/column with configurable alignment, spacing, and optional spread behavior.
+
+## Usage
+
+```tsx
+<Distribute gap="small" direction="row" alignment="center">
+  <Text>Left</Text>
+  <Text>Center</Text>
+  <Text>Right</Text>
+</Distribute>
+```
+
+## Props
+
+| Name | Type | Default |
+| --- | --- | --- |
+| `children` | `React.ReactNode` | required |
+| `direction` | `ResponsiveType<'row' \| 'column'>` | `'row'` |
+| `alignment` | `'start' \| 'center' \| 'end' \| 'stretch'` (or array variant) | — |
+| `isSpread` | `ResponsiveType<true \| false>` | — |
+| `htmlTag` | `'div' \| 'header' \| 'article' \| 'section' \| 'nav' \| 'aside' \| 'footer' \| 'main'` | `'div'` |
+| `gap` | `string \| number` | — |
+
+## Type Source
 
 - `.lens-knowledge-base/type-declarations/components/distribute/distribute.d.ts`
-
-## Notes
-
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`

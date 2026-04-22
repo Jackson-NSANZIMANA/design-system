@@ -1,21 +1,37 @@
 # SkeletonContainer
 
-> **Generated stub** (2026-03-11T09:08:48.212Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Import
 
-**Import:** `import { SkeletonContainer } from '@loomhq/lens'`
+```tsx
+import { SkeletonContainer } from '@loomhq/lens'
+```
 
-## Where to read the documentation
+## Purpose
 
-This export is documented inside:
+`SkeletonContainer` is used for non-text loading placeholders such as avatars, thumbnails, and icon blocks.
+
+## Usage
+
+```tsx
+<Split gap="small">
+  <SkeletonContainer />
+  <SkeletonContainer height="24px" width="24px" radius="large" animated />
+</Split>
+```
+
+## Props
+
+| Name | Type | Default |
+| --- | --- | --- |
+| `animated` | `boolean` | `false` |
+| `height` | `string` | `'40px'` |
+| `width` | `string` | `'40px'` |
+| `radius` | `'medium' \| 'large' \| 'xlarge' \| 'full' \| '175'` | `'full'` |
+
+## Related Docs
 
 - `.lens-knowledge-base/components/Skeleton.md`
 
-## Type definitions (source of truth)
+## Type Source
 
-- Check `.lens-knowledge-base/type-declarations/` (component type file not auto-located)
-
-## Notes
-
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`
+- `.lens-knowledge-base/type-declarations/components/skeleton/skeleton.d.ts`

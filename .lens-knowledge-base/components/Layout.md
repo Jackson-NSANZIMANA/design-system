@@ -1,15 +1,44 @@
 # Layout
 
-> **Generated stub** (2026-03-11T09:08:48.185Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Import
 
-**Import:** `import { Layout } from '@loomhq/lens'`
+```tsx
+import Layout from '@loomhq/lens'
+```
 
-## Type definitions (source of truth)
+## Purpose
+
+`Layout` groups page sections and controls section sizing/alignment through `Layout.Section`.
+
+## Usage
+
+```tsx
+<Layout gap="medium" alignment="start">
+  <Layout.Section width="1fr">
+    <Text>Main content</Text>
+  </Layout.Section>
+  <Layout.Section maxWidth={40}>
+    <Text>Sidebar</Text>
+  </Layout.Section>
+</Layout>
+```
+
+## Layout Props
+
+| Name | Type | Default |
+| --- | --- | --- |
+| `alignment` | `'start' \| 'center' \| 'end' \| 'stretch'` (or array variant) | — |
+| `gap` | `ResponsiveType<string \| number>` | — |
+| `children` | `React.ReactNode` | — |
+
+## Layout.Section Props
+
+| Name | Type | Default |
+| --- | --- | --- |
+| `width` | `ResponsiveType<string \| number>` | — |
+| `maxWidth` | `ResponsiveType<string \| number>` | — |
+| `children` | `React.ReactNode` | — |
+
+## Type Source
 
 - `.lens-knowledge-base/type-declarations/components/layout/layout.d.ts`
-
-## Notes
-
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`

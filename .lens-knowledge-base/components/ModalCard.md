@@ -1,21 +1,47 @@
 # ModalCard
 
-> **Generated stub** (2026-03-11T09:08:48.206Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Import
 
-**Import:** `import { ModalCard } from '@loomhq/lens'`
+```tsx
+import { ModalCard } from '@loomhq/lens'
+```
 
-## Where to read the documentation
+## Purpose
 
-This export is documented inside:
+`ModalCard` is the dialog card surface used by `Modal`, and can also be used directly in custom backdrop/drawer flows.
+
+## Usage
+
+```tsx
+<ModalCard isOpen onCloseClick={onClose} maxWidth={72}>
+  <Container padding="large">
+    <Text>Custom modal card content</Text>
+  </Container>
+</ModalCard>
+```
+
+## Props
+
+| Name | Type | Default |
+| --- | --- | --- |
+| `id` | `string` | — |
+| `isOpen` | `boolean` | — |
+| `onKeyDown` | `React.ReactEventHandler` | — |
+| `onCloseClick` | `React.ReactEventHandler` | — |
+| `closeOnEscape` | `boolean` | `true` |
+| `placement` | `string` | `'center'` |
+| `maxHeight` | `number \| string` | `'70vh'` |
+| `maxWidth` | `number \| string` | `60` |
+| `ariaLabel` | `string` | — |
+| `ariaModal` | `boolean` | `true` |
+| `ariaLabelledBy` | `string` | — |
+| `removeClose` | `boolean` | `false` |
+| `initialFocus` | `HTMLElement \| SVGElement \| string \| false \| (() => HTMLElement \| SVGElement \| string \| false \| undefined)` | `undefined` |
+
+## Related Docs
 
 - `.lens-knowledge-base/components/Modal.md`
 
-## Type definitions (source of truth)
+## Type Source
 
-- Check `.lens-knowledge-base/type-declarations/` (component type file not auto-located)
-
-## Notes
-
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`
+- `.lens-knowledge-base/type-declarations/components/modal/modal.d.ts`

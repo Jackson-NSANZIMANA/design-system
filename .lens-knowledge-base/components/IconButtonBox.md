@@ -1,21 +1,37 @@
 # IconButtonBox
 
-> **Generated stub** (2026-03-11T09:08:48.182Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Import
 
-**Import:** `import { IconButtonBox } from '@loomhq/lens'`
+```tsx
+import { IconButtonBox } from '@loomhq/lens'
+```
 
-## Where to read the documentation
+## Purpose
 
-This export is documented inside:
+`IconButtonBox` is the styled wrapper used by `IconButton`.  
+Use `IconButton` for standard interactions; use `IconButtonBox` only when you need the wrapper primitive directly.
+
+## Usage
+
+```tsx
+<IconButtonBox as="button" size="medium" isActive={false}>
+  <Icon icon={<SvgAdd />} />
+</IconButtonBox>
+```
+
+## Wrapper Props
+
+| Name | Type | Default |
+| --- | --- | --- |
+| `size` | `'small' \| 'medium' \| 'large'` | `'medium'` |
+| `isActive` | `boolean` | `false` |
+| `backgroundColor` | `string` | — |
+| `as` | `'button' \| 'a'` | `'button'` |
+
+## Related Docs
 
 - `.lens-knowledge-base/components/IconButton.md`
 
-## Type definitions (source of truth)
+## Type Source
 
-- Check `.lens-knowledge-base/type-declarations/` (component type file not auto-located)
-
-## Notes
-
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`
+- `.lens-knowledge-base/type-declarations/components/icon-button/icon-button.d.ts`
