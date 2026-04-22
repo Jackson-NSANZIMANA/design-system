@@ -1,15 +1,44 @@
-# EllipsesLoader
+# 32.Ellipses Loader
 
-> **Generated stub** (2026-03-11T09:08:48.175Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Usage Guidelines
 
-**Import:** `import { EllipsesLoader } from '@loomhq/lens'`
+## Usage
 
-## Type definitions (source of truth)
+```javascript
+import { EllipsesLoader } from '@loomhq/lens'
+;<EllipsesLoader />
+```
 
-- Check `.lens-knowledge-base/type-declarations/` (component type file not auto-located)
+---
 
-## Notes
+## Sizes
 
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`
+```javascript
+<Arrange gap="medium">
+  <EllipsesLoader size="small" />
+  <EllipsesLoader size="medium" />
+  <EllipsesLoader size="large" />
+</Arrange>
+```
+
+---
+
+## Color
+
+Use one of the **palette colors**.
+
+```javascript
+<EllipsesLoader color="orange" />
+```
+
+---
+
+## Props
+
+| Name  | Type                             | Default    |
+| ----- | -------------------------------- | ---------- |
+| color | string                           | `'body'`   |
+| size  | `'small' \| 'medium' \| 'large'` | `'medium'` |
+
+---
+
