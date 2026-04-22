@@ -7,7 +7,8 @@ import { Icon, SvgBell } from '@loomhq/lens'
 ;<Icon icon={<SvgBell />} />
 ```
 
-273 icons
+This guide includes a curated subset of icons.
+For the complete list, see `../icons-inventory.md` (683 icons).
 
 - SvgAccount
 - SvgActionItem

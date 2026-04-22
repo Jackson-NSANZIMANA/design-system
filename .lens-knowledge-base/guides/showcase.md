@@ -208,9 +208,7 @@ Clouds is focused on the realtime granularization of incoming audio signals, and
   maxWidth={44}
 >
   <Arrange gap="medium" columns={['auto', '1fr']} alignItems="start">
-    <div>
-      <Link>0:32</Link>
-    </div>
+    <div><Link>0:32</Link></div>
     <Text>{demoText.medium}</Text>
   </Arrange>
 </Container>

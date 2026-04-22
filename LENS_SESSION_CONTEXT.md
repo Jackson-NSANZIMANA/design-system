@@ -148,11 +148,11 @@ import SvgBell from '@loomhq/lens/icons/bell'
 ## Loading
 - [Loader](components/Loader.md) — Spinner
 - [LogoLoader](components/LogoLoader.md) — Logo animation
-- [EllipsesLoader](components/Ellipses_Loader.md) — Dots animation
-- [WaveformLoader](components/Waveform_Loader.md) — Waveform animation
+- [EllipsesLoader](components/EllipsesLoader.md) — Dots animation
+- [WaveformLoader](components/WaveformLoader.md) — Waveform animation
 
 ## Other Documentation
-- [Styles & Tokens](tokens/styles-complete.md) — Colors, Typography, Spacing, Shadows, Radii
+- [Styles & Tokens](tokens/styles-full.md) — Colors, Typography, Spacing, Shadows, Radii
 - [Icons (683)](../icons-inventory.md) — Full icon list
 - [Forms Pattern](patterns/forms.md) — Form design patterns
 - [Error Pattern](patterns/errors.md) — Error handling patterns

@@ -37,8 +37,8 @@ _"No frontend element shall exist outside Lens governance."_
 **Documentation:** https://lens.loom.dev
 **Package:** `@loomhq/lens@12.14.0`
 **Local Knowledge Base:** `.lens-knowledge-base/`
-**Full component docs:** `.lens-knowledge-base/components.md` (7000+ lines)
-**Full styles docs:** `.lens-knowledge-base/styles.md` (1745 lines)
+**Full component docs:** `.lens-knowledge-base/reference/components-full.md` (7000+ lines)
+**Full styles docs:** `.lens-knowledge-base/reference/styles-full.md` (1745 lines)
 
 ---
 
@@ -147,7 +147,7 @@ As an AI Assistant on this project, you must deeply understand your operational 
 ## Quick Reference
 
 - Full component docs: @.lens-knowledge-base/COMPONENT-INDEX.md
-- Styles/tokens docs: @.lens-knowledge-base/tokens/styles-complete.md || see also: @.lens-knowledge-base/tokens/\_tokens-index.md
+- Styles/tokens docs: @.lens-knowledge-base/tokens/\_tokens-index.md || see also: @.@.lens-knowledge-base/tokens/styles-full.md
 - All exports: @.lens-knowledge-base/exports-inventory.json
 
 ---

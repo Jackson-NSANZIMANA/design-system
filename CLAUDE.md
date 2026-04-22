@@ -37,8 +37,8 @@ _"No frontend element shall exist outside Lens governance."_
 **Documentation:** https://lens.loom.dev
 **Package:** `@loomhq/lens@12.14.0`
 **Local Knowledge Base:** `.lens-knowledge-base/`
-**Full component docs:** `.lens-knowledge-base/components.md` (7000+ lines)
-**Full styles docs:** `.lens-knowledge-base/styles.md` (1745 lines)
+**Full component docs:** `.lens-knowledge-base/reference/components-full.md` (7000+ lines)
+**Full styles docs:** `.lens-knowledge-base/reference/styles-full.md` (1745 lines)
 
 ---
 
@@ -136,11 +136,18 @@ _"No frontend element shall exist outside Lens governance."_
 - **NEVER:** Browser alert()/confirm()/prompt()
 
 ---
+### RULE 8: SYSTEM BOUNDARIES & LINTING PROTOCOL
 
+As an AI Assistant on this project, you must deeply understand your operational boundaries:
+
+1. **The Linter is Infallible:** Our custom ESLint plugin is mathematically derived from the Lens Design System source code. If it throws an error, it is 100% correct.
+2. **No Rule Tampering:** You are forbidden from modifying `eslint.config.mjs`, the custom ESLint plugin, or any `.json` mastery databases to bypass an error.
+3. **No Local Escapes:** You are forbidden from using `// eslint-disable`, `/* eslint-disable */`, or `@ts-ignore` in the React code to silence Lens violations.
+4. **Your Responsibility:** Your sole responsibility when facing a lint error is to study the `.lens-knowledge-base/` and fix the React Component's implementation to match the exact Lens API.
 ## Quick Reference
 
 - Full component docs: @.lens-knowledge-base/COMPONENT-INDEX.md
-- Styles/tokens docs: @.lens-knowledge-base/tokens/styles-complete.md || see also: @.lens-knowledge-base/tokens/\_tokens-index.md
+- Styles/tokens docs: @.lens-knowledge-base/tokens/\_tokens-index.md || see also: @.@.lens-knowledge-base/tokens/styles-full.md
 - All exports: @.lens-knowledge-base/exports-inventory.json
 
 ---

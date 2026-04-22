@@ -8,15 +8,15 @@ style.innerHTML = getThemeStylesString() + getAllCssVarsString();
 document.head.appendChild(style);
 ```
 ## Layout Components
-|Component |	Purpose |	Replaces |
-|----------|--------------|------------|
-|<Container>|	Container with padding/border/color/radius|	<div>|
-|<Split>|	Flexbox layout|	display:flex divs|
-|<SplitSection>|	Flex item with grow/shrink/basis|	flex children|
-|<Arrange>|	CSS Grid layout|	display:grid| divs|
-|<Align>|	Position content within container|	positioning CSS|
-|<Spacer>|	Spacing between elements|	margin hacks|
-|<Backdrop>|	Full-screen overlay|	overlay divs|
+| Component | Purpose | Replaces |
+| --------- | ------- | -------- |
+| `<Container>` | Container with padding/border/color/radius | `<div>` |
+| `<Split>` | Flexbox layout | display:flex divs |
+| `<SplitSection>` | Flex item with grow/shrink/basis | flex children |
+| `<Arrange>` | CSS Grid layout | display:grid| divs |
+| `<Align>` | Position content within container | positioning CSS |
+| `<Spacer>` | Spacing between elements | margin hacks |
+| `<Backdrop>` | Full-screen overlay | overlay divs |
 ## Typography — ONE component: Text
 ```tsx
 <Text size="heading-lg" htmlTag="h1" variant="mainTitle">Page Title</Text>
@@ -31,14 +31,14 @@ Sizes: `body-sm` | `body-md` | `body-lg` | `heading-sm` | `heading-md` | `headin
 
 ## Spacing Tokens
 
-|Token|	px|	Use|
-|-----|-------|------|
-|xsmall|	4|	Tight gaps|
-small|	8|	Default gaps|
-|medium|	16|	Section padding|
-|large|	24|	Card padding|
-|xlarge|	40|	Page spacing|
-|xxlarge|	64|	Major divisions|
+| Token | px | Use |
+| ----- | -- | --- |
+| xsmall | 4 | Tight gaps |
+| small | 8 | Default gaps |
+| medium | 16 | Section padding |
+| large | 24 | Card padding |
+| xlarge | 40 | Page spacing |
+| xxlarge | 64 | Major divisions |
 
 Numbers multiply by 8: `padding={3}` = 24px
 
@@ -65,7 +65,6 @@ import SvgBell from '@loomhq/lens/icons/bell'
 - **Element:** htmlTag="a" (NOT as="a")
 - **Refs:** refHandler={(r) => ref.current = r} (NOT ref={ref})
 - **Icons:** iconBefore / iconAfter (NOT leftIcon / rightIcon)
-``
 ## Responsive
 ```tsx
 <Arrange gap={{ default: 'small', medium: 'large' }} />

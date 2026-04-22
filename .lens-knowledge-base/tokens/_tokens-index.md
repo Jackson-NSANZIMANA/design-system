@@ -9,3 +9,7 @@
 * **Need to apply styles?** Read `css-utilities.md` for all pre-defined Lens CSS utility classes (e.g., `c:red`, `p:medium`, `flex`).
 * **Need raw CSS variables?** Read `css-variables.md`.
 * **Need responsive behavior?** Read `responsive-layout.md` for breakpoint prefixes, Split/Arrange layouts, and hooks.
+
+
+## Other Documentation
+- [Styles & Tokens](tokens/_tokens-index.md) — Colors, Typography, Spacing, Shadows, Radii

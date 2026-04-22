@@ -23,6 +23,7 @@ This project uses ONLY `@loomhq/lens@12.14.0`. No other UI library permitted.
 7. NEVER import from other UI libraries
 
 ## REFERENCE
-- Docs: .lens-knowledge-base/components.md
-- Styles: .lens-knowledge-base/styles.md
+- Full component docs: @.lens-knowledge-base/COMPONENT-INDEX.md
+- Styles/tokens docs: @.lens-knowledge-base/tokens/\_tokens-index.md || see also: @.@.lens-knowledge-base/tokens/styles-full.md
+- All exports: @.lens-knowledge-base/exports-inventory.json
 - Site: https://lens.loom.dev
