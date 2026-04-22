@@ -1,15 +1,45 @@
-# WaveformLoader
+# 33.Waveform Loader
 
-> **Generated stub** (2026-03-11T09:08:48.238Z). This file exists to prevent agents from opening large reference docs and to provide a direct lookup path.
+## Usage Guidelines
 
-**Import:** `import { WaveformLoader } from '@loomhq/lens'`
+## Usage
 
-## Type definitions (source of truth)
+```javascript
+import { WaveformLoader } from '@loomhq/lens'
+;<WaveformLoader />
+```
 
-- Check `.lens-knowledge-base/type-declarations/` (component type file not auto-located)
+---
 
-## Notes
+## Speeds
 
-- If this component needs full documentation, extract it from the Lens docs and replace this stub.
-- Token lookup: `.lens-knowledge-base/tokens/_tokens-index.md`
-- Component lookup: `.lens-knowledge-base/COMPONENT-INDEX.md`
+Use **fast** for quick loading tasks such as generating a title.  
+Use **slow** for continuous loading tasks  such as for transcript processing.
+
+```javascript
+<Arrange gap="medium">
+  <WaveformLoader speed="fast" />
+  <WaveformLoader speed="slow" />
+</Arrange>
+```
+
+---
+
+## Color
+
+Use one of the **palette colors**.
+
+```javascript
+<WaveformLoader color="ai-primary" />
+```
+
+---
+
+## Props
+
+| Name  | Type               | Default    |
+| ----- | ------------------ | ---------- |
+| size  | literal            | `'medium'` |
+| speed | `'fast' \| 'slow'` | `'fast'`   |
+| color | string             | `'body'`   |
+
