@@ -1,5 +1,43 @@
-# Styles
+# Styles 
+# CSS Colors — Lens Design System
+> ## ⚠️ Agent Instructions: How To Apply Colors
+>
+> Reading this file gives you color token names and values.
+> To actually USE a color, choose the right tool:
+>
+> | Situation | Correct tool | Example |
+> |---|---|---|
+> | Color on a Lens component | Component `color` prop | `<Text color="bodyDimmed">` |
+> | Background on a Lens component | Component `backgroundColor` prop | `<Container backgroundColor="backgroundSecondary">` |
+> | Text color on a raw `<div>` | Lens utility class | `<div className="c:bodyDimmed">` |
+> | Background on a raw `<div>` | Lens utility class | `<div className="bgc:backgroundSecondary">` |
+> | Color in a CSS module | CSS variable | `.myClass { color: var(--lns-color-bodyDimmed); }` |
+> | Gradient anywhere | CSS module only | `.myClass { background: var(--lns-gradient-ai-primary); }` |
+>
+> **NEVER:** `style={{ color: 'var(--lns-color-primary)' }}` — inline styles forbidden.
+> **NEVER:** `style={{ color: '#1868db' }}` — hardcoded hex values forbidden.
+> **ALWAYS:** Prefer semantic colors over greyscale or base colors.
+> **ALWAYS:** Semantic colors adapt to light/dark theme automatically.
 
+---
+
+## Color Priority Order
+
+```
+1. Semantic colors (body, primary, border, background...)
+   → Theme-aware, adapts to light/dark automatically ← ALWAYS PREFER THESE
+
+2. Greyscale colors (grey1 through grey8, white)
+   → Static, do not adapt to theme
+   → Use only when a specific grey is required by design
+
+3. Base colors (red, blue, teal, orange...)
+   → Brand palette, static
+   → Use only for specific brand/status applications
+
+4. Hardcoded hex/rgb values
+   → FORBIDDEN. Always use a token.
+   
 ## Colors/Gradients
 
 All colors are defined with `HSLA` values: `hue` `saturation` `lightness` `alpha`. `HSLA` format is easy to read and easy to modify.

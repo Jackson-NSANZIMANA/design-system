@@ -38,27 +38,33 @@ All spacing values are derived from this base unit.
 
 ## Example
 
+> ⚠️ **Demonstration code only.** The example below uses `style={{}}` inline
+> styles to introspect and display the token values dynamically. This pattern
+> is used here because it is rendering the token system itself as data.
+> **Do NOT use `style={{}}` in production code.** Use Lens component props
+> or CSS utility classes instead.
+
 ```jsx
+// THIS IS DEMONSTRATION/INTROSPECTION CODE ONLY
+// Do not replicate the style={{}} pattern in production
 <Arrange gap="medium" columns="1fr">
   {Object.entries(spaces).map(([key, value], index) => (
     <Arrange gap="medium" key={index}>
       <Container minWidth="xxlarge">
         <div
           style={{
-            fontSize: 'var(--lns-fontSize-small)',
-            lineHeight: 'var(--lns-space-xsmall)',
+            fontSize: 'var(--lns-fontSize-small)',    // demo only
+            lineHeight: 'var(--lns-space-xsmall)',    // demo only
           }}
         >
           {key}
         </div>
       </Container>
-
       <Container width={value} height={value} backgroundColor="primary" />
     </Arrange>
   ))}
 </Arrange>
 ```
-
 ---
 
 # How Semantic Spacing Is Generated

@@ -46,12 +46,35 @@ _"No frontend element shall exist outside Lens governance."_
 
 ### Rule 0: KB-FIRST LOOKUP ORDER (MANDATORY)
 
-1. .lens-knowledge-base/QUICK-REFERENCE.md
-2. .lens-knowledge-base/COMPONENT-INDEX.md
-3. .lens-knowledge-base/components/<Component>.md
-4. .lens-knowledge-base/tokens/\_tokens-index.md → then the target token file
-5. .lens-knowledge-base/exports-verified.json
-6. Only then: https://lens.loom.dev (fallback)
+Consult in this exact order. Stop when you have what you need.
+
+**For component API questions:**
+1. `.lens-knowledge-base/QUICK-REFERENCE.md`
+2. `.lens-knowledge-base/COMPONENT-INDEX.md`
+3. `lens-knowledge-base/components/<ComponentName>.md`
+**For token and styling questions:**
+4. `.lens-knowledge-base/tokens/_tokens-index.md`
+   → Then the specific file it points to:
+   - Colors → `tokens/colors.md`
+   - Typography → `tokens/typography.md`
+   - Spacing → `tokens/spacing.md`
+   - Shadows/radius → `tokens/shape-and-elevation.md`
+   - **className needed** → `tokens/css-utilities.md` ← MANDATORY before any className
+   - CSS variables → `tokens/css-variables.md`
+   - Responsive → `tokens/responsive-layout.md`
+
+5. `.lens-knowledge-base/exports-verified.json`
+6. `https://lens.loom.dev` (last resort only)
+
+**⛔ NEVER read these files for implementation guidance:**
+- `reference/styles-full.md` — 1746-line dump, wastes full context budget
+- `reference/components-full.md` — same problem
+
+**Mandatory checks before writing any className:**
+- Have you read `css-utilities.md` in this session? If not, read it now.
+- Is the class you are writing in that file? If not, it is forbidden.
+- Are you using deprecated typography names (`text:small`, `text:medium`,
+  `text:large`, `text:xlarge`, `text:xxlarge`, `text:xxxlarge`)? Use new names.
    **Requirement:** In every response that writes UI code, include:
 
 - Sources consulted: with file paths (local), and optionally a URL if needed.
@@ -69,41 +92,199 @@ _"No frontend element shall exist outside Lens governance."_
 
 ### Rule 2: ONLY Lens Design Tokens for Styling
 
-- **ALWAYS:** Use Lens component props (padding="medium", color="primary")
-- **ALWAYS:** Use semantic spacing: xsmall|small|medium|large|xlarge|xxlarge
-- **NEVER:** Write raw CSS files (.css, .scss, .less)
-- **NEVER:** Write CSS-in-JS (styled-components, emotion css prop)
-- **NEVER:** Write Tailwind classes
-- **NEVER:** Write inline style={{}} with hardcoded pixel/color values
-- **NEVER:** Use the css={} prop from Emotion (even though @emotion is installed)
+**Styling authority hierarchy — apply in order:**
+
+**LEVEL 1 — Lens component props (always preferred)**
+- **ALWAYS:** Use Lens component props: `padding="medium"`, `color="primary"`, `gap="small"`
+- **ALWAYS:** Use semantic spacing: `xsmall | small | medium | large | xlarge | xxlarge`
+
+**LEVEL 2 — Lens CSS utility classes**
+- **ALLOWED on raw wrapper elements:** Any class from `css-utilities.md`
+- **ALLOWED on Lens components:** ONLY external spacing/positioning utilities
+  that affect layout relationships, NOT internal appearance
+  - ✅ `mr:small`, `ml:auto`, `mt:medium`, `mb:large` (margins — external spacing)
+  - ✅ `relative`, `absolute`, `grow:1`, `shrink:0` (layout relationship)
+  - ❌ `shadow:large`, `radius:medium`, `bgc:primary`, `c:red`, `text:body`
+    (these modify visual appearance — use component props instead)
+- **Syntax rule:** Lens utilities use `property:value` (colon) or bare words.
+  NEVER use hyphen-separated utilities — those are Tailwind.
+
+**LEVEL 3 — CSS Modules with Lens CSS variables (complex layout fallback)**
+- **ALLOWED:** `.module.css` files when Levels 1–2 cannot solve the need
+- **ALWAYS:** Values must use ONLY Lens CSS variables: `var(--lns-space-*)`,
+  `var(--lns-color-*)`, `var(--lns-radius-*)`, `var(--lns-shadow-*)`
+- **NEVER:** Hardcoded `px`, `rem`, `#hex`, `rgb()` values in CSS modules
+
+**ALWAYS FORBIDDEN — no exceptions, no levels:**
+- **NEVER:** `style={{}}` inline styles with any values whatsoever
+- **NEVER:** Tailwind classes — identified by hyphen-separated syntax:
+  `flex-col`, `items-center`, `justify-between`, `p-4`, `text-lg`, `bg-blue-500`
+- **NEVER:** CSS-in-JS: `styled-components`, emotion `css={}` prop
+- **NEVER:** `.scss` / `.less` files
+- **NEVER:** Hardcoded pixel/color/rem values anywhere
+
+**The Tailwind vs Lens identification rule:**
+```
+BEFORE writing any className value, ask:
+  1. Does this class appear in css-utilities.md?    YES → allowed (with placement rules above)
+                                                    NO  → FORBIDDEN
+  2. Does this use hyphen-separated syntax?
+     (items-center, flex-col, p-4)                  YES → Tailwind → FORBIDDEN
+     (items:center, flexDirection:column, p:large)  YES → Lens     → check placement rules
+```
+---
+
+### Rule 3: Lens Layout Components — Primary Tool, With Defined Escape Hatches
+
+**Primary rule — always try these first:**
+- **ALWAYS:** `<Split>` for flexbox layouts
+- **ALWAYS:** `<Arrange>` for CSS Grid layouts
+- **ALWAYS:** `<Container>` for containers with padding/border/shadow/radius
+- **ALWAYS:** `<Spacer>` for spacing between elements
+- **ALWAYS:** `<Align>` for positioning content within a container
+
+**When raw wrapper elements are permitted:**
+
+A raw `<div>` or `<span>` is allowed when a Lens layout component
+cannot express what is needed AND the wrapper does not replace a
+Lens component — it wraps one.
+
+Valid reasons:
+1. Positioning that `<Container>` props cannot express
+   (e.g. `position: absolute` on a wrapping shell)
+2. React interop: refs, portals, event boundaries
+3. Third-party library DOM requirements
+4. Display utilities needed at a structural level
+   (`flex`, `block`, `none`, responsive show/hide)
+
+Style raw wrappers with classes from `css-utilities.md` ONLY.
+
+**The corrected forbidden example and why:**
+
+```tsx
+// ❌ WHAT THE RULE USED TO SAY WAS FORBIDDEN:
+<div className="flex items-center">
+
+// WHY IT'S ACTUALLY TWO SEPARATE VIOLATIONS:
+//   "flex"         → EXISTS as Lens utility (display: flex) — the word is fine
+//   "items-center" → TAILWIND syntax — FORBIDDEN
+//                    The Lens equivalent is "items:center" (colon, not hyphen)
+
+// ✅ THE CORRECT LENS VERSION OF THAT SAME THING:
+<div className="flex items:center">
+```
+
+**Complete placement rules for className:**
+
+| Element | Spacing utilities (mr:*, ml:*, mt:*, mb:*, mx:*, my:*) | Layout utilities (flex, block, items:*, justify:*, grow:*) | Appearance utilities (shadow:*, radius:*, bgc:*, c:*, text:*) |
+|---|---|---|---|
+| Raw `<div>` / `<span>` | ✅ Allowed | ✅ Allowed | ✅ Allowed |
+| Lens layout components (`<Split>`, `<Arrange>`, `<Container>`) | ✅ Allowed (external spacing only) | ❌ Use component props | ❌ Use component props |
+| Lens UI components (`<Button>`, `<Text>`, `<Icon>`, etc.) | ✅ Allowed (external spacing only) | ❌ Use component props | ❌ Use component props |
+
+**Real examples from css-utilities.md (canonical patterns):**
+
+```tsx
+// ✅ CORRECT — wrapper div with Lens layout utilities
+<div className="flex items:center">
+  <div className="border p:medium">A</div>
+  <div className="border p:xlarge ml:small">B</div>
+</div>
+
+// ✅ CORRECT — spacing utility on Lens component (external margin only)
+<div className="flex flexWrap items:center">
+  <Button className="mr:small">Cancel</Button>
+  <Button variant="primary">Save</Button>
+  <TextButton className="ml:auto">Options</TextButton>
+</div>
+
+// ✅ CORRECT — positioning wrapper
+<div className="relative width:full border p:large">
+  <div className="absolute right:0 top:0 border">
+    <div className="p:small">Absolute</div>
+  </div>
+</div>
+
+// ✅ CORRECT — responsive utilities
+<div className="block sm-none">show on xsmall and smaller</div>
+<div className="none sm-block md-none">show only on small</div>
+
+// ❌ FORBIDDEN — Tailwind syntax (hyphen-separated)
+<div className="flex items-center gap-4 p-4">
+
+// ❌ FORBIDDEN — appearance utility on Lens component internal
+<Button className="shadow:large radius:medium bgc:primary">
+
+// ❌ FORBIDDEN — inline styles always
+<div style={{ display: 'flex', alignItems: 'center' }}>
+
+// ❌ FORBIDDEN — raw div replacing a Lens layout component
+// (when <Split> or <Arrange> would work)
+<div className="flex items:center gap:medium">  ← use <Split> instead
+```
+
+**Decision test — before writing any raw `<div>`:**
+```
+Can <Split>, <Arrange>, <Container>, <Spacer>, or <Align> do this?
+  YES → Use the Lens component. Stop.
+  NO  → Document why, then use a raw wrapper with css-utilities.md classes only.
+```
 
 ---
 
-### Rule 3: ONLY Lens Layout Components
+### Rule 4: ONLY Lens Typography — With Deprecation Enforcement
 
-- **ALWAYS:** <Split> for flexbox layouts (replaces Flex/Stack)
-- **ALWAYS:** <Arrange> for CSS Grid layouts (replaces Grid)
-- **ALWAYS:** <Container> for generic containers (replaces Box/div)
-- **ALWAYS:** <Spacer> for spacing between elements
-- **ALWAYS:** <Align> for positioning content within a container
-- **NEVER:** <div style={{ display: 'flex' }}>
-- **NEVER:** <div className="flex items-center">
-- **NEVER:** Custom layout wrappers with raw CSS
-- ***NOTE:***
-- **Allowed wrappers:** Raw wrapper HTML (e.g. <div>) is allowed only when required for React interop (refs, boundary elements, portals, third‑party libraries).
-- **Forbidden escapes:** Inline style={{}} is always forbidden; className must be static and Lens-utility-only (as enforced by the linter).
+**Component usage:**
+- **ALWAYS:** `<Text>` for ALL semantic text content
+- **ALWAYS:** New size names: `body-sm` | `body-md` | `body-lg` |
+  `heading-sm` | `heading-md` | `heading-lg`
+- **NEVER:** Deprecated size names: `small` | `medium` | `large` |
+  `xlarge` | `xxlarge` | `xxxlarge`
+- **NEVER:** Raw `<h1>–<h4>`, `<p>`, `<span>` for semantic text
+- **NEVER:** Custom font-size or font-weight via style={{}}
 
----
+**Deprecation enforcement table:**
 
-### Rule 4: ONLY Lens Typography
+| ❌ Deprecated (forbidden in new code) | ✅ Required replacement |
+|---|---|
+| `<Text size="small">` | `<Text size="body-sm">` |
+| `<Text size="medium">` | `<Text size="body-md">` |
+| `<Text size="large">` | `<Text size="body-lg">` |
+| `<Text size="xlarge">` | `<Text size="heading-sm">` |
+| `<Text size="xxlarge">` | `<Text size="heading-md">` |
+| `<Text size="xxxlarge">` | `<Text size="heading-lg">` |
+| `className="text:small"` | `className="text:body-sm"` |
+| `className="text:medium"` | `className="text:body-md"` |
+| `className="text:large"` | `className="text:body-lg"` |
+| `className="text:xlarge"` | `className="text:heading-sm"` |
+| `className="text:xxlarge"` | `className="text:heading-md"` |
+| `className="text:xxxlarge"` | `className="text:heading-lg"` |
 
-- **ALWAYS:** <Text> for ALL text (body, headings, spans, paragraphs)
-- **ALWAYS:** <Text size="heading-lg" htmlTag="h1"> for headings
-- **ALWAYS:** <Text size="body-md"> for body text
-- **NEVER:** <h1>, <h2>, <h3>, <h4> directly
-- **NEVER:** <p>, <span> directly
-- **NEVER:** Custom font-size or font-weight styles
+**Props vs utilities — never mix:**
 
+```tsx
+// ✅ CORRECT — props on <Text>
+<Text size="body-md" fontWeight="bold" color="bodyDimmed">
+
+// ✅ CORRECT — utilities on raw wrapper
+<div className="text:body-md weight:bold c:bodyDimmed">
+
+// ❌ WRONG — utility classes on <Text> component
+<Text className="text:body-md weight:bold">
+
+// ❌ WRONG — deprecated names anywhere
+<Text size="medium">
+<div className="text:xlarge">
+```
+
+**Semantic variants (prefer over manual size+weight):**
+
+```tsx
+// ✅ Use variants when they match the use case
+<Text variant="mainTitle">  // heading-md + bold, once per view
+<Text variant="title">      // body-lg + bold
+<Text variant="body">       // body-md + regular
+```
 ---
 
 ### Rule 5: ONLY Lens Icons
@@ -147,12 +328,171 @@ As an AI Assistant on this project, you must deeply understand your operational 
 2. **No Rule Tampering:** You are forbidden from modifying `eslint.config.mjs`, the custom ESLint plugin, or any `.json` mastery databases to bypass an error.
 3. **No Local Escapes:** You are forbidden from using `// eslint-disable`, `/* eslint-disable */`, or `@ts-ignore` in the React code to silence Lens violations.
 4. **Your Responsibility:** Your sole responsibility when facing a lint error is to study the `.lens-knowledge-base/` and fix the React Component's implementation to match the exact Lens API.
-## Quick Reference
+---
+### Rule 9: LENS UTILITY CLASS CONTRACT — COMPLETE
 
-- Full component docs: @.lens-knowledge-base/COMPONENT-INDEX.md
-- Styles/tokens docs: @.lens-knowledge-base/tokens/\_tokens-index.md || see also: @.@.lens-knowledge-base/tokens/styles-full.md
-- All exports: @.lens-knowledge-base/exports-inventory.json
+**Single source of truth:** `tokens/css-utilities.md`
 
+**Before writing any className value:**
+1. Open `css-utilities.md`
+2. Confirm the class exists in that file
+3. Check it is not in the deprecated list
+4. Check placement is valid for your element type
+
+---
+### Rule 10: TOKEN FILE TRAPS — KNOWN ISSUES IN KNOWLEDGE BASE
+
+The `.lens-knowledge-base/tokens/` files contain documentation-level
+patterns that are NOT valid production patterns. Knowing these prevents
+copying them blindly.
+
+**Known traps by file:**
+
+**`spacing.md`**
+- Example uses `style={{}}` — demonstration only, never copy
+
+**`responsive-layout.md`**
+- `<DemoBox>` does not exist in `@loomhq/lens`
+- Replace with `<Container>` in all production code
+- `sizeMinMax` examples use deprecated size names
+  Correct: `<Text sizeMinMax={['body-md', 'heading-sm']}>`
+
+**`css-variables.md`**
+- Contains a typo: `---lns-fontSize-xxxlarge` (three dashes)
+  Correct variable: `--lns-fontSize-heading-lg`
+- Lists deprecated variable names alongside current ones
+  Always use the current name (see deprecation table in that file)
+
+**`css-utilities.md`**
+- Lists deprecated typography utilities alongside current ones
+  Always use: `text:body-sm/md/lg`, `text:heading-sm/md/lg`
+
+**`shape-and-elevation.md`**
+- Only documents numeric radius tokens
+  Semantic tokens (medium, large, xlarge, full) also exist
+  See css-variables.md for the full list
+
+**Gradient rule — no utility class exists:**
+
+```
+Gradients (--lns-gradient-ai-primary, --lns-gradient-ai-secondary)
+have NO corresponding utility class in css-utilities.md.
+
+The ONLY valid way to apply a gradient:
+
+  ✅ CSS module:
+    .myClass { background: var(--lns-gradient-ai-primary); }
+
+  ❌ FORBIDDEN:
+    style={{ background: 'var(--lns-gradient-ai-primary)' }}
+    className="gradient:ai-primary"  ← does not exist
+```
+
+**Color application hierarchy:**
+
+```
+For Lens components:
+  → color prop:            <Text color="bodyDimmed">
+  → backgroundColor prop:  <Container backgroundColor="backgroundSecondary">
+
+For raw wrapper elements:
+  → text color utility:    <div className="c:bodyDimmed">
+  → background utility:    <div className="bgc:backgroundSecondary">
+
+In CSS modules:
+  → CSS variable:          .x { color: var(--lns-color-bodyDimmed); }
+
+NEVER:
+  → style={{ color: 'var(--lns-color-primary)' }}
+  → style={{ color: '#1868db' }}
+```
+---
+
+**Syntax identification:**
+
+```
+LENS = colon separator:   p:medium, mr:small, items:center,
+                          justify:spaceBetween, c:primary, bgc:background,
+                          text:body-md, weight:bold, shadow:large,
+                          radius:medium, top:xsmall, grow:1
+
+LENS = bare camelCase:    flex, block, inline, inlineFlex, inlineBlock,
+                          none, relative, absolute, sticky, fixed,
+                          flexWrap, border, borderTop, borderBottom,
+                          borderLeft, borderRight, ellipsis, srOnly
+
+LENS = responsive prefix: xs-flex, sm-none, md-block, lg-c:primary
+
+TAILWIND = hyphen:        flex-col, items-center, justify-between,
+                          p-4, text-lg, bg-blue-500  ← ALL FORBIDDEN
+```
+
+---
+
+**Placement rules:**
+
+```
+ON RAW <div> / <span>:
+  → Any class from css-utilities.md ✅
+  → Responsive prefixed variants ✅
+
+ON LENS COMPONENTS (<Button>, <Text>, <Icon>, <Container>, <Split>...):
+  → External spacing ONLY:
+    m:*, mt:*, mb:*, ml:*, mr:*, mx:*, my:* ✅
+    grow:*, shrink:*, self:* ✅
+  → NEVER appearance classes:
+    shadow:*, radius:*, bgc:*, c:*, text:*, weight:* ❌
+    (use component props instead)
+  → NEVER layout/display classes:
+    flex, block, none, items:*, justify:* ❌
+    (these break component rendering)
+```
+
+---
+
+**Deprecated typography utilities — forbidden in new code:**
+
+```
+❌ text:small     → ✅ text:body-sm
+❌ text:medium    → ✅ text:body-md
+❌ text:large     → ✅ text:body-lg
+❌ text:xlarge    → ✅ text:heading-sm
+❌ text:xxlarge   → ✅ text:heading-md
+❌ text:xxxlarge  → ✅ text:heading-lg
+```
+
+---
+
+**The inline style trap in official docs:**
+
+Some files in `.lens-knowledge-base/tokens/` contain `style={{}}` in
+their code examples. These are **introspection/demonstration patterns**
+that show the token system examining itself. They are NOT production
+patterns. `style={{}}` is always forbidden in `src/`. If you see it in
+a knowledge base example, do not copy it.
+
+---
+
+**Complete decision tree:**
+
+```
+Need to style something?
+│
+├─ Is it a Lens component?
+│   ├─ YES → Use its props (padding=, color=, size=, fontWeight=)
+│   │         External margin only: className="mr:small"
+│   │         STOP. Do not add other className.
+│   │
+│   └─ NO (raw wrapper div/span)
+│       ├─ Does a class in css-utilities.md solve it?
+│       │   YES → Use it. Confirm not deprecated.
+│       │   NO  → Use CSS module + var(--lns-*) variables
+│       │
+│       └─ NEVER: style={{}}, Tailwind, hardcoded values
+│
+└─ Is the value hardcoded (px, rem, #hex)?
+    YES → STOP. Find the Lens token. Never hardcode.
+```
 ---
 
 ## LENS COMPONENT MAPPING — USE THIS LOOKUP TABLE (see:@.lens-knowledge-base/COMPONENT-INDEX.md)

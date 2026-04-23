@@ -112,7 +112,33 @@ For example:
 | round | `calc(999 * var(--lns-unit, 8px))`  |
 
 ---
+## Radius Token Types
 
+There are two naming systems for radius tokens. Both are valid:
+
+| Type | Examples | When to use |
+|---|---|---|
+| Numeric tokens | `50`, `100`, `150`, `175`, `200`, `250`, `300` | When you need precise, size-specific rounding |
+| Semantic tokens | `medium`, `large`, `xlarge`, `full`, `round`, `none` | When the radius should communicate a visual intent |
+
+**In CSS utilities:** `radius:100`, `radius:medium`, `radius:round`
+**In CSS variables:** `var(--lns-radius-100)`, `var(--lns-radius-medium)`
+**In component props:** `radius="medium"`, `radius="100"`, `radius="round"`
+
+**Semantic radius guidance:**
+
+| Semantic name | Approximate equivalent | Typical use |
+|---|---|---|
+| `none` | 0px | Strict/structural elements |
+| `medium` | ~radius-100 (8px) | Small interactive elements |
+| `large` | ~radius-150 (12px) | Cards, panels |
+| `xlarge` | ~radius-200 (16px) | Large containers |
+| `round` | 999px effective | Pills, badges, avatars |
+| `full` | 100% | Circular elements |
+
+> ⚠️ The numeric-to-semantic mapping above is approximate.
+> Check `css-variables.md` for exact values if precision is needed.
+---
 # Example
 
 ```jsx

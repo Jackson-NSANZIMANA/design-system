@@ -95,7 +95,43 @@ We are deprecating the naming from the second column to better align with the At
 ```
 
 ---
+## Styling Text: Props vs CSS Utilities
 
+There are two ways to apply typography styles. The choice depends on
+what element you are styling:
+
+| Situation | Correct tool | Example |
+|---|---|---|
+| Styling a `<Text>` component | Use component props | `<Text size="body-md" fontWeight="bold">` |
+| Styling a raw `<div>` wrapper | Use CSS utility classes | `<div className="text:body-md weight:bold">` |
+| Setting color on `<Text>` | Use `color` prop | `<Text color="bodyDimmed">` |
+| Setting color on a raw wrapper | Use `c:*` utility | `<div className="c:bodyDimmed">` |
+
+**Never mix these:** do not apply `text:*` or `weight:*` utilities
+directly to a `<Text>` component. Use its props.
+
+```tsx
+// ✅ CORRECT — props on the Lens component
+<Text size="body-md" fontWeight="bold" color="bodyDimmed">
+  Content
+</Text>
+
+// ✅ CORRECT — utilities on a raw wrapper
+<div className="text:body-md weight:bold c:bodyDimmed">
+  Content
+</div>
+
+// ❌ WRONG — utilities on a Lens component (use props instead)
+<Text className="text:body-md weight:bold c:bodyDimmed">
+  Content
+</Text>
+
+// ❌ WRONG — deprecated size names
+<Text size="medium">Content</Text>
+<div className="text:medium">Content</div>
+// USE: size="body-md" / text:body-md
+```
+---
 # Semantic Variants
 
 Most text use cases can be covered by a specific variant.

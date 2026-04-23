@@ -2,6 +2,44 @@
 
 ---
 
+## ⚠️ Agent Read-This-First Warnings
+
+### 1. Typography class deprecation
+The following typography utility classes exist but are DEPRECATED.
+Do not use them in new code:
+
+| ❌ Deprecated | ✅ Use Instead |
+|---|---|
+| `text:small` | `text:body-sm` |
+| `text:medium` | `text:body-md` |
+| `text:large` | `text:body-lg` |
+| `text:xlarge` | `text:heading-sm` |
+| `text:xxlarge` | `text:heading-md` |
+| `text:xxxlarge` | `text:heading-lg` |
+
+Both columns appear in the tables below because the old classes
+still function. Always write the new name.
+
+### 2. className placement rules
+These classes are for use on raw wrapper elements (`<div>`, `<span>`).
+On Lens components, only external spacing classes are permitted:
+`m:*`, `mt:*`, `mb:*`, `ml:*`, `mr:*`, `mx:*`, `my:*`, `grow:*`, `shrink:*`, `self:*`
+
+Never apply appearance classes (color, background, shadow, radius,
+typography) directly to Lens components. Use their props instead.
+
+### 3. "With components" example context
+The example at the bottom of this file shows:
+  <Button className="mr:small">Cancel</Button>
+  <TextButton className="ml:auto">Options</TextButton>
+
+This is the ONLY valid pattern for className on Lens components:
+external margin utilities that create spacing between siblings.
+It is NOT a license to add other classes to Lens components.
+
+---
+---
+
 ## 🎨 Text Color Utilities
 
 Class Declaration
