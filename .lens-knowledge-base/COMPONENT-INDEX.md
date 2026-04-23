@@ -67,7 +67,7 @@
 
 ## Other Documentation
 - [Styles & Tokens](tokens/_tokens-index.md) — Colors, Typography, Spacing, Shadows, Radii
-- [Icons (683)](/icons-inventory.md) — Full icon list
+- [Icons (683)](icons-inventory.md) — Full icon list
 - [Forms Pattern](patterns/forms.md) — Form design patterns
 - [Error Pattern](patterns/errors.md) — Error handling patterns
 - [Disabled Pattern](patterns/disabled-styles.md) — Disabled state patterns

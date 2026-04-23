@@ -2,7 +2,7 @@
   "name": "lens-design-system",
   "version": "1.0.0",
   "description": "Lens design system engineered for AI assisted software development consumption.",
-   "repository": {
+  "repository": {
     "type": "git",
     "url": "git+https://github.com/Jackson-NSANZIMANA/design-system.git"
   },
@@ -12,7 +12,7 @@
     "components",
     "lens"
   ],
-   "author": "Jackson NSANZIMANA",
+  "author": "Jackson NSANZIMANA",
   "dependencies": {
     "@atlaskit/icon": "^25.8.0",
     "@atlaskit/icon-lab": "^4.11.0",
@@ -20,8 +20,8 @@
     "@emotion/core": "^11.0.0",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
-    "@loomhq/lens": "^12.14.0",
     "@jackson_nsanzimana/atlassian-fonts": "^1.0.0",
+    "@loomhq/lens": "^12.14.0",
     "react": "18.3.1",
     "react-dom": "18.3.1"
   },
@@ -33,6 +33,7 @@
     "globals": "^17.4.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.3.2",
+    "tsx": "^4.21.0",
     "typescript-eslint": "^8.56.1"
   },
   "lint-staged": {

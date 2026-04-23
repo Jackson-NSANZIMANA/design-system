@@ -89,6 +89,9 @@ _"No frontend element shall exist outside Lens governance."_
 - **NEVER:** <div style={{ display: 'flex' }}>
 - **NEVER:** <div className="flex items-center">
 - **NEVER:** Custom layout wrappers with raw CSS
+- ***NOTE:***
+- **Allowed wrappers:** Raw wrapper HTML (e.g. <div>) is allowed only when required for React interop (refs, boundary elements, portals, third‑party libraries).
+- **Forbidden escapes:** Inline style={{}} is always forbidden; className must be static and Lens-utility-only (as enforced by the linter).
 
 ---
 
