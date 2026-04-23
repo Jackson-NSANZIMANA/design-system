@@ -5,8 +5,7 @@
 ## Purpose
 
 Skeleton loading states provide **visual feedback** that content is actively loading.  
-They indicate **where and how content will appear** once fully loaded.
-
+They indicate **where and how content will appear** once fully loaded. It is about loading a placeholder
 Best suited for **content-rich layouts**, such as:
 
 - Video grids
@@ -22,8 +21,8 @@ Represents **loading text** placeholders.
 ### Basic Usage
 
 ```jsx
-import { SkeletonText } from '@loomhq/lens'
-;<SkeletonText lines={1} size="body-md" />
+import { SkeletonText } from "@loomhq/lens";
+<SkeletonText lines={1} size="body-md" />;
 ```
 
 ### Sizes
@@ -67,8 +66,8 @@ Represents **non-text UI elements** (e.g., avatar, icon, thumbnail).
 ### Basic Usage
 
 ```jsx
-import { SkeletonContainer } from '@loomhq/lens'
-;<SkeletonContainer />
+import { SkeletonContainer } from "@loomhq/lens";
+<SkeletonContainer />;
 ```
 
 ### Setting Height, Width, and Radius
@@ -124,4 +123,3 @@ Combine them to **represent richer UI elements**, such as cards or list items:
 ```
 
 ---
-

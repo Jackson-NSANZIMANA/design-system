@@ -54,8 +54,9 @@
 - [ListRow](components/ListRow.md) — List row item
 - [Logo](components/Logo.md) — Loom logo
 - [Pill](components/Pill.md) — Badge/tag
-- [Skeleton](components/Skeleton.md) — Loading placeholder
 - [SkeletonContainer](components/SkeletonContainer.md) — Skeleton wrapper
+- [SkeletonText](components/SkeletonText.md) — Skeleton text line
+r
 - [SkeletonText](components/SkeletonText.md) — Skeleton text line
 
 ## Feedback
