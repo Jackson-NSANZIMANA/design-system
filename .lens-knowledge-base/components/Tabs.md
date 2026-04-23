@@ -11,8 +11,9 @@ The `Tabs` component is used to **organize content into multiple sections** wher
 ## Usage
 
 ```jsx
-import { Tabs, Tab } from '@loomhq/lens'
-;<Tabs
+import { Tabs } from '@loomhq/lens'
+
+<Tabs
   tabs={[
     { tabContent: 'First' },
     { tabContent: 'Second', isActive: true },
@@ -193,7 +194,10 @@ Use `Link` components for tab content while maintaining accessibility:
 The old `<Tabs>` + `<Tab>` approach is deprecated and **should not be used**. Use the new `tabs` prop structure instead for proper accessibility and keyboard navigation.
 
 ---
+## Tab (legacy export)
 
+Lens also exports a [`Tab`](Tab.md) component for legacy composition. Prefer the `tabs` prop API shown above unless you specifically need the low-level component.
+---
 ## Props
 
 ### Tabs
