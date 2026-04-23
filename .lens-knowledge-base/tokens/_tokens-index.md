@@ -12,4 +12,4 @@
 
 
 ## Other Documentation
-- [Styles & Tokens](tokens/_tokens-index.md) — Colors, Typography, Spacing, Shadows, Radii
+- [Styles & Tokens](../reference/styles-full.md) — Colors, Typography, Spacing, Shadows, Radii

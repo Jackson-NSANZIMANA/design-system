@@ -3,7 +3,7 @@
 ## Import
 
 ```tsx
-import { TooltipBox } from '@loomhq/lens'
+import { TooltipBox } from "@loomhq/lens";
 ```
 
 ## Purpose
@@ -22,6 +22,7 @@ Use it when building custom tooltip behavior without the full trigger logic.
 ## Props
 
 | Name | Type | Default |
+| Name | Type (Lens types) | Default | Notes |
 | --- | --- | --- |
 | `children` | `React.ReactNode` | — |
 | `maxWidth` | `Size \| []` | — |
@@ -29,6 +30,12 @@ Use it when building custom tooltip behavior without the full trigger logic.
 | `onMouseLeave` | `React.ReactEventHandler` | — |
 | `layerProps` | `any` | — |
 | `zIndex` | `number` | — |
+| `children` | `React.ReactNode` | — | Tooltip content |
+| `maxWidth` | `Size \| []` | — | Lens emits `[]` here (empty tuple type) |
+| `onMouseEnter` | `React.ReactEventHandler` | — | Mouse enter handler |
+| `onMouseLeave` | `React.ReactEventHandler` | — | Mouse leave handler |
+| `layerProps` | `any` | — | Untyped in Lens `.d.ts` output |
+| `zIndex` | `number` | — | Stacking context |
 
 ## Related Docs
 

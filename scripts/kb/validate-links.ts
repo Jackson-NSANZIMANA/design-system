@@ -1,110 +1,141 @@
-// scripts/kb/validate-links.ts
-import fs from "node:fs";
 import path from "node:path";
-import { globSync } from "glob";
+import fs from "node:fs/promises";
+import { existsSync } from "node:fs";
 
-interface BrokenLink {
+import { unified } from "unified";
+import remarkParse from "remark-parse";
+import { visit } from "unist-util-visit";
+
+const KB_ROOT = path.join(process.cwd(), ".lens-knowledge-base");
+
+type MdLink = {
   file: string;
-  line: number;
-  target: string;
-  reason: string;
-}
+  url: string;
+  line?: number;
+  column?: number;
+};
 
-function findMarkdownFiles(root: string): string[] {
-  return globSync("**/*.md", {
-    cwd: root,
-    absolute: true,
-    ignore: ["node_modules/**", ".git/**"],
-  });
-}
+async function listMarkdownFiles(dir: string): Promise<string[]> {
+  const out: string[] = [];
+  const entries = await fs.readdir(dir, { withFileTypes: true });
 
-function extractLinks(content: string): Array<{ line: number; target: string; raw: string }> {
-  const links: Array<{ line: number; target: string; raw: string }> = [];
-  const lines = content.split("\n");
-
-  for (let i = 0; i < lines.length; i++) {
-    const line = lines[i];
-    const lineNum = i + 1;
-
-    // Match [text](url)
-    const mdLinkRegex = /\[([^\]]*)\]\(([^)]+)\)/g;
-    let match: RegExpExecArray | null;
-    while ((match = mdLinkRegex.exec(line)) !== null) {
-      const target = match[2];
-      // Skip external URLs and anchors
-      if (target.startsWith("http://") || target.startsWith("https://") || target.startsWith("#")) {
-        continue;
-      }
-      links.push({ line: lineNum, target, raw: match[0] });
-    }
-
-    // Match <url> style links
-    const angleLinkRegex = /<([^>]+\.md[^>]*)>/g;
-    while ((match = angleLinkRegex.exec(line)) !== null) {
-      links.push({ line: lineNum, target: match[1], raw: match[0] });
+  for (const e of entries) {
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) {
+      // still traverse dot dirs? you said validate all links, but KB has no dot dirs besides root
+      if (e.name === "node_modules") continue;
+      out.push(...(await listMarkdownFiles(full)));
+    } else if (e.isFile() && e.name.endsWith(".md")) {
+      out.push(full);
     }
   }
+  return out;
+}
+
+function isExternal(url: string) {
+  return (
+    url.startsWith("http://") ||
+    url.startsWith("https://") ||
+    url.startsWith("mailto:") ||
+    url.startsWith("tel:")
+  );
+}
+
+function stripAnchor(url: string) {
+  const i = url.indexOf("#");
+  return i === -1 ? url : url.slice(0, i);
+}
+
+function resolveLink(fromFile: string, rawUrl: string) {
+  const cleaned = stripAnchor(rawUrl).trim();
+
+  // Empty link "(#foo)" resolves to same file; we only check file existence here
+  if (cleaned === "" || cleaned.startsWith("#")) return null;
+
+  // Ignore external
+  if (isExternal(cleaned)) return null;
+
+  // Absolute filesystem paths are almost always wrong in docs; treat as invalid
+  if (cleaned.startsWith("/")) return { kind: "invalid-absolute", target: cleaned };
+
+  // Resolve relative to current file location
+  const target = path.resolve(path.dirname(fromFile), cleaned);
+  return { kind: "local", target, raw: cleaned };
+}
+
+async function extractLinks(file: string): Promise<MdLink[]> {
+  const content = await fs.readFile(file, "utf8");
+
+  const tree = unified().use(remarkParse).parse(content);
+
+  const links: MdLink[] = [];
+
+  // markdown links: [text](url)
+  visit(tree, "link", (node: any) => {
+    links.push({
+      file,
+      url: String(node.url ?? ""),
+      line: node.position?.start?.line,
+      column: node.position?.start?.column,
+    });
+  });
+
+  // images: ![alt](url)
+  visit(tree, "image", (node: any) => {
+    links.push({
+      file,
+      url: String(node.url ?? ""),
+      line: node.position?.start?.line,
+      column: node.position?.start?.column,
+    });
+  });
 
   return links;
 }
 
-function resolveLink(fromFile: string, target: string): { exists: boolean; resolvedPath: string } {
-  const fromDir = path.dirname(fromFile);
-  const resolved = path.resolve(fromDir, target);
-  return {
-    exists: fs.existsSync(resolved),
-    resolvedPath: resolved,
-  };
-}
+async function main() {
+  if (!existsSync(KB_ROOT)) {
+    throw new Error(`KB root not found: ${KB_ROOT}`);
+  }
 
-function validateAllLinks(root: string): { broken: BrokenLink[]; checked: number } {
-  const files = findMarkdownFiles(root);
-  const broken: BrokenLink[] = [];
-  let totalLinks = 0;
+  const files = await listMarkdownFiles(KB_ROOT);
+  const errors: string[] = [];
 
   for (const file of files) {
-    const content = fs.readFileSync(file, "utf8");
-    const links = extractLinks(content);
+    const links = await extractLinks(file);
 
-    for (const link of links) {
-      totalLinks++;
-      const { exists } = resolveLink(file, link.target);
-      if (!exists) {
-        broken.push({
-          file: path.relative(process.cwd(), file),
-          line: link.line,
-          target: link.target,
-          reason: `Target file not found: ${link.target}`,
-        });
+    for (const l of links) {
+      const resolved = resolveLink(file, l.url);
+      if (!resolved) continue;
+
+      if (resolved.kind === "invalid-absolute") {
+        const rel = path.relative(KB_ROOT, file);
+        errors.push(
+          `[${rel}:${l.line ?? "?"}:${l.column ?? "?"}] Invalid absolute link: (${l.url})`
+        );
+        continue;
+      }
+
+      if (!existsSync(resolved.target)) {
+        const rel = path.relative(KB_ROOT, file);
+        // show link as authored, not stripped version
+        errors.push(
+          `[${rel}:${l.line ?? "?"}:${l.column ?? "?"}] Broken link: (${l.url}) -> ${resolved.target}`
+        );
       }
     }
   }
 
-  return { broken, checked: totalLinks };
-}
-
-function main() {
-  const kbRoot = path.join(process.cwd(), ".lens-knowledge-base");
-
-  if (!fs.existsSync(kbRoot)) {
-    console.error("Error: .lens-knowledge-base directory not found");
+  if (errors.length) {
+    console.error(`❌ KB link validation failed (${errors.length} issue(s)):\n`);
+    for (const e of errors) console.error(e);
     process.exit(1);
   }
 
-  const { broken, checked } = validateAllLinks(kbRoot);
-
-  if (broken.length > 0) {
-    console.error(`\n❌ Found ${broken.length} broken link(s):\n`);
-    for (const b of broken) {
-      console.error(`  ${b.file}:${b.line}`);
-      console.error(`    → ${b.target}`);
-      console.error(`    ${b.reason}\n`);
-    }
-    process.exit(1);
-  }
-
-  console.log(`✅ All ${checked} links valid`);
-  process.exit(0);
+  console.log(`✅ KB link validation passed (${files.length} markdown file(s) checked)`);
 }
 
-main();
+main().catch((e) => {
+  console.error(e);
+  process.exit(1);
+});

@@ -2,7 +2,8 @@
 # Dependencies
 node_modules/
 .pnpm-store/
-
+# Ignore generated knowledge base type-declarations
+.lens-knowledge-base/type-declarations/
 # Build output
 dist/
 build/
