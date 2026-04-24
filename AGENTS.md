@@ -390,7 +390,7 @@ The ONLY valid way to apply a gradient:
 ❌ FORBIDDEN:
   style={{ background: 'var(--lns-gradient-ai-primary)' }}
   className="gradient:ai-primary"   ← does not exist in mastery-db.json
-  .myClass { background: ... }      ← CSS files are forbidden in this project
+  .myClass { background: ... }      ← only forbidden on Lens components; allowed for wrappers/custom elements
 ```
 
 **Color application hierarchy:**

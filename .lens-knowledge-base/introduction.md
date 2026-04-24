@@ -104,16 +104,18 @@ padding-right: var(--lns-space-medium);
 
 ## Using CSS variables
 
-> ⚠️ **Project rule:** CSS variable usage via `.css` files is forbidden in
-> this project. No `.css`, `.module.css`, or `.scss` files may be created.
-> The example below shows the Lens variable naming system, not a
+> ⚠️ **Project rule:** Use Lens component props and Lens utility classes first.
+> Scoped custom CSS (including CSS modules) is allowed only for one-off wrappers
+> and custom elements when Lens primitives are too constrained.
+> Do not apply custom CSS directly to Lens component internals.
+> The example below shows the Lens variable naming system and a
 > pattern to copy. Variables are injected at runtime via
 > `getThemeStylesString() + getAllCssVarsString() + cssUtilities()`.
 > For gradients, use `<Container backgroundImage="var(--lns-gradient-ai-primary)">`.
   ### Usage
 
 ```css
-/* Reference only — do not create .css files in this project */
+/* Allowed for wrappers/custom elements only; do not apply to Lens components */
 .myClass {
   font-size: var(--lns-fontSize-body-md);   /* use body-md, not medium */
   line-height: var(--lns-lineHeight-body-md);
