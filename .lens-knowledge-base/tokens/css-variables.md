@@ -136,16 +136,13 @@ Always use the current column. Never use the deprecated column. **Note:**
 The **ONLY** valid way to apply a gradient is via a CSS module.
 **NEVER** use gradient variables inside style={{}}.
 
-```CSS
-
-/* ✅ CORRECT — CSS module only */
-.aiContainer {
-  background: var(--lns-gradient-ai-primary);
-}
+```tsx
+// ✅ CORRECT — Lens prop with CSS variable string
+<Container backgroundImage="var(--lns-gradient-ai-primary)" />
 
 
-/* ❌ FORBIDDEN */
-<div style={{ background: 'var(--lns-gradient-ai-primary)' }}>
+// ❌ FORBIDDEN — inline styles always
+<div style={{ background: 'var(--lns-gradient-ai-primary)' }} />
 ```
 
 #### Available:

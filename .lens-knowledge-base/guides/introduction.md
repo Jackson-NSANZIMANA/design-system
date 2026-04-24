@@ -138,9 +138,12 @@ padding-right: var(--lns-space-medium);
 ### Usage
 
 ```css
+/* Reference only — Policy 1 forbids creating any CSS files in this project */
 .myClass {
   font-size: var(--lns-fontSize-medium);
   line-height: var(--lns-lineHeight-medium);
+    font-size: var(--lns-fontSize-body-md);
+  line-height: var(--lns-lineHeight-body-md);
   box-shadow: var(--lns-shadow-medium);
   padding: var(--lns-space-large);
   color: var(--lns-color-primary);
@@ -200,6 +203,9 @@ For example, if we need to position an `IconButton` in a corner:
 This solution is using Lens CSS utilities, but we can also achieve the same by applying a custom class to the wrapper `div` and use Lens CSS variables.
 
 ### Building a custom element
+
+Policy 1: Build with Lens primitives and Lens utility classes only.
+If a requirement cannot be expressed with Lens, escalate as a Lens gap:
 
 We want to use Lens as much as possible, but there are few very good reasons to not use Lens.
 

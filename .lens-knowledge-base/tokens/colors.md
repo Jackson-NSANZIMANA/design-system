@@ -11,13 +11,15 @@
 > | Background on a Lens component | Component `backgroundColor` prop | `<Container backgroundColor="backgroundSecondary">` |
 > | Text color on a raw `<div>` | Lens utility class | `<div className="c:bodyDimmed">` |
 > | Background on a raw `<div>` | Lens utility class | `<div className="bgc:backgroundSecondary">` |
-> | Color in a CSS module | CSS variable | `.myClass { color: var(--lns-color-bodyDimmed); }` |
-> | Gradient anywhere | CSS module only | `.myClass { background: var(--lns-gradient-ai-primary); }` |
+> | Color via CSS variables | Reference only | `color: var(--lns-color-bodyDimmed);` |
+> | Gradient via CSS variables | Reference only | `background: var(--lns-gradient-ai-primary);` |
 >
 > **NEVER:** `style={{ color: 'var(--lns-color-primary)' }}` — inline styles forbidden.
 > **NEVER:** `style={{ color: '#1868db' }}` — hardcoded hex values forbidden.
 > **ALWAYS:** Prefer semantic colors over greyscale or base colors.
 > **ALWAYS:** Semantic colors adapt to light/dark theme automatically.
+
+> **ALWAYS:** Use Lens component props or Lens utility classes.
 
 ---
 

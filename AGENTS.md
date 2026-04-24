@@ -109,19 +109,26 @@ Consult in this exact order. Stop when you have what you need.
 - **Syntax rule:** Lens utilities use `property:value` (colon) or bare words.
   NEVER use hyphen-separated utilities — those are Tailwind.
 
-**LEVEL 3 — CSS Modules with Lens CSS variables (complex layout fallback)**
-- **ALLOWED:** `.module.css` files when Levels 1–2 cannot solve the need
-- **ALWAYS:** Values must use ONLY Lens CSS variables: `var(--lns-space-*)`,
-  `var(--lns-color-*)`, `var(--lns-radius-*)`, `var(--lns-shadow-*)`
-- **NEVER:** Hardcoded `px`, `rem`, `#hex`, `rgb()` values in CSS modules
+**LEVEL 3 — Lens-only escalation (no custom CSS files)**
+- **Policy 1:** No `.css`, `.module.css`, `.scss`, `.less` files are permitted.
+- If Levels 1–2 cannot solve the need:
+  - Compose from Lens primitives (`Container`, `Split`, `Arrange`, `Align`, `Spacer`, `Text`)
+  - Use Lens utility classes from `tokens/css-utilities.md` on wrapper elements only
+  - If still impossible, escalate as a Lens gap:
+    - `// TODO: [LENS-GAP] <what you need>`
 
 **ALWAYS FORBIDDEN — no exceptions, no levels:**
 - **NEVER:** `style={{}}` inline styles with any values whatsoever
-- **NEVER:** Tailwind classes — identified by hyphen-separated syntax:
-  `flex-col`, `items-center`, `justify-between`, `p-4`, `text-lg`, `bg-blue-500`
-- **NEVER:** CSS-in-JS: `styled-components`, emotion `css={}` prop
-- **NEVER:** `.scss` / `.less` files
-- **NEVER:** Hardcoded pixel/color/rem values anywhere
+- [ ] Zero .css, .scss, .module.css files created
+- [ ] Zero style={{}} with hardcoded values
+- [ ] Zero className with custom classes
+- [ ] Zero raw HTML elements (div, span, p, h1-h6, button, input)
+- [ ] Zero raw interactive primitives (`button`, `input`, `select`, `textarea`, `a`)
+- [ ] Raw wrappers (`div`, `span`) are used only when required (refs/interop/boundaries) and only with approved Lens utility classes
+- [ ] Zero third-party UI libraries imported
+- [ ] All spacing uses named tokens (xsmall/small/medium/large/xlarge/xxlarge)
+- [ ] All colors use Lens token names (body, primary, danger, etc.)
+
 
 **The Tailwind vs Lens identification rule:**
 ```
