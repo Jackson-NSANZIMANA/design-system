@@ -1,83 +1,88 @@
 # Design System Tokens Index
 
-> ## ⚠️ Agent Instructions
-> - Use this index to find exactly what you need
-> - Read ONLY the specific file that answers your question
-> - **NEVER read `../reference/styles-full.md`** — it is 1746 lines
->   and will consume your entire context budget
-> - **NEVER read `../reference/components-full.md`** — same reason
-> - If a code example in any token file conflicts with the agentic rules,
->   the agentic rules take precedence
+> ## ⚠️ Agent Instructions — Read This First
+>
+> Use this index to navigate to exactly the file you need.
+> Read ONLY the specific file that answers your question.
+>
+> **⛔ NEVER read these files for implementation:**
+> - `../reference/styles-full.md` — 1746-line combined dump, wastes context budget
+> - `../reference/components-full.md` — 7000-line combined dump, wastes context budget
+>
+> **If a code example in any token file conflicts with the agentic rules,
+> the agentic rules take precedence.**
 
 ---
 
 ## Find Your File
 
-**Colors?** → `colors.md`
-- Light/Dark theme semantic colors
-- Greyscale (grey1–grey8)
-- Base colors (red, blue, teal, orange...)
-- Gradients (ai-primary, ai-secondary)
-- ⚠️ Read the "How To Apply Colors" header before copying any token
+**Need colors?** → `colors.md`
+- Light/Dark theme semantic colors, Greyscale, Base colors, Gradients
+- ⚠️ Read the "How To Apply Colors" section before using any token
 
-**Typography?** → `typography.md`
-- Font sizes, weights, line heights
-- Semantic variants (body, title, mainTitle)
-- ⚠️ Use NEW names: `body-sm/md/lg`, `heading-sm/md/lg`
-- ⚠️ NEVER use: `small`, `medium`, `large`, `xlarge`, `xxlarge`, `xxxlarge`
+**Need text styling?** → `typography.md`
+- Font sizes, weights, line heights, semantic variants
+- ⚠️ Use NEW names only: `body-sm` | `body-md` | `body-lg` | `heading-sm` | `heading-md` | `heading-lg`
+- ⚠️ NEVER use deprecated names: `small` | `medium` | `large` | `xlarge` | `xxlarge` | `xxxlarge`
 
-**Spacing?** → `spacing.md`
-- 8px base unit scale: xsmall(4px) → xxlarge(64px)
-- ⚠️ The code example uses `style={{}}` — that is demonstration code only.
-  Never use `style={{}}` in production.
+**Need spacing or gaps?** → `spacing.md`
+- 8px base unit scale: xsmall (4px) → xxlarge (64px)
+- ⚠️ Code examples use `style={{}}` — demonstration only, never copy this pattern
 
-**Shadows and radius?** → `shape-and-elevation.md`
+**Need shadows or radius?** → `shape-and-elevation.md`
 - Shadow: small / medium / large
-- Radius: numeric (50–300) and semantic (medium, large, xlarge, round, full, none)
-- ⚠️ Both numeric and semantic names exist. Both are valid.
+- Radius: numeric (50–300) AND semantic (medium, large, xlarge, round, full, none)
+- Both numeric and semantic names are valid
 
-**className values?** → `css-utilities.md`
+**Need className values?** → `css-utilities.md`
 - All Lens CSS utility classes
-- ⚠️ Read the deprecation header first
+- ⚠️ Read the deprecation header before use
 - ⚠️ Deprecated: `text:small/medium/large/xlarge/xxlarge/xxxlarge`
-- ⚠️ Current: `text:body-sm/md/lg`, `text:heading-sm/md/lg`
+- ⚠️ Current: `text:body-sm/md/lg` | `text:heading-sm/md/lg`
 
-**CSS variables for a `.module.css` file?** → `css-variables.md`
+**Need CSS variables for a `.module.css` file?** → `css-variables.md`
 - All `--lns-*` custom property names
-- ⚠️ Contains a typo: `---lns-fontSize-xxxlarge` (three dashes) — do not copy
-- ⚠️ Use current names, not deprecated ones (table provided in that file)
-- ⚠️ Gradient variables exist but have NO utility class — use CSS module only
+- ⚠️ Contains a typo: `---lns-fontSize-xxxlarge` (three dashes) — do not copy, use `--lns-fontSize-heading-lg`
+- ⚠️ Lists deprecated variable names — always use current names (table in that file)
+- ⚠️ Gradient variables exist but have NO utility class — CSS module only
 
-**Responsive behavior?** → `responsive-layout.md`
-- Breakpoint prefixes: `xs-`, `sm-`, `md-`, `lg-`
+**Need responsive behavior?** → `responsive-layout.md`
+- Breakpoint prefixes: `xs-` | `sm-` | `md-` | `lg-`
 - Algorithmic layouts with Arrange and Split
-- Responsive props syntax
-- ⚠️ `DemoBox` in examples is NOT a real component — replace with `<Container>`
-- ⚠️ `sizeMinMax` examples use deprecated names — use new names
-- ⚠️ `useMedia`/`<Media>` have performance cost — prefer CSS-based responsive
+- ⚠️ `<DemoBox>` in examples does NOT exist in `@loomhq/lens` — replace with `<Container>`
+- ⚠️ `sizeMinMax` examples use deprecated names — use `['body-md', 'heading-sm']` not `['medium', 'xlarge']`
+- ⚠️ `useMedia` / `<Media>` have JS re-render cost — prefer CSS-based responsive
 
 ---
 
 ## Trap Reference: What NOT To Do
 
-| Trap | Why it's a trap | Correct alternative |
+| Trap | Why | Correct alternative |
 |---|---|---|
-| `style={{ color: 'var(--lns-color-primary)' }}` | Inline styles forbidden | `<Text color="primary">` or CSS module |
-| `style={{ background: 'var(--lns-gradient-ai-primary)' }}` | Inline styles forbidden | CSS module with `background: var(--lns-gradient-ai-primary)` |
+| `style={{ color: 'var(--lns-color-primary)' }}` | Inline styles always forbidden | `<Text color="primary">` or CSS module |
+| `style={{ background: 'var(--lns-gradient-ai-primary)' }}` | Inline styles always forbidden | CSS module with `background: var(--lns-gradient-ai-primary)` |
 | `<Text size="medium">` | Deprecated name | `<Text size="body-md">` |
 | `className="text:xlarge"` | Deprecated class | `className="text:heading-sm"` |
-| `var(--lns-fontSize-medium)` in CSS module | Deprecated variable | `var(--lns-fontSize-body-md)` |
+| `var(--lns-fontSize-medium)` in CSS | Deprecated variable | `var(--lns-fontSize-body-md)` |
 | `---lns-fontSize-xxxlarge` | Three-dash typo in docs | `var(--lns-fontSize-heading-lg)` |
 | `import { DemoBox } from '@loomhq/lens'` | Does not exist | `<Container>` |
 | Reading `reference/styles-full.md` | 1746 lines, wastes context | Use targeted files above |
 | `<Text sizeMinMax={['medium', 'xlarge']}>` | Deprecated names | `<Text sizeMinMax={['body-md', 'heading-sm']}>` |
-| `radius="medium"` when numeric precision needed | Semantic may not match expectation | Check semantic↔numeric table in shape-and-elevation.md |
+| `className={styles.wrapper}` | Dynamic className — linter error | Static string only: `className="flex p:medium"` |
 
 ---
 
-## ⛔ Never Read These For Implementation
+## Linter Ground Truth
 
-| File | Reason |
-|---|---|
-| `../reference/styles-full.md` | 1746-line combined dump. Wastes full context budget. |
-| `../reference/components-full.md` | Same problem. Use `../components/<Name>.md` instead. |
+The ESLint plugin validates every `className` value against:
+`eslint-plugin-lens-compliance/lib/mastery-db.json` → `approvedClasses`
+
+This file contains **1935 approved classes** generated directly from
+`@loomhq/lens@12.14.0` package source.
+
+To regenerate after a Lens version update:
+```bash
+node scripts/generate-mastery-db.js
+css-utilities.md is the human-readable reference.
+mastery-db.json is what the linter actually enforces.
+Both are now in sync.
