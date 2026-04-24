@@ -39,6 +39,13 @@ All spacing values are derived from this base unit.
 ## Example
 
 > ⚠️ **Demonstration code only.** The example below uses `style={{}}` inline
+> styles to render token values dynamically for documentation purposes.
+> This is introspection code — it displays the token system as data.
+> **Never use `style={{}}` in production code.**
+> Use Lens component props or CSS utility classes instead.
+
+
+> ⚠️ **Demonstration code only.** The example below uses `style={{}}` inline
 > styles to introspect and display the token values dynamically. This pattern
 > is used here because it is rendering the token system itself as data.
 > **Do NOT use `style={{}}` in production code.** Use Lens component props

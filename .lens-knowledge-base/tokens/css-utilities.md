@@ -1,3 +1,48 @@
+# Lens CSS Utility Classes
+
+> ## ⚠️ Agent Instructions — Read Before Using Any Class
+>
+> ### 1. Linter ground truth
+> Every `className` value is validated against `mastery-db.json` approvedClasses.
+> As of `@loomhq/lens@12.14.0`, **1935 classes** are approved.
+> `className` must always be a **static string literal** — dynamic expressions
+> are linter errors regardless of which classes they contain.
+>
+> ### 2. Typography deprecation
+> Both deprecated and current typography class names appear in the tables below.
+> **Always use the current name:**
+>
+> | ❌ Deprecated — do not use | ✅ Current — use this |
+> |---|---|
+> | `text:small` | `text:body-sm` |
+> | `text:medium` | `text:body-md` |
+> | `text:large` | `text:body-lg` |
+> | `text:xlarge` | `text:heading-sm` |
+> | `text:xxlarge` | `text:heading-md` |
+> | `text:xxxlarge` | `text:heading-lg` |
+>
+> ### 3. className placement rules
+>
+> | Element | Spacing (m:*, p:*) | Layout (flex, items:*) | Appearance (c:*, shadow:*) |
+> |---|---|---|---|
+> | Raw `<div>` / `<span>` | ✅ | ✅ | ✅ |
+> | Lens layout (`<Split>`, `<Arrange>`, `<Container>`) | ✅ external only | ❌ use props | ❌ use props |
+> | Lens UI (`<Button>`, `<Text>`, `<Icon>`...) | ✅ external only | ❌ use props | ❌ use props |
+>
+> "External only" means margin classes that space the component relative to
+> siblings (`mr:small`, `ml:auto`) — not padding or appearance.
+>
+> ### 4. The "With components" example
+> The example at the bottom of this file shows:
+> ```tsx
+> <Button className="mr:small">Cancel</Button>
+> <TextButton className="ml:auto">Options</TextButton>
+> ```
+> This is the **only** valid pattern for className on Lens components:
+> external margin that spaces siblings. Not a license for other classes.
+
+---
+
 # Lens CSS Utility Classes Documentation
 
 ---

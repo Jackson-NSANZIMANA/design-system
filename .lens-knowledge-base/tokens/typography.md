@@ -218,3 +218,67 @@ Use CSS `ch` unit:
 - CSS utilities
 - CSS variables
 ---
+
+---
+
+## Styling Text: Props vs CSS Utilities
+
+There are two tools for typography styling. The choice depends on the element:
+
+| Situation | Correct tool | Example |
+|---|---|---|
+| Styling a `<Text>` component | Component props | `<Text size="body-md" fontWeight="bold">` |
+| Styling a raw `<div>` wrapper | CSS utility classes | `<div className="text:body-md weight:bold">` |
+| Color on `<Text>` | `color` prop | `<Text color="bodyDimmed">` |
+| Color on raw wrapper | `c:*` utility | `<div className="c:bodyDimmed">` |
+
+**Never mix:** do not apply `text:*` or `weight:*` utilities to a `<Text>` component.
+
+```tsx
+// ✅ CORRECT — props on the Lens component
+<Text size="body-md" fontWeight="bold" color="bodyDimmed">Content</Text>
+
+// ✅ CORRECT — utilities on a raw wrapper
+<div className="text:body-md weight:bold c:bodyDimmed">Content</div>
+
+// ❌ WRONG — utilities on a Lens component
+<Text className="text:body-md weight:bold">Content</Text>
+
+// ❌ WRONG — deprecated size names
+<Text size="medium">Content</Text>
+<div className="text:xlarge">Content</div>
+// Use: size="body-md" / text:body-md    size="heading-sm" / text:heading-sm
+```
+
+
+---
+
+## Styling Text: Props vs CSS Utilities
+
+There are two tools for typography styling. The choice depends on the element:
+
+| Situation | Correct tool | Example |
+|---|---|---|
+| Styling a `<Text>` component | Component props | `<Text size="body-md" fontWeight="bold">` |
+| Styling a raw `<div>` wrapper | CSS utility classes | `<div className="text:body-md weight:bold">` |
+| Color on `<Text>` | `color` prop | `<Text color="bodyDimmed">` |
+| Color on raw wrapper | `c:*` utility | `<div className="c:bodyDimmed">` |
+
+**Never mix:** do not apply `text:*` or `weight:*` utilities to a `<Text>` component.
+
+```tsx
+// ✅ CORRECT — props on the Lens component
+<Text size="body-md" fontWeight="bold" color="bodyDimmed">Content</Text>
+
+// ✅ CORRECT — utilities on a raw wrapper
+<div className="text:body-md weight:bold c:bodyDimmed">Content</div>
+
+// ❌ WRONG — utilities on a Lens component
+<Text className="text:body-md weight:bold">Content</Text>
+
+// ❌ WRONG — deprecated size names
+<Text size="medium">Content</Text>
+<div className="text:xlarge">Content</div>
+// Use: size="body-md" / text:body-md    size="heading-sm" / text:heading-sm
+```
+

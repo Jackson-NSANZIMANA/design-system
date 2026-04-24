@@ -195,3 +195,21 @@ Fully rounded shapes. Used for pills, avatars, badges, or circular UI elements.
 - CSS variables
 
 ---
+
+---
+
+## Radius Token Types — Both Are Valid
+
+Two naming systems exist for radius tokens:
+
+| Type | Examples | When to use |
+|---|---|---|
+| Numeric | `50`, `100`, `150`, `175`, `200`, `250`, `300` | Precise, size-specific rounding |
+| Semantic | `medium`, `large`, `xlarge`, `full`, `round`, `none` | Visual intent communication |
+
+**In CSS utilities:** `radius:100`, `radius:medium`, `radius:round`
+**In CSS variables:** `var(--lns-radius-100)`, `var(--lns-radius-medium)`
+**In component props:** `radius="medium"`, `radius="100"`, `radius="round"`
+
+All of the above exist in `mastery-db.json` approvedClasses and will pass the linter.
+
