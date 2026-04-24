@@ -80,9 +80,4 @@ The ESLint plugin validates every `className` value against:
 This file contains **1935 approved classes** generated directly from
 `@loomhq/lens@12.14.0` package source.
 
-To regenerate after a Lens version update:
-```bash
-node scripts/generate-mastery-db.js
-css-utilities.md is the human-readable reference.
-mastery-db.json is what the linter actually enforces.
-Both are now in sync.
+

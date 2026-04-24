@@ -1,12 +1,13 @@
 # CSS Variables
 
-> ⚠️ **Agent instructions:** This file lists ALL CSS variables including
-> deprecated ones. Deprecated variables are marked with `[DEPRECATED]`.
-> Do NOT use deprecated variables in new code. Use the current equivalent.
+> ## ⚠️ Agent Instructions
 >
-> ⚠️ **Usage rule:** CSS variables are for use ONLY inside `.module.css` files.
-> NEVER use `var(--lns-*)` inside `style={{}}` inline styles in React.
-> Inline styles are forbidden. CSS modules are the correct container.
+> CSS variables are for use **only** inside `.module.css` files.
+> **NEVER** use `var(--lns-*)` inside `style={{}}` inline styles.
+> Inline styles are always forbidden. CSS modules are the correct container.
+>
+> This file lists ALL variables including deprecated ones.
+> Deprecated variables are marked — do not use them in new code.
 
 ## Usage Example
 
@@ -19,98 +20,92 @@
   padding: var(--lns-space-large);
   color: var(--lns-color-primary);
 }
-```
 
-```tsx
+
 /* ❌ FORBIDDEN — never use var(--lns-*) inside style={{}} */
 <div style={{ fontSize: 'var(--lns-fontSize-body-md)' }}>
+<div style={{ color: 'var(--lns-color-primary)' }}>
 ```
-
----
 
 ## Spacing
 
-- `--lns-space-xsmall`
-- `--lns-space-small`
-- `--lns-space-medium`
-- `--lns-space-large`
-- `--lns-space-xlarge`
-- `--lns-space-xxlarge`
+```text
 
----
-
-## Text Size
-
-> ⚠️ Both deprecated and current variable names are listed.
-> Always use the **current** name (right column).
-
-| Deprecated [DO NOT USE] | Current [USE THIS] |
-|---|---|
-| `--lns-fontSize-small` | `--lns-fontSize-body-sm` |
-| `--lns-lineHeight-small` | `--lns-lineHeight-body-sm` |
-| `--lns-letterSpacing-small` | `--lns-letterSpacing-body-sm` |
-| `--lns-fontSize-medium` | `--lns-fontSize-body-md` |
-| `--lns-lineHeight-medium` | `--lns-lineHeight-body-md` |
-| `--lns-letterSpacing-medium` | `--lns-letterSpacing-body-md` |
-| `--lns-fontSize-large` | `--lns-fontSize-body-lg` |
-| `--lns-lineHeight-large` | `--lns-lineHeight-body-lg` |
-| `--lns-letterSpacing-large` | `--lns-letterSpacing-body-lg` |
-| `--lns-fontSize-xlarge` | `--lns-fontSize-heading-sm` |
-| `--lns-lineHeight-xlarge` | `--lns-lineHeight-heading-sm` |
-| `--lns-letterSpacing-xlarge` | `--lns-letterSpacing-heading-sm` |
-| `--lns-fontSize-xxlarge` | `--lns-fontSize-heading-md` |
-| `--lns-lineHeight-xxlarge` | `--lns-lineHeight-heading-md` |
-| `--lns-letterSpacing-xxlarge` | `--lns-letterSpacing-heading-md` |
-| `---lns-fontSize-xxxlarge` ⚠️ TYPO | `--lns-fontSize-heading-lg` |
-| `--lns-lineHeight-xxxlarge` | `--lns-lineHeight-heading-lg` |
-| `--lns-letterSpacing-xxxlarge` | `--lns-letterSpacing-heading-lg` |
-
-**Current variables only (copy-safe list):**
-```
---lns-fontSize-body-sm
---lns-lineHeight-body-sm
---lns-letterSpacing-body-sm
---lns-fontSize-body-md
---lns-lineHeight-body-md
---lns-letterSpacing-body-md
---lns-fontSize-body-lg
---lns-lineHeight-body-lg
---lns-letterSpacing-body-lg
---lns-fontSize-heading-sm
---lns-lineHeight-heading-sm
---lns-letterSpacing-heading-sm
---lns-fontSize-heading-md
---lns-lineHeight-heading-md
---lns-letterSpacing-heading-md
---lns-fontSize-heading-lg
---lns-lineHeight-heading-lg
---lns-letterSpacing-heading-lg
+--lns-space-xsmall
+--lns-space-small
+--lns-space-medium
+--lns-space-large
+--lns-space-xlarge
+--lns-space-xxlarge
 ```
 
----
+## Text Size — Deprecation Table
 
-## Font Weight
+⚠️ Both deprecated and current variable names exist in the compiled CSS.
+Always use the current column. Never use the deprecated column.
 
-- `--lns-fontWeight-book` ← [being renamed to regular, functionally equivalent]
-- `--lns-fontWeight-regular`
-- `--lns-fontWeight-medium`
-- `--lns-fontWeight-bold`
+> [!Note]:
+> ---lns-fontSize-xxxlarge in older docs has a three-dash typo — never copy it.
 
----
+❌ Deprecated — do not use |✅ Current — use this
+--lns-fontSize-small --lns-fontSize-body-sm
+--lns-lineHeight-small --lns-lineHeight-body-sm
+--lns-letterSpacing-small --lns-letterSpacing-body-sm
+--lns-fontSize-medium --lns-fontSize-body-md
+--lns-lineHeight-medium --lns-lineHeight-body-md
+--lns-letterSpacing-medium --lns-letterSpacing-body-md
+--lns-fontSize-large --lns-fontSize-body-lg
+--lns-lineHeight-large --lns-lineHeight-body-lg
+--lns-letterSpacing-large --lns-letterSpacing-body-lg
+--lns-fontSize-xlarge --lns-fontSize-heading-sm
+--lns-lineHeight-xlarge --lns-lineHeight-heading-sm
+--lns-letterSpacing-xlarge --lns-letterSpacing-heading-sm
+--lns-fontSize-xxlarge --lns-fontSize-heading-md
+--lns-lineHeight-xxlarge --lns-lineHeight-heading-md
+--lns-letterSpacing-xxlarge --lns-letterSpacing-heading-md
+---lns-fontSize-xxxlarge ⚠️ TYPO (3 dashes) --lns-fontSize-heading-lg
+--lns-lineHeight-xxxlarge --lns-lineHeight-heading-lg
+--lns-letterSpacing-xxxlarge --lns-letterSpacing-heading-lg
 
-## Font Setting
+### Current variables — copy-safe list:
 
-- `--lns-fontSetting-normal`
-- `--lns-fontSetting-tnum`
+```text
 
----
-
-## Radius
-
-> Both numeric and semantic names exist. Prefer numeric for precision,
-> semantic when the component's size determines the appropriate radius.
-
+--lns-fontSize-body-sm      --lns-lineHeight-body-sm      --lns-letterSpacing-body-sm
+--lns-fontSize-body-md      --lns-lineHeight-body-md      --lns-letterSpacing-body-md
+--lns-fontSize-body-lg      --lns-lineHeight-body-lg      --lns-letterSpacing-body-lg
+--lns-fontSize-heading-sm   --lns-lineHeight-heading-sm   --lns-letterSpacing-heading-sm
+--lns-fontSize-heading-md   --lns-lineHeight-heading-md   --lns-letterSpacing-heading-md
+--lns-fontSize-heading-lg   --lns-lineHeight-heading-lg   --lns-letterSpacing-heading-lg
 ```
+
+### Font Weight
+
+```text
+
+--lns-fontWeight-book       (being renamed to regular — functionally equivalent)
+--lns-fontWeight-regular
+--lns-fontWeight-medium
+--lns-fontWeight-bold
+```
+
+### Font Setting
+
+```text
+
+--lns-fontSetting-normal
+--lns-fontSetting-tnum
+```
+
+### Radius
+
+> [!Info]
+> Both numeric and semantic names exist.
+> Both are valid.
+> Prefer semantic for components, numeric for precise layout control.
+
+```text
+
 --lns-radius-none
 --lns-radius-50
 --lns-radius-100
@@ -126,51 +121,48 @@
 --lns-radius-full
 ```
 
----
+### Shadow
 
-## Shadow
+```text
 
-- `--lns-shadow-small`
-- `--lns-shadow-medium`
-- `--lns-shadow-large`
+--lns-shadow-small
+--lns-shadow-medium
+--lns-shadow-large
+```
 
----
+### Gradients
 
-## Gradients
+⚠️ Gradients have no utility class in `css-utilities.md`.
+The **ONLY** valid way to apply a gradient is via a CSS module.
+**NEVER** use gradient variables inside style={{}}.
 
-> ⚠️ Gradients have NO utility class equivalent in css-utilities.md.
-> The ONLY way to apply a gradient is via a CSS module.
-> NEVER use gradient variables inside style={{}}.
+```CSS
 
-```css
 /* ✅ CORRECT — CSS module only */
 .aiContainer {
   background: var(--lns-gradient-ai-primary);
 }
 
-.aiBackground {
-  background: var(--lns-gradient-ai-secondary);
-}
-```
 
-```tsx
 /* ❌ FORBIDDEN */
 <div style={{ background: 'var(--lns-gradient-ai-primary)' }}>
 ```
 
-Available gradient variables:
-- `--lns-gradient-ai-primary`
-- `--lns-gradient-ai-secondary`
+#### Available:
 
----
+```text
 
-## Form Field
-
-These variables are used internally by Lens form components.
-Do not use them in custom components — use `<TextInput>`,
-`<Select>`, `<Textarea>` and their props instead.
-
+--lns-gradient-ai-primary
+--lns-gradient-ai-secondary
 ```
+
+### Form Field
+
+"These are used internally by Lens form components.
+Do not use in custom components — use `<TextInput>`,` <Select>`,` <Textarea>` instead."
+
+```text
+
 --lns-formFieldBorderWidth
 --lns-formFieldBorderWidthFocus
 --lns-formFieldHeight
@@ -179,4 +171,11 @@ Do not use them in custom components — use `<TextInput>`,
 --lns-formFieldBorderShadow
 --lns-formFieldBorderShadowFocus
 --lns-formFieldBorderShadowError
+```
+
+### Unit
+
+```text
+
+--lns-unit    (default: 8px — base unit for all spacing calculations)
 ```
