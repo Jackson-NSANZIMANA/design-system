@@ -250,13 +250,13 @@ Layout component can cover most of the cases but not all. After building the bas
 Combine the custom CSS with Lens CSS variables.
 
 > ⚠️ **Project rule:** The pattern below (custom CSS classes with Lens variables)
-> is documented by Lens but **forbidden in this project**. No `.css` files
-> may be created. If you reach this point in the decision tree,
-> escalate with `// TODO: [LENS-GAP]` and use Lens component props or
-> utility classes as the closest approximation.
+> is allowed only for one-off wrappers and custom elements when Lens
+> primitives are too constrained. Do not apply custom CSS directly to Lens
+> components. If this becomes a repeated product pattern, escalate with
+> `// TODO: [LENS-GAP]` and propose a reusable Lens-level solution.
 
 ```css
-/* Reference only — forbidden in this project */
+/* Allowed for wrappers/custom elements only; do not apply to Lens components */
 .myClass {
   flex-grow: 3;
   padding: var(--lns-space-large);
@@ -265,7 +265,7 @@ Combine the custom CSS with Lens CSS variables.
 }
 ```
 
-Don't add custom styles to components. (see `./tokens`)
+Don't add custom styles to Lens components. Use wrappers/custom elements when needed. (see `./tokens`)
 
 ### When NOT to use Lens to compose layouts
 

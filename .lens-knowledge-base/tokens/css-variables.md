@@ -2,11 +2,12 @@
 
 > ## ⚠️ Agent Instructions
 >Inject Lens CSS variables and utilities at app startup using getThemeStylesString + getAllCssVarsString + cssUtilities.
->Do not create or import .css, .scss, or .module.css files in this repo.
 > **NEVER** use `var(--lns-*)` inside `style={{}}` inline styles.
-> Inline styles are always forbidden. CSS modules are the correct container.
->Prefer Lens component props and Lens utility classes for styling.
->Direct var(--lns-*) usage is allowed only in Lens component props that accept raw CSS strings (for example, Container backgroundImage for gradients).
+> Inline styles are always forbidden.
+> Do not override Lens component internals with custom classes or custom CSS.
+> Prefer Lens component props and Lens utility classes for styling.
+> Custom CSS (including CSS modules) is allowed only for one-off wrappers or custom elements when Lens primitives are too constrained.
+> In custom CSS, use Lens variables (`var(--lns-*)`) so spacing, typography, color, radius, and shadows stay aligned with Lens language.
 > This file lists ALL variables including deprecated ones.
 > Deprecated variables are marked — do not use them in new code.
 

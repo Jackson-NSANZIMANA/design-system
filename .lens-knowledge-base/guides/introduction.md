@@ -269,13 +269,15 @@ Layout components have the advantage of custom spacing and dimensions. We can sp
 
 #### When to add custom CSS
 
-Policy 1: never add custom CSS files. Use Lens layout primitives and Lens utility classes.
-If you reach a case where you would normally add CSS, escalate as a Lens gap.
+Policy 1: prefer Lens layout primitives and Lens utility classes first.
+Policy 2: custom CSS is allowed for one-off wrappers and custom elements when Lens primitives are too constrained.
+Policy 3: in custom CSS, use Lens variables (`var(--lns-*)`) to stay in Lens language.
+If the pattern repeats across features, escalate as a Lens gap.
 
-Don't add custom styles to components.
+Don't add custom styles to Lens components.
 
 ### When NOT to use Lens to compose layouts
 
 Layouts are one of the most common parts of an interface and each layout has slightly different needs. Because there are so many possible layout combinations, a system can't create patterns that cover all cases. Some layouts are too complex or need a specific behavior. For reference, check CSS `flex` and `grid` properties, just these can generate a huge amount of layout combinations.
 
-In cases where Lens tools are too constraining and more granular control is needed, escalate as a Lens gap and compose from Lens primitives as closely as possible.
+In cases where Lens tools are too constraining and more granular control is needed, use scoped custom CSS for wrappers/custom elements with Lens variables, and escalate as a Lens gap when the pattern becomes reusable.

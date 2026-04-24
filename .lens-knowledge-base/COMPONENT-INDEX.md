@@ -56,8 +56,7 @@
 - [Pill](components/Pill.md) — Badge/tag
 - [SkeletonContainer](components/SkeletonContainer.md) — Skeleton wrapper
 - [SkeletonText](components/SkeletonText.md) — Skeleton text line
-r
-- [SkeletonText](components/SkeletonText.md) — Skeleton text line
+
 
 ## Feedback
 
