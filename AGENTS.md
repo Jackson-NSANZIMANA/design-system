@@ -16,7 +16,7 @@ _"No frontend element shall exist outside Lens governance."_
 
 - **Lens First Every UI need starts with a Lens catalog lookup.**
 
-- **Lens Only Zero custom CSS/components unless Lens lacks it.**
+- **Lens Only Keep Lens components predictable; use custom CSS only for scoped wrappers/custom elements when Lens primitives are too constrained.**
 
 - **Lens Always Continuous compliance verification.**
 
@@ -109,12 +109,14 @@ Consult in this exact order. Stop when you have what you need.
 - **Syntax rule:** Lens utilities use `property:value` (colon) or bare words.
   NEVER use hyphen-separated utilities — those are Tailwind.
 
-**LEVEL 3 — Lens-only escalation (no custom CSS files)**
-- **Policy 1:** No `.css`, `.module.css`, `.scss`, `.less` files are permitted.
+**LEVEL 3 — Scoped custom CSS escalation (wrappers/custom elements only)**
+- **Policy 1:** Do not apply custom classes or custom CSS to Lens component internals.
+- **Policy 2:** If Levels 1-2 cannot solve the need, scoped custom CSS (including CSS modules) is allowed for one-off wrappers or custom elements.
+- **Policy 3:** In custom CSS, use Lens variables (`var(--lns-*)`) for spacing, typography, colors, radius, and shadows.
 - If Levels 1–2 cannot solve the need:
   - Compose from Lens primitives (`Container`, `Split`, `Arrange`, `Align`, `Spacer`, `Text`)
   - Use Lens utility classes from `tokens/css-utilities.md` on wrapper elements only
-  - If still impossible, escalate as a Lens gap:
+  - If still impossible or the pattern repeats, escalate as a Lens gap:
     - `// TODO: [LENS-GAP] <what you need>`
 
 **ALWAYS FORBIDDEN — no exceptions, no levels:**
@@ -489,7 +491,7 @@ Need to style something?
 │   └─ NO (raw wrapper div/span)
 │       ├─ Does a class in css-utilities.md solve it?
 │       │   YES → Use it. Confirm not deprecated.
-│       │   NO  → Use CSS module + var(--lns-*) variables
+│       │   NO  → Use CSS module + var(--lns-*) variables (wrappers/custom elements only)
 │       │
 │       └─ NEVER: style={{}}, Tailwind, hardcoded values
 │
