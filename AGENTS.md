@@ -119,16 +119,11 @@ Consult in this exact order. Stop when you have what you need.
 
 **ALWAYS FORBIDDEN — no exceptions, no levels:**
 - **NEVER:** `style={{}}` inline styles with any values whatsoever
-- [ ] Zero .css, .scss, .module.css files created
-- [ ] Zero style={{}} with hardcoded values
-- [ ] Zero className with custom classes
-- [ ] Zero raw HTML elements (div, span, p, h1-h6, button, input)
-- [ ] Zero raw interactive primitives (`button`, `input`, `select`, `textarea`, `a`)
-- [ ] Raw wrappers (`div`, `span`) are used only when required (refs/interop/boundaries) and only with approved Lens utility classes
-- [ ] Zero third-party UI libraries imported
-- [ ] All spacing uses named tokens (xsmall/small/medium/large/xlarge/xxlarge)
-- [ ] All colors use Lens token names (body, primary, danger, etc.)
-
+- **NEVER:** Tailwind classes — identified by hyphen-separated syntax:
+  `flex-col`, `items-center`, `justify-between`, `p-4`, `text-lg`, `bg-blue-500`
+- **NEVER:** CSS-in-JS: `styled-components`, emotion `css={}` prop
+- **NEVER:** `.scss` / `.less` files
+- **NEVER:** Hardcoded pixel/color/rem values anywhere
 
 **The Tailwind vs Lens identification rule:**
 ```
@@ -931,7 +926,8 @@ document.head.appendChild(style)
 - [ ] Zero .css, .scss, .module.css files created
 - [ ] Zero style={{}} with hardcoded values
 - [ ] Zero className with custom classes
-- [ ] Zero raw HTML elements (div, span, p, h1-h6, button, input)
+- [ ] Zero raw interactive primitives (`button`, `input`, `select`, `textarea`, `a`)
+- [ ] Raw wrappers (`div`, `span`) are used only when required (refs/interop/boundaries) and only with approved Lens utility classes
 - [ ] Zero third-party UI libraries imported
 - [ ] All spacing uses named tokens (xsmall/small/medium/large/xlarge/xxlarge)
 - [ ] All colors use Lens token names (body, primary, danger, etc.)

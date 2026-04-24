@@ -44,7 +44,7 @@
 - All `--lns-*` custom property names
 - ⚠️ Contains a typo: `---lns-fontSize-xxxlarge` (three dashes) — do not copy, use `--lns-fontSize-heading-lg`
 - ⚠️ Lists deprecated variable names — always use current names (table in that file)
-- ⚠️ Gradient variables exist but have NO utility class — CSS module only
+- ⚠️ Gradient variables exist but have NO utility class — use a Lens prop that accepts raw CSS strings (e.g. `Container backgroundImage="var(--lns-gradient-...)"`)
 
 **Need responsive behavior?** → `responsive-layout.md`
 - Breakpoint prefixes: `xs-` | `sm-` | `md-` | `lg-`
@@ -59,8 +59,8 @@
 
 | Trap | Why | Correct alternative |
 |---|---|---|
-| `style={{ color: 'var(--lns-color-primary)' }}` | Inline styles always forbidden | `<Text color="primary">` or CSS module |
-| `style={{ background: 'var(--lns-gradient-ai-primary)' }}` | Inline styles always forbidden | CSS module with `background: var(--lns-gradient-ai-primary)` |
+| `style={{ color: 'var(--lns-color-primary)' }}` | Inline styles always forbidden | `<Text color="primary">` |
+| `style={{ background: 'var(--lns-gradient-ai-primary)' }}` | Inline styles always forbidden | `<Container backgroundImage="var(--lns-gradient-ai-primary)" />` |
 | `<Text size="medium">` | Deprecated name | `<Text size="body-md">` |
 | `className="text:xlarge"` | Deprecated class | `className="text:heading-sm"` |
 | `var(--lns-fontSize-medium)` in CSS | Deprecated variable | `var(--lns-fontSize-body-md)` |
