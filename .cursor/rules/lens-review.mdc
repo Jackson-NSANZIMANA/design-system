@@ -8,8 +8,8 @@ alwaysApply: true
 
 ## Forbidden Imports — REJECT if found:
 - `from 'styled-components'`
-- `from '@emotion/react'` (except internal Lens use)
-- `from '@emotion/styled'` (except internal Lens use)
+- `from '@emotion/react'` (direct app use — internal Lens use is fine)
+- `from '@emotion/styled'` (direct app use — internal Lens use is fine)
 - `from '@chakra-ui'`
 - `from '@mui/'`
 - `from 'antd'`
@@ -24,12 +24,43 @@ alwaysApply: true
 - `*.scss'`
 
 ## Forbidden JSX — REJECT if found:
-- Raw HTML: `<div>`, `<span>`, `<p>`, `<h1>-<h6>`, `<button>`,
-  `<input>`, `<select>`, `<textarea>`, `<table>`, `<form>`,
-  `<img>`, `<ul>`, `<ol>`, `<li>`, `<nav>`, `<header>`,
-  `<footer>`, `<section>`, `<aside>`, `<main>`, `<article>`, `<a>`, `<hr>`
-- `style={{` with hardcoded values
-- className= with custom classes (unless documented Lens component accepts it)
+
+### Interactive primitives (linter enforces these — always forbidden):
+- `<button>` → use `<Button>`
+- `<input>` → use `<TextInput>`, `<Checkbox>`, `<Radio>`, `<Switch>`
+- `<select>` → use `<Select>`
+- `<textarea>` → use `<Textarea>`
+- `<a>` → use `<Link>`
+
+### Styling violations (linter enforces these — always forbidden):
+- `style={{` — inline styles, always forbidden, no exceptions
+- `className=` with values not in `mastery-db.json` approvedClasses
+- `className={` — dynamic className expressions, always forbidden
+
+### Raw HTML layout elements — PREFER Lens, but wrappers are allowed:
+```
+<div>, <span> are ALLOWED as wrapper elements when:
+  ✅ A Lens layout component (Split, Arrange, Container) cannot solve the need
+  ✅ React interop is required (refs, portals, event boundaries)
+  ✅ They are styled only with static Lens utility classes from mastery-db.json
+
+<div>, <span> are FORBIDDEN when:
+  ❌ They replace a Lens layout component (<Split>, <Arrange>, <Container>)
+  ❌ They carry inline styles
+  ❌ They carry className values not in mastery-db.json
+
+<p>, <h1>-<h6>, <span> for semantic text:
+  → Convention (not linter-enforced): use <Text htmlTag="p"> instead
+  → These will not fail CI but violate the coding standard
+
+<ul>, <ol>, <li> → use <List> / <ListRow>
+<img> → use <Avatar>, <Logo>, or <Illustration>
+<form> → use Lens form components wrapped in a <Container>
+<table>, <thead>, <tbody>, <tr>, <td> → escalate as LENS-GAP if needed
+<nav>, <header>, <footer>, <section>, <aside>, <main>, <article>
+  → Use <Container htmlTag="nav"> etc. (htmlTag prop controls semantic element)
+<hr> → use <Container borderSide="bottom" />
+```
 
 ## Wrong Prop Names — CORRECT these:
 - `disabled` → `isDisabled`
@@ -40,7 +71,7 @@ alwaysApply: true
 - `size="sm"` → `size="small"`
 - `size="md"` → `size="medium"`
 - `size="lg"` → `size="large"`
-- `variant="ghost"` → Does not exist in Lens
+- `variant="ghost"` → does not exist in Lens
 - `ref={ref}` → `refHandler={(r) => { ref.current = r }}`
 - `padding="4"` → `padding="medium"` or `padding={2}` (number × 8px)
 - `gap="2"` → `gap="small"`

@@ -380,12 +380,13 @@ have NO corresponding utility class in css-utilities.md.
 
 The ONLY valid way to apply a gradient:
 
-  ✅ CSS module:
-    .myClass { background: var(--lns-gradient-ai-primary); }
+  ✅ Container backgroundImage prop:
+  <Container backgroundImage="var(--lns-gradient-ai-primary)" />
 
-  ❌ FORBIDDEN:
-    style={{ background: 'var(--lns-gradient-ai-primary)' }}
-    className="gradient:ai-primary"  ← does not exist
+❌ FORBIDDEN:
+  style={{ background: 'var(--lns-gradient-ai-primary)' }}
+  className="gradient:ai-primary"   ← does not exist in mastery-db.json
+  .myClass { background: ... }      ← CSS files are forbidden in this project
 ```
 
 **Color application hierarchy:**
@@ -924,7 +925,7 @@ document.head.appendChild(style)
 - [ ] Zero style={{}} with hardcoded values
 - [ ] Zero className with custom classes
 - [ ] Zero raw HTML elements (div, span, p, h1-h6, button, input)
-- [ ]- [ ] Zero third-party UI libraries imported
+- [ ] Zero third-party UI libraries imported
 - [ ] All spacing uses named tokens (xsmall/small/medium/large/xlarge/xxlarge)
 - [ ] All colors use Lens token names (body, primary, danger, etc.)
 - [ ] All text uses <Text> component with proper size/variant

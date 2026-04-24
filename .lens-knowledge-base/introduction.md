@@ -104,16 +104,25 @@ padding-right: var(--lns-space-medium);
 
 ## Using CSS variables
 
-### Usage
+> ⚠️ **Project rule:** CSS variable usage via `.css` files is forbidden in
+> this project. No `.css`, `.module.css`, or `.scss` files may be created.
+> The example below shows the Lens variable naming system, not a
+> pattern to copy. Variables are injected at runtime via
+> `getThemeStylesString() + getAllCssVarsString() + cssUtilities()`.
+> For gradients, use `<Container backgroundImage="var(--lns-gradient-ai-primary)">`.
+  ### Usage
 
 ```css
+/* Reference only — do not create .css files in this project */
 .myClass {
-  font-size: var(--lns-fontSize-medium);
-  line-height: var(--lns-lineHeight-medium);
+  font-size: var(--lns-fontSize-body-md);   /* use body-md, not medium */
+  line-height: var(--lns-lineHeight-body-md);
   box-shadow: var(--lns-shadow-medium);
   padding: var(--lns-space-large);
   color: var(--lns-color-primary);
 }
+```
+
 ```
 
 # Development best practices
@@ -240,7 +249,14 @@ Layout component can cover most of the cases but not all. After building the bas
 
 Combine the custom CSS with Lens CSS variables.
 
+> ⚠️ **Project rule:** The pattern below (custom CSS classes with Lens variables)
+> is documented by Lens but **forbidden in this project**. No `.css` files
+> may be created. If you reach this point in the decision tree,
+> escalate with `// TODO: [LENS-GAP]` and use Lens component props or
+> utility classes as the closest approximation.
+
 ```css
+/* Reference only — forbidden in this project */
 .myClass {
   flex-grow: 3;
   padding: var(--lns-space-large);
