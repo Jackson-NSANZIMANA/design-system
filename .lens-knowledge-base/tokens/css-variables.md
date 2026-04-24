@@ -1,11 +1,12 @@
 # CSS Variables
 
 > ## ⚠️ Agent Instructions
->
-> CSS variables are for use **only** inside `.module.css` files.
+>Inject Lens CSS variables and utilities at app startup using getThemeStylesString + getAllCssVarsString + cssUtilities.
+>Do not create or import .css, .scss, or .module.css files in this repo.
 > **NEVER** use `var(--lns-*)` inside `style={{}}` inline styles.
 > Inline styles are always forbidden. CSS modules are the correct container.
->
+>Prefer Lens component props and Lens utility classes for styling.
+>Direct var(--lns-*) usage is allowed only in Lens component props that accept raw CSS strings (for example, Container backgroundImage for gradients).
 > This file lists ALL variables including deprecated ones.
 > Deprecated variables are marked — do not use them in new code.
 
@@ -41,31 +42,30 @@
 
 ## Text Size — Deprecation Table
 
-⚠️ Both deprecated and current variable names exist in the compiled CSS.
-Always use the current column. Never use the deprecated column.
+> ⚠️ Both deprecated and current variable names exist in the compiled CSS.
+Always use the current column. Never use the deprecated column. **Note:**
+ ---lns-fontSize-xxxlarge in older docs has a three-dash typo — never copy it.
 
-> [!Note]:
-> ---lns-fontSize-xxxlarge in older docs has a three-dash typo — never copy it.
-
-❌ Deprecated — do not use |✅ Current — use this
---lns-fontSize-small --lns-fontSize-body-sm
---lns-lineHeight-small --lns-lineHeight-body-sm
---lns-letterSpacing-small --lns-letterSpacing-body-sm
---lns-fontSize-medium --lns-fontSize-body-md
---lns-lineHeight-medium --lns-lineHeight-body-md
---lns-letterSpacing-medium --lns-letterSpacing-body-md
---lns-fontSize-large --lns-fontSize-body-lg
---lns-lineHeight-large --lns-lineHeight-body-lg
---lns-letterSpacing-large --lns-letterSpacing-body-lg
---lns-fontSize-xlarge --lns-fontSize-heading-sm
---lns-lineHeight-xlarge --lns-lineHeight-heading-sm
---lns-letterSpacing-xlarge --lns-letterSpacing-heading-sm
---lns-fontSize-xxlarge --lns-fontSize-heading-md
---lns-lineHeight-xxlarge --lns-lineHeight-heading-md
---lns-letterSpacing-xxlarge --lns-letterSpacing-heading-md
----lns-fontSize-xxxlarge ⚠️ TYPO (3 dashes) --lns-fontSize-heading-lg
---lns-lineHeight-xxxlarge --lns-lineHeight-heading-lg
---lns-letterSpacing-xxxlarge --lns-letterSpacing-heading-lg
+|❌ Deprecated — do not use |✅ Current — use this|
+|-----|----|
+--lns-fontSize-small| --lns-fontSize-body-sm|
+--lns-lineHeight-small |--lns-lineHeight-body-sm
+--lns-letterSpacing-small| --lns-letterSpacing-body-sm
+--lns-fontSize-medium |--lns-fontSize-body-md
+--lns-lineHeight-medium |--lns-lineHeight-body-md
+--lns-letterSpacing-medium |--lns-letterSpacing-body-md
+--lns-fontSize-large |--lns-fontSize-body-lg
+--lns-lineHeight-large |--lns-lineHeight-body-lg
+--lns-letterSpacing-large |--lns-letterSpacing-body-lg
+--lns-fontSize-xlarge |--lns-fontSize-heading-sm
+--lns-lineHeight-xlarge |--lns-lineHeight-heading-sm
+--lns-letterSpacing-xlarge |--lns-letterSpacing-heading-sm
+--lns-fontSize-xxlarge |--lns-fontSize-heading-md
+--lns-lineHeight-xxlarge |--lns-lineHeight-heading-md
+--lns-letterSpacing-xxlarge| --lns-letterSpacing-heading-md
+---lns-fontSize-xxxlarge ⚠️ TYPO (3 dashes) |--lns-fontSize-heading-lg
+--lns-lineHeight-xxxlarge |--lns-lineHeight-heading-lg
+--lns-letterSpacing-xxxlarge |--lns-letterSpacing-heading-lg
 
 ### Current variables — copy-safe list:
 

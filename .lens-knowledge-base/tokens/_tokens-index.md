@@ -40,7 +40,7 @@
 - ⚠️ Deprecated: `text:small/medium/large/xlarge/xxlarge/xxxlarge`
 - ⚠️ Current: `text:body-sm/md/lg` | `text:heading-sm/md/lg`
 
-**Need CSS variables for a `.module.css` file?** → `css-variables.md`
+**Need CSS variables** → `css-variables.md`
 - All `--lns-*` custom property names
 - ⚠️ Contains a typo: `---lns-fontSize-xxxlarge` (three dashes) — do not copy, use `--lns-fontSize-heading-lg`
 - ⚠️ Lists deprecated variable names — always use current names (table in that file)
@@ -80,4 +80,9 @@ The ESLint plugin validates every `className` value against:
 This file contains **1935 approved classes** generated directly from
 `@loomhq/lens@12.14.0` package source.
 
-
+To regenerate after a Lens version update:
+```bash
+npm run generate:mastery-db
+css-utilities.md is the human-readable reference.
+mastery-db.json is what the linter actually enforces.
+Both are now in sync.
