@@ -2,6 +2,7 @@
 
 ## Lens design system
 
+
 Lens is the design system that we use to build Loom products. It provides components, tools, and documentation for designers and developers.
 
 ## Lens impact
@@ -57,6 +58,36 @@ Styles and components are highly reusable and can be composed in many ways. Beca
 # Get started developing with Lens
 
 Lens provides developers tools to build a modular and scalable front-end. Our goal is to write as little CSS as possible and reuse code as much as possible.
+
+> ## ⚠️ Project-Specific Enforcement Rules
+>
+> This introduction documents what Lens *provides*. The sections below
+> describe capabilities that exist in Lens. However, **this project enforces
+> a stricter subset**. Before reading, know these project rules:
+>
+> | Lens capability shown below | This project's rule |
+> |---|---|
+> | `<div className="p:medium">` | ✅ **Allowed** — wrapper divs with Lens utility classes are permitted |
+> | `className="p:medium mr:medium shadow:large"` | ✅ **Allowed** — any class in `mastery-db.json` approvedClasses |
+> | `.myClass { padding: var(--lns-space-large); }` | ❌ **Forbidden** — no `.css` or `.module.css` files; no CSS imports |
+> | `style={{ fontSize: 'var(--lns-fontSize-medium)' }}` | ❌ **Forbidden** — inline styles always forbidden |
+> | Gradients via CSS class | ❌ No gradient utility class exists; use `<Container backgroundImage="var(--lns-gradient-ai-primary)">` |
+>
+> **The linter enforces:**
+> - `style={{}}` → always an error
+> - `className` not in `mastery-db.json` → always an error
+> - Dynamic `className={...}` expressions → always an error
+> - `<button>`, `<input>`, `<textarea>`, `<select>`, `<a>` → always an error
+>
+> **The linter does NOT enforce** (but the coding standard requires):
+> - Preferring `<Split>` over `<div className="flex">`
+> - Preferring `<Text>` over `<p>` or `<h1>`
+> - Using new typography names (`body-md` not `medium`)
+>
+> The examples below are from the official Lens documentation.
+> Read them to understand Lens capabilities.
+> Apply the table above to know what is permitted in `src/`.
+
 
 ## Using components
 
