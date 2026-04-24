@@ -3,5 +3,6 @@
 
 ./scripts/guard-protected-paths.sh
 ./scripts/guard-file-system.sh
+pnpm verify:lint-dbs
 
 npx lint-staged

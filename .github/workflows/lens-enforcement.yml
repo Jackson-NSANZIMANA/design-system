@@ -23,16 +23,18 @@ jobs:
     - name: Install pnpm
       uses: pnpm/action-setup@v2
       with:
-        version: 8
+        version: 9
 
     - name: Install Dependencies
       run: pnpm install --frozen-lockfile
 
-    - name: 🧠 Rebuild Mastery Database
+    - name: 🧠 Rebuild lint mastery DBs
       run: |
-        node scripts/generate-prop-mastery.js
-        node scripts/generate-mastery-database.js
-        node scripts/sync-lens-whitelist.js
+        pnpm generate:lint-dbs
+        pnpm verify:lint-dbs
+
+    - name: ✅ Ensure regenerated DBs are committed
+      run: git diff --exit-code -- eslint-plugin-lens-compliance/lib/mastery-db.json eslint-plugin-lens-compliance/lib/component-mastery-db.json
 
     - name: 🔍 Run Lens Linter
       run: pnpm eslint 'src/**/*.{ts,tsx}' --max-warnings=0

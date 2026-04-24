@@ -1,0 +1,172 @@
+#!/usr/bin/env node
+"use strict";
+
+const fs = require("fs");
+const path = require("path");
+
+const ROOT = process.cwd();
+const TYPES_DIR = path.join(ROOT, ".lens-knowledge-base", "type-declarations");
+const EXPORTS_PATH = path.join(ROOT, ".lens-knowledge-base", "exports-verified.json");
+const OUTPUT_PATH = path.join(
+  ROOT,
+  "eslint-plugin-lens-compliance",
+  "lib",
+  "component-mastery-db.json",
+);
+
+function readJson(p) {
+  return JSON.parse(fs.readFileSync(p, "utf8"));
+}
+
+function collectFiles(dir, files = []) {
+  if (!fs.existsSync(dir)) return files;
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  for (const e of entries) {
+    const full = path.join(dir, e.name);
+    if (e.isDirectory()) collectFiles(full, files);
+    else if (e.isFile() && e.name.endsWith(".d.ts")) files.push(full);
+  }
+  return files;
+}
+
+function extractTypeAliases(content) {
+  const aliases = {};
+  const aliasRegex = /type\s+([A-Za-z0-9_]+Props)\s*=\s*\{([\s\S]*?)\n\};/g;
+  let match;
+  while ((match = aliasRegex.exec(content)) !== null) {
+    aliases[match[1]] = match[2];
+  }
+  return aliases;
+}
+
+function parsePropType(typeText) {
+  const type = typeText.trim();
+
+  // Literal unions: 'a' | 'b'
+  const literalMatches = [...type.matchAll(/'([^']+)'/g)].map((m) => m[1]);
+  if (literalMatches.length > 0) return [...new Set(literalMatches)];
+
+  if (/\bboolean\b/.test(type)) return ["boolean"];
+  if (/\bnumber\b/.test(type)) return ["number"];
+  if (/\bstring\b/.test(type)) return ["string"];
+  if (/\bReact\.ReactNode\b/.test(type)) return ["React.ReactNode"];
+  if (/\bReact\.ReactEventHandler\b/.test(type)) return ["React.ReactEventHandler"];
+
+  // Keep concise but deterministic fallback for complex signatures.
+  const compact = type.replace(/\s+/g, " ").trim();
+  return [compact];
+}
+
+function parsePropsFromAliasBody(body) {
+  const props = {};
+  const required = [];
+  const lines = body.split("\n");
+
+  for (const rawLine of lines) {
+    const line = rawLine.trim();
+    if (!line || line.startsWith("//")) continue;
+
+    const m = line.match(/^([A-Za-z0-9_]+)(\?)?:\s*(.+);$/);
+    if (!m) continue;
+
+    const propName = m[1];
+    const optional = Boolean(m[2]);
+    const typeText = m[3];
+    props[propName] = parsePropType(typeText);
+
+    // Keep required conservative to avoid noisy false positives.
+    if (!optional && propName !== "children" && propName !== "className" && propName !== "style") {
+      required.push(propName);
+    }
+  }
+
+  return { props, required };
+}
+
+function getLensVersion() {
+  try {
+    const lensPkg = readJson(path.join(ROOT, "node_modules", "@loomhq", "lens", "package.json"));
+    return lensPkg.version || "unknown";
+  } catch {
+    return "unknown";
+  }
+}
+
+function main() {
+  if (!fs.existsSync(EXPORTS_PATH)) {
+    console.error("❌ Missing exports file:", EXPORTS_PATH);
+    process.exit(1);
+  }
+  if (!fs.existsSync(TYPES_DIR)) {
+    console.error("❌ Missing Lens type declarations directory:", TYPES_DIR);
+    process.exit(1);
+  }
+
+  const exportsVerified = readJson(EXPORTS_PATH);
+  const oldDb = fs.existsSync(OUTPUT_PATH) ? readJson(OUTPUT_PATH) : { components: {}, nesting: {}, responsive: { keys: [] } };
+
+  const componentsFromExports = [
+    ...(exportsVerified.layoutComponents || []),
+    ...(exportsVerified.typographyComponents || []),
+    ...(exportsVerified.interactiveComponents || []),
+    ...(exportsVerified.dataDisplayComponents || []),
+    ...(exportsVerified.feedbackComponents || []),
+    ...(exportsVerified.formComponents || []),
+    ...(exportsVerified.loadingComponents || []),
+    ...(exportsVerified.utilityComponents || []),
+  ];
+
+  const componentSet = new Set(componentsFromExports);
+
+  const aliasMap = {};
+  const files = collectFiles(TYPES_DIR);
+  for (const file of files) {
+    const content = fs.readFileSync(file, "utf8");
+    const aliases = extractTypeAliases(content);
+    Object.assign(aliasMap, aliases);
+  }
+
+  const components = {};
+  const oldComponents = oldDb.components || {};
+
+  for (const comp of componentSet) {
+    const aliasName = `${comp}Props`;
+    const existing = oldComponents[comp] || { props: {}, required: [] };
+
+    if (!aliasMap[aliasName]) {
+      // Keep previous entry if no direct alias found.
+      components[comp] = existing;
+      continue;
+    }
+
+    const parsed = parsePropsFromAliasBody(aliasMap[aliasName]);
+
+    // Merge strategy: parsed props overwrite same keys, preserve old specialized keys.
+    const mergedProps = { ...(existing.props || {}), ...parsed.props };
+
+    // Keep required conservative: preserve known required plus newly parsed required.
+    const requiredSet = new Set([...(existing.required || []), ...parsed.required]);
+
+    components[comp] = {
+      props: mergedProps,
+      required: [...requiredSet],
+    };
+  }
+
+  const output = {
+    _generated: new Date().toISOString(),
+    _lensVersion: getLensVersion(),
+    _note:
+      "Generated by scripts/generate-component-mastery-db.js from Lens type declarations + exports-verified.json. Do not edit manually.",
+    components,
+    nesting: oldDb.nesting || {},
+    responsive: oldDb.responsive || { keys: ["default", "xsmall", "small", "medium", "large"] },
+  };
+
+  fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2) + "\n", "utf8");
+  console.log("✅ component-mastery-db.json regenerated");
+  console.log("   - components:", Object.keys(components).length);
+  console.log("   - output:", OUTPUT_PATH);
+}
+
+main();
