@@ -16,7 +16,7 @@ _"No frontend element shall exist outside Lens governance."_
 
 - **Lens First Every UI need starts with a Lens catalog lookup.**
 
-- **Lens Only Zero custom CSS/components unless Lens lacks it.**
+- **Lens Only Keep Lens components predictable; use custom CSS only for scoped wrappers/custom elements when Lens primitives are too constrained.**
 
 - **Lens Always Continuous compliance verification.**
 
@@ -378,20 +378,22 @@ copying them blindly.
 
 **Gradient rule — no utility class exists:**
 
-```
+``` text
 Gradients (--lns-gradient-ai-primary, --lns-gradient-ai-secondary)
 have NO corresponding utility class in css-utilities.md.
 
-The ONLY valid way to apply a gradient:
+Valid ways to apply a gradient:
 
-  ✅ CSS module:
-    .myClass { background: var(--lns-gradient-ai-primary); }
+  ✅ Preferred — Container prop:
+  <Container backgroundImage="var(--lns-gradient-ai-primary)" />
 
-  ❌ FORBIDDEN:
-    style={{ background: 'var(--lns-gradient-ai-primary)' }}
-    className="gradient:ai-primary"  ← does not exist
+  ✅ Also valid — CSS module on a wrapper/custom element:
+  .myWrapper { background: var(--lns-gradient-ai-primary); }
+
+❌ FORBIDDEN — always:
+  style={{ background: 'var(--lns-gradient-ai-primary)' }}
+  className="gradient:ai-primary"  ← does not exist
 ```
-
 **Color application hierarchy:**
 
 ```
@@ -490,7 +492,7 @@ Need to style something?
 │   └─ NO (raw wrapper div/span)
 │       ├─ Does a class in css-utilities.md solve it?
 │       │   YES → Use it. Confirm not deprecated.
-│       │   NO  → Use CSS module + var(--lns-*) variables
+│       │   NO  → Use CSS module + var(--lns-*) variables (wrappers/custom elements only)
 │       │
 │       └─ NEVER: style={{}}, Tailwind, hardcoded values
 │
@@ -924,12 +926,13 @@ document.head.appendChild(style)
 ## SELF-CHECK BEFORE SUBMITTING CODE
 
 - [ ] Every UI import comes from @loomhq/lens
-- [ ] Zero .css, .scss, .module.css files created
+- [ ] No .css/.module.css files applied to Lens component internals
+- [ ] CSS modules used only for one-off wrappers/custom elements with var(--lns-*)
+- [ ] No custom className applied directly to Lens component internals
 - [ ] Zero style={{}} with hardcoded values
-- [ ] Zero className with custom classes
 - [ ] Zero raw interactive primitives (`button`, `input`, `select`, `textarea`, `a`)
 - [ ] Raw wrappers (`div`, `span`) are used only when required (refs/interop/boundaries) and only with approved Lens utility classes
-- [ ]- [ ] Zero third-party UI libraries imported
+- [ ] Zero third-party UI libraries imported
 - [ ] All spacing uses named tokens (xsmall/small/medium/large/xlarge/xxlarge)
 - [ ] All colors use Lens token names (body, primary, danger, etc.)
 - [ ] All text uses <Text> component with proper size/variant

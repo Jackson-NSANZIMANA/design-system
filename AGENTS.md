@@ -378,21 +378,22 @@ copying them blindly.
 
 **Gradient rule — no utility class exists:**
 
-```
+``` text
 Gradients (--lns-gradient-ai-primary, --lns-gradient-ai-secondary)
 have NO corresponding utility class in css-utilities.md.
 
-The ONLY valid way to apply a gradient:
+Valid ways to apply a gradient:
 
-  ✅ Container backgroundImage prop:
+  ✅ Preferred — Container prop:
   <Container backgroundImage="var(--lns-gradient-ai-primary)" />
 
-❌ FORBIDDEN:
-  style={{ background: 'var(--lns-gradient-ai-primary)' }}
-  className="gradient:ai-primary"   ← does not exist in mastery-db.json
-  .myClass { background: ... }      ← only forbidden on Lens components; allowed for wrappers/custom elements
-```
+  ✅ Also valid — CSS module on a wrapper/custom element:
+  .myWrapper { background: var(--lns-gradient-ai-primary); }
 
+❌ FORBIDDEN — always:
+  style={{ background: 'var(--lns-gradient-ai-primary)' }}
+  className="gradient:ai-primary"  ← does not exist
+```
 **Color application hierarchy:**
 
 ```
@@ -925,9 +926,10 @@ document.head.appendChild(style)
 ## SELF-CHECK BEFORE SUBMITTING CODE
 
 - [ ] Every UI import comes from @loomhq/lens
-- [ ] Zero .css, .scss, .module.css files created
+- [ ] No .css/.module.css files applied to Lens component internals
+- [ ] CSS modules used only for one-off wrappers/custom elements with var(--lns-*)
+- [ ] No custom className applied directly to Lens component internals
 - [ ] Zero style={{}} with hardcoded values
-- [ ] Zero className with custom classes
 - [ ] Zero raw interactive primitives (`button`, `input`, `select`, `textarea`, `a`)
 - [ ] Raw wrappers (`div`, `span`) are used only when required (refs/interop/boundaries) and only with approved Lens utility classes
 - [ ] Zero third-party UI libraries imported

@@ -2,6 +2,7 @@
 
 ## Lens design system
 
+
 Lens is the design system that we use to build Loom products. It provides components, tools, and documentation for designers and developers.
 
 ## Lens impact
@@ -58,6 +59,36 @@ Styles and components are highly reusable and can be composed in many ways. Beca
 
 Lens provides developers tools to build a modular and scalable front-end. Our goal is to write as little CSS as possible and reuse code as much as possible.
 
+> ## ⚠️ Project-Specific Enforcement Rules
+>
+> This introduction documents what Lens *provides*. The sections below
+> describe capabilities that exist in Lens. However, **this project enforces
+> a stricter subset**. Before reading, know these project rules:
+>
+> | Lens capability shown below | This project's rule |
+> |---|---|
+> | `<div className="p:medium">` | ✅ **Allowed** — wrapper divs with Lens utility classes are permitted |
+> | `className="p:medium mr:medium shadow:large"` | ✅ **Allowed** — any class in `mastery-db.json` approvedClasses |
+> | `.myClass { padding: var(--lns-space-large); }` | ✅ **Allowed** — for wrappers/ custom elements only. Never on Lens component internals. |
+> | `style={{ fontSize: 'var(--lns-fontSize-medium)' }}` | ❌ **Forbidden** — inline styles always forbidden |
+> | Gradients via CSS class | ❌ No gradient utility class exists; use `<Container backgroundImage="var(--lns-gradient-ai-primary)">` |
+>
+> **The linter enforces:**
+> - `style={{}}` → always an error
+> - `className` not in `mastery-db.json` → always an error
+> - Dynamic `className={...}` expressions → always an error
+> - `<button>`, `<input>`, `<textarea>`, `<select>`, `<a>` → always an error
+>
+> **The linter does NOT enforce** (but the coding standard requires):
+> - Preferring `<Split>` over `<div className="flex">`
+> - Preferring `<Text>` over `<p>` or `<h1>`
+> - Using new typography names (`body-md` not `medium`)
+>
+> The examples below are from the official Lens documentation.
+> Read them to understand Lens capabilities.
+> Apply the table above to know what is permitted in `src/`.
+
+
 ## Using components
 
 ### Import
@@ -104,27 +135,16 @@ padding-right: var(--lns-space-medium);
 
 ## Using CSS variables
 
-> ⚠️ **Project rule:** Use Lens component props and Lens utility classes first.
-> Scoped custom CSS (including CSS modules) is allowed only for one-off wrappers
-> and custom elements when Lens primitives are too constrained.
-> Do not apply custom CSS directly to Lens component internals.
-> The example below shows the Lens variable naming system and a
-> pattern to copy. Variables are injected at runtime via
-> `getThemeStylesString() + getAllCssVarsString() + cssUtilities()`.
-> For gradients, use `<Container backgroundImage="var(--lns-gradient-ai-primary)">`.
-  ### Usage
+### Usage
 
 ```css
-/* Allowed for wrappers/custom elements only; do not apply to Lens components */
+/* Allowed for wrappers/custom elements only. 
+   Do not apply to Lens component internals. */
 .myClass {
-  font-size: var(--lns-fontSize-body-md);   /* use body-md, not medium */
-  line-height: var(--lns-lineHeight-body-md);
-  box-shadow: var(--lns-shadow-medium);
+  font-size: var(--lns-fontSize-body-md);
   padding: var(--lns-space-large);
   color: var(--lns-color-primary);
 }
-```
-
 ```
 
 # Development best practices
@@ -181,11 +201,19 @@ This solution is using Lens CSS utilities, but we can also achieve the same by a
 
 ### Building a custom element
 
-We want to use Lens as much as possible, but there are few very good reasons to not use Lens.
+When Lens primitives cannot cover the need:
 
-- **When building a complex layout.** Layouts are one of the most common parts of the interface and each layout has slightly different needs. In many cases we need granular control on a very low level and CSS does exactly that. Combine the custom CSS with Lens CSS variables for consistent spacing.
+1. Build the element using Lens layout components and utility classes first.
+2. If still insufficient, scoped custom CSS is allowed for one-off 
+   wrappers or custom elements. Use Lens variables (`var(--lns-*)`) 
+   for all values.
+3. Do not apply custom CSS to Lens component internals.
+4. If the pattern repeats, escalate:
+  
 
-- **When building an experiment or a temporal feature.** If we are not sure that what we are building is going to be a pattern used across the product, it's much better to build it as a custom element.
+```tsx
+ // TODO: [LENS-GAP] <describe what Lens is missing>
+```
 
 ## How to compose layouts with Lens
 
@@ -247,30 +275,15 @@ Layout components have the advantage of custom spacing and dimensions. We can sp
 
 #### When to add custom CSS
 
-Layout component can cover most of the cases but not all. After building the basic structure with layout components we can add some additional CSS for custom behavior.
+Policy 1: prefer Lens layout primitives and Lens utility classes first.
+Policy 2: custom CSS is allowed for one-off wrappers and custom elements when Lens primitives are too constrained.
+Policy 3: in custom CSS, use Lens variables (`var(--lns-*)`) to stay in Lens language.
+If the pattern repeats across features, escalate as a Lens gap.
 
-Combine the custom CSS with Lens CSS variables.
-
-> ⚠️ **Project rule:** The pattern below (custom CSS classes with Lens variables)
-> is allowed only for one-off wrappers and custom elements when Lens
-> primitives are too constrained. Do not apply custom CSS directly to Lens
-> components. If this becomes a repeated product pattern, escalate with
-> `// TODO: [LENS-GAP]` and propose a reusable Lens-level solution.
-
-```css
-/* Allowed for wrappers/custom elements only; do not apply to Lens components */
-.myClass {
-  flex-grow: 3;
-  padding: var(--lns-space-large);
-  margin-bottom: var(--lns-space-small);
-  border-radius: var(--lns-radius-medium);
-}
-```
-
-Don't add custom styles to Lens components. Use wrappers/custom elements when needed. (see `./tokens`)
+Don't add custom styles to Lens components.
 
 ### When NOT to use Lens to compose layouts
 
 Layouts are one of the most common parts of an interface and each layout has slightly different needs. Because there are so many possible layout combinations, a system can't create patterns that cover all cases. Some layouts are too complex or need a specific behavior. For reference, check CSS `flex` and `grid` properties, just these can generate a huge amount of layout combinations.
 
-In cases where Lens tools are too constraining and more granular control is needed, compose with custom CSS.
+In cases where Lens tools are too constraining and more granular control is needed, use scoped custom CSS for wrappers/custom elements with Lens variables, and escalate as a Lens gap when the pattern becomes reusable.

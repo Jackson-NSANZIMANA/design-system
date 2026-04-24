@@ -27,7 +27,11 @@ jobs:
 
     - name: Install Dependencies
       run: pnpm install --frozen-lockfile
+    - name: 📚 Validate Lens Knowledge Base (types/links/exports)
+      run: pnpm kb:validate
 
+    - name: ✅ Ensure KB generated artifacts are committed
+  run: git diff --exit-code -- .lens-knowledge-base/type-declarations .lens-knowledge-base/package-meta.json
     - name: 🧠 Rebuild lint mastery DBs
       run: |
         pnpm generate:lint-dbs

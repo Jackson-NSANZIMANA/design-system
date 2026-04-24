@@ -69,7 +69,7 @@ Lens provides developers tools to build a modular and scalable front-end. Our go
 > |---|---|
 > | `<div className="p:medium">` | ✅ **Allowed** — wrapper divs with Lens utility classes are permitted |
 > | `className="p:medium mr:medium shadow:large"` | ✅ **Allowed** — any class in `mastery-db.json` approvedClasses |
-> | `.myClass { padding: var(--lns-space-large); }` | ❌ **Forbidden** — no `.css` or `.module.css` files; no CSS imports |
+> | `.myClass { padding: var(--lns-space-large); }` | ✅ **Allowed** — for wrappers/ custom elements only. Never on Lens component internals. |
 > | `style={{ fontSize: 'var(--lns-fontSize-medium)' }}` | ❌ **Forbidden** — inline styles always forbidden |
 > | Gradients via CSS class | ❌ No gradient utility class exists; use `<Container backgroundImage="var(--lns-gradient-ai-primary)">` |
 >
@@ -138,11 +138,10 @@ padding-right: var(--lns-space-medium);
 ### Usage
 
 ```css
-/* Reference only — Policy 1 forbids creating any CSS files in this project */
+/* Allowed for wrappers/custom elements only. 
+   Do not apply to Lens component internals. */
 .myClass {
   font-size: var(--lns-fontSize-body-md);
-  line-height: var(--lns-lineHeight-body-md);
-  box-shadow: var(--lns-shadow-medium);
   padding: var(--lns-space-large);
   color: var(--lns-color-primary);
 }
@@ -202,11 +201,18 @@ This solution is using Lens CSS utilities, but we can also achieve the same by a
 
 ### Building a custom element
 
-Policy 1: build with Lens primitives and Lens utility classes only.
-If a requirement cannot be expressed with Lens, escalate as a Lens gap:
+When Lens primitives cannot cover the need:
+
+1. Build the element using Lens layout components and utility classes first.
+2. If still insufficient, scoped custom CSS is allowed for one-off 
+   wrappers or custom elements. Use Lens variables (`var(--lns-*)`) 
+   for all values.
+3. Do not apply custom CSS to Lens component internals.
+4. If the pattern repeats, escalate:
+  
 
 ```tsx
-// TODO: [LENS-GAP] <describe missing Lens capability>
+ // TODO: [LENS-GAP] <describe what Lens is missing>
 ```
 
 ## How to compose layouts with Lens
