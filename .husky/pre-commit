@@ -1,8 +1,18 @@
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
+set -e
+
+export PATH="$(pwd)/node_modules/.bin:$PATH"
 
 ./scripts/guard-protected-paths.sh
 ./scripts/guard-file-system.sh
 pnpm verify:lint-dbs
 
-npx lint-staged
+STAGED_TS_FILES="$(git diff --cached --name-only --diff-filter=ACMR | grep -E '\.(ts|tsx)$' || true)"
+if [ -n "$STAGED_TS_FILES" ]; then
+  echo "🔍 Linting staged TS/TSX files..."
+  echo "$STAGED_TS_FILES" | xargs -r pnpm exec eslint --max-warnings=0
+else
+  echo "ℹ️  No staged TS/TSX files to lint."
+fi
+
+pnpm exec lint-staged

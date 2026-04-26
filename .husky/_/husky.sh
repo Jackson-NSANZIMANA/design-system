@@ -1,4 +1,9 @@
+echo "husky - DEPRECATED
+
+Please remove the following two lines from $0:
+
 #!/usr/bin/env sh
-# Minimal husky bootstrap for POSIX shells.
-# Ensures local node binaries are available.
-export PATH="node_modules/.bin:$PATH"
+. \"\$(dirname -- \"\$0\")/_/husky.sh\"
+
+They WILL FAIL in v10.0.0
+"

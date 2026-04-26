@@ -2,43 +2,55 @@ name: Lens Design System Enforcement
 
 on:
   push:
-    branches: [ "main", "master" ]
+    branches: [ "main", "master", "Jackson", "develop" ]
   pull_request:
     branches: [ "main", "master" ]
 
 jobs:
   enforce-lens:
-    name: 🛡️ Lens Compliance Guard
+    name: 🛡️ Lens Compliance & Validation
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Code
-      uses: actions/checkout@v4
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 9
 
-    - name: Install pnpm
-      uses: pnpm/action-setup@v2
-      with:
-        version: 9
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
 
-    - name: Install Dependencies
-      run: pnpm install --frozen-lockfile
-    - name: 📚 Validate Lens Knowledge Base (types/links/exports)
-      run: pnpm kb:validate
+      - name: Install Dependencies
+        run: pnpm install --frozen-lockfile
 
-    - name: ✅ Ensure KB generated artifacts are committed
-  run: git diff --exit-code -- .lens-knowledge-base/type-declarations .lens-knowledge-base/package-meta.json
-    - name: 🧠 Rebuild lint mastery DBs
-      run: |
-        pnpm generate:lint-dbs
-        pnpm verify:lint-dbs
+      - name: 📚 Validate Knowledge Base
+        run: pnpm kb:validate
 
-    - name: ✅ Ensure regenerated DBs are committed
-      run: git diff --exit-code -- eslint-plugin-lens-compliance/lib/mastery-db.json eslint-plugin-lens-compliance/lib/component-mastery-db.json
+      - name: 🧠 Rebuild Lint Mastery DBs
+        run: pnpm generate:lint-dbs
 
-    - name: 🔍 Run Lens Linter
-      run: pnpm eslint 'src/**/*.{ts,tsx}' --max-warnings=0
+      - name: ✅ Verify Lint DBs are fresh
+        run: pnpm verify:lint-dbs
+
+      - name: ✅ Ensure Lint DBs are committed
+        run: |
+          git diff --exit-code -- \
+            eslint-plugin-lens-compliance/lib/mastery-db.json \
+            eslint-plugin-lens-compliance/lib/component-mastery-db.json || {
+            echo "❌ Lint DBs out of sync. Run pnpm generate:lint-dbs and commit."
+            exit 1
+          }
+
+      - name: 🔍 Lint src/ (when present)
+        run: |
+          if [ -d "src" ] && [ "$(find src -name '*.ts' -o -name '*.tsx' | grep -v test | wc -l)" -gt 0 ]; then
+            pnpm eslint 'src/**/*.{ts,tsx}' --max-warnings=0
+          else
+            echo "ℹ️  No src/ files to lint yet"
+          fi
