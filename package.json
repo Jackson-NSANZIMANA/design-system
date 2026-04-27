@@ -40,7 +40,7 @@
     "kb:sync-types": "tsx scripts/kb/sync-types.ts",
     "kb:validate-links": "tsx scripts/kb/validate-links.ts",
     "kb:validate-exports": "tsx scripts/kb/validate-exports.ts",
-    "kb:validate": "pnpm kb:sync-types && pnpm kb:validate-links && pnpm kb:validate-exports",
+    "kb:validate": "pnpm kb:sync-types && node scripts/generate-session-context.js && pnpm kb:validate-links && pnpm kb:validate-exports",
     "generate:mastery-db": "node scripts/generate-mastery-db.js",
     "generate:component-mastery-db": "node scripts/generate-component-mastery-db.js",
     "generate:lint-dbs": "pnpm generate:mastery-db && pnpm generate:component-mastery-db",
