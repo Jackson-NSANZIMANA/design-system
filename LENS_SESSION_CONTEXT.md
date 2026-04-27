@@ -25,15 +25,15 @@ style.innerHTML = getThemeStylesString() + getAllCssVarsString();
 document.head.appendChild(style);
 ```
 ## Layout Components
-|Component |	Purpose |	Replaces |
-|----------|--------------|------------|
-|<Container>|	Container with padding/border/color/radius|	<div>|
-|<Split>|	Flexbox layout|	display:flex divs|
-|<SplitSection>|	Flex item with grow/shrink/basis|	flex children|
-|<Arrange>|	CSS Grid layout|	display:grid| divs|
-|<Align>|	Position content within container|	positioning CSS|
-|<Spacer>|	Spacing between elements|	margin hacks|
-|<Backdrop>|	Full-screen overlay|	overlay divs|
+| Component | Purpose | Replaces |
+| --------- | ------- | -------- |
+| `<Container>` | Container with padding/border/color/radius | `<div>` |
+| `<Split>` | Flexbox layout | display:flex divs |
+| `<SplitSection>` | Flex item with grow/shrink/basis | flex children |
+| `<Arrange>` | CSS Grid layout | display:grid| divs |
+| `<Align>` | Position content within container | positioning CSS |
+| `<Spacer>` | Spacing between elements | margin hacks |
+| `<Backdrop>` | Full-screen overlay | overlay divs |
 ## Typography — ONE component: Text
 ```tsx
 <Text size="heading-lg" htmlTag="h1" variant="mainTitle">Page Title</Text>
@@ -48,14 +48,14 @@ Sizes: `body-sm` | `body-md` | `body-lg` | `heading-sm` | `heading-md` | `headin
 
 ## Spacing Tokens
 
-|Token|	px|	Use|
-|-----|-------|------|
-|xsmall|	4|	Tight gaps|
-small|	8|	Default gaps|
-|medium|	16|	Section padding|
-|large|	24|	Card padding|
-|xlarge|	40|	Page spacing|
-|xxlarge|	64|	Major divisions|
+| Token | px | Use |
+| ----- | -- | --- |
+| xsmall | 4 | Tight gaps |
+| small | 8 | Default gaps |
+| medium | 16 | Section padding |
+| large | 24 | Card padding |
+| xlarge | 40 | Page spacing |
+| xxlarge | 64 | Major divisions |
 
 Numbers multiply by 8: `padding={3}` = 24px
 
@@ -82,7 +82,6 @@ import SvgBell from '@loomhq/lens/icons/bell'
 - **Element:** htmlTag="a" (NOT as="a")
 - **Refs:** refHandler={(r) => ref.current = r} (NOT ref={ref})
 - **Icons:** iconBefore / iconAfter (NOT leftIcon / rightIcon)
-``
 ## Responsive
 ```tsx
 <Arrange gap={{ default: 'small', medium: 'large' }} />
@@ -96,67 +95,92 @@ import SvgBell from '@loomhq/lens/icons/bell'
 
 # Lens Component Index
 
+## Foundation
+
+- [BaseStyles](components/BaseStyles.md) — Global base styles / baseline
+
 ## Layout
+
 - [Align](components/Align.md) — Position content within a container
 - [Arrange](components/Arrange.md) — CSS Grid layout
 - [Backdrop](components/Backdrop.md) — Full-screen overlay
 - [Container](components/Container.md) — Generic container
-- [ErrorContainer](components/ErrorContainer.md) — Inline error wrapper
-- [Popover](components/Popover.md) — Floating content
+- [Distribute](components/Distribute.md) — Distribution layout
+- [Layout](components/Layout.md) — Page layout composition
 - [Spacer](components/Spacer.md) — Spacing between elements
 - [Split](components/Split.md) — Flexbox layout
+- [SplitSection](components/SplitSection.md) — Flex item section
 
 ## Typography
+
 - [Text](components/Text.md) — ALL text (headings, body, inline)
 
 ## Interactive
+
 - [Button](components/Button.md) — Action button
 - [Checkbox](components/Checkbox.md) — Checkbox input
 - [ColorPicker](components/ColorPicker.md) — Color selection
 - [Dropdown](components/Dropdown.md) — Dropdown menu
 - [IconButton](components/IconButton.md) — Icon-only button
+- [IconButtonBox](components/IconButtonBox.md) — Icon button variant
 - [Link](components/Link.md) — Navigation link
 - [Menu](components/Menu.md) — Menu container
+- [MenuItem](components/MenuItem.md) — Menu item
 - [Modal](components/Modal.md) — Dialog overlay
+- [ModalCard](components/ModalCard.md) — Modal card layout
 - [Radio](components/Radio.md) — Radio input
 - [Select](components/Select.md) — Dropdown selection
 - [Switch](components/Switch.md) — Toggle switch
 - [Tabs](components/Tabs.md) — Tab navigation
+- [Tab](components/Tab.md) — Individual tab item (legacy export)
 - [TextButton](components/TextButton.md) — Text-styled button
 - [TextInput](components/TextInput.md) — Text input
 - [Textarea](components/Textarea.md) — Multi-line input
 - [Typeahead](components/Typeahead.md) — Autocomplete
 
 ## Data Display
+
 - [Avatar](components/Avatar.md) — User avatar
 - [Icon](components/Icon.md) — Icon wrapper
 - [Illustration](components/Illustration.md) — Pre-built illustrations
+- [Media](components/Media.md) — Media wrapper (image/video)
 - [Indicator](components/Indicator.md) — Status dot
 - [List](components/List.md) — List container
+- [ListRow](components/ListRow.md) — List row item
 - [Logo](components/Logo.md) — Loom logo
 - [Pill](components/Pill.md) — Badge/tag
-- [Skeleton](components/Skeleton.md) — Loading placeholder
+- [SkeletonContainer](components/SkeletonContainer.md) — Skeleton wrapper
+- [SkeletonText](components/SkeletonText.md) — Skeleton text line
+
 
 ## Feedback
+
+- [ErrorContainer](components/ErrorContainer.md) — Inline error wrapper
 - [NotificationBar](components/NotificationBar.md) — Banner
+- [Popover](components/Popover.md) — Floating content
 - [Toast](components/Toast.md) — Temporary notification
 - [Tooltip](components/Tooltip.md) — Hover info
+- [TooltipBox](components/TooltipBox.md) — Tooltip container
 
 ## Form
+
 - [FormField](components/FormField.md) — Field wrapper with label/error
 
 ## Loading
+
 - [Loader](components/Loader.md) — Spinner
 - [LogoLoader](components/LogoLoader.md) — Logo animation
 - [EllipsesLoader](components/EllipsesLoader.md) — Dots animation
 - [WaveformLoader](components/WaveformLoader.md) — Waveform animation
 
 ## Other Documentation
-- [Styles & Tokens](tokens/styles-full.md) — Colors, Typography, Spacing, Shadows, Radii
-- [Icons (683)](../icons-inventory.md) — Full icon list
+
+- [Styles & Tokens](tokens/_tokens-index.md) — Colors, Typography, Spacing, Shadows, Radii
+- [Icons (683)](icons-inventory.md) — Full icon list
 - [Forms Pattern](patterns/forms.md) — Form design patterns
 - [Error Pattern](patterns/errors.md) — Error handling patterns
 - [Disabled Pattern](patterns/disabled-styles.md) — Disabled state patterns
+- [Master Reference](MASTER-REFERENCE.md) — Full exports and API inventory
 
 
 ---
@@ -165,15 +189,92 @@ import SvgBell from '@loomhq/lens/icons/bell'
 
 # Design System Tokens Index
 
-**Agent Instructions:** Do not guess token values. Use this index to find the exact file containing the design system tokens you need.
+> ## ⚠️ Agent Instructions — Read This First
+>
+> Use this index to navigate to exactly the file you need.
+> Read ONLY the specific file that answers your question.
+>
+> **⛔ NEVER read these files for implementation:**
+> - `../reference/styles-full.md` — 1746-line combined dump, wastes context budget
+> - `../reference/components-full.md` — 7000-line combined dump, wastes context budget
+>
+> **If a code example in any token file conflicts with the agentic rules,
+> the agentic rules take precedence.**
 
-* **Need colors?** Read `colors.md` for Light/Dark Theme, Greyscale, Base, and Semantic colors.
-* **Need text styling?** Read `typography.md` for Atlassian Sans configurations, sizes, and weights.
-* **Need spacing/gaps?** Read `spacing.md` for the 8px base unit scale (xsmall to xxlarge).
-* **Need borders, corners, or depth?** Read `shape-and-elevation.md` for radius and shadow tokens.
-* **Need to apply styles?** Read `css-utilities.md` for all pre-defined Lens CSS utility classes (e.g., `c:red`, `p:medium`, `flex`).
-* **Need raw CSS variables?** Read `css-variables.md`.
-* **Need responsive behavior?** Read `responsive-layout.md` for breakpoint prefixes, Split/Arrange layouts, and hooks.
+---
+
+## Find Your File
+
+**Need colors?** → `colors.md`
+- Light/Dark theme semantic colors, Greyscale, Base colors, Gradients
+- ⚠️ Read the "How To Apply Colors" section before using any token
+
+**Need text styling?** → `typography.md`
+- Font sizes, weights, line heights, semantic variants
+- ⚠️ Use NEW names only: `body-sm` | `body-md` | `body-lg` | `heading-sm` | `heading-md` | `heading-lg`
+- ⚠️ NEVER use deprecated names: `small` | `medium` | `large` | `xlarge` | `xxlarge` | `xxxlarge`
+
+**Need spacing or gaps?** → `spacing.md`
+- 8px base unit scale: xsmall (4px) → xxlarge (64px)
+- ⚠️ Code examples use `style={{}}` — demonstration only, never copy this pattern
+
+**Need shadows or radius?** → `shape-and-elevation.md`
+- Shadow: small / medium / large
+- Radius: numeric (50–300) AND semantic (medium, large, xlarge, round, full, none)
+- Both numeric and semantic names are valid
+
+**Need className values?** → `css-utilities.md`
+- All Lens CSS utility classes
+- ⚠️ Read the deprecation header before use
+- ⚠️ Deprecated: `text:small/medium/large/xlarge/xxlarge/xxxlarge`
+- ⚠️ Current: `text:body-sm/md/lg` | `text:heading-sm/md/lg`
+
+**Need CSS variables** → `css-variables.md`
+- All `--lns-*` custom property names
+- ⚠️ Contains a typo: `---lns-fontSize-xxxlarge` (three dashes) — do not copy, use `--lns-fontSize-heading-lg`
+- ⚠️ Lists deprecated variable names — always use current names (table in that file)
+- ⚠️ Gradient variables exist but have NO utility class — use a Lens prop that accepts raw CSS strings (e.g. `Container backgroundImage="var(--lns-gradient-...)"`)
+
+**Need responsive behavior?** → `responsive-layout.md`
+- Breakpoint prefixes: `xs-` | `sm-` | `md-` | `lg-`
+- Algorithmic layouts with Arrange and Split
+- ⚠️ `<DemoBox>` in examples does NOT exist in `@loomhq/lens` — replace with `<Container>`
+- ⚠️ `sizeMinMax` examples use deprecated names — use `['body-md', 'heading-sm']` not `['medium', 'xlarge']`
+- ⚠️ `useMedia` / `<Media>` have JS re-render cost — prefer CSS-based responsive
+
+---
+
+## Trap Reference: What NOT To Do
+
+| Trap | Why | Correct alternative |
+|---|---|---|
+| `style={{ color: 'var(--lns-color-primary)' }}` | Inline styles always forbidden | `<Text color="primary">` |
+| `style={{ background: 'var(--lns-gradient-ai-primary)' }}` | Inline styles always forbidden | `<Container backgroundImage="var(--lns-gradient-ai-primary)" />` |
+| `<Text size="medium">` | Deprecated name | `<Text size="body-md">` |
+| `className="text:xlarge"` | Deprecated class | `className="text:heading-sm"` |
+| `var(--lns-fontSize-medium)` in CSS | Deprecated variable | `var(--lns-fontSize-body-md)` |
+| `---lns-fontSize-xxxlarge` | Three-dash typo in docs | `var(--lns-fontSize-heading-lg)` |
+| `import { DemoBox } from '@loomhq/lens'` | Does not exist | `<Container>` |
+| Reading `reference/styles-full.md` | 1746 lines, wastes context | Use targeted files above |
+| `<Text sizeMinMax={['medium', 'xlarge']}>` | Deprecated names | `<Text sizeMinMax={['body-md', 'heading-sm']}>` |
+| `className={styles.wrapper}` | Dynamic className — linter error | Static string only: `className="flex p:medium"` |
+
+---
+
+## Linter Ground Truth
+
+The ESLint plugin validates every `className` value against:
+`eslint-plugin-lens-compliance/lib/mastery-db.json` → `approvedClasses`
+
+This file contains **1935 approved classes** generated directly from
+`@loomhq/lens@12.14.0` package source.
+
+To regenerate after a Lens version update:
+```bash
+npm run generate:mastery-db
+css-utilities.md is the human-readable reference.
+mastery-db.json is what the linter actually enforces.
+Both are now in sync.
 
 
 ---
