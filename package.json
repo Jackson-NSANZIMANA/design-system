@@ -45,7 +45,9 @@
     "generate:component-mastery-db": "node scripts/generate-component-mastery-db.js",
     "generate:lint-dbs": "pnpm generate:mastery-db && pnpm generate:component-mastery-db",
     "verify:lint-dbs": "node scripts/verify-lint-db-fresh.js",
-    "prepare": "husky"
+    "prepare": "husky",
+    "context:task": "bash scripts/generate-task-context.sh",
+    "lint:feedback": "bash scripts/lint-feedback.sh"
   },
   "lint-staged": {
     "src/**/*.{ts,tsx}": [
