@@ -35,7 +35,6 @@
 - [ModalCard](components/ModalCard.md) — Modal card layout
 - [Radio](components/Radio.md) — Radio input
 - [Select](components/Select.md) — Dropdown selection
-- [SearchBar](components/SearchBar.md) — Controlled search input field
 - [Switch](components/Switch.md) — Toggle switch
 - [Tabs](components/Tabs.md) — Tab navigation
 - [Tab](components/Tab.md) — Individual tab item (legacy export)

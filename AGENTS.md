@@ -550,7 +550,7 @@ Need to style something?
 | Textarea         | `<textarea>`              | `<Textarea>` from lens                 |
 | Select/dropdown  | `<select>`                | `<Select>` from lens                   |
 | Typeahead/search | Custom autocomplete       | `<Typeahead>` from lens                |
-| Search bar       | Custom search             | `<SearchBar>` from lens (if available) |
+| Search input | Custom search | `<TextInput type="search" icon={<SvgSearch />} />` or `<Typeahead />` |
 | Color picker     | Third-party picker        | `<ColorPicker>` from lens              |
 
 ### Data Display
@@ -561,7 +561,7 @@ Need to style something?
 | Badge/pill       | Custom span        | `<Pill>` from lens                    |
 | Status indicator | Custom dot         | `<Indicator>` from lens               |
 | List             | Custom ul/ol       | `<List>` from lens                    |
-| Skeleton loader  | Custom placeholder | `<Skeleton>` from lens                |
+| Skeleton loader  | Custom placeholder | `<SkeletonContainer> + <SkeletonText>` from lens                |
 | Logo             | Custom img         | `<Logo>` from lens                    |
 | Icon             | Raw SVG            | `<Icon icon={<SvgName />}>` from lens |
 | Illustration     | Raw SVG            | `<Illustration>` from lens            |
@@ -593,7 +593,7 @@ Need to style something?
 | Logo loader      | Custom animation   | `<LogoLoader>` from lens     |
 | Dots loader      | Custom animation   | `<EllipsesLoader>` from lens |
 | Waveform loader  | Custom animation   | `<WaveformLoader>` from lens |
-| Content skeleton | Custom placeholder | `<Skeleton>` from lens       |
+| Content skeleton | Custom placeholder | `<SkeletonContainer> + <SkeletonText>` from lens       |
 
 ---
 

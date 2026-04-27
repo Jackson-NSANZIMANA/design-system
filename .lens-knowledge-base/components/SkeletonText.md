@@ -26,7 +26,7 @@ import { SkeletonText } from '@loomhq/lens'
 
 ## Related Docs
 
-- `.lens-knowledge-base/components/Skeleton.md`
+- `.lens-knowledge-base/patterns/skeletons.md`
 
 ## Type Source
 
