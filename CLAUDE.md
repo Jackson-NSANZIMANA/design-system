@@ -12,6 +12,37 @@ as the **sole and exclusive** frontend component library and styling system.
 **The Core Doctrine**
 _"No frontend element shall exist outside Lens governance."_
 
+## Context Loading Protocol
+
+This file contains the rules. The files below contain the knowledge.
+Load rules once. Load knowledge just-in-time for the task.
+
+### Task → File Routing
+
+| Task | Load | Skip |
+|---|---|---|
+| Find a component | COMPONENT-INDEX.md | Everything else |
+| Check syntax | QUICK-REFERENCE.md | Everything else |
+| Style something | tokens/css-utilities.md | styles-full.md (never) |
+| Check ref support | MASTER-REFERENCE.md | Everything else |
+| Understand why | introduction.md | Everything else |
+| Deep component API | components/<Name>.md | components-full.md (never) |
+
+### Distrust Rule
+If a pattern feels familiar from general React knowledge
+but is NOT documented in .lens-knowledge-base/:
+→ Treat it as UNVALIDATED
+→ Do not implement it
+→ Say: "I cannot find this pattern in the Lens knowledge base.
+  Should I check lens.loom.dev or escalate as a LENS-GAP?"
+
+### When You Receive a Linter Error
+The linter is derived from Lens source code. It is correct.
+1. Read the error precisely
+2. Load components/<FailingComponent>.md
+3. Fix the implementation
+4. Never disable the linter
+
 **The Lens Pipeline**
 
 - **Lens First Every UI need starts with a Lens catalog lookup.**
