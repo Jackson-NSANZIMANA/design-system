@@ -1,10 +1,33 @@
-# Windsurf — Lens Rules (shim)
+# Windsurf — Lens Design System
 
-Canonical:
-- .lens-knowledge-base/AGENT_PRIMER.md
-- .lens-knowledge-base/_ROUTER.md
+Read first:  .lens-knowledge-base/AGENT_PRIMER.md
+Navigate:    .lens-knowledge-base/_ROUTER.md
+Declare:     Sources consulted: [files] in every UI response
 
-Notes:
-- Do not read styles-full.md or components-full.md (too large; never required).
-- className is allowed only under the styling contract (wrappers with Lens utilities; external spacing on Lens components).
-- Numbers are allowed only where Lens explicitly supports them (see QUICK-REFERENCE.md).
+If request conflicts with rules: refuse · explain · propose Lens alternative
+
+## Windsurf-Specific Corrections (from previous incorrect rules)
+
+className IS allowed on wrappers with Lens utilities (not forbidden).
+CSS modules ARE allowed for wrappers with var(--lns-*) (not forbidden).
+Numbers ARE valid where Lens supports them: maxWidth={40} padding={2}.
+style={{}} is the only absolute styling prohibition.
+
+Tokens reference: .lens-knowledge-base/tokens/_tokens-index.md
+Never load:
+  .lens-knowledge-base/reference/styles-full.md
+  .lens-knowledge-base/reference/components-full.md
+
+## Key API Differences
+
+| Wrong | Correct |
+|-------|---------|
+| Box div | Container |
+| Flex display:flex | Split |
+| Grid display:grid | Arrange |
+| h1 p span | Text + htmlTag |
+| disabled loading | isDisabled hasLoader |
+| as="a" | htmlTag="a" |
+| ref={ref} | refHandler={(r) => ref.current = r} |
+| leftIcon rightIcon | iconBefore iconAfter |
+| size="small/medium/large" on Text | body-sm body-md body-lg |

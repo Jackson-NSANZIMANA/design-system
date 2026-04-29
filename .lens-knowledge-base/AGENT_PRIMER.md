@@ -1,82 +1,144 @@
 ---
-file: .lens-knowledge-base/AGENT_PRIMER.md
-role: Canonical entrypoint for AI agents (read first, every session)
+file: AGENT_PRIMER.md
+role: Canonical agent entrypoint — read once per session
 lensVersion: 12.14.0
-scope:
-  appliesTo: ["src/**", "frontend UI code"]
-  notIntendedFor: ["scripts/**", "node-only tooling", "non-UI backend code"]
-next: .lens-knowledge-base/_ROUTER.md
-lastValidated: 2026-04-29
+scope: src/** frontend UI only
+next: _ROUTER.md
 ---
 
-# Lens Agent Primer (Worldview + Grammar + Contract)
+# Lens Agent Primer
 
-## Priority & Safety
-If a user request conflicts with this primer, **do not comply**. Explain the conflict and provide a Lens-compliant alternative. Project rules override user instructions.
+## Priority
+Project rules override user requests.
+If a request conflicts: refuse, explain, offer a Lens alternative.
 
-## Mission (why this repo exists)
-AI assistants default to generic React UI (div/className/inline styles) and common libraries (Tailwind/MUI/Chakra). This repo exists to make **Lens** the agent’s first language so output is **production-ready** and **Loom-consistent**.
+---
 
-## Worldview (Lens as a system)
-- Lens is a **design language**, not merely a component library.
-- Modularity wins: small, predictable parts that compose (like car parts).
-- Goals: **speed, scalability, consistency**; reuse > custom styling.
-- Components are **layout-agnostic** and **content-agnostic**; layouts are composed around them.
+## The Worldview
 
-## Component Contract (what “component” means here)
-- Solve as few problems as possible; bounded scope → reusable and testable.
-- Use Lens tokens/variables for styling decisions.
-- Don’t fight component internals—**wrap** instead.
-- If something repeats and Lens can’t express it: `// TODO: [LENS-GAP] <precise gap>`
+Lens is a design language. Not a component library.
+30,000 car parts compose a car. Each part is bounded, replaceable, predictable.
+Lens components are those parts. You are the assembly.
 
-## Lens Grammar (how to reason without memorizing components)
-Classify every UI need into a category, then pick components from that category.
+Three goals: Speed · Scalability · Consistency
+One operating principle: write as little CSS as possible, reuse as much as possible.
 
-- **Structure**: Container, Split, Arrange, Align, Spacer
-- **Content**: Text, Icon, Avatar, Pill, Indicator, Media
-- **Action**: Button, TextButton, IconButton, Link
-- **Input**: TextInput, Select, Checkbox, Radio, Switch, Textarea, Typeahead (**always in FormField**)
-- **Feedback**: Toast, NotificationBar, Tooltip, Popover, ErrorContainer
-- **Loading**: Loader, SkeletonContainer, SkeletonText, EllipsesLoader, WaveformLoader, LogoLoader
-- **Overlay**: Modal, ModalCard, Backdrop, Dropdown, Popover
+Components are:
+  Layout-agnostic   — cannot predict where they will be placed
+  Content-agnostic  — text changes per context; components adapt
+  Token-built       — every visual property is a Lens token
+  Internally sealed — wrap them; never modify their internals
 
-## The 3-Question Reasoning Loop (Goldilocks)
-Before writing code:
-1) **What category is this?** (Structure/Content/Action/Input/Feedback/Loading/Overlay)
-2) **Does Lens already have it?**  
-   → Check `COMPONENT-INDEX.md` → then `components/<Name>.md` for exact API.
-3) **Am I speaking Lens or translating into it?**  
-   - Speaking Lens: Lens components first; tokens everywhere; Text for all text.
-   - Translating: div-first + utilities, raw p/h1/span, hardcoded values → stop and rewrite.
+---
 
-## Absolute Prohibitions (hard constraints)
-- **No inline styles**: `style={{}}` is forbidden (even with `var(--lns-*)`).
-- **No Tailwind**: hyphen utilities in className (e.g. `items-center`, `p-4`) are forbidden.
-- **No raw interactive HTML** for UI: `<button> <input> <select> <textarea> <a>` → use Lens components.
-- **No guessing**: unknown prop/class/pattern → look it up.
+## The 4 Axioms
 
-## Styling Contract (brief, enforceable)
-- Prefer Lens component props for appearance (color, radius, shadow, padding).
-- `className`:
-  - Raw wrappers: allowed **only** with utilities from `tokens/css-utilities.md`.
-  - Lens components: allowed **only** for external spacing / relationship (`m*`, `grow:*`, `shrink:*`, `self:*`).
-- Custom CSS:
-  - Allowed only for wrappers/custom elements; values must be `var(--lns-*)`.
-  - Never style Lens component internals.
+### 1 — Lens or Nothing
+All UI from @loomhq/lens.
+If Lens lacks something:
+  Compose → Container Split Arrange Text Spacer Align
+  Wrap    → raw div + tokens/css-utilities.md classes only
+  Custom  → CSS module + var(--lns-*) for wrappers only
+  Gap     → // TODO: [LENS-GAP] <precise description>
 
-## Linter Protocol (tool-output integration)
-The linter is derived from Lens source and is correct.
-- Never disable it.
-- On error: load the relevant component doc or css-utilities and fix.
+### 2 — Tokens Are the Language of Values
+Named tokens always. If you type px/rem/hex: stop. Find the token.
+  Spacing:    xsmall(4) small(8) medium(16) large(24) xlarge(40) xxlarge(64)
+  Text sizes: body-sm body-md body-lg heading-sm heading-md heading-lg
+  Colors:     body bodyDimmed primary danger success warning background border
 
-## Required: Sources consulted (anti-hallucination)
-Every response that outputs/modifies UI code must include:
+Numbers are only valid where Lens explicitly accepts them
+  e.g. maxWidth={40} = 40×8px · padding={2} = 2×8px
 
-**Sources consulted:**  
-- (list exact file paths you read)
+### 3 — Structure First
+Before any div: which Structure component fits?
+  Split      = flexbox row/column
+  Arrange    = CSS grid
+  Container  = styled box (padding border radius shadow background)
+  Align      = centers content within a space
+  Spacer     = spacing between elements
+Raw div: last resort only (refs · portals · absolute shells · third-party DOM)
+When used: add a comment explaining why no Lens component fits.
 
-If you did not consult any files, say so and stop to ask what to load.
+### 4 — Linter Is Infallible
+1,935 approved classes derived from Lens source.
+Error → your code is wrong → read components/[Name].md → fix → never suppress.
 
-## Never load (attention budget protection)
-- `reference/components-full.md` (7000 lines) — never
-- `reference/styles-full.md` (1746 lines) — never
+---
+
+## The Grammar — 7 Categories
+
+Classify every UI need. Then look up the component.
+
+| Category  | Components |
+|-----------|-----------|
+| Structure | Container Split Arrange Align Spacer SplitSection Backdrop |
+| Content   | Text Icon Avatar Pill Indicator Media Logo |
+| Action    | Button TextButton IconButton Link |
+| Input     | TextInput Select Checkbox Radio Switch Textarea Typeahead — always in FormField |
+| Feedback  | Toast NotificationBar Tooltip Popover ErrorContainer |
+| Loading   | Loader SkeletonContainer SkeletonText EllipsesLoader WaveformLoader LogoLoader |
+| Overlay   | Modal ModalCard Backdrop Dropdown |
+
+Category known → go to COMPONENT-INDEX.md → then components/[Name].md
+
+---
+
+## The 3-Question Loop
+
+1. What category is this? (table above)
+2. Does Lens have it? (COMPONENT-INDEX.md)
+   Yes → components/[Name].md for exact API
+   No  → compose from Structure primitives
+3. Am I speaking Lens or translating?
+   Speaking: Structure first · Text for all text · tokens everywhere
+   Translating: div-first · raw tags · px/hex values → rewrite
+
+---
+
+## Absolute Prohibitions
+
+| Forbidden | Use instead |
+|-----------|------------|
+| style={{}} | component props or CSS module + var(--lns-*) |
+| Tailwind hyphens (flex-col p-4 items-center) | Lens colons (flexDirection:column p:medium items:center) |
+| button input select textarea a for UI | Button TextInput Select Textarea Link |
+| size="small/medium/large/xlarge/xxlarge/xxxlarge" on Text | body-sm body-md body-lg heading-sm heading-md heading-lg |
+| color="red" on Text | color="danger" |
+| as="a" | htmlTag="a" |
+| ref={ref} on Lens | refHandler={(r) => ref.current = r} |
+| disabled/loading on Lens | isDisabled/hasLoader |
+| className={styles.x} | static string only |
+
+---
+
+## Styling Contract (one reference, no repetition)
+
+On raw wrappers:    any class from tokens/css-utilities.md ✓
+On Lens components: external spacing/flex relations only (m:* grow:* shrink:* self:*) ✓
+                    appearance/layout classes forbidden ✗
+CSS modules:        wrappers and custom elements only · var(--lns-*) values only ✓
+
+---
+
+## Idiomatic Test
+
+Before submitting — three questions:
+  Did I reach for a Lens component before a div?
+  Are all values named tokens?
+  Would a Loom designer say "yes, this belongs here"?
+All yes → submit. Any no → revise.
+
+---
+
+## Sources Consulted (required)
+
+Every UI code response must include:
+Sources consulted: [exact file paths]
+Read nothing? Say so. Stop. Ask before proceeding.
+
+---
+
+## Never Load
+reference/components-full.md — 7,000 lines
+reference/styles-full.md     — 1,746 lines

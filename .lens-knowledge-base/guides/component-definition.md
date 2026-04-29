@@ -1,13 +1,16 @@
 ---
-file: guides/component-definition.md
+file: .lens-knowledge-base/guides/component-definition.md
 layer: worldview
-answers: "What a component is and is not (Lens contract)"
+lensVersion: 12.14.0
+answers: "What a Lens component is and is not. The component contract."
 load-when:
-  - First time onboarding
-  - Clarifying component boundaries
+  - Understanding why a component has the boundaries it does
+  - Deciding whether to build a custom element or compose from primitives
+  - Onboarding to the Lens system
 do-not-load-when:
-  - Looking up specific API (use components/[Name].md)
-last-validated: 2026-04-29
+  - Looking up a specific component API (use components/<Name>.md)
+  - Building a feature (AGENT_PRIMER.md contains the distilled contract)
+lastValidated: 2026-04-29
 ---
 
 # Component definition

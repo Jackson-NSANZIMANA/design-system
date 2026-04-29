@@ -1,6 +1,4 @@
-# Lens Session Context (deprecated)
+# Lens Session Context — Superseded
 
-Start here:
-- .lens-knowledge-base/AGENT_PRIMER.md
-Then:
-- .lens-knowledge-base/_ROUTER.md
+Read: .lens-knowledge-base/AGENT_PRIMER.md
+Then: .lens-knowledge-base/_ROUTER.md

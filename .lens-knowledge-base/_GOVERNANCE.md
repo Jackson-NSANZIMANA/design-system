@@ -1,36 +1,66 @@
-# _GOVERNANCE.md — ContextOps (Human-only)
+# _GOVERNANCE.md — ContextOps (Human only)
 
-## Purpose
-Prevent context rot, contradictions, and bloat regression.
+## Current State
+Lens:       @loomhq/lens@12.14.0
+Validated:  2026-04-29
+Owner:      [name]
 
-## Canonical entrypoint
-- .lens-knowledge-base/AGENT_PRIMER.md is canonical.
-- Tool shims defer to it: .clinerules, .windsurfrules, CLAUDE.md.
+## Hard Caps (CI enforced)
 
-## Hard caps (enforced by docs-verify CI)
-- CLAUDE.md ≤ 80 lines
-- AGENT_PRIMER.md ≤ 260 lines
-- _ROUTER.md ≤ 160 lines
+| File | Max lines |
+|------|-----------|
+| CLAUDE.md | 25 |
+| AGENT_PRIMER.md | 180 |
+| _ROUTER.md | 80 |
+| .clinerules | 40 |
+| .windsurfrules | 40 |
+| LENS_SESSION_CONTEXT.md | 10 |
 
-## Version authority
-- Lens package version must match:
-  - package.json dependency version
-  - .lens-knowledge-base/package-meta.json (if present)
-  - AGENT_PRIMER.md frontmatter lensVersion
+Rule: if someone wants to add to CLAUDE.md or AGENT_PRIMER.md,
+they must identify which specific file the content belongs in instead.
+No net additions. Delegate to the right file.
 
-## On Lens version bump (must do)
-1) Run: npm run generate:mastery-db
-2) Update exports-verified.json and MASTER-REFERENCE.md
-3) Update COMPONENT-INDEX.md if components change
-4) Update component docs under components/
-5) Run docs-verify CI and fix any failing examples
-6) Update lastValidated in AGENT_PRIMER.md and _ROUTER.md
+## Single Source of Truth
+AGENT_PRIMER.md is canonical.
+Tool files defer to it and add tool-specific notes only.
+Never maintain the same rule in more than one file.
 
-## Known high-risk files (copy/paste bias)
-- guides/showcase.md
-- patterns/*.md
-These must remain lint-safe and idiomatic.
+## On Lens Version Bump
 
-## Change policy
-- If adding rules: add to AGENT_PRIMER.md or the correct local doc, not CLAUDE.md.
-- If adding examples: add to showcase.md or pattern files; they must pass docs-verify.
+1. npm run generate:mastery-db
+2. Update exports-verified.json and MASTER-REFERENCE.md
+3. Update COMPONENT-INDEX.md (new/removed components)
+4. Create/archive components/[Name].md as needed
+5. Update token files if token names changed
+6. Update _ROUTER.md trap table if APIs deprecated
+7. Run: node scripts/docs-verify.mjs — fix all failures
+8. Update lensVersion in AGENT_PRIMER.md and _ROUTER.md
+9. Update this file (version + date + owner)
+
+## File Ownership
+
+| File | Reviewer |
+|------|----------|
+| AGENT_PRIMER.md | Team lead |
+| CLAUDE.md | Team lead |
+| _ROUTER.md | Any engineer |
+| .clinerules .windsurfrules | Team lead |
+| components/[Name].md | Feature engineer |
+| guides/showcase.md | Engineer + designer |
+| patterns/*.md | Engineer + designer |
+| tokens/*.md | Script output + engineer |
+
+## High-Risk Files (CI strict mode)
+guides/showcase.md · patterns/forms.md · patterns/errors.md · QUICK-REFERENCE.md
+These are copied by agents. Every code fence must pass docs-verify.
+
+## Known Issues Resolved
+AGENTS.md missing reference → fixed (.clinerules now points to AGENT_PRIMER.md)
+windsurfrules className ban → fixed (corrected in .windsurfrules)
+windsurfrules styles-full.md pointer → fixed (removed)
+showcase deprecated sizes → fixed (body-sm etc)
+showcase hasFullWidth → fixed (width="full")
+showcase color="teal" → fixed (color="success")
+CLAUDE.md 1,134 lines → fixed (25-line shim)
+LENS_SESSION_CONTEXT.md duplicate → fixed (5-line pointer)
+guides/introduction.md duplicate → redirect to root introduction.md

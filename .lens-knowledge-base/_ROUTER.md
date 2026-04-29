@@ -1,50 +1,52 @@
 ---
-file: .lens-knowledge-base/_ROUTER.md
-role: Task router (load once per task)
-lastValidated: 2026-04-29
+file: _ROUTER.md
+role: Task router — one task one file — stop when found
+lensVersion: 12.14.0
 ---
 
-# Router — Load Only What This Task Needs
+# Router
 
-## Find a component
-- Load: COMPONENT-INDEX.md
-- Then: components/<Name>.md
+## Load exactly one file per need. Stop when you have what you need.
 
-## Confirm common syntax / patterns quickly
-- Load: QUICK-REFERENCE.md
-- Then: components/<Name>.md if needed
+| Task | Load |
+|------|------|
+| Find a component | COMPONENT-INDEX.md → then components/[Name].md |
+| Common syntax patterns | QUICK-REFERENCE.md |
+| Verify a className | tokens/css-utilities.md |
+| Color tokens | tokens/colors.md |
+| Spacing tokens | tokens/spacing.md |
+| Radius and shadow tokens | tokens/shape-and-elevation.md |
+| CSS variables --lns-* | tokens/css-variables.md |
+| Responsive behavior | tokens/responsive-layout.md |
+| Ref support check | MASTER-REFERENCE.md (Forward Ref column) |
+| Form composition | patterns/forms.md → components/FormField.md |
+| Error patterns | patterns/errors.md |
+| Composition reference | guides/showcase.md |
+| Linter error (component) | components/[ComponentName].md |
+| Linter error (className) | tokens/css-utilities.md |
+| Deeper WHY | introduction.md → guides/component-definition.md |
 
-## Write/verify a className
-- Load: tokens/css-utilities.md
-- Rule: every class must exist there
+Never load:
+  reference/components-full.md   7,000 lines
+  reference/styles-full.md       1,746 lines
 
-## Pick token values
-- Colors: tokens/colors.md
-- Typography: tokens/typography.md
-- Spacing: tokens/spacing.md
-- Radius/shadow: tokens/shape-and-elevation.md
-- CSS vars: tokens/css-variables.md
-- Responsive: tokens/responsive-layout.md
+## Common Traps
 
-## Forms
-- Load: patterns/forms.md
-- Then: components/FormField.md and components/<Input>.md
-
-## Errors / error UX decisions
-- Load: patterns/errors.md
-- Then: components/ErrorContainer.md or components/NotificationBar.md if needed
-
-## Composition examples
-- Load: guides/showcase.md
-
-## Ref support
-- Load: MASTER-REFERENCE.md (Forward Ref column)
-
-## Linter error
-- Component error → components/<Name>.md
-- className error → tokens/css-utilities.md
-- Fix code. Never disable linter.
-
-## Never load
-- reference/components-full.md
-- reference/styles-full.md
+| You wrote | Problem | Correct |
+|-----------|---------|---------|
+| style={{}} | Always forbidden | Component prop or CSS module |
+| flex-col items-center p-4 | Tailwind | flexDirection:column items:center p:medium |
+| Text size="small/medium/large" | Deprecated | body-sm body-md body-lg |
+| Text size="xlarge/xxlarge/xxxlarge" | Deprecated | heading-sm heading-md heading-lg |
+| Text color="red" | Base color | color="danger" |
+| ref={ref} | Wrong API | refHandler={(r) => ref.current = r} |
+| as="a" | Wrong API | htmlTag="a" |
+| className={styles.x} | Dynamic | static string only |
+| DemoBox | Does not exist | Container |
+| gradient className | Does not exist | Container backgroundImage prop |
+| div className="flex" | Not idiomatic | Split |
+| p h1 h2 for content | Raw HTML | Text htmlTag="p/h1/h2" |
+| Toast for errors | Wrong pattern | ErrorContainer or NotificationBar |
+| Modal for errors | Wrong pattern | ErrorContainer or NotificationBar |
+| hasFullWidth | Deprecated | width="full" |
+| color="teal/grey6" for semantic need | Base color | success/bodyDimmed |

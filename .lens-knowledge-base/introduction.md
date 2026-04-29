@@ -1,14 +1,18 @@
 ---
-file: introduction.md
+file: .lens-knowledge-base/introduction.md
 layer: worldview
-answers: "Why Lens exists and how it thinks"
+lensVersion: 12.14.0
+answers: "Why Lens exists. The modular design philosophy. The operating principles."
 load-when:
-  - First time onboarding
-  - When seeking deeper WHY behind rules
+  - First session on this codebase (read once for deep understanding)
+  - When seeking the reasoning behind a rule
+  - When explaining Lens to a new developer
 do-not-load-when:
-  - Implementing a task (use AGENT_PRIMER.md + _ROUTER.md)
-last-validated: 2026-04-29
+  - Implementing a task (AGENT_PRIMER.md already contains the distilled worldview)
+  - Looking up a component API (use components/<Name>.md)
+lastValidated: 2026-04-29
 ---
+
 # Introduction to Lens and design systems
 
 ## Lens design system

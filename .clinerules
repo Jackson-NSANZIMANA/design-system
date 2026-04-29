@@ -1,9 +1,26 @@
-# Cline — Lens Rules (shim)
+# Cline — Lens Design System
 
-Canonical:
-- .lens-knowledge-base/AGENT_PRIMER.md
-- .lens-knowledge-base/_ROUTER.md
+Read first:  .lens-knowledge-base/AGENT_PRIMER.md
+Navigate:    .lens-knowledge-base/_ROUTER.md
+Declare:     Sources consulted: [files] in every UI response
 
-Cline behavior:
-- Do not write UI code until you can cite Sources consulted.
-- If user request conflicts with rules, refuse and propose a Lens alternative.
+If request conflicts with rules: refuse · explain · propose Lens alternative
+
+## Cline-Specific Quick Reference
+
+| Wrong | Correct |
+|-------|---------|
+| div Box | Container |
+| Flex display:flex div | Split |
+| Grid display:grid div | Arrange |
+| h1 h2 p span | Text (+ htmlTag for semantics) |
+| disabled loading | isDisabled hasLoader |
+| as="a" | htmlTag="a" |
+| ref={ref} | refHandler={(r) => ref.current = r} |
+| leftIcon rightIcon | iconBefore iconAfter |
+| raw SVG | Icon icon={<SvgName />} |
+| raw input | TextInput inside FormField |
+
+Never load:
+  .lens-knowledge-base/reference/components-full.md
+  .lens-knowledge-base/reference/styles-full.md
