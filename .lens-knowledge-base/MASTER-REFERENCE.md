@@ -1,3 +1,17 @@
+---
+file: MASTER-REFERENCE.md
+layer: 3 — VERIFIED INVENTORY
+answers: "Does component X support forwardRef? What is the complete verified export list?"
+load-when:
+  - You need to check if a component accepts a ref (refHandler)
+  - You need the complete verified list of all 103 components
+  - You are doing an inventory check, not implementation
+do-not-load-when:
+  - You need implementation patterns (load QUICK-REFERENCE.md)
+  - You need component API (load components/<Name>.md)
+  - You need to find a component (load COMPONENT-INDEX.md)
+single-source-of-truth-for: Forward ref support. Verified export inventory.
+---
 # Lens Design System — Master Reference
 
 ## Package: @loomhq/lens@12.14.0
