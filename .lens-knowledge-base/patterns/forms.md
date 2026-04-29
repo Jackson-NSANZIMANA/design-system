@@ -232,7 +232,7 @@ Guidelines:
 
   <Spacer bottom="medium"/>
 
-  <Text color="red">This form has an error</Text>
+  <Text color="danger">This form has an error</Text>
 </Container>
 
 <Container maxWidth={40}>

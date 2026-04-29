@@ -1,42 +1,36 @@
-# Cline — Lens Design System Rules
+# Cline — Lens Design System
 
-## Mandate
-This project uses ONLY `@loomhq/lens@12.14.0`. No other UI library permitted.
+## Canonical Rules
+All rules, prohibitions, and governance live in:
+→ CLAUDE.md (read this first, always)
 
-## Before Writing Any UI Code
-Read: .lens-knowledge-base/QUICK-REFERENCE.md
+## Lens Knowledge Base
+→ .lens-knowledge-base/_ROUTER.md (find any file)
 
-## Critical Differences From Common Libraries
-| Need | Wrong | Correct |
-|------|-------|---------|
-| Container/Box | `<div>`, `<Box>` | `<Container>` |
-| Flex layout | `<Flex>`, flex div | `<Split>` + `<SplitSection>` |
-| Grid layout | `<Grid>`, grid div | `<Arrange columns={[...]}>` |
-| All headings | `<h1>`,`<Heading>` | `<Text size="heading-lg" htmlTag="h1">` |
-| Disabled state | `disabled` | `isDisabled` |
-| Loading state | `loading` | `hasLoader` |
-| Element type | `as="a"` | `htmlTag="a"` |
-| Button icons | `leftIcon` | `iconBefore` |
-| Ref forwarding | `ref={ref}` | `refHandler={(r) => ref.current = r}` |
-| Icon usage | Any SVG directly | `<Icon icon={<SvgName />} />` |
+## Cline-Specific Notes
 
-## Absolute Prohibitions
-- No raw `<button>`, `<input>`, `<a>`, `<select>`, `<textarea>`
-- No `style={{}}` inline styles
-- No `className` with custom classes
-- No CSS files, SCSS files, styled-components, Tailwind
-- No imports from other UI libraries
+### Before any UI task
+1. Read CLAUDE.md
+2. Read .lens-knowledge-base/guides/LENS_THINKING.md
+3. Route via .lens-knowledge-base/_ROUTER.md
 
-## Decision Algorithm
-1. Identify UI element needed
-2. Check .lens-knowledge-base/COMPONENT-INDEX.md — does Lens have it?
-3. YES → use it per .lens-knowledge-base/components/<Name>.md
-4. NO → build wrapper with Lens layout + var(--lns-*) tokens
-5. Pattern repeats → mark // TODO: [LENS-GAP] and report
+### Quick API differences from common libraries
+| Need          | Wrong                | Correct Lens             |
+|---------------|----------------------|--------------------------|
+| Box/Container | div, Box             | Container                |
+| Flex layout   | Flex, flex div       | Split                    |
+| Grid layout   | Grid, grid div       | Arrange                  |
+| Heading       | h1, Heading          | Text size="heading-lg"   |
+| Disabled      | disabled             | isDisabled               |
+| Loading       | loading              | hasLoader                |
+| Element type  | as="a"               | htmlTag="a"              |
+| Button icons  | leftIcon             | iconBefore               |
+| Ref           | ref={ref}            | refHandler={(r)=>...}    |
+| Icon          | raw SVG              | Icon icon={SvgName /}    |
 
-## Reference
-- Component lookup: .lens-knowledge-base/QUICK-REFERENCE.md
-- Full component list: .lens-knowledge-base/COMPONENT-INDEX.md
-- Component details: .lens-knowledge-base/components/<Name>.md
-- Tokens: .lens-knowledge-base/tokens/_tokens-index.md
-- Full governance: AGENTS.md
+### Decision Flow
+1. UI need identified
+2. COMPONENT-INDEX.md — does Lens have it?
+3. YES → components/[Name].md for API
+4. NO → compose from primitives + Lens tokens
+5. Pattern repeats → // TODO: [LENS-GAP]
