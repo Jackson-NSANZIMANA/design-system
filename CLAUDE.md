@@ -946,16 +946,6 @@ document.head.appendChild(style)
 
 ---
 
-## REFERENCE LOOKUP ORDER
-
-1. FIRST: Check .lens-knowledge-base/COMPONENT-INDEX.md (7000 lines, all components) || Or simply .lens-knowledge-base/COMPONENT-INDEX.md (Components Index page)
-2. SECOND: Check .lens-knowledge-base/reference/styles-full.md (all design tokens)
-3. THIRD: Check https://lens.loom.dev
-4. FOURTH: Check TypeScript types in .lens-knowledge-base/type-declarations/
-5. NEVER: Guess prop names — look them up or ask
-
----
-
 ## APPENDIX: VERIFIED COMPONENT LIST (@loomhq/lens@12.14.0)
 
 ### Layout (9 components)
