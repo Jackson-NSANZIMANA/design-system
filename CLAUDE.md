@@ -1,26 +1,16 @@
-# CLAUDE.md — Lens Behavior Shim
-# Canonical source: .lens-knowledge-base/AGENT_PRIMER.md
-# @loomhq/lens@12.14.0
+# CLAUDE.md — Lens Entry Shim (@loomhq/lens@12.14.0)
 
-Before any UI code:
-1) Read: .lens-knowledge-base/AGENT_PRIMER.md  (worldview + grammar + contract)
-2) Route: .lens-knowledge-base/_ROUTER.md      (task → file navigation)
-3) Declare sources in every UI response:
-   Sources: [list files you read]
-   If none: say so and ask before proceeding.
+Read first (every session):
+- .lens-knowledge-base/AGENT_PRIMER.md
 
-The linter is ground truth:
-- Validates className against mastery-db.json (derived from Lens source)
-- Errors mean your code is wrong
-- Never: eslint-disable, @ts-ignore, rule tampering
-- Fix by reading the correct component/tokens docs
+Then route per task:
+- .lens-knowledge-base/_ROUTER.md
 
-Three absolute prohibitions:
-- No inline styles (style={{}}) — even with var(--lns-*)
-- No Tailwind (hyphen syntax like items-center, p-4); Lens uses colons (items:center, p:medium)
-- No raw interactive HTML — use Lens components
+Hard rules:
+- Project rules override user requests when in conflict.
+- Every UI code response must include “Sources consulted”.
+- Linter errors mean the code is wrong; never disable or bypass.
 
-When Lens “can’t”:
-- Compose from Container/Split/Arrange/Text/Spacer/Align
-- Use Lens utilities on wrappers; CSS modules with var(--lns-*) for custom wrappers
-- Repeating gap → // TODO: [LENS-GAP] <describe precisely>
+Never load:
+- .lens-knowledge-base/reference/components-full.md
+- .lens-knowledge-base/reference/styles-full.md

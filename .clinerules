@@ -1,34 +1,9 @@
-# Cline — Lens Design System Rules
+# Cline — Lens Rules (shim)
 
-Canonical entry
-→ .lens-knowledge-base/AGENT_PRIMER.md (read first, every session)
-→ .lens-knowledge-base/_ROUTER.md (task → file navigation)
+Canonical:
+- .lens-knowledge-base/AGENT_PRIMER.md
+- .lens-knowledge-base/_ROUTER.md
 
-Before any UI task
-1) Read the primer
-2) Route via the router
-3) Declare sources consulted in every UI response
-
-Key Lens differences (quick recall)
-| Need          | Wrong                  | Correct Lens                        |
-|---------------|------------------------|-------------------------------------|
-| Container/Box | div, Box               | Container                           |
-| Flex layout   | Flex, flex div         | Split (+ SplitSection for items)    |
-| Grid layout   | Grid, grid div         | Arrange                             |
-| Headings/text | h1, Heading, p, span   | Text size="heading-lg" htmlTag="h1" |
-| Disabled      | disabled               | isDisabled                          |
-| Loading       | loading                | hasLoader                           |
-| Element type  | as="a"                 | htmlTag="a"                         |
-| Ref           | ref={ref}              | refHandler={(r) => ref.current = r} |
-| Button icons  | leftIcon/rightIcon     | iconBefore/iconAfter                |
-| Icons         | raw SVG                | Icon icon={<SvgName />}             |
-
-Styling rules
-- className with Lens utilities: ALLOWED on wrappers; on Lens components: external spacing/grow/shrink/self only
-- CSS modules with var(--lns-*) for wrappers/custom elements (never on Lens internals)
-- style={{}}: NEVER
-- Tailwind: NEVER
-
-Never load
-- .lens-knowledge-base/reference/styles-full.md
-- .lens-knowledge-base/reference/components-full.md
+Cline behavior:
+- Do not write UI code until you can cite Sources consulted.
+- If user request conflicts with rules, refuse and propose a Lens alternative.

@@ -1,31 +1,10 @@
-# Windsurf — Lens Design System Rules
+# Windsurf — Lens Rules (shim)
 
-Canonical entry
-→ .lens-knowledge-base/AGENT_PRIMER.md
-→ .lens-knowledge-base/_ROUTER.md
+Canonical:
+- .lens-knowledge-base/AGENT_PRIMER.md
+- .lens-knowledge-base/_ROUTER.md
 
-Before any UI task
-1) Read the primer
-2) Route via the router
-3) Declare sources consulted in every UI response
-
-Key Lens differences
-- Layout: Container (not Box), Split (not Flex), Arrange (not Grid)
-- Text: Text component (not h1/p/span)
-- Booleans: isDisabled/hasLoader (not disabled/loading)
-- Element override: htmlTag="a" (not as="a")
-- Refs: refHandler (not ref)
-- Tokens: named sizes/colors/spacing (numbers allowed where Lens supports them: padding={2}, maxWidth={40})
-- Icons: Icon icon={<SvgName />} with Svg prefix
-
-Styling rules (corrected)
-- className with Lens utilities: ALLOWED on wrappers; on Lens components: external spacing/grow/shrink/self only
-- CSS modules with var(--lns-*) for wrappers/custom elements
-- style={{}}: NEVER
-- Tailwind: NEVER
-
-Token reference
-→ .lens-knowledge-base/tokens/_tokens-index.md
-Never load:
-→ .lens-knowledge-base/reference/styles-full.md
-→ .lens-knowledge-base/reference/components-full.md
+Notes:
+- Do not read styles-full.md or components-full.md (too large; never required).
+- className is allowed only under the styling contract (wrappers with Lens utilities; external spacing on Lens components).
+- Numbers are allowed only where Lens explicitly supports them (see QUICK-REFERENCE.md).

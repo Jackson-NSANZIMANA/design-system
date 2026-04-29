@@ -1,56 +1,36 @@
-# _GOVERNANCE.md — ContextOps Protocol (Human-only)
+# _GOVERNANCE.md — ContextOps (Human-only)
 
-Current state
-- Lens version: @loomhq/lens@12.14.0
-- System last validated: 2026-04-29
-- Validated by: <owner>
+## Purpose
+Prevent context rot, contradictions, and bloat regression.
 
-One rule that protects this system
-- CLAUDE.md ≤ 80 lines. Any additions must move to the correct file.
-- CI MUST fail if CLAUDE.md exceeds 80 lines.
+## Canonical entrypoint
+- .lens-knowledge-base/AGENT_PRIMER.md is canonical.
+- Tool shims defer to it: .clinerules, .windsurfrules, CLAUDE.md.
 
-When Lens updates — run this checklist
-1) Regenerate mastery DB
-   - npm run generate:mastery-db
-   - Confirms className list is current (eslint-plugin-lens-compliance/lib/mastery-db.json)
+## Hard caps (enforced by docs-verify CI)
+- CLAUDE.md ≤ 80 lines
+- AGENT_PRIMER.md ≤ 260 lines
+- _ROUTER.md ≤ 160 lines
 
-2) Verify exports + forward refs
-   - Update MASTER-REFERENCE.md component list and Forward Ref column if changed
+## Version authority
+- Lens package version must match:
+  - package.json dependency version
+  - .lens-knowledge-base/package-meta.json (if present)
+  - AGENT_PRIMER.md frontmatter lensVersion
 
-3) New/changed components
-   - Update COMPONENT-INDEX.md
-   - Create/patch components/[NewName].md
-   - Update QUICK-REFERENCE.md if common pattern changed
-   - If reasoning changes, update LENS_THINKING.md (rare)
+## On Lens version bump (must do)
+1) Run: npm run generate:mastery-db
+2) Update exports-verified.json and MASTER-REFERENCE.md
+3) Update COMPONENT-INDEX.md if components change
+4) Update component docs under components/
+5) Run docs-verify CI and fix any failing examples
+6) Update lastValidated in AGENT_PRIMER.md and _ROUTER.md
 
-4) Tokens changed/added/deprecated
-   - Update tokens/[file].md
-   - Update _ROUTER.md trap table (e.g., deprecated sizes)
-   - Scan docs via docs-verify script
+## Known high-risk files (copy/paste bias)
+- guides/showcase.md
+- patterns/*.md
+These must remain lint-safe and idiomatic.
 
-5) Showcase and patterns
-   - Ensure every code fence compiles + passes ESLint (CI)
-   - Fix deprecated patterns immediately
-
-6) Tools in sync
-   - .clinerules and .windsurfrules defer to AGENT_PRIMER.md
-   - Remove any tool-specific contradictions
-
-7) Update this file (version/date/owner)
-
-Ownership
-- AGENT_PRIMER.md: team lead (reviews all edits)
-- CLAUDE.md: team lead (hard cap enforcement)
-- _ROUTER.md: any engineer (PR review)
-- LENS_THINKING.md (if present): senior eng + designer
-- COMPONENT-INDEX.md, QUICK-REFERENCE.md, component/token files: feature owner
-- showcase.md: engineer + designer review
-- CI scripts: platform owner
-
-CI requirements (docs sanity)
-- Code fences in .md compile and pass ESLint (docs-verify)
-- Deprecated tokens/classes banned by regex scan
-- Internal links resolve (no broken references)
-
-Known issues log
-- Keep a short table of recent fixed issues (e.g., showcase had size="small" → updated to size="body-sm")
+## Change policy
+- If adding rules: add to AGENT_PRIMER.md or the correct local doc, not CLAUDE.md.
+- If adding examples: add to showcase.md or pattern files; they must pass docs-verify.

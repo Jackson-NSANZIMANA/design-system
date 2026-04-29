@@ -21,6 +21,8 @@ It provides:
 ---
 
 ## For AI Agents — Start Here
+**Note:**
+_"Before AI coding: open AGENT_PRIMER.md "_
 
 When building UI with this system, follow this lookup order:
 
