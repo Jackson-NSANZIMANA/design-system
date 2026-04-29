@@ -88,6 +88,51 @@ Lens provides developers tools to build a modular and scalable front-end. Our go
 > Read them to understand Lens capabilities.
 > Apply the table above to know what is permitted in `src/`.
 
+## Design Philosophy Constraints
+
+These are not syntax rules. These are the qualitative questions
+every implementation decision must answer before code is written.
+The linter enforces correctness. These enforce quality.
+
+### Predictability Over Cleverness
+A Lens implementation is correct when a developer who has never
+seen this code can read it and know exactly what it renders.
+→ If your solution requires a comment to explain why it works,
+  the abstraction is wrong. Simplify.
+
+### Composition Over Configuration  
+Before adding a prop, ask: can this be solved by composing
+two existing components instead?
+→ A growing prop API is a signal that the component boundary
+  is in the wrong place.
+
+### Lens Language First
+Every time you reach for a raw div, a custom class, or an
+inline style, you are leaving the Lens language.
+→ The cost is not just a lint error. The cost is that this
+  element no longer responds to Lens theme changes, dark mode,
+  or design token updates.
+→ Staying in Lens language means the entire UI upgrades together.
+
+### The Wrapper Test
+When Lens seems too constrained, the answer is almost always
+a wrapper — not a modification.
+→ Wrap the Lens component. Style the wrapper. Leave the
+  component's internals untouched.
+→ This is not a workaround. This is the intended pattern.
+  See: introduction.md "Wrapping the component" section.
+
+### Why We Reject These Patterns
+
+| Pattern | Why rejected | Lens alternative |
+|---|---|---|
+| `style={{}}` inline | Breaks theme system, bypasses token contract | Component props or CSS module with var(--lns-*) |
+| Tailwind classes | Different token system entirely, creates two sources of truth | Lens colon-syntax utilities |
+| Third-party components | Breaks visual consistency, unpredictable with Lens tokens | Compose from Lens primitives |
+| Custom CSS on Lens internals | Conflicts with future Lens updates, unpredictable specificity | Wrapper pattern |
+| Hardcoded px/hex values | Disconnects from design token system | Named semantic tokens |
+| `as` prop | Not the Lens API | `htmlTag` prop |
+| `ref` prop | Not the Lens API | `refHandler` function |
 
 ## Using components
 
