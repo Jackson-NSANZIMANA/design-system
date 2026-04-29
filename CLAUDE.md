@@ -501,7 +501,11 @@ Need to style something?
 ```
 ---
 
-## LENS COMPONENT MAPPING — USE THIS LOOKUP TABLE (see:@.lens-knowledge-base/COMPONENT-INDEX.md)
+## APPENDIX: VERIFIED COMPONENT LIST
+
+→ See: .lens-knowledge-base/MASTER-REFERENCE.md
+  Load that file when you need the complete verified export list
+  or need to check Forward Ref support.
 
 **Note:**
 
