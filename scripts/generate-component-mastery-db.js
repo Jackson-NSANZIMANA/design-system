@@ -3,10 +3,15 @@
 
 const fs = require("fs");
 const path = require("path");
+const crypto = require("crypto");
 
 const ROOT = process.cwd();
 const TYPES_DIR = path.join(ROOT, ".lens-knowledge-base", "type-declarations");
-const EXPORTS_PATH = path.join(ROOT, ".lens-knowledge-base", "exports-verified.json");
+const EXPORTS_PATH = path.join(
+  ROOT,
+  ".lens-knowledge-base",
+  "exports-verified.json",
+);
 const OUTPUT_PATH = path.join(
   ROOT,
   "eslint-plugin-lens-compliance",
@@ -20,8 +25,7 @@ function readJson(p) {
 
 function collectFiles(dir, files = []) {
   if (!fs.existsSync(dir)) return files;
-  const entries = fs.readdirSync(dir, { withFileTypes: true });
-  for (const e of entries) {
+  for (const e of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, e.name);
     if (e.isDirectory()) collectFiles(full, files);
     else if (e.isFile() && e.name.endsWith(".d.ts")) files.push(full);
@@ -31,62 +35,48 @@ function collectFiles(dir, files = []) {
 
 function extractTypeAliases(content) {
   const aliases = {};
-  const aliasRegex = /type\s+([A-Za-z0-9_]+Props)\s*=\s*\{([\s\S]*?)\n\};/g;
-  let match;
-  while ((match = aliasRegex.exec(content)) !== null) {
-    aliases[match[1]] = match[2];
-  }
+  const re = /type\s+([A-Za-z0-9_]+Props)\s*=\s*\{([\s\S]*?)\n\};/g;
+  let m;
+  while ((m = re.exec(content)) !== null) aliases[m[1]] = m[2];
   return aliases;
 }
 
 function parsePropType(typeText) {
   const type = typeText.trim();
-
-  // Literal unions: 'a' | 'b'
-  const literalMatches = [...type.matchAll(/'([^']+)'/g)].map((m) => m[1]);
-  if (literalMatches.length > 0) return [...new Set(literalMatches)];
-
+  const literals = [...type.matchAll(/'([^']+)'/g)].map((m) => m[1]);
+  if (literals.length > 0) return [...new Set(literals)];
   if (/\bboolean\b/.test(type)) return ["boolean"];
   if (/\bnumber\b/.test(type)) return ["number"];
   if (/\bstring\b/.test(type)) return ["string"];
   if (/\bReact\.ReactNode\b/.test(type)) return ["React.ReactNode"];
-  if (/\bReact\.ReactEventHandler\b/.test(type)) return ["React.ReactEventHandler"];
-
-  // Keep concise but deterministic fallback for complex signatures.
-  const compact = type.replace(/\s+/g, " ").trim();
-  return [compact];
+  if (/\bReact\.ReactEventHandler\b/.test(type))
+    return ["React.ReactEventHandler"];
+  return [type.replace(/\s+/g, " ").trim()];
 }
 
 function parsePropsFromAliasBody(body) {
   const props = {};
   const required = [];
-  const lines = body.split("\n");
-
-  for (const rawLine of lines) {
+  for (const rawLine of body.split("\n")) {
     const line = rawLine.trim();
     if (!line || line.startsWith("//")) continue;
-
     const m = line.match(/^([A-Za-z0-9_]+)(\?)?:\s*(.+);$/);
     if (!m) continue;
-
-    const propName = m[1];
-    const optional = Boolean(m[2]);
-    const typeText = m[3];
+    const [, propName, optional, typeText] = m;
     props[propName] = parsePropType(typeText);
-
-    // Keep required conservative to avoid noisy false positives.
-    if (!optional && propName !== "children" && propName !== "className" && propName !== "style") {
+    if (!optional && !["children", "className", "style"].includes(propName))
       required.push(propName);
-    }
   }
-
   return { props, required };
 }
 
 function getLensVersion() {
   try {
-    const lensPkg = readJson(path.join(ROOT, "node_modules", "@loomhq", "lens", "package.json"));
-    return lensPkg.version || "unknown";
+    return (
+      readJson(
+        path.join(ROOT, "node_modules", "@loomhq", "lens", "package.json"),
+      ).version || "unknown"
+    );
   } catch {
     return "unknown";
   }
@@ -103,7 +93,9 @@ function main() {
   }
 
   const exportsVerified = readJson(EXPORTS_PATH);
-  const oldDb = fs.existsSync(OUTPUT_PATH) ? readJson(OUTPUT_PATH) : { components: {}, nesting: {}, responsive: { keys: [] } };
+  const oldDb = fs.existsSync(OUTPUT_PATH)
+    ? readJson(OUTPUT_PATH)
+    : { components: {}, nesting: {}, responsive: { keys: [] } };
 
   const componentsFromExports = [
     ...(exportsVerified.layoutComponents || []),
@@ -117,54 +109,61 @@ function main() {
   ];
 
   const componentSet = new Set(componentsFromExports);
-
   const aliasMap = {};
-  const files = collectFiles(TYPES_DIR);
-  for (const file of files) {
-    const content = fs.readFileSync(file, "utf8");
-    const aliases = extractTypeAliases(content);
-    Object.assign(aliasMap, aliases);
+
+  for (const file of collectFiles(TYPES_DIR)) {
+    Object.assign(aliasMap, extractTypeAliases(fs.readFileSync(file, "utf8")));
   }
 
   const components = {};
   const oldComponents = oldDb.components || {};
 
   for (const comp of componentSet) {
-    const aliasName = `${comp}Props`;
     const existing = oldComponents[comp] || { props: {}, required: [] };
-
-    if (!aliasMap[aliasName]) {
-      // Keep previous entry if no direct alias found.
+    if (!aliasMap[`${comp}Props`]) {
       components[comp] = existing;
       continue;
     }
 
-    const parsed = parsePropsFromAliasBody(aliasMap[aliasName]);
-
-    // Merge strategy: parsed props overwrite same keys, preserve old specialized keys.
+    const parsed = parsePropsFromAliasBody(aliasMap[`${comp}Props`]);
     const mergedProps = { ...(existing.props || {}), ...parsed.props };
-
-    // Keep required conservative: preserve known required plus newly parsed required.
-    const requiredSet = new Set([...(existing.required || []), ...parsed.required]);
-
-    components[comp] = {
-      props: mergedProps,
-      required: [...requiredSet],
-    };
+    const requiredSet = new Set([
+      ...(existing.required || []),
+      ...parsed.required,
+    ]);
+    components[comp] = { props: mergedProps, required: [...requiredSet] };
   }
 
+  // ── Content hash — stable as long as data hasn't changed ──────────────────
+  const lensVersion = getLensVersion();
+  const dataToHash = JSON.stringify({
+    lensVersion,
+    components,
+    nesting: oldDb.nesting || {},
+    responsive: oldDb.responsive || { keys: [] },
+  });
+  const contentHash = crypto
+    .createHash("sha256")
+    .update(dataToHash)
+    .digest("hex")
+    .slice(0, 16);
+
   const output = {
-    _generated: new Date().toISOString(),
-    _lensVersion: getLensVersion(),
+    _generated: contentHash,
+    _lensVersion: lensVersion,
     _note:
       "Generated by scripts/generate-component-mastery-db.js from Lens type declarations + exports-verified.json. Do not edit manually.",
     components,
     nesting: oldDb.nesting || {},
-    responsive: oldDb.responsive || { keys: ["default", "xsmall", "small", "medium", "large"] },
+    responsive: oldDb.responsive || {
+      keys: ["default", "xsmall", "small", "medium", "large"],
+    },
   };
 
   fs.writeFileSync(OUTPUT_PATH, JSON.stringify(output, null, 2) + "\n", "utf8");
-  console.log("✅ component-mastery-db.json regenerated");
+  console.log(
+    `✅ component-mastery-db.json regenerated  (hash: ${contentHash})`,
+  );
   console.log("   - components:", Object.keys(components).length);
   console.log("   - output:", OUTPUT_PATH);
 }
