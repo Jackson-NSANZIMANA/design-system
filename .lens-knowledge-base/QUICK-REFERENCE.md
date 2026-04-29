@@ -1,3 +1,21 @@
+---
+file: QUICK-REFERENCE.md
+layer: 2B — HOW (syntax)
+answers: "What is the exact syntax for X in Lens?"
+load-when:
+  - You need API patterns without reading full component docs
+  - You need spacing token values
+  - You need button variant names
+  - You need breakpoint values
+  - You need setup code for main.tsx
+do-not-load-when:
+  - You need to find what component exists (load COMPONENT-INDEX.md)
+  - You need CSS class values (load tokens/css-utilities.md)
+  - You need complete component API (load components/<Name>.md)
+feeds-from: COMPONENT-INDEX.md
+feeds-into: components/<Name>.md for deeper detail
+single-source-of-truth-for: Common API syntax patterns
+---
 # Lens Quick Reference — @loomhq/lens@12.14.0
 
 ## Setup (REQUIRED in main.tsx)
