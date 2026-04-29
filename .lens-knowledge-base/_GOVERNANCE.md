@@ -1,115 +1,56 @@
+# _GOVERNANCE.md — ContextOps Protocol (Human-only)
 
----
+Current state
+- Lens version: @loomhq/lens@12.14.0
+- System last validated: 2026-04-29
+- Validated by: <owner>
 
-### FILE 7: _GOVERNANCE.md — Human ContextOps
+One rule that protects this system
+- CLAUDE.md ≤ 80 lines. Any additions must move to the correct file.
+- CI MUST fail if CLAUDE.md exceeds 80 lines.
 
-```markdown
-# _GOVERNANCE.md — ContextOps Protocol
-# NOT agent-facing. Human maintainers only.
-# This file prevents the system from becoming stale.
-# This file prevents CLAUDE.md from growing back to 1,134 lines.
+When Lens updates — run this checklist
+1) Regenerate mastery DB
+   - npm run generate:mastery-db
+   - Confirms className list is current (eslint-plugin-lens-compliance/lib/mastery-db.json)
 
----
+2) Verify exports + forward refs
+   - Update MASTER-REFERENCE.md component list and Forward Ref column if changed
 
-## Current State
-Lens version:        @loomhq/lens@12.14.0
-System validated:    [DATE]
-Validated by:        [NAME]
-Total context lines: ~450 (down from 1,985)
-CLAUDE.md lines:     ~80 (enforced maximum)
+3) New/changed components
+   - Update COMPONENT-INDEX.md
+   - Create/patch components/[NewName].md
+   - Update QUICK-REFERENCE.md if common pattern changed
+   - If reasoning changes, update LENS_THINKING.md (rare)
 
----
+4) Tokens changed/added/deprecated
+   - Update tokens/[file].md
+   - Update _ROUTER.md trap table (e.g., deprecated sizes)
+   - Scan docs via docs-verify script
 
-## The One Rule That Protects This System
+5) Showcase and patterns
+   - Ensure every code fence compiles + passes ESLint (CI)
+   - Fix deprecated patterns immediately
 
-CLAUDE.md must never exceed 80 lines.
+6) Tools in sync
+   - .clinerules and .windsurfrules defer to AGENT_PRIMER.md
+   - Remove any tool-specific contradictions
 
-If someone wants to add content to CLAUDE.md:
-  → Identify which file that content belongs in
-  → Add it there instead
-  → Update _ROUTER.md if navigation changes
+7) Update this file (version/date/owner)
 
-No net additions to CLAUDE.md. Ever.
-This prevents the 1,134-line regression.
+Ownership
+- AGENT_PRIMER.md: team lead (reviews all edits)
+- CLAUDE.md: team lead (hard cap enforcement)
+- _ROUTER.md: any engineer (PR review)
+- LENS_THINKING.md (if present): senior eng + designer
+- COMPONENT-INDEX.md, QUICK-REFERENCE.md, component/token files: feature owner
+- showcase.md: engineer + designer review
+- CI scripts: platform owner
 
----
+CI requirements (docs sanity)
+- Code fences in .md compile and pass ESLint (docs-verify)
+- Deprecated tokens/classes banned by regex scan
+- Internal links resolve (no broken references)
 
-## When Lens Upgrades — Run This Checklist
-
-□ Run: npm run generate:mastery-db
-  Updates: eslint-plugin-lens-compliance/lib/mastery-db.json
-  Validates: approved classes match new version
-
-□ Check: New components added?
-  → Add to COMPONENT-INDEX.md
-  → Create components/[NewName].md
-  → Add to QUICK-REFERENCE.md if commonly used
-  → Add to LENS_THINKING.md decision trees if it
-     changes how agents should think about that category
-
-□ Check: API changes to existing components?
-  → Update components/[Name].md
-  → Update QUICK-REFERENCE.md if pattern changed
-  → Update showcase.md if example is affected
-  → Update LENS_THINKING.md decision trees if needed
-
-□ Check: New or changed token names?
-  → Update relevant tokens/[file].md
-  → Update _ROUTER.md trap table
-  → Update LENS_THINKING.md color/typography trees
-  → Update showcase.md if examples use old names
-
-□ Check: Deprecated anything?
-  → Add to trap table in _ROUTER.md
-  → Update LENS_THINKING.md trees
-  → Fix any showcase.md examples using deprecated patterns
-
-□ Validate: Run linter against all src/ code
-  New errors after version bump = breaking changes
-
-□ Update: this file
-  → Lens version number
-  → Validation date and name
-
----
-
-## File Ownership and Review Requirements
-
-| File | Change requires | Reviewer |
-|------|----------------|----------|
-| CLAUDE.md | PR + team lead review | Team lead |
-| LENS_THINKING.md | PR + designer review | Senior eng + designer |
-| _ROUTER.md | PR | Any engineer |
-| showcase.md | PR + visual review | Engineer + designer |
-| components/[Name].md | PR | Engineer who used it |
-| tokens/[file].md | Automated + PR | Script + engineer |
-| .clinerules | PR | Team lead |
-| .windsurfrules | PR | Team lead |
-| _GOVERNANCE.md | PR | Team lead |
-
----
-
-## Known Issues Resolved
-
-| Issue | Status | Fix Applied |
-|-------|--------|-------------|
-| AGENTS.md referenced but missing | FIXED | .clinerules now references CLAUDE.md |
-| .windsurfrules said read styles-full.md | FIXED | Points to _tokens-index.md |
-| .windsurfrules said never use className | FIXED | Clarified Lens utilities are allowed |
-| showcase.md used deprecated size="small" | FIXED | Updated to size="body-sm" |
-| CLAUDE.md contradicted itself on styles-full.md | FIXED | Bottom section removed |
-| LENS_SESSION_CONTEXT.md duplicated 3 files | FIXED | Superseded, replaced with pointer |
-| Two files named introduction.md | FIXED | guides/introduction.md → pointer |
-| No cognitive framework for agents | FIXED | LENS_THINKING.md created |
-| No routing mechanism | FIXED | _ROUTER.md created |
-| No governance protocol | FIXED | This file created |
-
----
-
-## What Was Deleted or Superseded
-
-LENS_SESSION_CONTEXT.md → replaced by LENS_THINKING.md + _ROUTER.md
-guides/introduction.md → now points to root introduction.md
-CLAUDE.md bottom "REFERENCE LOOKUP ORDER" section → deleted (contradicted Rule 0)
-CLAUDE.md component mapping tables → deleted (live in COMPONENT-INDEX.md)
-CLAUDE.md verified appendix → deleted (lives in MASTER-REFERENCE.md)
+Known issues log
+- Keep a short table of recent fixed issues (e.g., showcase had size="small" → updated to size="body-sm")

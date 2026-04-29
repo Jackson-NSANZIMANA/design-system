@@ -1,36 +1,34 @@
-# Cline — Lens Design System
+# Cline — Lens Design System Rules
 
-## Canonical Rules
-All rules, prohibitions, and governance live in:
-→ CLAUDE.md (read this first, always)
+Canonical entry
+→ .lens-knowledge-base/AGENT_PRIMER.md (read first, every session)
+→ .lens-knowledge-base/_ROUTER.md (task → file navigation)
 
-## Lens Knowledge Base
-→ .lens-knowledge-base/_ROUTER.md (find any file)
+Before any UI task
+1) Read the primer
+2) Route via the router
+3) Declare sources consulted in every UI response
 
-## Cline-Specific Notes
+Key Lens differences (quick recall)
+| Need          | Wrong                  | Correct Lens                        |
+|---------------|------------------------|-------------------------------------|
+| Container/Box | div, Box               | Container                           |
+| Flex layout   | Flex, flex div         | Split (+ SplitSection for items)    |
+| Grid layout   | Grid, grid div         | Arrange                             |
+| Headings/text | h1, Heading, p, span   | Text size="heading-lg" htmlTag="h1" |
+| Disabled      | disabled               | isDisabled                          |
+| Loading       | loading                | hasLoader                           |
+| Element type  | as="a"                 | htmlTag="a"                         |
+| Ref           | ref={ref}              | refHandler={(r) => ref.current = r} |
+| Button icons  | leftIcon/rightIcon     | iconBefore/iconAfter                |
+| Icons         | raw SVG                | Icon icon={<SvgName />}             |
 
-### Before any UI task
-1. Read CLAUDE.md
-2. Read .lens-knowledge-base/guides/LENS_THINKING.md
-3. Route via .lens-knowledge-base/_ROUTER.md
+Styling rules
+- className with Lens utilities: ALLOWED on wrappers; on Lens components: external spacing/grow/shrink/self only
+- CSS modules with var(--lns-*) for wrappers/custom elements (never on Lens internals)
+- style={{}}: NEVER
+- Tailwind: NEVER
 
-### Quick API differences from common libraries
-| Need          | Wrong                | Correct Lens             |
-|---------------|----------------------|--------------------------|
-| Box/Container | div, Box             | Container                |
-| Flex layout   | Flex, flex div       | Split                    |
-| Grid layout   | Grid, grid div       | Arrange                  |
-| Heading       | h1, Heading          | Text size="heading-lg"   |
-| Disabled      | disabled             | isDisabled               |
-| Loading       | loading              | hasLoader                |
-| Element type  | as="a"               | htmlTag="a"              |
-| Button icons  | leftIcon             | iconBefore               |
-| Ref           | ref={ref}            | refHandler={(r)=>...}    |
-| Icon          | raw SVG              | Icon icon={SvgName /}    |
-
-### Decision Flow
-1. UI need identified
-2. COMPONENT-INDEX.md — does Lens have it?
-3. YES → components/[Name].md for API
-4. NO → compose from primitives + Lens tokens
-5. Pattern repeats → // TODO: [LENS-GAP]
+Never load
+- .lens-knowledge-base/reference/styles-full.md
+- .lens-knowledge-base/reference/components-full.md

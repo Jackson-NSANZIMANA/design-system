@@ -1,37 +1,31 @@
-# Windsurf — Lens Design System
+# Windsurf — Lens Design System Rules
 
-## Canonical Rules
-All rules, prohibitions, and governance live in:
-→ CLAUDE.md (read this first, always)
+Canonical entry
+→ .lens-knowledge-base/AGENT_PRIMER.md
+→ .lens-knowledge-base/_ROUTER.md
 
-## Lens Knowledge Base  
-→ .lens-knowledge-base/_ROUTER.md (find any file)
+Before any UI task
+1) Read the primer
+2) Route via the router
+3) Declare sources consulted in every UI response
 
-## Windsurf-Specific Notes
-
-### Before any UI task
-1. Read CLAUDE.md
-2. Read .lens-knowledge-base/guides/LENS_THINKING.md
-3. Route via .lens-knowledge-base/_ROUTER.md
-
-### Key Lens Differences
+Key Lens differences
 - Layout: Container (not Box), Split (not Flex), Arrange (not Grid)
-- Text: Text component always (not h1/p/span)
-- Booleans: isDisabled, hasLoader (not disabled, loading)
-- Element: htmlTag="a" (not as="a")
-- Refs: refHandler={(r) => ref.current = r} (not ref={})
-- Icons: Icon icon={SvgName /} with Svg prefix
-- Spacing: named tokens xsmall/small/medium/large/xlarge/xxlarge
-- Button icons: iconBefore/iconAfter (not leftIcon/rightIcon)
+- Text: Text component (not h1/p/span)
+- Booleans: isDisabled/hasLoader (not disabled/loading)
+- Element override: htmlTag="a" (not as="a")
+- Refs: refHandler (not ref)
+- Tokens: named sizes/colors/spacing (numbers allowed where Lens supports them: padding={2}, maxWidth={40})
+- Icons: Icon icon={<SvgName />} with Svg prefix
 
-### Styling Rules (CORRECTED)
-- className with Lens utility classes: ALLOWED on raw wrappers
-- className with Lens utilities on Lens components:
-  external spacing only (mr:small, mt:medium)
-- CSS modules with var(--lns-*): ALLOWED for custom wrappers
-- style={{}}: NEVER allowed — this is the only absolute
-- Tailwind classes: NEVER allowed
+Styling rules (corrected)
+- className with Lens utilities: ALLOWED on wrappers; on Lens components: external spacing/grow/shrink/self only
+- CSS modules with var(--lns-*) for wrappers/custom elements
+- style={{}}: NEVER
+- Tailwind: NEVER
 
-### Token Reference
+Token reference
 → .lens-knowledge-base/tokens/_tokens-index.md
-→ NEVER: reference/styles-full.md (7,000 lines, wastes context)
+Never load:
+→ .lens-knowledge-base/reference/styles-full.md
+→ .lens-knowledge-base/reference/components-full.md

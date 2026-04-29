@@ -1,3 +1,14 @@
+---
+file: introduction.md
+layer: worldview
+answers: "Why Lens exists and how it thinks"
+load-when:
+  - First time onboarding
+  - When seeking deeper WHY behind rules
+do-not-load-when:
+  - Implementing a task (use AGENT_PRIMER.md + _ROUTER.md)
+last-validated: 2026-04-29
+---
 # Introduction to Lens and design systems
 
 ## Lens design system

@@ -1,3 +1,15 @@
+---
+file: guides/component-definition.md
+layer: worldview
+answers: "What a component is and is not (Lens contract)"
+load-when:
+  - First time onboarding
+  - Clarifying component boundaries
+do-not-load-when:
+  - Looking up specific API (use components/[Name].md)
+last-validated: 2026-04-29
+---
+
 # Component definition
 
 Before adding a new component to the design system consider the definition of the component.

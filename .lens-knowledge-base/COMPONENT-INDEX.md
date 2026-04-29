@@ -1,18 +1,14 @@
 ---
 file: COMPONENT-INDEX.md
-layer: 2A — WHAT EXISTS
+layer: inventory
 answers: "Does Lens have a component for X? What is it called?"
 load-when:
-  - You need to find a component for a UI need
-  - You are unsure if something exists in Lens
-  - You need the path to a specific component doc
+  - Finding a component for a UI need
 do-not-load-when:
-  - You already know the component name (load components/<Name>.md directly)
-  - You need syntax patterns (load QUICK-REFERENCE.md)
-feeds-from: introduction.md (why these components exist)
-feeds-into: components/<Name>.md (detailed API)
-single-source-of-truth-for: Component existence and categorization
+  - You already know the component name (go to components/[Name].md)
+last-validated: 2026-04-29
 ---
+
 # Lens Component Index
 
 ## Foundation
