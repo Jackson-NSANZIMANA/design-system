@@ -4,6 +4,7 @@
 
 This project uses **Lens** (`@loomhq/lens`), the official Loom design system,
 as the **sole and exclusive** frontend component library and styling system.
+ℹ️  No staged TS/TSX files to lint.
 
 ---
 
