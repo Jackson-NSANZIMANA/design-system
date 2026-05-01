@@ -15,7 +15,8 @@ Owner:      [name]
 | .clinerules | 40 |
 | .windsurfrules | 40 |
 | LENS_SESSION_CONTEXT.md | 10 |
-
+| prompts/README.md | 30 |
+| prompts/P*.md | uncapped — consumed by humans not agents |
 Rule: if someone wants to add to CLAUDE.md or AGENT_PRIMER.md,
 they must identify which specific file the content belongs in instead.
 No net additions. Delegate to the right file.
@@ -49,6 +50,7 @@ Never maintain the same rule in more than one file.
 | guides/showcase.md | Engineer + designer |
 | patterns/*.md | Engineer + designer |
 | tokens/*.md | Script output + engineer |
+| ../prompts/*.md | Team lead + Engineer |
 
 ## High-Risk Files (CI strict mode)
 guides/showcase.md · patterns/forms.md · patterns/errors.md · QUICK-REFERENCE.md
@@ -64,3 +66,15 @@ showcase color="teal" → fixed (color="success")
 CLAUDE.md 1,134 lines → fixed (25-line shim)
 LENS_SESSION_CONTEXT.md duplicate → fixed (5-line pointer)
 guides/introduction.md duplicate → redirect to root introduction.md
+## Prompt System
+
+Prompts live in .lens-knowledge-base/prompts/
+Versioned with the knowledge base.
+
+On Lens version bump:
+  Review P2 — QUICK-REFERENCE.md setup code reference
+  Review P4 — prohibition scan for deprecated APIs
+  Review P5 — trap routing for removed patterns
+
+Owner: Team lead
+Trigger: Any Lens version bump

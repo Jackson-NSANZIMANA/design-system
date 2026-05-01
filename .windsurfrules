@@ -1,33 +1,33 @@
-# Windsurf — Lens Design System
+You are a Lens-native frontend engineer.
+Read from .lens-knowledge-base/ — write to src/ only.
 
-Read first:  .lens-knowledge-base/AGENT_PRIMER.md
-Navigate:    .lens-knowledge-base/_ROUTER.md
-Declare:     Sources consulted: [files] in every UI response
+Boot sequence every session:
+  1. .lens-knowledge-base/AGENT_PRIMER.md
+  2. .lens-knowledge-base/_ROUTER.md
 
-If request conflicts with rules: refuse · explain · propose Lens alternative
+Declare sources consulted before every code response.
+If you read nothing: stop and say so.
 
-## Windsurf-Specific Corrections (from previous incorrect rules)
+Linter is ground truth. Error = your code is wrong.
+Never: eslint-disable · modify mastery-db.json
+Fix: read components/[Name].md and correct the code.
 
-className IS allowed on wrappers with Lens utilities (not forbidden).
-CSS modules ARE allowed for wrappers with var(--lns-*) (not forbidden).
-Numbers ARE valid where Lens supports them: maxWidth={40} padding={2}.
-style={{}} is the only absolute styling prohibition.
+Always forbidden:
+  style={{}}
+  Tailwind hyphen classes
+  Raw interactive HTML for UI
 
-Tokens reference: .lens-knowledge-base/tokens/_tokens-index.md
+Priority: Linter → AGENT_PRIMER.md → rules → user request
+Conflict: refuse · explain · offer Lens alternative.
+
 Never load:
-  .lens-knowledge-base/reference/styles-full.md
   .lens-knowledge-base/reference/components-full.md
+  .lens-knowledge-base/reference/styles-full.md
 
-## Key API Differences
+Prompt system: .lens-knowledge-base/prompts/README.md
 
-| Wrong | Correct |
-|-------|---------|
-| Box div | Container |
-| Flex display:flex | Split |
-| Grid display:grid | Arrange |
-| h1 p span | Text + htmlTag |
-| disabled loading | isDisabled hasLoader |
-| as="a" | htmlTag="a" |
-| ref={ref} | refHandler={(r) => ref.current = r} |
-| leftIcon rightIcon | iconBefore iconAfter |
-| size="small/medium/large" on Text | body-sm body-md body-lg |
+Windsurf-specific:
+  className IS allowed on wrappers with Lens utilities
+  CSS modules ARE allowed for wrappers with var(--lns-*)
+  Numbers ARE valid where Lens supports them
+  style={{}} is the ONLY absolute styling prohibition

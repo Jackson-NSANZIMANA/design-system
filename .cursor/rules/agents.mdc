@@ -25,15 +25,3 @@ Never load:
   .lens-knowledge-base/reference/styles-full.md
 
 Prompt system: .lens-knowledge-base/prompts/README.md
-
-Quick reference:
-  div Box         → Container
-  display:flex    → Split
-  display:grid    → Arrange
-  h1 h2 p span    → Text + htmlTag
-  disabled        → isDisabled
-  loading         → hasLoader
-  as="a"          → htmlTag="a"
-  ref={ref}       → refHandler={(r) => ref.current = r}
-  leftIcon        → iconBefore
-  raw input       → TextInput inside FormField
