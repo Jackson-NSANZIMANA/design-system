@@ -9,36 +9,31 @@ Boot sequence:
   1. Read .lens-knowledge-base/AGENT_PRIMER.md
   2. Read .lens-knowledge-base/_ROUTER.md
 
-Then produce your Session Contract — nothing else.
-No code. No assumptions. No planning yet.
+Produce your Session Contract. Use your own words.
+Do not reproduce tables verbatim.
 
 ┌─ SESSION CONTRACT ──────────────────────────────────────┐
 │                                                         │
 │ LENS VERSION    [from AGENT_PRIMER.md frontmatter]      │
 │                                                         │
-│ SPACES                                                  │
-│   Read  → .lens-knowledge-base/                        │
-│   Write → src/                                         │
+│ GRAMMAR         Name all 7 categories.                  │
+│                 For each: one primary component.        │
+│                 Your own words — prove understanding.   │
 │                                                         │
-│ GRAMMAR — 7 CATEGORIES                                  │
-│   [Reproduce the full grammar table from               │
-│    AGENT_PRIMER.md exactly. No paraphrasing.]          │
+│ THREE TRAPS     Pick the three most dangerous traps     │
+│                 from _ROUTER.md for a Next.js project.  │
+│                 State each trap and its correction.     │
 │                                                         │
-│ ACTIVE TRAPS                                            │
-│   [Reproduce every row of the Common Traps table       │
-│    from _ROUTER.md. Every row. No omissions.]          │
+│ LINTER          State the exact command.                │
+│                 State where it runs from.               │
+│                 State why next lint is insufficient.    │
 │                                                         │
-│ PROHIBITIONS CONFIRMED                                  │
-│   style={{}} · Tailwind classes · Raw HTML             │
-│   eslint-disable · Never-load files                    │
+│ SPACES          Read → .lens-knowledge-base/            │
+│                 Write → src/                            │
 │                                                         │
-│ PRIORITY CONFIRMED                                      │
-│   Linter → AGENT_PRIMER.md → rules → user request     │
-│                                                         │
-│ KNOWLEDGE GAPS                                          │
-│   [Anything ambiguous or missing found during          │
-│    this read. If none: "None identified."]             │
+│ GAPS            Anything ambiguous in the files.        │
+│                 If none: "None identified."             │
 │                                                         │
 └─────────────────────────────────────────────────────────┘
 
-Wait for confirmation before any code or planning.
+Wait for confirmation. No code before confirmation.
