@@ -1,7 +1,7 @@
 ---
 file: .lens-knowledge-base/guides/component-definition.md
 layer: worldview
-lensVersion: 12.14.0
+lensVersion: 12.18.0
 answers: "What a Lens component is and is not. The component contract."
 load-when:
   - Understanding why a component has the boundaries it does

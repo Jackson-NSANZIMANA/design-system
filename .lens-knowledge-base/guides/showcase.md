@@ -1,7 +1,7 @@
 ---
 file: guides/showcase.md
 role: Idiomatic Lens composition reference (agent + human)
-lensVersion: 12.14.0
+lensVersion: 12.18.0
 answers: "What does correct, idiomatic Lens composition look like?"
 load-when:
   - Building a new UI pattern

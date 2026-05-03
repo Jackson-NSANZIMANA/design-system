@@ -9,7 +9,7 @@ do-not-load-when:
 last-validated: 2026-04-29
 ---
 
-# Lens Quick Reference — @loomhq/lens@12.14.0
+# Lens Quick Reference — @loomhq/lens@12.18.0
 
 ## Setup (REQUIRED in main.tsx)
 ```tsx

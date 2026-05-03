@@ -78,7 +78,7 @@ The ESLint plugin validates every `className` value against:
 `eslint-plugin-lens-compliance/lib/mastery-db.json` → `approvedClasses`
 
 This file contains **1935 approved classes** generated directly from
-`@loomhq/lens@12.14.0` package source.
+`@loomhq/lens@12.18.0` package source.
 
 To regenerate after a Lens version update:
 ```bash

@@ -1,6 +1,6 @@
 {
   "_generated": "2026-03-05T11:56:50.117Z",
-  "_lensVersion": "12.14.0",
+  "_lensVersion": "12.18.0",
   "_note": "Verified via require(@loomhq/lens) runtime inspection",
   "layoutComponents": [
     "Align",

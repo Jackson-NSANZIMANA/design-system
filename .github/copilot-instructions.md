@@ -1,7 +1,7 @@
 cat > .github/copilot-instructions.md << 'EOF'
 # GitHub Copilot — Lens Design System
 
-## Package: @loomhq/lens@12.14.0
+## Package: @loomhq/lens@12.18.0
 
 ## Read First
 Before generating UI code, read:

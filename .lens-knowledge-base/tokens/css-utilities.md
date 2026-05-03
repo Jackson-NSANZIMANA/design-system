@@ -4,7 +4,7 @@
 >
 > ### 1. Linter ground truth
 > Every `className` value is validated against `mastery-db.json` approvedClasses.
-> As of `@loomhq/lens@12.14.0`, **1935 classes** are approved.
+> As of `@loomhq/lens@12.18.0`, **1935 classes** are approved.
 > `className` must always be a **static string literal** — dynamic expressions
 > are linter errors regardless of which classes they contain.
 >

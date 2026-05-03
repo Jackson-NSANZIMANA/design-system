@@ -8,7 +8,7 @@ const allExports = Object.keys(lens).sort();
 
 const verified = {
   _generated: new Date().toISOString(),
-  _lensVersion: "12.14.0",
+  _lensVersion: "12.18.0",
   _note: "Verified via require(@loomhq/lens) runtime inspection",
 
   layoutComponents: allExports.filter(e => 

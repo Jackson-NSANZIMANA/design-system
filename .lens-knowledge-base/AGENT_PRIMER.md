@@ -1,7 +1,7 @@
 ---
 file: AGENT_PRIMER.md
 role: Canonical agent entrypoint — read once per session
-lensVersion: 12.14.0
+lensVersion: 12.18.0
 scope: src/** frontend UI only
 next: _ROUTER.md
 ---

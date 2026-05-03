@@ -1,7 +1,7 @@
 # _GOVERNANCE.md — ContextOps (Human only)
 
 ## Current State
-Lens:       @loomhq/lens@12.14.0
+Lens:       @loomhq/lens@12.18.0
 Validated:  2026-04-29
 Owner:      [name]
 

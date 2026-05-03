@@ -1,7 +1,7 @@
 ---
 file: prompts/README.md
 role: Prompt system index
-lensVersion: 12.14.0
+lensVersion: 12.18.0
 ---
 
 # Lens Prompt System

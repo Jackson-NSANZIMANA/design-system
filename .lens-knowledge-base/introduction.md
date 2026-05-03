@@ -1,7 +1,7 @@
 ---
 file: .lens-knowledge-base/introduction.md
 layer: worldview
-lensVersion: 12.14.0
+lensVersion: 12.18.0
 answers: "Why Lens exists. The modular design philosophy. The operating principles."
 load-when:
   - First session on this codebase (read once for deep understanding)

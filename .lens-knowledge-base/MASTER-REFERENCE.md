@@ -10,7 +10,7 @@ last-validated: 2026-04-29
 ---
 # Lens Design System — Master Reference
 
-## Package: @loomhq/lens@12.14.0
+## Package: @loomhq/lens@12.18.0
 
 ## Available Components (103)
 
@@ -230,5 +230,5 @@ last-validated: 2026-04-29
 
 - **Docs:** https://lens.loom.dev
 - **Package:** @loomhq/lens
-- **Version:** 12.14.0
+- **Version:** 12.18.0
 - **Total exports:** 201

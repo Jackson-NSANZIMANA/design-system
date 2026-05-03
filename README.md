@@ -127,7 +127,7 @@ Every push to `main` triggers CI which repeats all of the above.
 ---
 
 ## Lens Version
-Currently tracking: `@loomhq/lens v12.14.0`
+Currently tracking: `@loomhq/lens v12.18.0`
 
 To upgrade: update @loomhq/lens, then run pnpm kb:validate && pnpm generate:lint-dbs.
 ---

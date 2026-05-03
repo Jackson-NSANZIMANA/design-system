@@ -26,7 +26,7 @@ do-not-load-when:
 last-validated: 2026-04-29
 ---
 
-# Lens Quick Reference — @loomhq/lens@12.14.0
+# Lens Quick Reference — @loomhq/lens@12.18.0
 
 ## Setup (REQUIRED in main.tsx)
 ```tsx
@@ -289,7 +289,7 @@ The ESLint plugin validates every `className` value against:
 `eslint-plugin-lens-compliance/lib/mastery-db.json` → `approvedClasses`
 
 This file contains **1935 approved classes** generated directly from
-`@loomhq/lens@12.14.0` package source.
+`@loomhq/lens@12.18.0` package source.
 
 To regenerate after a Lens version update:
 ```bash
@@ -306,7 +306,7 @@ Both are now in sync.
 ```json
 {
   "_generated": "2026-03-05T11:56:50.117Z",
-  "_lensVersion": "12.14.0",
+  "_lensVersion": "12.18.0",
   "_note": "Verified via require(@loomhq/lens) runtime inspection",
   "layoutComponents": [
     "Align",
