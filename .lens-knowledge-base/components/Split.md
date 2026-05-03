@@ -82,21 +82,19 @@ const size = useMedia(
   'small'
 )
 ```
-
+---
 ## DemoBox
 DemoBox does not exist in Lens. It appears in documentation examples only. Replace with Container in all real code.
 
+---
 ## Decision Rule
 Need responsive layout? → Use Arrange with auto-fit columns or Split with SplitSection grow/basis first. Only reach for responsive props if algorithmic layout cannot handle the requirement. Only reach for useMedia if responsive props cannot handle it.
 
 ---
+## Critical — Exact Valid Values
 
-### THE P5 CORRECTION PROMPT — Must Route To This File
-
-The agent used CSS values for Split props because when it hit a layout problem it did not route to `responsive-layout.md`. The correction loop must include it.
-
-Add one line to `P5-correction-loop.md` under the ROUTE section:
-
-
-Responsive layout error →
-  .lens-knowledge-base/tokens/responsive-layout.md
+alignItems: "start" only
+justifyContent: "flex-start" only
+wrap: "nowrap" only
+direction: "column" only when overriding default
+SplitSection: direct child of Split — nothing between them

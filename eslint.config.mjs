@@ -17,7 +17,10 @@ export default tseslint.config(
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        React: "readonly",
+      },
       parser: tseslint.parser,
       parserOptions: {
         ecmaFeatures: { jsx: true },
@@ -75,6 +78,14 @@ export default tseslint.config(
     },
     settings: {
       react: { version: "detect" },
+    },
+  },
+  {
+    files: ["**/*.config.{js,ts,mjs}", "**/next.config.*"],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
     },
   },
 );

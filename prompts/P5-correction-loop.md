@@ -30,6 +30,9 @@ Forbidden pattern →
 
 Unsure → start at _ROUTER.md and let it route you.
 
+Responsive layout error →
+  .lens-knowledge-base/tokens/responsive-layout.md
+  
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 STEP 2 — DIAGNOSE BEFORE YOU FIX
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
