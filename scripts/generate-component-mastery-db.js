@@ -32,28 +32,18 @@ function collectFiles(dir, files = []) {
   }
   return files;
 }
-
 function extractTypeAliases(content) {
   const aliases = {};
-
-  // Match: type AliasProps = { ... };
-  const typeRe =
-    /(?:export\s+)?type\s+([A-Za-z0-9_]+Props)\s*=\s*\{([\s\S]*?)\n\};/g;
-
-  // Match: interface AliasProps [extends ...] { ... }
-  // Key changes:
-  // 1. Added (?:\s+extends\s+[A-Za-z0-9_]+)? to handle "extends SharedProps"
-  // 2. Changed \n} to just } (files may not have newline before closing brace)
-  const interfaceRe =
-    /(?:export\s+)?interface\s+([A-Za-z0-9_]+Props)(?:\s+extends\s+[A-Za-z0-9_]+)?\s*\{([\s\S]*?)\n\}/g;
-
+  // This single regex handles `type` or `interface`, optional `export`, optional `extends`,
+  // and is not dependent on fragile newlines or specific brace placement.
+  const re =
+    /(?:export\s+)?(?:type|interface)\s+([A-Za-z0-9_]+Props)\s*(?:extends\s+[\s\S]+?)?\s*\{([\s\S]*?)\};?/g;
   let m;
-  while ((m = typeRe.exec(content)) !== null) aliases[m[1]] = m[2];
-  while ((m = interfaceRe.exec(content)) !== null) aliases[m[1]] = m[2];
-
+  while ((m = re.exec(content)) !== null) {
+    aliases[m[1]] = m[2];
+  }
   return aliases;
 }
-
 function parsePropType(typeText) {
   let type = typeText.trim();
 
@@ -63,11 +53,11 @@ function parsePropType(typeText) {
     type = responsiveMatch[1];
   }
 
-  // Extract all single-quoted literals (handles unions, ResponsiveType, etc.)
+  // Extract ALL single-quoted literals from the (possibly nested) type string
   const literals = [...type.matchAll(/'([^']+)'/g)].map((m) => m[1]);
 
   if (literals.length > 0) {
-    return [...new Set(literals)];
+    return [...new Set(literals)].sort(); // sort for stable hashing
   }
 
   // Primitive and React type markers
@@ -84,6 +74,7 @@ function parsePropType(typeText) {
 
   return [trimmed.replace(/\s+/g, " ")];
 }
+
 function parsePropsFromAliasBody(body) {
   const props = {};
   const required = [];
