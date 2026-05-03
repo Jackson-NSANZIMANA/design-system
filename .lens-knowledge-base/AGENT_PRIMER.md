@@ -69,10 +69,7 @@ When used: add a comment explaining why no Lens component fits.
 1,935 approved classes derived from Lens source.
 Error → your code is wrong → read components/[Name].md → fix → never suppress.
 
-Lens compliance linter command:
-pnpm eslint "src/\*_/_.{ts,tsx}"
-Run from the design-system root — not from src/
-next lint is not the Lens linter
+Lens linter: pnpm eslint "src/**/*.{ts,tsx}" — run from design-system root. next lint is not the Lens linter.
 
 ---
 
