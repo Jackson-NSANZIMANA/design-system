@@ -52,3 +52,7 @@ reference/styles-full.md 1,746 lines
 | color="teal/grey6" for semantic need          | Base color                                                                      | success/bodyDimmed                                                                                    |
 | import SvgBell from '@loomhq/lens/icons/bell' | Default import — removed in 12.18.0                                             | import { SvgBell } from '@loomhq/lens/icons/bell'                                                     |
 | Running next lint for Lens compliance         | next lint only checks React/Next.js rules — Lens violations are invisible to it | Run pnpm eslint "src/\*_/_.{ts,tsx}" from the design-system root — this is the Lens compliance linter |
+| Split alignItems="center"      | CSS value — Lens only accepts "start" | alignItems="start" |
+| Split alignItems="flex-start"  | CSS value — Lens only accepts "start" | alignItems="start" |
+| Split wrap="wrap"              | CSS value — Lens only accepts "nowrap" | wrap="nowrap" or omit |
+| SplitSection inside Container  | SplitSection must be DIRECT child of Split — no wrapper between them | Remove Container between Split and SplitSection |

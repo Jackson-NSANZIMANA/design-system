@@ -5,10 +5,10 @@ type HslaColor = {
     a: number;
     ads?: string;
 };
-declare const BaseColors: readonly ["red", "redDark", "blurpleLight", "blurpleMedium", "blurple", "blurpleDark", "blurpleStrong", "offWhite", "blueLight", "blue", "blueDark", "magentaLight", "magenta", "magentaDark", "orangeLight", "orange", "orangeDark", "tealLight", "teal", "tealDark", "yellowLight", "yellow", "yellowDark"];
+declare const BaseColors: readonly ["red", "redDark", "blurpleLight", "blurpleMedium", "blurple", "blurpleDark", "blurpleStrong", "offWhite", "blueLight", "blue", "blueDark", "magentaLight", "magenta", "magentaDark", "orangeLight", "orange", "orangeDark", "purple", "purpleDark", "purpleLight", "tealLight", "teal", "tealDark", "yellowLight", "yellow", "yellowDark"];
 declare const GreyColors: readonly ["grey8", "grey7", "grey6", "grey5", "grey4", "grey3", "grey2", "grey1", "white"];
 declare const SharedColors: readonly ["record", "recordHover", "recordActive", "backdropDark", "backdropTwilight", "highlight", "highlightHover", "highlightActive", "warning"];
-declare const SemanticColors: readonly ["primary", "primaryHover", "primaryActive", "body", "bodyDimmed", "bodyInverse", "background", "backgroundHover", "backgroundActive", "backgroundNeutral", "backgroundNeutralHover", "backgroundNeutralActive", "backgroundSecondary", "backgroundSecondary2", "backgroundInverse", "focusRing", "overlay", "overlayHover", "overlayActive", "backdrop", "border", "disabledContent", "disabledBackground", "formFieldBorder", "formFieldBackground", "buttonBorder", "upgrade", "upgradeHover", "upgradeActive", "tabBackground", "discoveryBackground", "discoveryLightBackground", "discoveryTitle", "discoveryHighlight", "info", "success", "danger", "dangerHover", "dangerActive"];
+declare const SemanticColors: readonly ["primary", "primaryHover", "primaryActive", "body", "bodyDimmed", "bodyInverse", "background", "backgroundHover", "backgroundActive", "backgroundNeutral", "backgroundNeutralHover", "backgroundNeutralActive", "backgroundSecondary", "backgroundSecondary2", "backgroundInverse", "focusRing", "overlay", "overlayHover", "overlayActive", "backdrop", "border", "disabledContent", "disabledBackground", "formFieldBorder", "formFieldBackground", "buttonBorder", "upgrade", "upgradeHover", "upgradeActive", "tabBackground", "discoveryBackground", "discoveryLightBackground", "discoveryTitle", "discoveryHighlight", "info", "success", "danger", "dangerHover", "dangerActive", "illustrationAccent", "illustrationOrange", "illustrationLine", "illustrationPurple", "illustrationGreen", "illustrationGray", "illustrationAccentGray", "illustrationStroke", "illustrationDrawer", "illustrationPaper", "illustrationInnerPaper", "illustrationGreenShade", "illustrationBlueDark", "illustrationFace", "illustrationRainstormGray", "illustrationCheckBlue", "illustrationGreyscaleFill", "illustrationGreyscaleAccent", "illustrationGreyscaleMid", "illustrationGreyscaleMidDark", "illustrationGreyscaleDark", "illustrationGreyscaleStroke", "illustrationBg"];
 type ThemesColorVariant = Record<(typeof SharedColors)[number] | (typeof SemanticColors)[number], HslaColor>;
 type ThemesColors = {
     light: ThemesColorVariant;
@@ -21,6 +21,10 @@ export declare const alphaFunction: (color: HslaColor, alpha: number) => HslaCol
 export declare const hslaBaseColors: Record<(typeof BaseColors)[number], HslaColor>;
 export declare const hslaGreys: Record<(typeof GreyColors)[number], HslaColor>;
 export declare const themeColors: ThemesColors;
+export declare const illustrationColors: {
+    staticDarkBlue: string;
+    staticRed: string;
+};
 export declare const hslaColors: {
     grey8: HslaColor;
     grey7: HslaColor;
@@ -48,6 +52,9 @@ export declare const hslaColors: {
     orangeLight: HslaColor;
     orange: HslaColor;
     orangeDark: HslaColor;
+    purple: HslaColor;
+    purpleDark: HslaColor;
+    purpleLight: HslaColor;
     tealLight: HslaColor;
     teal: HslaColor;
     tealDark: HslaColor;

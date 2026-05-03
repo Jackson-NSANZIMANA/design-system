@@ -1,1 +1,1 @@
-{"version":3,"file":"desktop-app-and-chrome-extension.d.ts","sourceRoot":"","sources":["../../../../src/illustrations/desktop-app-and-chrome-extension.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAC;AAE/B,iBAAS,wCAAwC,CAAC,KAAK,KAAA,qBA0BtD;AAED,eAAe,wCAAwC,CAAC"}
+{"version":3,"file":"desktop-app-and-chrome-extension.d.ts","sourceRoot":"","sources":["../../../../src/illustrations/desktop-app-and-chrome-extension.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAC;AAE/B,mJAAmJ;AACnJ,iBAAS,wCAAwC,CAAC,KAAK,KAAA,qBA0BtD;AAED,eAAe,wCAAwC,CAAC"}

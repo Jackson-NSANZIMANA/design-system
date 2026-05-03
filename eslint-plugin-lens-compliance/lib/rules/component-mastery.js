@@ -86,7 +86,20 @@ module.exports = {
           const propValidValues = config.props ? config.props[propName] : null;
 
           // A. Check Literal Values (e.g. size="small")
-          if (propValidValues && attr.value && attr.value.type === "Literal") {
+          // A. Check Literal Values (e.g. size="small")
+          // Skip validation when all valid values are TypeScript type names.
+          // Type names are not string literals — they describe the shape,
+          // not the allowed values. Checking them produces false positives.
+          const TYPE_PATTERN =
+            /^[A-Z]|^(string|number|boolean|object|any|void|never|unknown|React\.)/;
+          const isTypeOnly = propValidValues.every((v) => TYPE_PATTERN.test(v));
+
+          if (
+            !isTypeOnly &&
+            propValidValues &&
+            attr.value &&
+            attr.value.type === "Literal"
+          ) {
             if (!propValidValues.includes(attr.value.value)) {
               context.report({
                 node: attr,
@@ -124,7 +137,7 @@ module.exports = {
               }
             });
           }
-        });
+        };);
       },
     };
   },

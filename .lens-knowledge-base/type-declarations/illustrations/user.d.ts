@@ -1,4 +1,3 @@
 import * as React from 'react';
-declare function IllustrationUser(props: any): React.JSX.Element;
-export default IllustrationUser;
+export default function User(props: any): React.JSX.Element;
 //# sourceMappingURL=user.d.ts.map

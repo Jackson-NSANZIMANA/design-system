@@ -30,9 +30,7 @@
           "React.ReactNode"
         ]
       },
-      "required": [
-        "children"
-      ]
+      "required": []
     },
     "Arrange": {
       "props": {
@@ -78,9 +76,7 @@
           "row"
         ]
       },
-      "required": [
-        "children"
-      ]
+      "required": []
     },
     "Backdrop": {
       "props": {
@@ -114,9 +110,7 @@
           "large"
         ]
       },
-      "required": [
-        "children"
-      ]
+      "required": []
     },
     "Distribute": {
       "props": {
@@ -745,9 +739,7 @@
           "string"
         ]
       },
-      "required": [
-        "children"
-      ]
+      "required": []
     },
     "TextInput": {
       "props": {
@@ -910,7 +902,14 @@
     "Avatar": {
       "props": {
         "themeColor": [
-          "AvatarColor"
+          "orange",
+          "green",
+          "teal",
+          "blue",
+          "purple",
+          "red",
+          "yellow",
+          "grey"
         ],
         "altText": [
           "string"
@@ -972,9 +971,7 @@
           "React.ReactNode"
         ]
       },
-      "required": [
-        "children"
-      ]
+      "required": []
     },
     "List": {
       "props": {
@@ -1094,7 +1091,6 @@
     "ErrorContainer": {
       "props": {},
       "required": [
-        "children",
         "errorActive"
       ]
     },

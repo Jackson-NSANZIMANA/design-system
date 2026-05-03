@@ -6,13 +6,19 @@ import lensCompliance from "eslint-plugin-lens-compliance";
 
 export default tseslint.config(
   {
-    ignores: ["**/node_modules/**", "**/dist/**", "**/.lens-knowledge-base/**"],
+    ignores: [
+      "**/node_modules/**",
+      "**/dist/**",
+      "**/.lens-knowledge-base/**",
+      "**/.next/**",
+    ],
   },
   {
     files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"],
     languageOptions: {
       ecmaVersion: 2020,
       globals: globals.browser,
+      parser: tseslint.parser,
       parserOptions: {
         ecmaFeatures: { jsx: true },
       },
@@ -25,14 +31,10 @@ export default tseslint.config(
       ...js.configs.recommended.rules,
       ...tseslint.configs.recommended.rules,
       ...reactPlugin.configs.recommended.rules,
-
-      // --- LENS ENFORCEMENT RULES ---
       "lens-compliance/enforce-lens-primitives": "error",
       "lens-compliance/forbid-styling-props": "error",
       "lens-compliance/component-mastery": "error",
       "lens-compliance/no-eslint-disable": "error",
-
-      // Import Lockdown
       "no-restricted-imports": [
         "error",
         {
@@ -60,17 +62,15 @@ export default tseslint.config(
           ],
         },
       ],
-
       "no-restricted-syntax": [
         "error",
         {
           selector:
             "ImportDeclaration[source.value=/\\.css$/][source.value!=/globals\\.css$/]",
           message:
-            "❌ LENS VIOLATION: CSS file imports are forbidden. Use Lens Design Tokens. Exception: globals.css for Lens and font initialization only.",
+            "❌ LENS VIOLATION: CSS file imports are forbidden. Exception: globals.css only.",
         },
       ],
-
       "react/react-in-jsx-scope": "off",
     },
     settings: {

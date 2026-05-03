@@ -1,1 +1,1 @@
-{"version":3,"file":"recents-empty-state-mobile.d.ts","sourceRoot":"","sources":["../../../../src/illustrations/recents-empty-state-mobile.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAC;AAE/B,iBAAS,mCAAmC,CAAC,KAAK,KAAA,qBAgBjD;AAED,eAAe,mCAAmC,CAAC"}
+{"version":3,"file":"recents-empty-state-mobile.d.ts","sourceRoot":"","sources":["../../../../src/illustrations/recents-empty-state-mobile.tsx"],"names":[],"mappings":"AAAA,OAAO,KAAK,KAAK,MAAM,OAAO,CAAC;AAE/B,mJAAmJ;AACnJ,iBAAS,mCAAmC,CAAC,KAAK,KAAA,qBAgBjD;AAED,eAAe,mCAAmC,CAAC"}

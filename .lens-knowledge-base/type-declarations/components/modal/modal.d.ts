@@ -51,7 +51,7 @@ declare const Modal: React.ForwardRefExoticComponent<Omit<{
 } & {
     theme?: import("@emotion/react").Theme;
     as?: React.ElementType;
-} & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & Omit<import("../../types").LensDivProps, keyof {
+} & React.ClassAttributes<HTMLDivElement> & React.HTMLAttributes<HTMLDivElement> & Omit<import("../..").LensDivProps, keyof {
     isOpen?: boolean;
     children?: React.ReactNode;
     zIndex?: number;
