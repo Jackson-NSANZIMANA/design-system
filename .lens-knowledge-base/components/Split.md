@@ -174,23 +174,12 @@ Use the `htmlTag` prop to render semantic list markup (`ul`, `ol`, `li`). `Split
 | large      | 75em (1200px) |
 
 ---
-## Exact Valid Values — Critical
+## Critical — Exact Valid Values
 
-alignItems: "start" only
-  ✗ alignItems="center"     CSS value — rejected by linter
-  ✗ alignItems="flex-start" CSS value — rejected by linter  
-  ✓ alignItems="start"      Lens token — correct
-
-wrap: "nowrap" only
-  ✗ wrap="wrap"   CSS value — rejected by linter
-  ✓ wrap="nowrap" Lens token — correct
-
-direction: "column" only when overriding default
-  Default is row — omit direction for horizontal layout
-
-SplitSection must be a DIRECT child of Split
-  ✗ <Split><Container><SplitSection /></Container></Split>
-  ✓ <Split><SplitSection /></Split>
+alignItems: "start" only — never "center", never "flex-start"
+wrap: "nowrap" only — never "wrap"
+direction: "column" only — default is row, omit for horizontal
+SplitSection: direct child of Split only — no wrapper between them
 ---
 ## Props
 
