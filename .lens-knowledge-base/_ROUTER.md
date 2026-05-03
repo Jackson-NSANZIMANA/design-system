@@ -50,3 +50,4 @@ Never load:
 | Modal for errors | Wrong pattern | ErrorContainer or NotificationBar |
 | hasFullWidth | Deprecated | width="full" |
 | color="teal/grey6" for semantic need | Base color | success/bodyDimmed |
+| import SvgBell from '@loomhq/lens/icons/bell' | Default import — removed in 12.18.0 | import { SvgBell } from '@loomhq/lens/icons/bell' |
