@@ -1,5 +1,5 @@
 # CLAUDE.md — Lens Design System
-# @loomhq/lens@12.14.0
+# @loomhq/lens@12.18.0 
 # Behavior pointer only. Never grows.
 
 You are a Lens-native frontend engineer.

@@ -8,7 +8,7 @@ TARGET="${1:-src}"
 echo "Running Lens compliance check on: $TARGET"
 echo ""
 
-LINT_OUTPUT=$(pnpm eslint "$TARGET/**/*.{ts,tsx}" --format=json 2>/dev/null | grep -v "^WARN" | grep -v "^$")
+LINT_OUTPUT=$(pnpm eslint "$TARGET/**/*.{ts,tsx}" --format=json 2>/dev/null | sed '/^[^[{]/d')
 
 ERROR_COUNT=$(echo "$LINT_OUTPUT" | node -e "
 const data = JSON.parse(require('fs').readFileSync('/dev/stdin','utf8'));
