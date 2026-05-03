@@ -35,25 +35,55 @@ function collectFiles(dir, files = []) {
 
 function extractTypeAliases(content) {
   const aliases = {};
-  const re = /type\s+([A-Za-z0-9_]+Props)\s*=\s*\{([\s\S]*?)\n\};/g;
+
+  // Match: type AliasProps = { ... };
+  const typeRe =
+    /(?:export\s+)?type\s+([A-Za-z0-9_]+Props)\s*=\s*\{([\s\S]*?)\n\};/g;
+
+  // Match: interface AliasProps [extends ...] { ... }
+  // Key changes:
+  // 1. Added (?:\s+extends\s+[A-Za-z0-9_]+)? to handle "extends SharedProps"
+  // 2. Changed \n} to just } (files may not have newline before closing brace)
+  const interfaceRe =
+    /(?:export\s+)?interface\s+([A-Za-z0-9_]+Props)(?:\s+extends\s+[A-Za-z0-9_]+)?\s*\{([\s\S]*?)\n\}/g;
+
   let m;
-  while ((m = re.exec(content)) !== null) aliases[m[1]] = m[2];
+  while ((m = typeRe.exec(content)) !== null) aliases[m[1]] = m[2];
+  while ((m = interfaceRe.exec(content)) !== null) aliases[m[1]] = m[2];
+
   return aliases;
 }
 
 function parsePropType(typeText) {
-  const type = typeText.trim();
+  let type = typeText.trim();
+
+  // Extract inner type from ResponsiveType<T>
+  const responsiveMatch = type.match(/ResponsiveType<([^>]+)>/i);
+  if (responsiveMatch && responsiveMatch[1]) {
+    type = responsiveMatch[1];
+  }
+
+  // Extract all single-quoted literals (handles unions, ResponsiveType, etc.)
   const literals = [...type.matchAll(/'([^']+)'/g)].map((m) => m[1]);
-  if (literals.length > 0) return [...new Set(literals)];
+
+  if (literals.length > 0) {
+    return [...new Set(literals)];
+  }
+
+  // Primitive and React type markers
   if (/\bboolean\b/.test(type)) return ["boolean"];
   if (/\bnumber\b/.test(type)) return ["number"];
   if (/\bstring\b/.test(type)) return ["string"];
   if (/\bReact\.ReactNode\b/.test(type)) return ["React.ReactNode"];
-  if (/\bReact\.ReactEventHandler\b/.test(type))
+  if (/\bReact\.[A-Za-z]+Handler\b/.test(type))
     return ["React.ReactEventHandler"];
-  return [type.replace(/\s+/g, " ").trim()];
-}
 
+  // Type aliases (AvatarColor, etc.)
+  const trimmed = type.trim();
+  if (/^[A-Z]/.test(trimmed)) return [trimmed];
+
+  return [trimmed.replace(/\s+/g, " ")];
+}
 function parsePropsFromAliasBody(body) {
   const props = {};
   const required = [];
